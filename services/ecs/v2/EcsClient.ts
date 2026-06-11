@@ -18,6 +18,9 @@ import { AttachServerVolumeRequest } from './model/AttachServerVolumeRequest';
 import { AttachServerVolumeRequestBody } from './model/AttachServerVolumeRequestBody';
 import { AttachServerVolumeResponse } from './model/AttachServerVolumeResponse';
 import { AttachableQuantityForNic } from './model/AttachableQuantityForNic';
+import { BatchAddServerGroupMemberReq } from './model/BatchAddServerGroupMemberReq';
+import { BatchAddServerGroupMemberRequest } from './model/BatchAddServerGroupMemberRequest';
+import { BatchAddServerGroupMemberResponse } from './model/BatchAddServerGroupMemberResponse';
 import { BatchAddServerNicOption } from './model/BatchAddServerNicOption';
 import { BatchAddServerNicsRequest } from './model/BatchAddServerNicsRequest';
 import { BatchAddServerNicsRequestBody } from './model/BatchAddServerNicsRequestBody';
@@ -30,6 +33,9 @@ import { BatchAttachSharableVolumesResponse } from './model/BatchAttachSharableV
 import { BatchCreateServerTagsRequest } from './model/BatchCreateServerTagsRequest';
 import { BatchCreateServerTagsRequestBody } from './model/BatchCreateServerTagsRequestBody';
 import { BatchCreateServerTagsResponse } from './model/BatchCreateServerTagsResponse';
+import { BatchDeleteServerGroupMemberReq } from './model/BatchDeleteServerGroupMemberReq';
+import { BatchDeleteServerGroupMemberRequest } from './model/BatchDeleteServerGroupMemberRequest';
+import { BatchDeleteServerGroupMemberResponse } from './model/BatchDeleteServerGroupMemberResponse';
 import { BatchDeleteServerNicOption } from './model/BatchDeleteServerNicOption';
 import { BatchDeleteServerNicsRequest } from './model/BatchDeleteServerNicsRequest';
 import { BatchDeleteServerNicsRequestBody } from './model/BatchDeleteServerNicsRequestBody';
@@ -39,6 +45,7 @@ import { BatchDeleteServerTagsRequestBody } from './model/BatchDeleteServerTagsR
 import { BatchDeleteServerTagsResponse } from './model/BatchDeleteServerTagsResponse';
 import { BatchDetachVolumesRequest } from './model/BatchDetachVolumesRequest';
 import { BatchDetachVolumesResponse } from './model/BatchDetachVolumesResponse';
+import { BatchOperateResultResponse } from './model/BatchOperateResultResponse';
 import { BatchRebootServersRequest } from './model/BatchRebootServersRequest';
 import { BatchRebootServersRequestBody } from './model/BatchRebootServersRequestBody';
 import { BatchRebootServersResponse } from './model/BatchRebootServersResponse';
@@ -62,6 +69,7 @@ import { BatchUpdateServersNameRequest } from './model/BatchUpdateServersNameReq
 import { BatchUpdateServersNameRequestBody } from './model/BatchUpdateServersNameRequestBody';
 import { BatchUpdateServersNameResponse } from './model/BatchUpdateServersNameResponse';
 import { BlockDeviceAttachableQuantity } from './model/BlockDeviceAttachableQuantity';
+import { CapacityReservationSpecification } from './model/CapacityReservationSpecification';
 import { ChangeServerChargeModePrepaidOption } from './model/ChangeServerChargeModePrepaidOption';
 import { ChangeServerChargeModeRequest } from './model/ChangeServerChargeModeRequest';
 import { ChangeServerChargeModeRequestBody } from './model/ChangeServerChargeModeRequestBody';
@@ -381,6 +389,9 @@ import { ShowRecycleBinRequest } from './model/ShowRecycleBinRequest';
 import { ShowRecycleBinResponse } from './model/ShowRecycleBinResponse';
 import { ShowResetPasswordFlagRequest } from './model/ShowResetPasswordFlagRequest';
 import { ShowResetPasswordFlagResponse } from './model/ShowResetPasswordFlagResponse';
+import { ShowSerialConsoleActionsOption } from './model/ShowSerialConsoleActionsOption';
+import { ShowSerialConsoleActionsRequest } from './model/ShowSerialConsoleActionsRequest';
+import { ShowSerialConsoleActionsResponse } from './model/ShowSerialConsoleActionsResponse';
 import { ShowServerAttachableNicNumRequest } from './model/ShowServerAttachableNicNumRequest';
 import { ShowServerAttachableNicNumResponse } from './model/ShowServerAttachableNicNumResponse';
 import { ShowServerBlockDeviceRequest } from './model/ShowServerBlockDeviceRequest';
@@ -429,6 +440,10 @@ import { UpdateRecycleBinRequest } from './model/UpdateRecycleBinRequest';
 import { UpdateRecycleBinResponse } from './model/UpdateRecycleBinResponse';
 import { UpdateScheduledEventRequest } from './model/UpdateScheduledEventRequest';
 import { UpdateScheduledEventResponse } from './model/UpdateScheduledEventResponse';
+import { UpdateSerialConsoleOptionsOption } from './model/UpdateSerialConsoleOptionsOption';
+import { UpdateSerialConsoleOptionsRequest } from './model/UpdateSerialConsoleOptionsRequest';
+import { UpdateSerialConsoleOptionsRequestBody } from './model/UpdateSerialConsoleOptionsRequestBody';
+import { UpdateSerialConsoleOptionsResponse } from './model/UpdateSerialConsoleOptionsResponse';
 import { UpdateServerAddress } from './model/UpdateServerAddress';
 import { UpdateServerAutoTerminateTimeRequest } from './model/UpdateServerAutoTerminateTimeRequest';
 import { UpdateServerAutoTerminateTimeRequestBody } from './model/UpdateServerAutoTerminateTimeRequestBody';
@@ -553,6 +568,26 @@ export class EcsClient {
     }
 
     /**
+     * 将云服务器加入云服务器组。添加成功后，该云服务器与云服务器组中的其他成员尽量分散地创建在不同主机上。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 云服务器组批量添加成员
+     * @param {string} serverGroupId 
+     * @param {BatchAddServerGroupMemberReq} batchAddServerGroupMemberReq This is a auto create Body Object
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public batchAddServerGroupMember(batchAddServerGroupMemberRequest?: BatchAddServerGroupMemberRequest): Promise<BatchAddServerGroupMemberResponse> {
+        const options = ParamCreater().batchAddServerGroupMember(batchAddServerGroupMemberRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 给云服务器添加一张或多张网卡。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -607,6 +642,26 @@ export class EcsClient {
      */
     public batchCreateServerTags(batchCreateServerTagsRequest?: BatchCreateServerTagsRequest): Promise<BatchCreateServerTagsResponse> {
         const options = ParamCreater().batchCreateServerTags(batchCreateServerTagsRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 将弹性云服务器移出云服务器组。移出后，该云服务器与云服务器组中的成员不再遵从反亲和策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 云服务器组批量删除成员
+     * @param {string} serverGroupId 
+     * @param {BatchDeleteServerGroupMemberReq} batchDeleteServerGroupMemberReq This is a auto create Body Object
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public batchDeleteServerGroupMember(batchDeleteServerGroupMemberRequest?: BatchDeleteServerGroupMemberRequest): Promise<BatchDeleteServerGroupMemberResponse> {
+        const options = ParamCreater().batchDeleteServerGroupMember(batchDeleteServerGroupMemberRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -2156,12 +2211,14 @@ export class EcsClient {
     }
 
     /**
-     * 查询flavor的容量
+     * 查询规格的容量
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @summary 查询flavor的容量
+     * @summary 查询规格的容量
      * @param {string} flavorId 
+     * @param {string} [count] 
+     * @param {string} [regionIds] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -2223,6 +2280,25 @@ export class EcsClient {
      */
     public showResetPasswordFlag(showResetPasswordFlagRequest?: ShowResetPasswordFlagRequest): Promise<ShowResetPasswordFlagResponse> {
         const options = ParamCreater().showResetPasswordFlag(showResetPasswordFlagRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 获取云服务器云主机串口登录地址。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 获取串口登录地址
+     * @param {string} serverId 云服务器ID。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showSerialConsoleActions(showSerialConsoleActionsRequest?: ShowSerialConsoleActionsRequest): Promise<ShowSerialConsoleActionsResponse> {
+        const options = ParamCreater().showSerialConsoleActions(showSerialConsoleActionsRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -2462,6 +2538,26 @@ export class EcsClient {
 
          // @ts-ignore
         options['responseHeaders'] = ['X-Request-Id'];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 设置云服务器云主机串口登录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 设置云服务器云主机串口登录
+     * @param {string} serverId 云服务器ID。
+     * @param {UpdateSerialConsoleOptionsRequestBody} updateSerialConsoleOptionsRequestBody This is a auto create Body Object
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public updateSerialConsoleOptions(updateSerialConsoleOptionsRequest?: UpdateSerialConsoleOptionsRequest): Promise<UpdateSerialConsoleOptionsResponse> {
+        const options = ParamCreater().updateSerialConsoleOptions(updateSerialConsoleOptionsRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
 
         return this.hcClient.sendRequest(options);
     }
@@ -2837,6 +2933,52 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 将云服务器加入云服务器组。添加成功后，该云服务器与云服务器组中的其他成员尽量分散地创建在不同主机上。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        batchAddServerGroupMember(batchAddServerGroupMemberRequest?: BatchAddServerGroupMemberRequest) {
+            const options = {
+                method: "POST",
+                url: "/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}/add_members",
+                contentType: "application/json;charset=UTF-8",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let serverGroupId;
+
+            if (batchAddServerGroupMemberRequest !== null && batchAddServerGroupMemberRequest !== undefined) {
+                if (batchAddServerGroupMemberRequest instanceof BatchAddServerGroupMemberRequest) {
+                    serverGroupId = batchAddServerGroupMemberRequest.serverGroupId;
+                    body = batchAddServerGroupMemberRequest.body
+                } else {
+                    serverGroupId = batchAddServerGroupMemberRequest['server_group_id'];
+                    body = batchAddServerGroupMemberRequest['body'];
+                }
+            }
+
+        
+            if (serverGroupId === null || serverGroupId === undefined) {
+            throw new RequiredError('serverGroupId','Required parameter serverGroupId was null or undefined when calling batchAddServerGroupMember.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json;charset=UTF-8';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'server_group_id': serverGroupId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 给云服务器添加一张或多张网卡。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -2972,6 +3114,52 @@ export const ParamCreater = function () {
 
             options.data = body !== undefined ? body : {};
             options.pathParams = { 'server_id': serverId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 将弹性云服务器移出云服务器组。移出后，该云服务器与云服务器组中的成员不再遵从反亲和策略。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        batchDeleteServerGroupMember(batchDeleteServerGroupMemberRequest?: BatchDeleteServerGroupMemberRequest) {
+            const options = {
+                method: "POST",
+                url: "/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}/remove_members",
+                contentType: "application/json;charset=UTF-8",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let serverGroupId;
+
+            if (batchDeleteServerGroupMemberRequest !== null && batchDeleteServerGroupMemberRequest !== undefined) {
+                if (batchDeleteServerGroupMemberRequest instanceof BatchDeleteServerGroupMemberRequest) {
+                    serverGroupId = batchDeleteServerGroupMemberRequest.serverGroupId;
+                    body = batchDeleteServerGroupMemberRequest.body
+                } else {
+                    serverGroupId = batchDeleteServerGroupMemberRequest['server_group_id'];
+                    body = batchDeleteServerGroupMemberRequest['body'];
+                }
+            }
+
+        
+            if (serverGroupId === null || serverGroupId === undefined) {
+            throw new RequiredError('serverGroupId','Required parameter serverGroupId was null or undefined when calling batchDeleteServerGroupMember.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json;charset=UTF-8';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'server_group_id': serverGroupId, };
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -6579,7 +6767,7 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 查询flavor的容量
+         * 查询规格的容量
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -6593,15 +6781,23 @@ export const ParamCreater = function () {
                 headers: {}
             };
             const localVarHeaderParameter = {} as any;
-
+            const localVarQueryParameter = {} as any;
             
             let flavorId;
+            
+            let count;
+            
+            let regionIds;
 
             if (showFlavorCapacityRequest !== null && showFlavorCapacityRequest !== undefined) {
                 if (showFlavorCapacityRequest instanceof ShowFlavorCapacityRequest) {
                     flavorId = showFlavorCapacityRequest.flavorId;
+                    count = showFlavorCapacityRequest.count;
+                    regionIds = showFlavorCapacityRequest.regionIds;
                 } else {
                     flavorId = showFlavorCapacityRequest['flavor_id'];
+                    count = showFlavorCapacityRequest['count'];
+                    regionIds = showFlavorCapacityRequest['region_ids'];
                 }
             }
 
@@ -6609,7 +6805,14 @@ export const ParamCreater = function () {
             if (flavorId === null || flavorId === undefined) {
             throw new RequiredError('flavorId','Required parameter flavorId was null or undefined when calling showFlavorCapacity.');
             }
+            if (count !== null && count !== undefined) {
+                localVarQueryParameter['count'] = count;
+            }
+            if (regionIds !== null && regionIds !== undefined) {
+                localVarQueryParameter['region_ids'] = regionIds;
+            }
 
+            options.queryParams = localVarQueryParameter;
             options.pathParams = { 'flavor_id': flavorId, };
             options.headers = localVarHeaderParameter;
             return options;
@@ -6703,6 +6906,43 @@ export const ParamCreater = function () {
         
             if (serverId === null || serverId === undefined) {
             throw new RequiredError('serverId','Required parameter serverId was null or undefined when calling showResetPasswordFlag.');
+            }
+
+            options.pathParams = { 'server_id': serverId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 获取云服务器云主机串口登录地址。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showSerialConsoleActions(showSerialConsoleActionsRequest?: ShowSerialConsoleActionsRequest) {
+            const options = {
+                method: "POST",
+                url: "/v1/{project_id}/cloudservers/{server_id}/actions/serial-console",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let serverId;
+
+            if (showSerialConsoleActionsRequest !== null && showSerialConsoleActionsRequest !== undefined) {
+                if (showSerialConsoleActionsRequest instanceof ShowSerialConsoleActionsRequest) {
+                    serverId = showSerialConsoleActionsRequest.serverId;
+                } else {
+                    serverId = showSerialConsoleActionsRequest['server_id'];
+                }
+            }
+
+        
+            if (serverId === null || serverId === undefined) {
+            throw new RequiredError('serverId','Required parameter serverId was null or undefined when calling showSerialConsoleActions.');
             }
 
             options.pathParams = { 'server_id': serverId, };
@@ -7175,6 +7415,52 @@ export const ParamCreater = function () {
 
             options.data = body !== undefined ? body : {};
             options.pathParams = { 'id': id, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 设置云服务器云主机串口登录。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        updateSerialConsoleOptions(updateSerialConsoleOptionsRequest?: UpdateSerialConsoleOptionsRequest) {
+            const options = {
+                method: "PUT",
+                url: "/v1/{project_id}/cloudservers/{server_id}/serial-console-options",
+                contentType: "application/json;charset=UTF-8",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let serverId;
+
+            if (updateSerialConsoleOptionsRequest !== null && updateSerialConsoleOptionsRequest !== undefined) {
+                if (updateSerialConsoleOptionsRequest instanceof UpdateSerialConsoleOptionsRequest) {
+                    serverId = updateSerialConsoleOptionsRequest.serverId;
+                    body = updateSerialConsoleOptionsRequest.body
+                } else {
+                    serverId = updateSerialConsoleOptionsRequest['server_id'];
+                    body = updateSerialConsoleOptionsRequest['body'];
+                }
+            }
+
+        
+            if (serverId === null || serverId === undefined) {
+            throw new RequiredError('serverId','Required parameter serverId was null or undefined when calling updateSerialConsoleOptions.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json;charset=UTF-8';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'server_id': serverId, };
             options.headers = localVarHeaderParameter;
             return options;
         },

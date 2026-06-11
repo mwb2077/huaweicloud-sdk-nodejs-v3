@@ -1,5 +1,6 @@
 import { InstanceStatistics } from './InstanceStatistics';
 import { Resource } from './Resource';
+import { StatusSchemaResp } from './StatusSchemaResp';
 
 
 export class ResourceGroupInfo {
@@ -9,7 +10,7 @@ export class ResourceGroupInfo {
     private 'group_id'?: string;
     private 'create_time'?: number;
     private 'instance_statistics'?: InstanceStatistics;
-    public status?: string;
+    public status?: StatusSchemaResp;
     private 'enterprise_project_id'?: string;
     public resources?: Array<Resource>;
     public constructor() { 
@@ -68,7 +69,7 @@ export class ResourceGroupInfo {
     public get instanceStatistics(): InstanceStatistics | undefined {
         return this['instance_statistics'];
     }
-    public withStatus(status: string): ResourceGroupInfo {
+    public withStatus(status: StatusSchemaResp): ResourceGroupInfo {
         this['status'] = status;
         return this;
     }

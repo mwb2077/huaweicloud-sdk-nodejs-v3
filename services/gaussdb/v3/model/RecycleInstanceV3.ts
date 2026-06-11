@@ -1,3 +1,4 @@
+import { RecycleBackupV3 } from './RecycleBackupV3';
 
 
 export class RecycleInstanceV3 {
@@ -18,6 +19,7 @@ export class RecycleInstanceV3 {
     private 'backup_level'?: string;
     private 'recycle_backup_id'?: string;
     private 'recycle_status'?: string;
+    private 'recycle_backups'?: Array<RecycleBackupV3>;
     public constructor() { 
     }
     public withId(id: string): RecycleInstanceV3 {
@@ -177,5 +179,15 @@ export class RecycleInstanceV3 {
     }
     public get recycleStatus(): string | undefined {
         return this['recycle_status'];
+    }
+    public withRecycleBackups(recycleBackups: Array<RecycleBackupV3>): RecycleInstanceV3 {
+        this['recycle_backups'] = recycleBackups;
+        return this;
+    }
+    public set recycleBackups(recycleBackups: Array<RecycleBackupV3>  | undefined) {
+        this['recycle_backups'] = recycleBackups;
+    }
+    public get recycleBackups(): Array<RecycleBackupV3> | undefined {
+        return this['recycle_backups'];
     }
 }

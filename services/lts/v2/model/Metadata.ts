@@ -11,7 +11,8 @@ export class Metadata {
     private 'lts_alarm_type'?: string;
     private 'log_group_name'?: string;
     private 'log_stream_name'?: string;
-    public constructor(eventType?: string, eventId?: string, eventSeverity?: string, eventName?: string, resourceType?: string, resourceId?: string, resourceProvider?: string, ltsAlarmType?: string) { 
+    private 'event_subtype'?: string;
+    public constructor(eventType?: string, eventId?: string, eventSeverity?: string, eventName?: string, resourceType?: string, resourceId?: string, resourceProvider?: string, ltsAlarmType?: string, logGroupName?: string, logStreamName?: string, eventSubtype?: string) { 
         this['event_type'] = eventType;
         this['event_id'] = eventId;
         this['event_severity'] = eventSeverity;
@@ -20,6 +21,9 @@ export class Metadata {
         this['resource_id'] = resourceId;
         this['resource_provider'] = resourceProvider;
         this['lts_alarm_type'] = ltsAlarmType;
+        this['log_group_name'] = logGroupName;
+        this['log_stream_name'] = logStreamName;
+        this['event_subtype'] = eventSubtype;
     }
     public withEventType(eventType: string): Metadata {
         this['event_type'] = eventType;
@@ -120,5 +124,15 @@ export class Metadata {
     }
     public get logStreamName(): string | undefined {
         return this['log_stream_name'];
+    }
+    public withEventSubtype(eventSubtype: string): Metadata {
+        this['event_subtype'] = eventSubtype;
+        return this;
+    }
+    public set eventSubtype(eventSubtype: string  | undefined) {
+        this['event_subtype'] = eventSubtype;
+    }
+    public get eventSubtype(): string | undefined {
+        return this['event_subtype'];
     }
 }

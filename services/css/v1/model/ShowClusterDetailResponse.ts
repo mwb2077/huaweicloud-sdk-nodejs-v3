@@ -4,6 +4,7 @@ import { ClusterDetailInstances } from './ClusterDetailInstances';
 import { ClusterDetailTags } from './ClusterDetailTags';
 import { ElbWhiteListResp } from './ElbWhiteListResp';
 import { PublicKibanaRespBody } from './PublicKibanaRespBody';
+import { SnapshotPolicyResp } from './SnapshotPolicyResp';
 
 import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
 
@@ -15,6 +16,7 @@ export class ShowClusterDetailResponse extends SdkResponse {
     public updated?: string;
     public name?: string;
     public publicIp?: string;
+    public snapshotPolicy?: SnapshotPolicyResp;
     public created?: string;
     public id?: string;
     public status?: string;
@@ -23,6 +25,7 @@ export class ShowClusterDetailResponse extends SdkResponse {
     public subnetId?: string;
     public securityGroupId?: string;
     public vpcepIp?: string;
+    public vpcepIpv6Address?: string;
     public bandwidthSize?: number;
     public httpsEnable?: boolean;
     public diskEncrypted?: boolean;
@@ -35,6 +38,12 @@ export class ShowClusterDetailResponse extends SdkResponse {
     public failedReason?: ClusterDetailFailedReasons;
     public period?: boolean;
     public bandwidthResourceId?: string;
+    public ipv6Endpoint?: string;
+    public supportVpcep?: boolean;
+    public cmkId?: string;
+    public orderId?: string;
+    public currentSubnetIds?: string;
+    public desc?: string;
     public constructor() { 
         super();
     }
@@ -64,6 +73,10 @@ export class ShowClusterDetailResponse extends SdkResponse {
     }
     public withPublicIp(publicIp: string): ShowClusterDetailResponse {
         this['publicIp'] = publicIp;
+        return this;
+    }
+    public withSnapshotPolicy(snapshotPolicy: SnapshotPolicyResp): ShowClusterDetailResponse {
+        this['snapshotPolicy'] = snapshotPolicy;
         return this;
     }
     public withCreated(created: string): ShowClusterDetailResponse {
@@ -96,6 +109,10 @@ export class ShowClusterDetailResponse extends SdkResponse {
     }
     public withVpcepIp(vpcepIp: string): ShowClusterDetailResponse {
         this['vpcepIp'] = vpcepIp;
+        return this;
+    }
+    public withVpcepIpv6Address(vpcepIpv6Address: string): ShowClusterDetailResponse {
+        this['vpcepIpv6Address'] = vpcepIpv6Address;
         return this;
     }
     public withBandwidthSize(bandwidthSize: number): ShowClusterDetailResponse {
@@ -144,6 +161,30 @@ export class ShowClusterDetailResponse extends SdkResponse {
     }
     public withBandwidthResourceId(bandwidthResourceId: string): ShowClusterDetailResponse {
         this['bandwidthResourceId'] = bandwidthResourceId;
+        return this;
+    }
+    public withIpv6Endpoint(ipv6Endpoint: string): ShowClusterDetailResponse {
+        this['ipv6Endpoint'] = ipv6Endpoint;
+        return this;
+    }
+    public withSupportVpcep(supportVpcep: boolean): ShowClusterDetailResponse {
+        this['supportVpcep'] = supportVpcep;
+        return this;
+    }
+    public withCmkId(cmkId: string): ShowClusterDetailResponse {
+        this['cmkId'] = cmkId;
+        return this;
+    }
+    public withOrderId(orderId: string): ShowClusterDetailResponse {
+        this['orderId'] = orderId;
+        return this;
+    }
+    public withCurrentSubnetIds(currentSubnetIds: string): ShowClusterDetailResponse {
+        this['currentSubnetIds'] = currentSubnetIds;
+        return this;
+    }
+    public withDesc(desc: string): ShowClusterDetailResponse {
+        this['desc'] = desc;
         return this;
     }
 }

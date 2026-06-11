@@ -5,8 +5,10 @@ export class EstimateChangeImageRequestBody {
     private 'desktop_pool_id'?: string;
     private 'desktop_ids'?: Array<string>;
     private 'promotion_plan_id'?: string;
+    private 'handle_type'?: EstimateChangeImageRequestBodyHandleTypeEnum | string;
     private 'image_spec_code'?: string;
     private 'image_id'?: string;
+    private 'image_type'?: string;
     public constructor() { 
     }
     public withDesktopPoolId(desktopPoolId: string): EstimateChangeImageRequestBody {
@@ -39,6 +41,16 @@ export class EstimateChangeImageRequestBody {
     public get promotionPlanId(): string | undefined {
         return this['promotion_plan_id'];
     }
+    public withHandleType(handleType: EstimateChangeImageRequestBodyHandleTypeEnum | string): EstimateChangeImageRequestBody {
+        this['handle_type'] = handleType;
+        return this;
+    }
+    public set handleType(handleType: EstimateChangeImageRequestBodyHandleTypeEnum | string  | undefined) {
+        this['handle_type'] = handleType;
+    }
+    public get handleType(): EstimateChangeImageRequestBodyHandleTypeEnum | string | undefined {
+        return this['handle_type'];
+    }
     public withImageSpecCode(imageSpecCode: string): EstimateChangeImageRequestBody {
         this['image_spec_code'] = imageSpecCode;
         return this;
@@ -59,4 +71,24 @@ export class EstimateChangeImageRequestBody {
     public get imageId(): string | undefined {
         return this['image_id'];
     }
+    public withImageType(imageType: string): EstimateChangeImageRequestBody {
+        this['image_type'] = imageType;
+        return this;
+    }
+    public set imageType(imageType: string  | undefined) {
+        this['image_type'] = imageType;
+    }
+    public get imageType(): string | undefined {
+        return this['image_type'];
+    }
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum EstimateChangeImageRequestBodyHandleTypeEnum {
+    ONLY_FOR_EXPAND = 'ONLY_FOR_EXPAND',
+    FOR_EXPAND_AND_IDLE = 'FOR_EXPAND_AND_IDLE',
+    FOR_EXPAND_AND_ALL = 'FOR_EXPAND_AND_ALL'
 }

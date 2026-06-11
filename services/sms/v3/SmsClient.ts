@@ -6,8 +6,6 @@ import { BatchConsistencyReq } from './model/BatchConsistencyReq';
 import { BatchGetConsistencyResultReq } from './model/BatchGetConsistencyResultReq';
 import { BtrfsFileSystem } from './model/BtrfsFileSystem';
 import { BtrfsSubvolumn } from './model/BtrfsSubvolumn';
-import { CheckNetAclRequest } from './model/CheckNetAclRequest';
-import { CheckNetAclResponse } from './model/CheckNetAclResponse';
 import { CloneServer } from './model/CloneServer';
 import { CloneServerBrief } from './model/CloneServerBrief';
 import { CollectLogRequest } from './model/CollectLogRequest';
@@ -17,7 +15,6 @@ import { CommandParam } from './model/CommandParam';
 import { ConfigBody } from './model/ConfigBody';
 import { ConfigurationRequestBody } from './model/ConfigurationRequestBody';
 import { ConsistencyResult } from './model/ConsistencyResult';
-import { ConsistencyResultRequestBodyResultList } from './model/ConsistencyResultRequestBodyResultList';
 import { CreateMigprojectRequest } from './model/CreateMigprojectRequest';
 import { CreateMigprojectResponse } from './model/CreateMigprojectResponse';
 import { CreatePrivacyAgreementsRequest } from './model/CreatePrivacyAgreementsRequest';
@@ -111,8 +108,6 @@ import { ShowPrivacyAgreementsRequest } from './model/ShowPrivacyAgreementsReque
 import { ShowPrivacyAgreementsResponse } from './model/ShowPrivacyAgreementsResponse';
 import { ShowServerRequest } from './model/ShowServerRequest';
 import { ShowServerResponse } from './model/ShowServerResponse';
-import { ShowSha256Request } from './model/ShowSha256Request';
-import { ShowSha256Response } from './model/ShowSha256Response';
 import { ShowTargetPasswordRequest } from './model/ShowTargetPasswordRequest';
 import { ShowTargetPasswordResponse } from './model/ShowTargetPasswordResponse';
 import { ShowTaskRequest } from './model/ShowTaskRequest';
@@ -143,8 +138,6 @@ import { TasksResponseBody } from './model/TasksResponseBody';
 import { TemplateDisk } from './model/TemplateDisk';
 import { TemplateRequest } from './model/TemplateRequest';
 import { TemplateResponseBody } from './model/TemplateResponseBody';
-import { UnlockTargetEcsRequest } from './model/UnlockTargetEcsRequest';
-import { UnlockTargetEcsResponse } from './model/UnlockTargetEcsResponse';
 import { UpdateCommandResultRequest } from './model/UpdateCommandResultRequest';
 import { UpdateCommandResultResponse } from './model/UpdateCommandResultResponse';
 import { UpdateConsistencyResultRequest } from './model/UpdateConsistencyResultRequest';
@@ -432,7 +425,7 @@ export class SmsClient {
      *
      * @summary 批量获取一致性校验结果
      * @param {BatchGetConsistencyResultReq} exportConsistencyResultsRequestBody 一致性校验结果请求体
-     * @param {string} [xLanguage] 中英文选择
+     * @param {string} [xLanguage] 中英文选择。当前仅支持英文。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -453,7 +446,6 @@ export class SmsClient {
      * @summary 查询待迁移源端的所有错误
      * @param {number} offset 偏移量
      * @param {number} [limit] 每一页记录的错误数量
-     * @param {string} [migproject] 需要查询的迁移项目ID，添加此字段将只查询对应ID下的迁移任务报错信息
      * @param {string} [enterpriseProjectId] 需要查询的企业项目ID
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -493,10 +485,11 @@ export class SmsClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 查询源端服务器列表
-     * @param {'unavailable' | 'waiting' | 'initialize' | 'replicate' | 'syncing' | 'stopping' | 'stopped' | 'skipping' | 'deleting' | 'error' | 'cloning' | 'cutovering' | 'finished' | 'clearing' | 'cleared' | 'clearfailed' | 'premigready' | 'premiging' | 'premiged' | 'premigfailed'} [state] 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 error：错误 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败 premigready: 迁移演练已就绪 premiging: 迁移演练中 premiged: 迁移演练已完成 premigfailed: 迁移演练失败
+     * @param {'unavailable' | 'waiting' | 'initialize' | 'replicate' | 'syncing' | 'stopping' | 'stopped' | 'skipping' | 'deleting' | 'clearing' | 'cleared' | 'clearfailed' | 'premigready' | 'premiged' | 'premigfailed' | 'cloning' | 'cutovering' | 'finished' | 'error'} [state] 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败 premigready：迁移演练就绪 premiged：迁移演练完成 premigfailed：迁移演练失败 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成 error：错误
      * @param {string} [name] 源端服务器名称
      * @param {string} [id] 源端服务器ID
      * @param {string} [ip] 源端服务器IP地址
+     * @param {string} [ipv6] 源端服务器IPV6地址，优先使用IP进行查询
      * @param {string} [migproject] 迁移项目ID，填写该参数将查询迁移项目下的所有虚拟机
      * @param {number} [limit] 每一页记录的源端服务器数量，0表示用默认值 200
      * @param {number} [offset] 偏移量，默认值0
@@ -504,6 +497,7 @@ export class SmsClient {
      * @param {boolean} [connected] 查询失去连接的源端
      * @param {string} [enterpriseProjectId] 需要查询的企业项目ID
      * @param {boolean} [isConsistencyResultExist] 是否存在一致性校验结果
+     * @param {string} [vmId] 平台的克隆服务器id
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -552,6 +546,7 @@ export class SmsClient {
      * @param {string} [region] Region ID
      * @param {number} [limit] 分页大小，不传值默认为50
      * @param {number} [offset] 偏移量，不传值默认为0
+     * @param {string} [id] 模板id
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -872,6 +867,7 @@ export class SmsClient {
 
     /**
      * 更新任务对应源端复制状态。
+     * 在以下情况下不校验请求参数且更新不会生效：“迁移服务器”列表中“实时状态”一栏为“校验失败”、“暂停中”、“已暂停”、“删除中”、“迁移已完成”、“资源清理中”、“资源清理失败”时。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -911,6 +907,7 @@ export class SmsClient {
 
     /**
      * 更新服务器的磁盘信息，此接口会把服务器原有磁盘信息清空，然后更新成新磁盘信息。
+     * 接口仅在“待设置目的端”才能生效，开始迁移后更改磁盘信息不生效。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1051,7 +1048,7 @@ export class SmsClient {
     }
 
     /**
-     * 管理迁移任务，包括启动任务，暂停任务，同步任务，日志上传，回滚失败迁移任务，删除快照资源。
+     * 管理迁移任务，包括启动任务，暂停任务，同步任务，日志上传，删除快照资源等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1129,29 +1126,7 @@ export class SmsClient {
     }
 
     /**
-     * 检查网卡安全组。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @summary 检查网卡安全组端口是否符合要求
-     * @param {string} tProjectId 目的虚拟机所属project_id
-     * @param {string} tNetworkId 目的端子网ID
-     * @param {string} regionId 区域ID
-     * @param {string} osType 操作系统类型
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public checkNetAcl(checkNetAclRequest?: CheckNetAclRequest): Promise<CheckNetAclResponse> {
-        const options = ParamCreater().checkNetAcl(checkNetAclRequest);
-
-         // @ts-ignore
-        options['responseHeaders'] = [''];
-
-        return this.hcClient.sendRequest(options);
-    }
-
-    /**
-     * 查询主机迁移服务的API版本信息。
+     * 查询主机迁移服务的API版本信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1174,50 +1149,12 @@ export class SmsClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 查询主机迁移服务指定API版本信息
-     * @param {string} version 版本信息
+     * @param {string} version 版本信息，如v3
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     public showApiVersion(showApiVersionRequest?: ShowApiVersionRequest): Promise<ShowApiVersionResponse> {
         const options = ParamCreater().showApiVersion(showApiVersionRequest);
-
-         // @ts-ignore
-        options['responseHeaders'] = [''];
-
-        return this.hcClient.sendRequest(options);
-    }
-
-    /**
-     * 计算sha256，加密字段值为uuid。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @summary 计算sha256
-     * @param {string} key 关键字，加密字段值为uuid。
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public showSha256(showSha256Request?: ShowSha256Request): Promise<ShowSha256Response> {
-        const options = ParamCreater().showSha256(showSha256Request);
-
-         // @ts-ignore
-        options['responseHeaders'] = [''];
-
-        return this.hcClient.sendRequest(options);
-    }
-
-    /**
-     * 解锁指定任务的目的端服务器。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @summary 解锁指定任务的目的端服务器
-     * @param {string} taskId 指定任务的ID
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public unlockTargetEcs(unlockTargetEcsRequest?: UnlockTargetEcsRequest): Promise<UnlockTargetEcsResponse> {
-        const options = ParamCreater().unlockTargetEcs(unlockTargetEcsRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -1735,20 +1672,16 @@ export const ParamCreater = function () {
             
             let limit;
             
-            let migproject;
-            
             let enterpriseProjectId;
 
             if (listErrorServersRequest !== null && listErrorServersRequest !== undefined) {
                 if (listErrorServersRequest instanceof ListErrorServersRequest) {
                     offset = listErrorServersRequest.offset;
                     limit = listErrorServersRequest.limit;
-                    migproject = listErrorServersRequest.migproject;
                     enterpriseProjectId = listErrorServersRequest.enterpriseProjectId;
                 } else {
                     offset = listErrorServersRequest['offset'];
                     limit = listErrorServersRequest['limit'];
-                    migproject = listErrorServersRequest['migproject'];
                     enterpriseProjectId = listErrorServersRequest['enterprise_project_id'];
                 }
             }
@@ -1762,9 +1695,6 @@ export const ParamCreater = function () {
             }
             if (limit !== null && limit !== undefined) {
                 localVarQueryParameter['limit'] = limit;
-            }
-            if (migproject !== null && migproject !== undefined) {
-                localVarQueryParameter['migproject'] = migproject;
             }
             if (enterpriseProjectId !== null && enterpriseProjectId !== undefined) {
                 localVarQueryParameter['enterprise_project_id'] = enterpriseProjectId;
@@ -1844,6 +1774,8 @@ export const ParamCreater = function () {
             
             let ip;
             
+            let ipv6;
+            
             let migproject;
             
             let limit;
@@ -1857,6 +1789,8 @@ export const ParamCreater = function () {
             let enterpriseProjectId;
             
             let isConsistencyResultExist;
+            
+            let vmId;
 
             if (listServersRequest !== null && listServersRequest !== undefined) {
                 if (listServersRequest instanceof ListServersRequest) {
@@ -1864,6 +1798,7 @@ export const ParamCreater = function () {
                     name = listServersRequest.name;
                     id = listServersRequest.id;
                     ip = listServersRequest.ip;
+                    ipv6 = listServersRequest.ipv6;
                     migproject = listServersRequest.migproject;
                     limit = listServersRequest.limit;
                     offset = listServersRequest.offset;
@@ -1871,11 +1806,13 @@ export const ParamCreater = function () {
                     connected = listServersRequest.connected;
                     enterpriseProjectId = listServersRequest.enterpriseProjectId;
                     isConsistencyResultExist = listServersRequest.isConsistencyResultExist;
+                    vmId = listServersRequest.vmId;
                 } else {
                     state = listServersRequest['state'];
                     name = listServersRequest['name'];
                     id = listServersRequest['id'];
                     ip = listServersRequest['ip'];
+                    ipv6 = listServersRequest['ipv6'];
                     migproject = listServersRequest['migproject'];
                     limit = listServersRequest['limit'];
                     offset = listServersRequest['offset'];
@@ -1883,6 +1820,7 @@ export const ParamCreater = function () {
                     connected = listServersRequest['connected'];
                     enterpriseProjectId = listServersRequest['enterprise_project_id'];
                     isConsistencyResultExist = listServersRequest['is_consistency_result_exist'];
+                    vmId = listServersRequest['vm_id'];
                 }
             }
 
@@ -1898,6 +1836,9 @@ export const ParamCreater = function () {
             }
             if (ip !== null && ip !== undefined) {
                 localVarQueryParameter['ip'] = ip;
+            }
+            if (ipv6 !== null && ipv6 !== undefined) {
+                localVarQueryParameter['ipv6'] = ipv6;
             }
             if (migproject !== null && migproject !== undefined) {
                 localVarQueryParameter['migproject'] = migproject;
@@ -1919,6 +1860,9 @@ export const ParamCreater = function () {
             }
             if (isConsistencyResultExist !== null && isConsistencyResultExist !== undefined) {
                 localVarQueryParameter['is_consistency_result_exist'] = isConsistencyResultExist;
+            }
+            if (vmId !== null && vmId !== undefined) {
+                localVarQueryParameter['vm_id'] = vmId;
             }
 
             options.queryParams = localVarQueryParameter;
@@ -2031,6 +1975,8 @@ export const ParamCreater = function () {
             let limit;
             
             let offset;
+            
+            let id;
 
             if (listTemplatesRequest !== null && listTemplatesRequest !== undefined) {
                 if (listTemplatesRequest instanceof ListTemplatesRequest) {
@@ -2039,12 +1985,14 @@ export const ParamCreater = function () {
                     region = listTemplatesRequest.region;
                     limit = listTemplatesRequest.limit;
                     offset = listTemplatesRequest.offset;
+                    id = listTemplatesRequest.id;
                 } else {
                     name = listTemplatesRequest['name'];
                     availabilityZone = listTemplatesRequest['availability_zone'];
                     region = listTemplatesRequest['region'];
                     limit = listTemplatesRequest['limit'];
                     offset = listTemplatesRequest['offset'];
+                    id = listTemplatesRequest['id'];
                 }
             }
 
@@ -2063,6 +2011,9 @@ export const ParamCreater = function () {
             }
             if (offset !== null && offset !== undefined) {
                 localVarQueryParameter['offset'] = offset;
+            }
+            if (id !== null && id !== undefined) {
+                localVarQueryParameter['id'] = id;
             }
 
             options.queryParams = localVarQueryParameter;
@@ -2667,6 +2618,7 @@ export const ParamCreater = function () {
     
         /**
          * 更新任务对应源端复制状态。
+         * 在以下情况下不校验请求参数且更新不会生效：“迁移服务器”列表中“实时状态”一栏为“校验失败”、“暂停中”、“已暂停”、“删除中”、“迁移已完成”、“资源清理中”、“资源清理失败”时。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -2750,6 +2702,7 @@ export const ParamCreater = function () {
     
         /**
          * 更新服务器的磁盘信息，此接口会把服务器原有磁盘信息清空，然后更新成新磁盘信息。
+         * 接口仅在“待设置目的端”才能生效，开始迁移后更改磁盘信息不生效。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -3060,7 +3013,7 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 管理迁移任务，包括启动任务，暂停任务，同步任务，日志上传，回滚失败迁移任务，删除快照资源。
+         * 管理迁移任务，包括启动任务，暂停任务，同步任务，日志上传，删除快照资源等。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -3216,72 +3169,7 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 检查网卡安全组。
-         * 
-         * Please refer to HUAWEI cloud API Explorer for details.
-         */
-        checkNetAcl(checkNetAclRequest?: CheckNetAclRequest) {
-            const options = {
-                method: "GET",
-                url: "/v3/tasks/{t_project_id}/networkacl/{t_network_id}/check",
-                contentType: "application/json",
-                queryParams: {},
-                pathParams: {},
-                headers: {}
-            };
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-            
-            let tProjectId;
-            
-            let tNetworkId;
-            
-            let regionId;
-            
-            let osType;
-
-            if (checkNetAclRequest !== null && checkNetAclRequest !== undefined) {
-                if (checkNetAclRequest instanceof CheckNetAclRequest) {
-                    tProjectId = checkNetAclRequest.tProjectId;
-                    tNetworkId = checkNetAclRequest.tNetworkId;
-                    regionId = checkNetAclRequest.regionId;
-                    osType = checkNetAclRequest.osType;
-                } else {
-                    tProjectId = checkNetAclRequest['t_project_id'];
-                    tNetworkId = checkNetAclRequest['t_network_id'];
-                    regionId = checkNetAclRequest['region_id'];
-                    osType = checkNetAclRequest['os_type'];
-                }
-            }
-
-        
-            if (tProjectId === null || tProjectId === undefined) {
-            throw new RequiredError('tProjectId','Required parameter tProjectId was null or undefined when calling checkNetAcl.');
-            }
-            if (tNetworkId === null || tNetworkId === undefined) {
-            throw new RequiredError('tNetworkId','Required parameter tNetworkId was null or undefined when calling checkNetAcl.');
-            }
-            if (regionId === null || regionId === undefined) {
-                throw new RequiredError('regionId','Required parameter regionId was null or undefined when calling checkNetAcl.');
-            }
-            if (regionId !== null && regionId !== undefined) {
-                localVarQueryParameter['region_id'] = regionId;
-            }
-            if (osType === null || osType === undefined) {
-                throw new RequiredError('osType','Required parameter osType was null or undefined when calling checkNetAcl.');
-            }
-            if (osType !== null && osType !== undefined) {
-                localVarQueryParameter['os_type'] = osType;
-            }
-
-            options.queryParams = localVarQueryParameter;
-            options.pathParams = { 't_project_id': tProjectId,'t_network_id': tNetworkId, };
-            options.headers = localVarHeaderParameter;
-            return options;
-        },
-    
-        /**
-         * 查询主机迁移服务的API版本信息。
+         * 查询主机迁移服务的API版本信息
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -3334,80 +3222,6 @@ export const ParamCreater = function () {
             }
 
             options.pathParams = { 'version': version, };
-            options.headers = localVarHeaderParameter;
-            return options;
-        },
-    
-        /**
-         * 计算sha256，加密字段值为uuid。
-         * 
-         * Please refer to HUAWEI cloud API Explorer for details.
-         */
-        showSha256(showSha256Request?: ShowSha256Request) {
-            const options = {
-                method: "GET",
-                url: "/v3/sha256/{key}",
-                contentType: "application/json",
-                queryParams: {},
-                pathParams: {},
-                headers: {}
-            };
-            const localVarHeaderParameter = {} as any;
-
-            
-            let key;
-
-            if (showSha256Request !== null && showSha256Request !== undefined) {
-                if (showSha256Request instanceof ShowSha256Request) {
-                    key = showSha256Request.key;
-                } else {
-                    key = showSha256Request['key'];
-                }
-            }
-
-        
-            if (key === null || key === undefined) {
-            throw new RequiredError('key','Required parameter key was null or undefined when calling showSha256.');
-            }
-
-            options.pathParams = { 'key': key, };
-            options.headers = localVarHeaderParameter;
-            return options;
-        },
-    
-        /**
-         * 解锁指定任务的目的端服务器。
-         * 
-         * Please refer to HUAWEI cloud API Explorer for details.
-         */
-        unlockTargetEcs(unlockTargetEcsRequest?: UnlockTargetEcsRequest) {
-            const options = {
-                method: "POST",
-                url: "/v3/tasks/{task_id}/unlock",
-                contentType: "application/json",
-                queryParams: {},
-                pathParams: {},
-                headers: {}
-            };
-            const localVarHeaderParameter = {} as any;
-
-            
-            let taskId;
-
-            if (unlockTargetEcsRequest !== null && unlockTargetEcsRequest !== undefined) {
-                if (unlockTargetEcsRequest instanceof UnlockTargetEcsRequest) {
-                    taskId = unlockTargetEcsRequest.taskId;
-                } else {
-                    taskId = unlockTargetEcsRequest['task_id'];
-                }
-            }
-
-        
-            if (taskId === null || taskId === undefined) {
-            throw new RequiredError('taskId','Required parameter taskId was null or undefined when calling unlockTargetEcs.');
-            }
-
-            options.pathParams = { 'task_id': taskId, };
             options.headers = localVarHeaderParameter;
             return options;
         },

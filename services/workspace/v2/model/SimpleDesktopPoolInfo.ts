@@ -1,6 +1,8 @@
 import { AutoscalePolicy } from './AutoscalePolicy';
 import { ProductInfo } from './ProductInfo';
 import { SecurityGroupInfo } from './SecurityGroupInfo';
+import { Tag } from './Tag';
+import { UserResetPolicy } from './UserResetPolicy';
 import { VolumeInfo } from './VolumeInfo';
 
 
@@ -15,6 +17,7 @@ export class SimpleDesktopPoolInfo {
     private 'desktop_used'?: number;
     private 'availability_zone'?: string;
     private 'subnet_id'?: string;
+    private 'subnet_ids'?: Array<string>;
     public product?: ProductInfo;
     private 'image_id'?: string;
     private 'image_name'?: string;
@@ -22,16 +25,24 @@ export class SimpleDesktopPoolInfo {
     private 'image_os_version'?: string;
     private 'image_os_platform'?: string;
     private 'image_product_code'?: string;
+    private 'image_cloud_service_type'?: string;
+    private 'image_resource_type'?: string;
     private 'root_volume'?: VolumeInfo;
     private 'data_volumes'?: Array<VolumeInfo>;
     private 'security_groups'?: Array<SecurityGroupInfo>;
     private 'disconnected_retention_period'?: number;
     private 'enable_autoscale'?: boolean;
     private 'autoscale_policy'?: AutoscalePolicy;
+    private 'user_reset_policy'?: UserResetPolicy;
     public status?: string;
     private 'enterprise_project_id'?: string;
     private 'in_maintenance_mode'?: boolean;
     private 'desktop_name_policy_id'?: string;
+    public tags?: Array<Tag>;
+    private 'ou_name'?: string;
+    private 'vpc_id'?: string;
+    private 'isolation_num'?: number;
+    public domain?: string;
     public constructor() { 
     }
     public withId(id: string): SimpleDesktopPoolInfo {
@@ -110,6 +121,16 @@ export class SimpleDesktopPoolInfo {
     public get subnetId(): string | undefined {
         return this['subnet_id'];
     }
+    public withSubnetIds(subnetIds: Array<string>): SimpleDesktopPoolInfo {
+        this['subnet_ids'] = subnetIds;
+        return this;
+    }
+    public set subnetIds(subnetIds: Array<string>  | undefined) {
+        this['subnet_ids'] = subnetIds;
+    }
+    public get subnetIds(): Array<string> | undefined {
+        return this['subnet_ids'];
+    }
     public withProduct(product: ProductInfo): SimpleDesktopPoolInfo {
         this['product'] = product;
         return this;
@@ -174,6 +195,26 @@ export class SimpleDesktopPoolInfo {
     public get imageProductCode(): string | undefined {
         return this['image_product_code'];
     }
+    public withImageCloudServiceType(imageCloudServiceType: string): SimpleDesktopPoolInfo {
+        this['image_cloud_service_type'] = imageCloudServiceType;
+        return this;
+    }
+    public set imageCloudServiceType(imageCloudServiceType: string  | undefined) {
+        this['image_cloud_service_type'] = imageCloudServiceType;
+    }
+    public get imageCloudServiceType(): string | undefined {
+        return this['image_cloud_service_type'];
+    }
+    public withImageResourceType(imageResourceType: string): SimpleDesktopPoolInfo {
+        this['image_resource_type'] = imageResourceType;
+        return this;
+    }
+    public set imageResourceType(imageResourceType: string  | undefined) {
+        this['image_resource_type'] = imageResourceType;
+    }
+    public get imageResourceType(): string | undefined {
+        return this['image_resource_type'];
+    }
     public withRootVolume(rootVolume: VolumeInfo): SimpleDesktopPoolInfo {
         this['root_volume'] = rootVolume;
         return this;
@@ -234,6 +275,16 @@ export class SimpleDesktopPoolInfo {
     public get autoscalePolicy(): AutoscalePolicy | undefined {
         return this['autoscale_policy'];
     }
+    public withUserResetPolicy(userResetPolicy: UserResetPolicy): SimpleDesktopPoolInfo {
+        this['user_reset_policy'] = userResetPolicy;
+        return this;
+    }
+    public set userResetPolicy(userResetPolicy: UserResetPolicy  | undefined) {
+        this['user_reset_policy'] = userResetPolicy;
+    }
+    public get userResetPolicy(): UserResetPolicy | undefined {
+        return this['user_reset_policy'];
+    }
     public withStatus(status: string): SimpleDesktopPoolInfo {
         this['status'] = status;
         return this;
@@ -267,5 +318,43 @@ export class SimpleDesktopPoolInfo {
     }
     public get desktopNamePolicyId(): string | undefined {
         return this['desktop_name_policy_id'];
+    }
+    public withTags(tags: Array<Tag>): SimpleDesktopPoolInfo {
+        this['tags'] = tags;
+        return this;
+    }
+    public withOuName(ouName: string): SimpleDesktopPoolInfo {
+        this['ou_name'] = ouName;
+        return this;
+    }
+    public set ouName(ouName: string  | undefined) {
+        this['ou_name'] = ouName;
+    }
+    public get ouName(): string | undefined {
+        return this['ou_name'];
+    }
+    public withVpcId(vpcId: string): SimpleDesktopPoolInfo {
+        this['vpc_id'] = vpcId;
+        return this;
+    }
+    public set vpcId(vpcId: string  | undefined) {
+        this['vpc_id'] = vpcId;
+    }
+    public get vpcId(): string | undefined {
+        return this['vpc_id'];
+    }
+    public withIsolationNum(isolationNum: number): SimpleDesktopPoolInfo {
+        this['isolation_num'] = isolationNum;
+        return this;
+    }
+    public set isolationNum(isolationNum: number  | undefined) {
+        this['isolation_num'] = isolationNum;
+    }
+    public get isolationNum(): number | undefined {
+        return this['isolation_num'];
+    }
+    public withDomain(domain: string): SimpleDesktopPoolInfo {
+        this['domain'] = domain;
+        return this;
     }
 }

@@ -6,13 +6,16 @@ export class ScheduledTask {
     private 'task_type'?: string;
     private 'scheduled_type'?: string;
     private 'life_cycle_type'?: string;
+    private 'life_cycle_exec_period'?: number;
     private 'last_status'?: string;
     private 'next_execution_time'?: string;
+    private 'expire_time'?: string;
     public enable?: boolean;
     public description?: string;
     public priority?: number;
     private 'time_zone'?: string;
     private 'wait_time'?: number;
+    private 'extra_params'?: string;
     public constructor() { 
     }
     public withId(id: string): ScheduledTask {
@@ -59,6 +62,16 @@ export class ScheduledTask {
     public get lifeCycleType(): string | undefined {
         return this['life_cycle_type'];
     }
+    public withLifeCycleExecPeriod(lifeCycleExecPeriod: number): ScheduledTask {
+        this['life_cycle_exec_period'] = lifeCycleExecPeriod;
+        return this;
+    }
+    public set lifeCycleExecPeriod(lifeCycleExecPeriod: number  | undefined) {
+        this['life_cycle_exec_period'] = lifeCycleExecPeriod;
+    }
+    public get lifeCycleExecPeriod(): number | undefined {
+        return this['life_cycle_exec_period'];
+    }
     public withLastStatus(lastStatus: string): ScheduledTask {
         this['last_status'] = lastStatus;
         return this;
@@ -78,6 +91,16 @@ export class ScheduledTask {
     }
     public get nextExecutionTime(): string | undefined {
         return this['next_execution_time'];
+    }
+    public withExpireTime(expireTime: string): ScheduledTask {
+        this['expire_time'] = expireTime;
+        return this;
+    }
+    public set expireTime(expireTime: string  | undefined) {
+        this['expire_time'] = expireTime;
+    }
+    public get expireTime(): string | undefined {
+        return this['expire_time'];
     }
     public withEnable(enable: boolean): ScheduledTask {
         this['enable'] = enable;
@@ -110,5 +133,15 @@ export class ScheduledTask {
     }
     public get waitTime(): number | undefined {
         return this['wait_time'];
+    }
+    public withExtraParams(extraParams: string): ScheduledTask {
+        this['extra_params'] = extraParams;
+        return this;
+    }
+    public set extraParams(extraParams: string  | undefined) {
+        this['extra_params'] = extraParams;
+    }
+    public get extraParams(): string | undefined {
+        return this['extra_params'];
     }
 }

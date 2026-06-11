@@ -3,28 +3,22 @@ import { CreateIpReputationRuleRequestBodyAction } from './CreateIpReputationRul
 
 export class CreateIpReputationRuleRequestBody {
     public name?: string;
-    public policyname?: string;
     public description?: string;
-    public status?: number;
     public action?: CreateIpReputationRuleRequestBodyAction;
     public type?: string;
     public tags?: Array<string>;
-    public constructor() { 
+    public constructor(name?: string, action?: CreateIpReputationRuleRequestBodyAction, type?: string, tags?: Array<string>) { 
+        this['name'] = name;
+        this['action'] = action;
+        this['type'] = type;
+        this['tags'] = tags;
     }
     public withName(name: string): CreateIpReputationRuleRequestBody {
         this['name'] = name;
         return this;
     }
-    public withPolicyname(policyname: string): CreateIpReputationRuleRequestBody {
-        this['policyname'] = policyname;
-        return this;
-    }
     public withDescription(description: string): CreateIpReputationRuleRequestBody {
         this['description'] = description;
-        return this;
-    }
-    public withStatus(status: number): CreateIpReputationRuleRequestBody {
-        this['status'] = status;
         return this;
     }
     public withAction(action: CreateIpReputationRuleRequestBodyAction): CreateIpReputationRuleRequestBody {

@@ -2,13 +2,13 @@
 
 export class Product {
     private 'product_id'?: string;
-    private 'flavor_id'?: string;
     public type?: string;
     public architecture?: string;
     public cpu?: string;
     private 'cpu_desc'?: string;
     public memory?: string;
     private 'is_gpu'?: boolean;
+    public vram?: string;
     private 'system_disk_type'?: string;
     private 'system_disk_size'?: string;
     private 'data_disk_size'?: string;
@@ -37,16 +37,6 @@ export class Product {
     }
     public get productId(): string | undefined {
         return this['product_id'];
-    }
-    public withFlavorId(flavorId: string): Product {
-        this['flavor_id'] = flavorId;
-        return this;
-    }
-    public set flavorId(flavorId: string  | undefined) {
-        this['flavor_id'] = flavorId;
-    }
-    public get flavorId(): string | undefined {
-        return this['flavor_id'];
     }
     public withType(type: string): Product {
         this['type'] = type;
@@ -83,6 +73,10 @@ export class Product {
     }
     public get isGpu(): boolean | undefined {
         return this['is_gpu'];
+    }
+    public withVram(vram: string): Product {
+        this['vram'] = vram;
+        return this;
     }
     public withSystemDiskType(systemDiskType: string): Product {
         this['system_disk_type'] = systemDiskType;

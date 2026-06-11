@@ -264,6 +264,6 @@ export enum CreateInstanceReqBrokerNumEnum {
 export enum CreateInstanceReqStorageSpecCodeEnum {
     DMS_PHYSICAL_STORAGE_HIGH_V2 = 'dms.physical.storage.high.v2',
     DMS_PHYSICAL_STORAGE_ULTRA_V2 = 'dms.physical.storage.ultra.v2',
-    DMS_PHYSICAL_STORAGE_HIGH_DSS_V2 = 'dms.physical.storage.high.dss.v2',
-    DMS_PHYSICAL_STORAGE_ULTRA_DSS_V2 = 'dms.physical.storage.ultra.dss.v2'
+    DMS_PHYSICAL_STORAGE_GENERAL_TAGHWSHWS_HKDTAX = '[dms.physical.storage.general](tag:hws,hws_hk,dt,ax)',
+    DMS_PHYSICAL_STORAGE_EXTREME_TAGHWSHWS_HKDTAX = '[dms.physical.storage.extreme](tag:hws,hws_hk,dt,ax)'
 }

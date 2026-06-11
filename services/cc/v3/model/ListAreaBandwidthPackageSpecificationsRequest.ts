@@ -1,9 +1,19 @@
 
 
 export class ListAreaBandwidthPackageSpecificationsRequest {
+    public limit?: number;
+    public offset?: number;
     private 'local_area_id'?: Array<string>;
     private 'remote_area_id'?: Array<string>;
     public constructor() { 
+    }
+    public withLimit(limit: number): ListAreaBandwidthPackageSpecificationsRequest {
+        this['limit'] = limit;
+        return this;
+    }
+    public withOffset(offset: number): ListAreaBandwidthPackageSpecificationsRequest {
+        this['offset'] = offset;
+        return this;
     }
     public withLocalAreaId(localAreaId: Array<string>): ListAreaBandwidthPackageSpecificationsRequest {
         this['local_area_id'] = localAreaId;

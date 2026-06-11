@@ -5,6 +5,7 @@ export class EstimateAddSubResourcesRequestBody {
     private 'desktop_pool_id'?: string;
     private 'desktop_ids'?: Array<string>;
     private 'promotion_plan_id'?: string;
+    private 'handle_type'?: EstimateAddSubResourcesRequestBodyHandleTypeEnum | string;
     public constructor() { 
     }
     public withDesktopPoolId(desktopPoolId: string): EstimateAddSubResourcesRequestBody {
@@ -37,4 +38,24 @@ export class EstimateAddSubResourcesRequestBody {
     public get promotionPlanId(): string | undefined {
         return this['promotion_plan_id'];
     }
+    public withHandleType(handleType: EstimateAddSubResourcesRequestBodyHandleTypeEnum | string): EstimateAddSubResourcesRequestBody {
+        this['handle_type'] = handleType;
+        return this;
+    }
+    public set handleType(handleType: EstimateAddSubResourcesRequestBodyHandleTypeEnum | string  | undefined) {
+        this['handle_type'] = handleType;
+    }
+    public get handleType(): EstimateAddSubResourcesRequestBodyHandleTypeEnum | string | undefined {
+        return this['handle_type'];
+    }
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum EstimateAddSubResourcesRequestBodyHandleTypeEnum {
+    ONLY_FOR_EXPAND = 'ONLY_FOR_EXPAND',
+    FOR_EXPAND_AND_IDLE = 'FOR_EXPAND_AND_IDLE',
+    FOR_EXPAND_AND_ALL = 'FOR_EXPAND_AND_ALL'
 }

@@ -4,6 +4,8 @@ import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
 export class ListFeatureGatesResponse extends SdkResponse {
     public enableDomainName?: boolean;
     public enableCombinationRetention?: boolean;
+    public enableArtifactScanning?: boolean;
+    public enableArtifactGc?: boolean;
     public constructor() { 
         super();
     }
@@ -13,6 +15,14 @@ export class ListFeatureGatesResponse extends SdkResponse {
     }
     public withEnableCombinationRetention(enableCombinationRetention: boolean): ListFeatureGatesResponse {
         this['enableCombinationRetention'] = enableCombinationRetention;
+        return this;
+    }
+    public withEnableArtifactScanning(enableArtifactScanning: boolean): ListFeatureGatesResponse {
+        this['enableArtifactScanning'] = enableArtifactScanning;
+        return this;
+    }
+    public withEnableArtifactGc(enableArtifactGc: boolean): ListFeatureGatesResponse {
+        this['enableArtifactGc'] = enableArtifactGc;
         return this;
     }
 }

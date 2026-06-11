@@ -23,8 +23,8 @@ import { BlockListBlockingList } from './model/BlockListBlockingList';
 import { Bw } from './model/Bw';
 import { CadDomainSwitchRequest } from './model/CadDomainSwitchRequest';
 import { CertificateBody } from './model/CertificateBody';
-import { CreateAadDomainRequest } from './model/CreateAadDomainRequest';
-import { CreateAadDomainResponse } from './model/CreateAadDomainResponse';
+import { CreateDomainRequest } from './model/CreateDomainRequest';
+import { CreateDomainResponse } from './model/CreateDomainResponse';
 import { CreatePolicyRequest } from './model/CreatePolicyRequest';
 import { CreatePolicyRequestBody } from './model/CreatePolicyRequestBody';
 import { CreatePolicyResponse } from './model/CreatePolicyResponse';
@@ -87,6 +87,8 @@ import { ShowAlarmConfigRequest } from './model/ShowAlarmConfigRequest';
 import { ShowAlarmConfigResponse } from './model/ShowAlarmConfigResponse';
 import { ShowBlockStatisticsRequest } from './model/ShowBlockStatisticsRequest';
 import { ShowBlockStatisticsResponse } from './model/ShowBlockStatisticsResponse';
+import { ShowLtsConfigRequest } from './model/ShowLtsConfigRequest';
+import { ShowLtsConfigResponse } from './model/ShowLtsConfigResponse';
 import { ShowPolicyRequest } from './model/ShowPolicyRequest';
 import { ShowPolicyResponse } from './model/ShowPolicyResponse';
 import { ShowUnblockRecordRequest } from './model/ShowUnblockRecordRequest';
@@ -100,6 +102,10 @@ import { UpdateDomainRequest } from './model/UpdateDomainRequest';
 import { UpdateDomainResponse } from './model/UpdateDomainResponse';
 import { UpdateInstanceIpRuleRequest } from './model/UpdateInstanceIpRuleRequest';
 import { UpdateInstanceIpRuleResponse } from './model/UpdateInstanceIpRuleResponse';
+import { UpdateLtsConfigRequest } from './model/UpdateLtsConfigRequest';
+import { UpdateLtsConfigRequestBody } from './model/UpdateLtsConfigRequestBody';
+import { UpdateLtsConfigRequestBodyLtsIdInfo } from './model/UpdateLtsConfigRequestBodyLtsIdInfo';
+import { UpdateLtsConfigResponse } from './model/UpdateLtsConfigResponse';
 import { UpdatePackageIpRequest } from './model/UpdatePackageIpRequest';
 import { UpdatePackageIpRequestBody } from './model/UpdatePackageIpRequestBody';
 import { UpdatePackageIpResponse } from './model/UpdatePackageIpResponse';
@@ -359,8 +365,8 @@ export class AadClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public createAadDomain(createAadDomainRequest?: CreateAadDomainRequest): Promise<CreateAadDomainResponse> {
-        const options = ParamCreater().createAadDomain(createAadDomainRequest);
+    public createDomain(createDomainRequest?: CreateDomainRequest): Promise<CreateDomainResponse> {
+        const options = ParamCreater().createDomain(createDomainRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -509,11 +515,13 @@ export class AadClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 查询域名列表
+     * @param {number} [limit] 限制条数
+     * @param {number} [offset] 偏移量
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     public listDomain(listDomainRequest?: ListDomainRequest): Promise<ListDomainResponse> {
-        const options = ParamCreater().listDomain();
+        const options = ParamCreater().listDomain(listDomainRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -566,6 +574,8 @@ export class AadClient {
      * @summary 查询高防实例IP的转发规则列表
      * @param {string} instanceId 实例Id
      * @param {string} ip 单个 IP
+     * @param {number} [limit] 限制条数
+     * @param {number} [offset] 偏移量
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -759,6 +769,25 @@ export class AadClient {
     }
 
     /**
+     * 查询日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询日志配置
+     * @param {string} [enterpriseProjectId] 企业项目id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showLtsConfig(showLtsConfigRequest?: ShowLtsConfigRequest): Promise<ShowLtsConfigResponse> {
+        const options = ParamCreater().showLtsConfig(showLtsConfigRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 查询策略详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -831,6 +860,26 @@ export class AadClient {
      */
     public updateInstanceIpRule(updateInstanceIpRuleRequest?: UpdateInstanceIpRuleRequest): Promise<UpdateInstanceIpRuleResponse> {
         const options = ParamCreater().updateInstanceIpRule(updateInstanceIpRuleRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 设置日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 设置日志配置
+     * @param {string} enterpriseProjectId 企业项目id
+     * @param {UpdateLtsConfigRequestBody} updateLtsConfigRequestBody 更新日志配置的请求体
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public updateLtsConfig(updateLtsConfigRequest?: UpdateLtsConfigRequest): Promise<UpdateLtsConfigResponse> {
+        const options = ParamCreater().updateLtsConfig(updateLtsConfigRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -1423,7 +1472,7 @@ export const ParamCreater = function () {
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
-        createAadDomain(createAadDomainRequest?: CreateAadDomainRequest) {
+        createDomain(createDomainRequest?: CreateDomainRequest) {
             const options = {
                 method: "POST",
                 url: "/v1/{project_id}/aad/external/domains",
@@ -1437,11 +1486,11 @@ export const ParamCreater = function () {
 
             let body: any;
 
-            if (createAadDomainRequest !== null && createAadDomainRequest !== undefined) {
-                if (createAadDomainRequest instanceof CreateAadDomainRequest) {
-                    body = createAadDomainRequest.body
+            if (createDomainRequest !== null && createDomainRequest !== undefined) {
+                if (createDomainRequest instanceof CreateDomainRequest) {
+                    body = createDomainRequest.body
                 } else {
-                    body = createAadDomainRequest['body'];
+                    body = createDomainRequest['body'];
                 }
             }
 
@@ -1733,7 +1782,7 @@ export const ParamCreater = function () {
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
-        listDomain() {
+        listDomain(listDomainRequest?: ListDomainRequest) {
             const options = {
                 method: "GET",
                 url: "/v1/aad/protected-domains",
@@ -1743,8 +1792,31 @@ export const ParamCreater = function () {
                 headers: {}
             };
             const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let limit;
+            
+            let offset;
 
+            if (listDomainRequest !== null && listDomainRequest !== undefined) {
+                if (listDomainRequest instanceof ListDomainRequest) {
+                    limit = listDomainRequest.limit;
+                    offset = listDomainRequest.offset;
+                } else {
+                    limit = listDomainRequest['limit'];
+                    offset = listDomainRequest['offset'];
+                }
+            }
 
+        
+            if (limit !== null && limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+            if (offset !== null && offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
+            }
+
+            options.queryParams = localVarQueryParameter;
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -1822,19 +1894,27 @@ export const ParamCreater = function () {
                 headers: {}
             };
             const localVarHeaderParameter = {} as any;
-
+            const localVarQueryParameter = {} as any;
             
             let instanceId;
             
             let ip;
+            
+            let limit;
+            
+            let offset;
 
             if (listInstanceIpRuleRequest !== null && listInstanceIpRuleRequest !== undefined) {
                 if (listInstanceIpRuleRequest instanceof ListInstanceIpRuleRequest) {
                     instanceId = listInstanceIpRuleRequest.instanceId;
                     ip = listInstanceIpRuleRequest.ip;
+                    limit = listInstanceIpRuleRequest.limit;
+                    offset = listInstanceIpRuleRequest.offset;
                 } else {
                     instanceId = listInstanceIpRuleRequest['instance_id'];
                     ip = listInstanceIpRuleRequest['ip'];
+                    limit = listInstanceIpRuleRequest['limit'];
+                    offset = listInstanceIpRuleRequest['offset'];
                 }
             }
 
@@ -1845,7 +1925,14 @@ export const ParamCreater = function () {
             if (ip === null || ip === undefined) {
             throw new RequiredError('ip','Required parameter ip was null or undefined when calling listInstanceIpRule.');
             }
+            if (limit !== null && limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+            if (offset !== null && offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
+            }
 
+            options.queryParams = localVarQueryParameter;
             options.pathParams = { 'instance_id': instanceId,'ip': ip, };
             options.headers = localVarHeaderParameter;
             return options;
@@ -2231,6 +2318,43 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 查询日志配置
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showLtsConfig(showLtsConfigRequest?: ShowLtsConfigRequest) {
+            const options = {
+                method: "GET",
+                url: "/v1/cnad/config/lts",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let enterpriseProjectId;
+
+            if (showLtsConfigRequest !== null && showLtsConfigRequest !== undefined) {
+                if (showLtsConfigRequest instanceof ShowLtsConfigRequest) {
+                    enterpriseProjectId = showLtsConfigRequest.enterpriseProjectId;
+                } else {
+                    enterpriseProjectId = showLtsConfigRequest['enterprise_project_id'];
+                }
+            }
+
+        
+            if (enterpriseProjectId !== null && enterpriseProjectId !== undefined) {
+                localVarQueryParameter['enterprise_project_id'] = enterpriseProjectId;
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 查询策略详情
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -2407,6 +2531,55 @@ export const ParamCreater = function () {
 
             options.data = body !== undefined ? body : {};
             options.pathParams = { 'instance_id': instanceId,'ip': ip,'rule_id': ruleId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 设置日志配置
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        updateLtsConfig(updateLtsConfigRequest?: UpdateLtsConfigRequest) {
+            const options = {
+                method: "PUT",
+                url: "/v1/cnad/config/lts",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            let body: any;
+            
+            let enterpriseProjectId;
+
+            if (updateLtsConfigRequest !== null && updateLtsConfigRequest !== undefined) {
+                if (updateLtsConfigRequest instanceof UpdateLtsConfigRequest) {
+                    enterpriseProjectId = updateLtsConfigRequest.enterpriseProjectId;
+                    body = updateLtsConfigRequest.body
+                } else {
+                    enterpriseProjectId = updateLtsConfigRequest['enterprise_project_id'];
+                    body = updateLtsConfigRequest['body'];
+                }
+            }
+
+        
+            if (enterpriseProjectId === null || enterpriseProjectId === undefined) {
+                throw new RequiredError('enterpriseProjectId','Required parameter enterpriseProjectId was null or undefined when calling updateLtsConfig.');
+            }
+            if (enterpriseProjectId !== null && enterpriseProjectId !== undefined) {
+                localVarQueryParameter['enterprise_project_id'] = enterpriseProjectId;
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.queryParams = localVarQueryParameter;
             options.headers = localVarHeaderParameter;
             return options;
         },

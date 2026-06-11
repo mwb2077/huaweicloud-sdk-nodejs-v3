@@ -4,6 +4,8 @@ export class AdDomainInfo {
     private 'domain_type'?: AdDomainInfoDomainTypeEnum | string;
     private 'domain_admin_account'?: string;
     private 'domain_password'?: string;
+    private 'cba_enabled'?: boolean;
+    private 'certificate_id'?: string;
     public constructor(domainType?: string, domainAdminAccount?: string, domainPassword?: string) { 
         this['domain_type'] = domainType;
         this['domain_admin_account'] = domainAdminAccount;
@@ -38,6 +40,26 @@ export class AdDomainInfo {
     }
     public get domainPassword(): string | undefined {
         return this['domain_password'];
+    }
+    public withCbaEnabled(cbaEnabled: boolean): AdDomainInfo {
+        this['cba_enabled'] = cbaEnabled;
+        return this;
+    }
+    public set cbaEnabled(cbaEnabled: boolean  | undefined) {
+        this['cba_enabled'] = cbaEnabled;
+    }
+    public get cbaEnabled(): boolean | undefined {
+        return this['cba_enabled'];
+    }
+    public withCertificateId(certificateId: string): AdDomainInfo {
+        this['certificate_id'] = certificateId;
+        return this;
+    }
+    public set certificateId(certificateId: string  | undefined) {
+        this['certificate_id'] = certificateId;
+    }
+    public get certificateId(): string | undefined {
+        return this['certificate_id'];
     }
 }
 

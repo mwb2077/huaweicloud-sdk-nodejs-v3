@@ -1,7 +1,10 @@
 import { AdditionalManifests } from './AdditionalManifests';
 import { AvParameters } from './AvParameters';
+import { FileMetaData } from './FileMetaData';
+import { ImageSpriteInfo } from './ImageSpriteInfo';
 import { ObsObjInfo } from './ObsObjInfo';
 import { PicInfo } from './PicInfo';
+import { ThumbnailsInfo } from './ThumbnailsInfo';
 import { TranscodeDetail } from './TranscodeDetail';
 
 
@@ -23,8 +26,11 @@ export class QueryTranscodingsTaskResponse {
     private 'thumbnail_output'?: ObsObjInfo;
     private 'thumbnail_outputname'?: string;
     private 'pic_info'?: Array<PicInfo>;
+    private 'thumbnails_info'?: Array<ThumbnailsInfo>;
+    private 'image_sprite_info'?: Array<ImageSpriteInfo>;
     private 'av_parameters'?: Array<AvParameters>;
     private 'additional_manifests'?: Array<AdditionalManifests>;
+    public metadata?: Array<FileMetaData>;
     public constructor() { 
     }
     public withTaskId(taskId: string): QueryTranscodingsTaskResponse {
@@ -161,6 +167,26 @@ export class QueryTranscodingsTaskResponse {
     public get picInfo(): Array<PicInfo> | undefined {
         return this['pic_info'];
     }
+    public withThumbnailsInfo(thumbnailsInfo: Array<ThumbnailsInfo>): QueryTranscodingsTaskResponse {
+        this['thumbnails_info'] = thumbnailsInfo;
+        return this;
+    }
+    public set thumbnailsInfo(thumbnailsInfo: Array<ThumbnailsInfo>  | undefined) {
+        this['thumbnails_info'] = thumbnailsInfo;
+    }
+    public get thumbnailsInfo(): Array<ThumbnailsInfo> | undefined {
+        return this['thumbnails_info'];
+    }
+    public withImageSpriteInfo(imageSpriteInfo: Array<ImageSpriteInfo>): QueryTranscodingsTaskResponse {
+        this['image_sprite_info'] = imageSpriteInfo;
+        return this;
+    }
+    public set imageSpriteInfo(imageSpriteInfo: Array<ImageSpriteInfo>  | undefined) {
+        this['image_sprite_info'] = imageSpriteInfo;
+    }
+    public get imageSpriteInfo(): Array<ImageSpriteInfo> | undefined {
+        return this['image_sprite_info'];
+    }
     public withAvParameters(avParameters: Array<AvParameters>): QueryTranscodingsTaskResponse {
         this['av_parameters'] = avParameters;
         return this;
@@ -180,6 +206,10 @@ export class QueryTranscodingsTaskResponse {
     }
     public get additionalManifests(): Array<AdditionalManifests> | undefined {
         return this['additional_manifests'];
+    }
+    public withMetadata(metadata: Array<FileMetaData>): QueryTranscodingsTaskResponse {
+        this['metadata'] = metadata;
+        return this;
     }
 }
 

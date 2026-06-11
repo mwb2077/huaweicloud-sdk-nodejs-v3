@@ -4,6 +4,7 @@ export class Target {
     private 'target_id'?: string;
     private 'target_name'?: string;
     private 'target_type'?: TargetTargetTypeEnum | string;
+    private 'target_domain'?: string;
     public constructor() { 
     }
     public withTargetId(targetId: string): Target {
@@ -36,6 +37,16 @@ export class Target {
     public get targetType(): TargetTargetTypeEnum | string | undefined {
         return this['target_type'];
     }
+    public withTargetDomain(targetDomain: string): Target {
+        this['target_domain'] = targetDomain;
+        return this;
+    }
+    public set targetDomain(targetDomain: string  | undefined) {
+        this['target_domain'] = targetDomain;
+    }
+    public get targetDomain(): string | undefined {
+        return this['target_domain'];
+    }
 }
 
 /**
@@ -49,5 +60,6 @@ export enum TargetTargetTypeEnum {
     CLIENTIP = 'CLIENTIP',
     OU = 'OU',
     USERGROUP = 'USERGROUP',
-    ALL = 'ALL'
+    ALL = 'ALL',
+    DESKTOP_TAG = 'DESKTOP_TAG'
 }

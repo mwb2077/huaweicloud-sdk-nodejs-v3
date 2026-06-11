@@ -19,15 +19,35 @@ import { BatchCreateMembersOption } from './model/BatchCreateMembersOption';
 import { BatchCreateMembersRequest } from './model/BatchCreateMembersRequest';
 import { BatchCreateMembersRequestBody } from './model/BatchCreateMembersRequestBody';
 import { BatchCreateMembersResponse } from './model/BatchCreateMembersResponse';
+import { BatchDeleteCertificatesRequest } from './model/BatchDeleteCertificatesRequest';
+import { BatchDeleteCertificatesRequestBody } from './model/BatchDeleteCertificatesRequestBody';
+import { BatchDeleteCertificatesResp } from './model/BatchDeleteCertificatesResp';
+import { BatchDeleteCertificatesResponse } from './model/BatchDeleteCertificatesResponse';
 import { BatchDeleteIpListOption } from './model/BatchDeleteIpListOption';
 import { BatchDeleteIpListRequest } from './model/BatchDeleteIpListRequest';
 import { BatchDeleteIpListRequestBody } from './model/BatchDeleteIpListRequestBody';
 import { BatchDeleteIpListResponse } from './model/BatchDeleteIpListResponse';
+import { BatchDeleteListenersRequest } from './model/BatchDeleteListenersRequest';
+import { BatchDeleteListenersRequestBody } from './model/BatchDeleteListenersRequestBody';
+import { BatchDeleteListenersResponse } from './model/BatchDeleteListenersResponse';
+import { BatchDeleteLoadbalancersRequest } from './model/BatchDeleteLoadbalancersRequest';
+import { BatchDeleteLoadbalancersRequestBody } from './model/BatchDeleteLoadbalancersRequestBody';
+import { BatchDeleteLoadbalancersResponse } from './model/BatchDeleteLoadbalancersResponse';
 import { BatchDeleteMembersOption } from './model/BatchDeleteMembersOption';
 import { BatchDeleteMembersRequest } from './model/BatchDeleteMembersRequest';
 import { BatchDeleteMembersRequestBody } from './model/BatchDeleteMembersRequestBody';
 import { BatchDeleteMembersResponse } from './model/BatchDeleteMembersResponse';
 import { BatchDeleteMembersState } from './model/BatchDeleteMembersState';
+import { BatchDeletePoolsRequest } from './model/BatchDeletePoolsRequest';
+import { BatchDeletePoolsRequestBody } from './model/BatchDeletePoolsRequestBody';
+import { BatchDeletePoolsResp } from './model/BatchDeletePoolsResp';
+import { BatchDeletePoolsResponse } from './model/BatchDeletePoolsResponse';
+import { BatchDisableDomainIPsRequest } from './model/BatchDisableDomainIPsRequest';
+import { BatchDisableDomainIPsRequestBody } from './model/BatchDisableDomainIPsRequestBody';
+import { BatchDisableDomainIPsResponse } from './model/BatchDisableDomainIPsResponse';
+import { BatchEnableDomainIPsRequest } from './model/BatchEnableDomainIPsRequest';
+import { BatchEnableDomainIPsRequestBody } from './model/BatchEnableDomainIPsRequestBody';
+import { BatchEnableDomainIPsResponse } from './model/BatchEnableDomainIPsResponse';
 import { BatchMember } from './model/BatchMember';
 import { BatchRemoveAvailableZonesRequest } from './model/BatchRemoveAvailableZonesRequest';
 import { BatchRemoveAvailableZonesRequestBody } from './model/BatchRemoveAvailableZonesRequestBody';
@@ -42,9 +62,21 @@ import { BatchUpdatePoliciesPriorityRequestBody } from './model/BatchUpdatePolic
 import { BatchUpdatePoliciesPriorityResponse } from './model/BatchUpdatePoliciesPriorityResponse';
 import { BatchUpdatePriorityRequestBody } from './model/BatchUpdatePriorityRequestBody';
 import { CertificateInfo } from './model/CertificateInfo';
+import { ChangeListenerTagsRequest } from './model/ChangeListenerTagsRequest';
+import { ChangeListenerTagsRequestBody } from './model/ChangeListenerTagsRequestBody';
+import { ChangeListenerTagsResponse } from './model/ChangeListenerTagsResponse';
 import { ChangeLoadbalancerChargeModeRequest } from './model/ChangeLoadbalancerChargeModeRequest';
 import { ChangeLoadbalancerChargeModeRequestBody } from './model/ChangeLoadbalancerChargeModeRequestBody';
 import { ChangeLoadbalancerChargeModeResponse } from './model/ChangeLoadbalancerChargeModeResponse';
+import { ChangeLoadbalancerTagsRequest } from './model/ChangeLoadbalancerTagsRequest';
+import { ChangeLoadbalancerTagsRequestBody } from './model/ChangeLoadbalancerTagsRequestBody';
+import { ChangeLoadbalancerTagsResponse } from './model/ChangeLoadbalancerTagsResponse';
+import { ChangeResourceTagOption } from './model/ChangeResourceTagOption';
+import { CloneListenerOption } from './model/CloneListenerOption';
+import { CloneListenerRequest } from './model/CloneListenerRequest';
+import { CloneListenerRequestBody } from './model/CloneListenerRequestBody';
+import { CloneListenerResp } from './model/CloneListenerResp';
+import { CloneListenerResponse } from './model/CloneListenerResponse';
 import { CloneLoadbalancerRequest } from './model/CloneLoadbalancerRequest';
 import { CloneLoadbalancerRequestBody } from './model/CloneLoadbalancerRequestBody';
 import { CloneLoadbalancerResponse } from './model/CloneLoadbalancerResponse';
@@ -133,6 +165,7 @@ import { CreateSecurityPolicyRequestBody } from './model/CreateSecurityPolicyReq
 import { CreateSecurityPolicyResponse } from './model/CreateSecurityPolicyResponse';
 import { CreateTrafficLimitConfig } from './model/CreateTrafficLimitConfig';
 import { CreateTrafficMirrorConfig } from './model/CreateTrafficMirrorConfig';
+import { CustomQosLimit } from './model/CustomQosLimit';
 import { DeleteCertificateRequest } from './model/DeleteCertificateRequest';
 import { DeleteCertificateResponse } from './model/DeleteCertificateResponse';
 import { DeleteHealthMonitorRequest } from './model/DeleteHealthMonitorRequest';
@@ -169,7 +202,11 @@ import { DeleteRecycleLoadBalancerRequest } from './model/DeleteRecycleLoadBalan
 import { DeleteRecycleLoadBalancerResponse } from './model/DeleteRecycleLoadBalancerResponse';
 import { DeleteSecurityPolicyRequest } from './model/DeleteSecurityPolicyRequest';
 import { DeleteSecurityPolicyResponse } from './model/DeleteSecurityPolicyResponse';
+import { DnsConfigResponseBody } from './model/DnsConfigResponseBody';
+import { DnsIp } from './model/DnsIp';
+import { DnsIpResponse } from './model/DnsIpResponse';
 import { EipInfo } from './model/EipInfo';
+import { EipNode } from './model/EipNode';
 import { Extension } from './model/Extension';
 import { FeatureConfig } from './model/FeatureConfig';
 import { FixtedResponseConfig } from './model/FixtedResponseConfig';
@@ -183,8 +220,12 @@ import { IpGroup } from './model/IpGroup';
 import { IpGroupIp } from './model/IpGroupIp';
 import { IpInfo } from './model/IpInfo';
 import { JobEntities } from './model/JobEntities';
+import { L4Limit } from './model/L4Limit';
+import { L7Limit } from './model/L7Limit';
 import { L7Policy } from './model/L7Policy';
 import { L7Rule } from './model/L7Rule';
+import { ListAllL7RulesRequest } from './model/ListAllL7RulesRequest';
+import { ListAllL7RulesResponse } from './model/ListAllL7RulesResponse';
 import { ListAllMembersRequest } from './model/ListAllMembersRequest';
 import { ListAllMembersResponse } from './model/ListAllMembersResponse';
 import { ListApiVersionsRequest } from './model/ListApiVersionsRequest';
@@ -193,6 +234,8 @@ import { ListAvailabilityZonesRequest } from './model/ListAvailabilityZonesReque
 import { ListAvailabilityZonesResponse } from './model/ListAvailabilityZonesResponse';
 import { ListCertificatesRequest } from './model/ListCertificatesRequest';
 import { ListCertificatesResponse } from './model/ListCertificatesResponse';
+import { ListDomainIPsRequest } from './model/ListDomainIPsRequest';
+import { ListDomainIPsResponse } from './model/ListDomainIPsResponse';
 import { ListFeatureConfigsRequest } from './model/ListFeatureConfigsRequest';
 import { ListFeatureConfigsResponse } from './model/ListFeatureConfigsResponse';
 import { ListFlavorsRequest } from './model/ListFlavorsRequest';
@@ -207,12 +250,16 @@ import { ListL7PoliciesRequest } from './model/ListL7PoliciesRequest';
 import { ListL7PoliciesResponse } from './model/ListL7PoliciesResponse';
 import { ListL7RulesRequest } from './model/ListL7RulesRequest';
 import { ListL7RulesResponse } from './model/ListL7RulesResponse';
+import { ListListenerTagsRequest } from './model/ListListenerTagsRequest';
+import { ListListenerTagsResponse } from './model/ListListenerTagsResponse';
 import { ListListenersRequest } from './model/ListListenersRequest';
 import { ListListenersResponse } from './model/ListListenersResponse';
 import { ListLoadBalancersRequest } from './model/ListLoadBalancersRequest';
 import { ListLoadBalancersResponse } from './model/ListLoadBalancersResponse';
 import { ListLoadbalancerFeatureRequest } from './model/ListLoadbalancerFeatureRequest';
 import { ListLoadbalancerFeatureResponse } from './model/ListLoadbalancerFeatureResponse';
+import { ListLoadbalancerTagsRequest } from './model/ListLoadbalancerTagsRequest';
+import { ListLoadbalancerTagsResponse } from './model/ListLoadbalancerTagsResponse';
 import { ListLogtanksRequest } from './model/ListLogtanksRequest';
 import { ListLogtanksResponse } from './model/ListLogtanksResponse';
 import { ListMasterSlavePoolsRequest } from './model/ListMasterSlavePoolsRequest';
@@ -229,13 +276,16 @@ import { ListSecurityPoliciesRequest } from './model/ListSecurityPoliciesRequest
 import { ListSecurityPoliciesResponse } from './model/ListSecurityPoliciesResponse';
 import { ListSystemSecurityPoliciesRequest } from './model/ListSystemSecurityPoliciesRequest';
 import { ListSystemSecurityPoliciesResponse } from './model/ListSystemSecurityPoliciesResponse';
+import { ListTag } from './model/ListTag';
 import { Listener } from './model/Listener';
 import { ListenerInsertHeaders } from './model/ListenerInsertHeaders';
 import { ListenerIpGroup } from './model/ListenerIpGroup';
 import { ListenerMemberInfo } from './model/ListenerMemberInfo';
+import { ListenerNode } from './model/ListenerNode';
 import { ListenerQuicConfig } from './model/ListenerQuicConfig';
 import { ListenerRef } from './model/ListenerRef';
 import { LoadBalancer } from './model/LoadBalancer';
+import { LoadBalancerNode } from './model/LoadBalancerNode';
 import { LoadBalancerRef } from './model/LoadBalancerRef';
 import { LoadBalancerStatus } from './model/LoadBalancerStatus';
 import { LoadBalancerStatusHealthMonitor } from './model/LoadBalancerStatusHealthMonitor';
@@ -245,6 +295,7 @@ import { LoadBalancerStatusMember } from './model/LoadBalancerStatusMember';
 import { LoadBalancerStatusPolicy } from './model/LoadBalancerStatusPolicy';
 import { LoadBalancerStatusPool } from './model/LoadBalancerStatusPool';
 import { LoadBalancerStatusResult } from './model/LoadBalancerStatusResult';
+import { LoadBalancerTopologyResult } from './model/LoadBalancerTopologyResult';
 import { LoadbalancerFeature } from './model/LoadbalancerFeature';
 import { LocalPort } from './model/LocalPort';
 import { Logtank } from './model/Logtank';
@@ -263,8 +314,10 @@ import { MemberInfo } from './model/MemberInfo';
 import { MemberRef } from './model/MemberRef';
 import { MemberStatus } from './model/MemberStatus';
 import { PageInfo } from './model/PageInfo';
+import { PolicyLabel } from './model/PolicyLabel';
 import { Pool } from './model/Pool';
 import { PoolHealth } from './model/PoolHealth';
+import { PoolNode } from './model/PoolNode';
 import { PoolRef } from './model/PoolRef';
 import { PortRange } from './model/PortRange';
 import { PreoccupyIp } from './model/PreoccupyIp';
@@ -287,7 +340,9 @@ import { RedirectPoolsStickySessionConfig } from './model/RedirectPoolsStickySes
 import { RedirectUrlConfig } from './model/RedirectUrlConfig';
 import { RemoveHeaderConfig } from './model/RemoveHeaderConfig';
 import { RemoveHeadersConfig } from './model/RemoveHeadersConfig';
+import { ResPortRange } from './model/ResPortRange';
 import { ResourceID } from './model/ResourceID';
+import { ResourceTag } from './model/ResourceTag';
 import { RestoreLoadbalancerRequest } from './model/RestoreLoadbalancerRequest';
 import { RestoreLoadbalancerResponse } from './model/RestoreLoadbalancerResponse';
 import { RewriteUrlConfig } from './model/RewriteUrlConfig';
@@ -315,12 +370,18 @@ import { ShowL7RuleRequest } from './model/ShowL7RuleRequest';
 import { ShowL7RuleResponse } from './model/ShowL7RuleResponse';
 import { ShowListenerRequest } from './model/ShowListenerRequest';
 import { ShowListenerResponse } from './model/ShowListenerResponse';
+import { ShowListenerTagsRequest } from './model/ShowListenerTagsRequest';
+import { ShowListenerTagsResponse } from './model/ShowListenerTagsResponse';
 import { ShowLoadBalancerPortsRequest } from './model/ShowLoadBalancerPortsRequest';
 import { ShowLoadBalancerPortsResponse } from './model/ShowLoadBalancerPortsResponse';
 import { ShowLoadBalancerRequest } from './model/ShowLoadBalancerRequest';
 import { ShowLoadBalancerResponse } from './model/ShowLoadBalancerResponse';
 import { ShowLoadBalancerStatusRequest } from './model/ShowLoadBalancerStatusRequest';
 import { ShowLoadBalancerStatusResponse } from './model/ShowLoadBalancerStatusResponse';
+import { ShowLoadBalancerTopologyRequest } from './model/ShowLoadBalancerTopologyRequest';
+import { ShowLoadBalancerTopologyResponse } from './model/ShowLoadBalancerTopologyResponse';
+import { ShowLoadbalancerTagsRequest } from './model/ShowLoadbalancerTagsRequest';
+import { ShowLoadbalancerTagsResponse } from './model/ShowLoadbalancerTagsResponse';
 import { ShowLogtankRequest } from './model/ShowLogtankRequest';
 import { ShowLogtankResponse } from './model/ShowLogtankResponse';
 import { ShowMasterSlavePoolRequest } from './model/ShowMasterSlavePoolRequest';
@@ -339,9 +400,14 @@ import { ShowSecurityPolicyRequest } from './model/ShowSecurityPolicyRequest';
 import { ShowSecurityPolicyResponse } from './model/ShowSecurityPolicyResponse';
 import { SlowStart } from './model/SlowStart';
 import { SubJob } from './model/SubJob';
+import { SubnetMappingList } from './model/SubnetMappingList';
+import { SystemDefaultDnsConfigRequestBody } from './model/SystemDefaultDnsConfigRequestBody';
 import { SystemSecurityPolicy } from './model/SystemSecurityPolicy';
 import { Tag } from './model/Tag';
 import { TargetLoadbalancerParam } from './model/TargetLoadbalancerParam';
+import { TopologyEdge } from './model/TopologyEdge';
+import { TopologyLabels } from './model/TopologyLabels';
+import { TopologyNodes } from './model/TopologyNodes';
 import { TrafficLimitConfig } from './model/TrafficLimitConfig';
 import { TrafficMirrorConfig } from './model/TrafficMirrorConfig';
 import { UpdateAzAffinity } from './model/UpdateAzAffinity';
@@ -416,10 +482,17 @@ import { UpdateSecurityPolicyOption } from './model/UpdateSecurityPolicyOption';
 import { UpdateSecurityPolicyRequest } from './model/UpdateSecurityPolicyRequest';
 import { UpdateSecurityPolicyRequestBody } from './model/UpdateSecurityPolicyRequestBody';
 import { UpdateSecurityPolicyResponse } from './model/UpdateSecurityPolicyResponse';
+import { UpdateSystemDefaultDomainConfigRequest } from './model/UpdateSystemDefaultDomainConfigRequest';
+import { UpdateSystemDefaultDomainConfigRequestBody } from './model/UpdateSystemDefaultDomainConfigRequestBody';
+import { UpdateSystemDefaultDomainConfigResponse } from './model/UpdateSystemDefaultDomainConfigResponse';
 import { UpdateTrafficLimitConfig } from './model/UpdateTrafficLimitConfig';
+import { UpdateUserDefinedDomainConfigRequest } from './model/UpdateUserDefinedDomainConfigRequest';
+import { UpdateUserDefinedDomainConfigRequestBody } from './model/UpdateUserDefinedDomainConfigRequestBody';
+import { UpdateUserDefinedDomainConfigResponse } from './model/UpdateUserDefinedDomainConfigResponse';
 import { UpgradeLoadbalancerRequest } from './model/UpgradeLoadbalancerRequest';
 import { UpgradeLoadbalancerResponse } from './model/UpgradeLoadbalancerResponse';
 import { UpgradeV3RequestBody } from './model/UpgradeV3RequestBody';
+import { UserDefinedDnsConfigRequestBody } from './model/UserDefinedDnsConfigRequestBody';
 
 export class ElbClient {
     public static newBuilder(): ClientBuilder<ElbClient> {
@@ -510,6 +583,63 @@ export class ElbClient {
     }
 
     /**
+     * 批量删除证书。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 批量删除证书
+     * @param {BatchDeleteCertificatesRequestBody} batchDeleteCertificatesRequestBody This is a auto create Body Object
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public batchDeleteCertificates(batchDeleteCertificatesRequest?: BatchDeleteCertificatesRequest): Promise<BatchDeleteCertificatesResponse> {
+        const options = ParamCreater().batchDeleteCertificates(batchDeleteCertificatesRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 批量删除监听器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 批量删监听器
+     * @param {BatchDeleteListenersRequestBody} batchDeleteListenersRequestBody This is a auto create Body Object
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public batchDeleteListeners(batchDeleteListenersRequest?: BatchDeleteListenersRequest): Promise<BatchDeleteListenersResponse> {
+        const options = ParamCreater().batchDeleteListeners(batchDeleteListenersRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 批量删除负载均衡器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 批量删除负载均衡器
+     * @param {BatchDeleteLoadbalancersRequestBody} batchDeleteLoadbalancersRequestBody This is a auto create Body Object
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public batchDeleteLoadbalancers(batchDeleteLoadbalancersRequest?: BatchDeleteLoadbalancersRequest): Promise<BatchDeleteLoadbalancersResponse> {
+        const options = ParamCreater().batchDeleteLoadbalancers(batchDeleteLoadbalancersRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 在指定pool下批量删除后端服务器。一次最多添加200个。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -522,6 +652,65 @@ export class ElbClient {
      */
     public batchDeleteMembers(batchDeleteMembersRequest?: BatchDeleteMembersRequest): Promise<BatchDeleteMembersResponse> {
         const options = ParamCreater().batchDeleteMembers(batchDeleteMembersRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 批量删除后端服务器组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 批量删除后端服务器组
+     * @param {BatchDeletePoolsRequestBody} batchDeletePoolsRequestBody This is a auto create Body Object
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public batchDeletePools(batchDeletePoolsRequest?: BatchDeletePoolsRequest): Promise<BatchDeletePoolsResponse> {
+        const options = ParamCreater().batchDeletePools(batchDeletePoolsRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 批量将IP地址从ELB实例域名解析中移除。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 批量将IP地址从ELB实例域名解析中移除
+     * @param {string} loadbalancerId **参数解释**：负载均衡器ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {BatchDisableDomainIPsRequestBody} batchDisableDomainIPsRequestBody 批量将IP地址从ELB实例域名解析中移除的请求体。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public batchDisableDomainIPs(batchDisableDomainIPsRequest?: BatchDisableDomainIPsRequest): Promise<BatchDisableDomainIPsResponse> {
+        const options = ParamCreater().batchDisableDomainIPs(batchDisableDomainIPsRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 批量将IP地址加入ELB实例域名解析中。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 批量将IP地址加入ELB实例域名解析中
+     * @param {string} loadbalancerId **参数解释**：负载均衡器ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {BatchEnableDomainIPsRequestBody} batchEnableDomainIPsRequestBody 批量将IP地址加入ELB实例域名解析中的请求体。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public batchEnableDomainIPs(batchEnableDomainIPsRequest?: BatchEnableDomainIPsRequest): Promise<BatchEnableDomainIPsResponse> {
+        const options = ParamCreater().batchEnableDomainIPs(batchEnableDomainIPsRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -590,6 +779,26 @@ export class ElbClient {
     }
 
     /**
+     * 批量添加或删除指定监听器器标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 变更监听器标签列表
+     * @param {string} listenerId **参数解释**：监听器ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {ChangeListenerTagsRequestBody} changeListenerTagsRequestBody This is a auto create Body Object
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public changeListenerTags(changeListenerTagsRequest?: ChangeListenerTagsRequest): Promise<ChangeListenerTagsResponse> {
+        const options = ParamCreater().changeListenerTags(changeListenerTagsRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 负载均衡器计费模式变更，当前支持的计费模式变更为：
      * 1. 按需计费转包周期计费。
      * 2. 按需按规格计费转按需按使用量计费。
@@ -612,13 +821,60 @@ export class ElbClient {
     }
 
     /**
+     * 批量添加或删除指定负载均衡器标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 变更负载均衡器标签列表
+     * @param {string} loadbalancerId **参数解释**：负载均衡器ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {ChangeLoadbalancerTagsRequestBody} changeLoadbalancerTagsRequestBody This is a auto create Body Object
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public changeLoadbalancerTags(changeLoadbalancerTagsRequest?: ChangeLoadbalancerTagsRequest): Promise<ChangeLoadbalancerTagsResponse> {
+        const options = ParamCreater().changeLoadbalancerTags(changeLoadbalancerTagsRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 复制已有的监听器到同VPC内的负载均衡器。
+     * - 仅支持同VPC实例间使用监听器复制功能。
+     * - 不支持网关型LB下监听器进行复制，也不支持复制到网关型LB下。
+     * - 仅同类型实例之间可以使用监听器复制功能。
+     * - 对复制的源监听器有如下限制：后端服务器总数不能超过1000；转发策略总数不能超过100。
+     * - 源监听器所在负载均衡器和目的监听器所在负载均衡器不能处于冻结、迁移状态。
+     * - 源监听器中若配置quic_config，复制后为null。
+     * - 七层转发策略配置为重定向到监听器，该转发策略不会进行复制。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 复制已有监听器
+     * @param {string} listenerId **参数解释**：被复制监听器ID（UUID）。  **约束限制**：不涉及  **取值范围**：标准的UUID格式，长度为36个字符。  **默认取值**：不涉及
+     * @param {CloneListenerRequestBody} cloneListenerRequestBody **参数解释**：复制监听器请求体。  **约束限制**：不涉及
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public cloneListener(cloneListenerRequest?: CloneListenerRequest): Promise<CloneListenerResponse> {
+        const options = ParamCreater().cloneListener(cloneListenerRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 复制已有的负载均衡器实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 复制已有负载均衡器
      * @param {string} loadbalancerId **参数解释**：负载均衡器ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
-     * @param {CloneLoadbalancerRequestBody} cloneLoadbalancerRequestBody 
+     * @param {CloneLoadbalancerRequestBody} cloneLoadbalancerRequestBody **参数解释**：复制负载均衡器接口请求体。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -632,7 +888,7 @@ export class ElbClient {
     }
 
     /**
-     * 创建用于弹性负载均衡器HTTPS/TLS/QUIC协议监听器的证书。支持关联云证书管理服务(CCM)的证书，或者使用自有证书。
+     * 创建用于弹性负载均衡器HTTPS/TLS/QUIC协议监听器的证书。支持关联云证书与管理服务(CCM)的证书，或者使用自有证书。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -728,7 +984,7 @@ export class ElbClient {
     }
 
     /**
-     * 创建监听器。支持通过该接口创建独享型及共享型LB实例下的监听器。
+     * 创建监听器。支持通过该接口创建独享型及共享型ELB实例下的监听器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -759,11 +1015,12 @@ export class ElbClient {
      * - 若要创建网络型负载均衡器，则需要传入l4_flavor_id（网络型规格ID）；若要创建应用型负载均衡器，则需要传入l7_flavor_id（应用型规格ID）；若要创建网络型+应用型负载均衡器，则需要传入l4_flavor_id和l7_flavor_id。
      * [- 若要创建包周期负载均衡器，则需要传入prepaid_options，否则创建按需计费负载均衡器。](tag:hws)
      * - 按需计费分为固定规格计费和弹性规格计费，根据创建时所选规格的类型决定计费方式。具体规格说明见创建LB请求参数l4_flavor_id和l7_flavor_id。
-     * [- 若要创建gateway类型的负载均衡器，则需要：
+     * - 若要创建gateway类型的负载均衡器，则需要：
      *    - 指定loadbalancer_type&#x3D;\&quot;gateway\&quot;，且不支持指定vip_address，ipv6_vip_address。
-     *    - vip_subnet_cidr_id和ipv6_subnet_cidr_id两者不能都为空，如果两者都传入，则必须属于同一子网。 
+     *    - vip_subnet_cidr_id和ipv6_subnet_cidr_id两者不能都为空，如果两者都传入，则必须属于同一子网。
      *    - 不支持创建公网gateway类型LB。
-     *    - 如果要指定规格，则从请求参数gw_flavor_id传入。](tag:hws_eu)
+     *    - 不支持传入autoscaling字段，不支持l4_flavor_id和l7_flavor_id。
+     *    - 必须要指定网关型规格，通过参数gw_flavor_id传入。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -900,12 +1157,12 @@ export class ElbClient {
     }
 
     /**
-     * 删除ELB证书。若是删除source&#x3D;scm的证书，关联的云证书管理服务（CCM）中的证书不会被删除。若想删除已关联到监听器的证书，则需要先解除监听器和证书的绑定关系。
+     * 删除ELB证书。若是删除source&#x3D;scm的证书，关联的云证书与管理服务（CCM）中的证书不会被删除。若想删除已关联到监听器的证书，则需要先解除监听器和证书的绑定关系。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 删除证书
-     * @param {string} certificateId 证书ID。
+     * @param {string} certificateId **参数解释**：证书ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -982,7 +1239,7 @@ export class ElbClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 删除监听器
-     * @param {string} listenerId 监听器ID。
+     * @param {string} listenerId **参数解释**：监听器ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -1001,7 +1258,7 @@ export class ElbClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 级联删除监听器
-     * @param {string} listenerId 监听器ID。
+     * @param {string} listenerId **参数解释**：监听器ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -1056,8 +1313,11 @@ export class ElbClient {
     /**
      * 删除负载均衡器且级联删除其下子资源（删除负载均衡器及其绑定的监听器、后端服务器组、后端服务器等一系列资源）。
      * - 若LB关联了EIP，则只解绑EIP，不会删除EIP。
+     * - 若LB已开启了误删保护开关，则级联删除失败。
+     * - 若LB下任意一个后端服务器组开启了误删保护开关，则级联删除失败。
+     * - 修改保护开关开启不影响级联删除，仍能正常删除。
      * [- 若已开启多挂特性，且关联了多个LB，则只做解绑；否则删除。
-     * - 若是共享型LB下的后端服务器组，无论是否多挂都只删除，不解绑。](tag:hc,hk)
+     * - 若是共享型LB下的后端服务器组，无论是否多挂都只删除，不解绑。](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1196,12 +1456,43 @@ export class ElbClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 删除自定义安全策略
-     * @param {string} securityPolicyId 自定义安全策略的ID。
+     * @param {string} securityPolicyId **参数解释**：自定义安全策略的ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     public deleteSecurityPolicy(deleteSecurityPolicyRequest?: DeleteSecurityPolicyRequest): Promise<DeleteSecurityPolicyResponse> {
         const options = ParamCreater().deleteSecurityPolicy(deleteSecurityPolicyRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询当前项目下所有转发规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询转发规则全局列表
+     * @param {number} [limit] **参数解释**：每页返回的个数。  **约束限制**：不涉及  **取值范围**：0-2000  **默认取值**：2000
+     * @param {string} [marker] **参数解释**：上一页最后一条记录的ID。  **约束限制**： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {boolean} [pageReverse] **参数解释**：是否反向查询。  **约束限制**： - 必须与limit一起使用。 - 当page_reverse&#x3D;true时，若要查询上一页，marker取值为当前页返回值的previous_marker。  **取值范围**： - true：查询上一页。 - false：查询下一页。  **默认取值**：false
+     * @param {Array<string>} [id] **参数解释**：转发规则ID。 支持多值查询，查询条件格式：*id&#x3D;xxx&amp;id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {Array<string>} [compareType] **参数解释**：转发匹配方式。 支持多值查询，查询条件格式：*compare_type&#x3D;xxx&amp;compare_type&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**： - EQUAL_TO 表示精确匹配。 - REGEX 表示正则匹配。 - STARTS_WITH 表示前缀匹配。  **默认取值**：不涉及
+     * @param {Array<string>} [provisioningStatus] **参数解释**：转发规则的配置状态。 支持多值查询，查询条件格式：*provisioning_status&#x3D;xxx&amp;provisioning_status&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：ACTIVE 表示正常。  **默认取值**：不涉及
+     * @param {boolean} [invert] **参数解释**：是否反向匹配。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {boolean} [adminStateUp] **参数解释**：转发规则的管理状态。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {Array<string>} [value] **参数解释**：匹配内容的值。 支持多值查询，查询条件格式：*value&#x3D;xxx&amp;value&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {Array<string>} [key] **参数解释**：匹配内容的键值，用于标识规则。 支持多值查询，查询条件格式：*key&#x3D;xxx&amp;key&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {Array<string>} [type] **参数解释**：匹配类别。 支持多值查询，查询条件格式：*type&#x3D;xxx&amp;type&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**： - HOST_NAME：匹配域名。 - PATH：匹配请求路径。  **默认取值**：不涉及
+     * @param {Array<string>} [enterpriseProjectId] **参数解释**：所属的企业项目ID。 支持多值查询，查询条件格式： *enterprise_project_id&#x3D;xxx&amp;enterprise_project_id&#x3D;xxx*。  **约束限制**： 如果enterprise_project_id不传值，默认查询所有企业项目下的资源，鉴权按照细粒度权限鉴权，必须在用户组下分配elb:l7rules:list权限。 如果enterprise_project_id传值，鉴权按照企业项目权限鉴权，分为传入具体eps_id和all_granted_eps两种场景，前者查询指定eps_id的eps下的资源，后者查询的是所有有list权限的eps下的资源。  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {Array<string>} [l7policyId] **参数解释**：七层转发策略ID。 支持多值查询，查询条件格式：*l7policy_id&#x3D;xxx&amp;l7policy_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listAllL7Rules(listAllL7RulesRequest?: ListAllL7RulesRequest): Promise<ListAllL7RulesResponse> {
+        const options = ParamCreater().listAllL7Rules(listAllL7RulesRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -1259,7 +1550,7 @@ export class ElbClient {
      *
      * @summary 查询可用区列表
      * @param {string} [publicBorderGroup] **参数解释**：公网边界组。  **约束限制**：不涉及  **取值范围**： - center：表示中心站点的公网边界组 - 边缘站点名称：表示边缘站点的公网边界组  **默认取值**：不涉及
-     * @param {string} [loadbalancerId] **参数解释**：负载均衡器ID。传入可查询对应ELB支持的可用区列表。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {string} [loadbalancerId] **参数解释**：负载均衡器ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -1287,10 +1578,10 @@ export class ElbClient {
      * @param {boolean} [adminStateUp] **参数解释**：证书的管理状态。  **约束限制**：不涉及  **取值范围**： - true：表示证书可用。 - false：表示证书不可用。  **默认取值**：不涉及
      * @param {Array<string>} [domain] **参数解释**：服务器证书所签域名。 支持多值查询，查询条件格式：domain&#x3D;xxx&amp;domain&#x3D;xxx。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {Array<string>} [type] **参数解释**：证书的类型。 支持多值查询，查询条件格式：type&#x3D;xxx&amp;type&#x3D;xxx。  **约束限制**：不涉及  **取值范围**： - server：服务器证书。 - client：CA证书。 - server_sm：服务器SM双证书。  **默认取值**：不涉及
-     * @param {Array<string>} [scmCertificateId] **参数解释**：云证书管理服务（CCM）中的证书ID。 支持多值查询，查询条件格式：scm_certificate_id&#x3D;xxx&amp;scm_certificate_id&#x3D;xxx。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {Array<string>} [scmCertificateId] **参数解释**：云证书与管理服务（CCM）中的证书ID。 支持多值查询，查询条件格式：scm_certificate_id&#x3D;xxx&amp;scm_certificate_id&#x3D;xxx。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {Array<string>} [commonName] **参数解释**：证书的主域名。 支持多值查询，查询条件格式：common_name&#x3D;xxx&amp;common_name&#x3D;xxx。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {Array<string>} [fingerprint] **参数解释**：证书的指纹。 支持多值查询，查询条件格式：fingerprint&#x3D;xxx&amp;fingerprint&#x3D;xxx。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
-     * @param {Array<string>} [source] **参数解释**：证书来源。 支持多值查询，查询条件格式：source&#x3D;xxx&amp;source&#x3D;xxx。  **约束限制**：不涉及  **取值范围**： - scm：表示关联云证书管理服务（CCM）中的证书。 - 空值：表示自有证书。  **默认取值**：不涉及
+     * @param {Array<string>} [source] **参数解释**：证书来源。 支持多值查询，查询条件格式：source&#x3D;xxx&amp;source&#x3D;xxx。  **约束限制**：不涉及  **取值范围**： - scm：表示关联云证书与管理服务（CCM）中的证书。 - 空值：表示自有证书。  **默认取值**：不涉及
      * @param {Array<string>} [protectionStatus] **参数解释**：修改保护状态。 支持多值查询，查询条件格式：protection_status&#x3D;xxx&amp;protection_status&#x3D;xxx。  **约束限制**：不涉及  **取值范围**： - nonProtection: 不保护 - consoleProtection: 控制台修改保护，即禁止通过控制台修改。  **默认取值**：不涉及
      * @param {Array<string>} [protectionReason] **参数解释**：设置修改保护的原因。 支持多值查询，查询条件格式：protection_reason&#x3D;xxx&amp;protection_reason&#x3D;xxx。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {Array<string>} [enterpriseProjectId] **参数解释**：资源所属的企业项目ID。 支持多值查询，查询条件格式： *enterprise_project_id&#x3D;xxx&amp;enterprise_project_id&#x3D;xxx*。  **约束限制**： - 如果enterprise_project_id不传值，默认查询所有企业项目下的资源，鉴权按照细粒度权限鉴权，必须在用户组下分配elb:certificates:list权限。 - 如果enterprise_project_id传值，鉴权按照企业项目权限鉴权，分为传入具体eps_id和all_granted_eps两种场景，前者查询指定eps_id的eps下的资源，后者查询的是所有有list权限的eps下的资源。  **取值范围**：不涉及  **默认取值**：不涉及
@@ -1299,6 +1590,29 @@ export class ElbClient {
      */
     public listCertificates(listCertificatesRequest?: ListCertificatesRequest): Promise<ListCertificatesResponse> {
         const options = ParamCreater().listCertificates(listCertificatesRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询负载均衡器所有IP的域名解析配置信息，即负载均衡器的IP是否加入了域名解析，以及对应的域名。
+     * 注意：只返回启用的域名类型对应的配置。若只开启公网域名解析，则只返回该负载均衡器的公网IP的域名解析配置；若负载均衡器的公网域名解析和私网域名解析都没有开启，则该返回空列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询负载均衡器IP地址的域名解析配置
+     * @param {string} loadbalancerId **参数解释**：负载均衡器ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {string} [marker] **参数解释**：上一页最后一条记录的ID。  **约束限制**： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {number} [limit] **参数解释**：每页返回的个数。  **约束限制**：不涉及  **取值范围**：0-2000  **默认取值**：2000
+     * @param {boolean} [pageReverse] **参数解释**：是否反向查询。  **约束限制**： - 必须与limit一起使用。 - 当page_reverse&#x3D;true时，若要查询上一页，marker取值为当前页返回值的previous_marker。  **取值范围**： - true：查询上一页。 - false：查询下一页。  **默认取值**：false
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listDomainIPs(listDomainIPsRequest?: ListDomainIPsRequest): Promise<ListDomainIPsResponse> {
+        const options = ParamCreater().listDomainIPs(listDomainIPsRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -1336,7 +1650,7 @@ export class ElbClient {
      * @param {boolean} [pageReverse] **参数解释**：是否反向查询。  **约束限制**： - 必须与limit一起使用。 - 当page_reverse&#x3D;true时，若要查询上一页，marker取值为当前页返回值的previous_marker。  **取值范围**： - true：查询上一页。 - false：查询下一页。  **默认取值**：false
      * @param {Array<string>} [id] **参数解释**：规格ID。 支持多值查询，查询条件格式：*id&#x3D;xxx&amp;id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {Array<string>} [name] **参数解释**：规格名称。 支持多值查询，查询条件格式：*name&#x3D;xxx&amp;name&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
-     * @param {Array<string>} [type] **参数解释**：规格类别。 支持多值查询，查询条件格式：*type&#x3D;xxx&amp;type&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**： - L4和L7 表示四层网络型和七层应用型flavor。 [- gateway 表示网关型LB的flavor，目前只支持弹性计费类型。当前仅支持欧洲局点。](tag:hws_eu) - L4_elastic和L7_elastic 表示弹性扩缩容实例的下限规格。 - L4_elastic_max、L7_elastic_max[和gateway_elastic_max](tag:hws_eu) 表示弹性扩缩容实例的上限规格。  **默认取值**：不涉及
+     * @param {Array<string>} [type] **参数解释**：规格类别。 支持多值查询，查询条件格式：*type&#x3D;xxx&amp;type&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**： - L4和L7 表示四层网络型和七层应用型flavor。 - gwlb 表示网关型LB的flavor。 - L4_elastic和L7_elastic 表示弹性扩缩容实例的下限规格。 - L4_elastic_max、L7_elastic_max和gwlb_elastic_max 表示弹性扩缩容实例的上限规格。  **默认取值**：不涉及
      * @param {boolean} [shared] **参数解释**：是否查询公共规格。  **约束限制**：不涉及  **取值范围**： - true表示查询公共规格，所有租户可见的规格。 - false表示查询私有规格，当前仅租户可见的规格。  **默认取值**：不涉及
      * @param {Array<string>} [publicBorderGroup] **参数解释**：公网边界组。 支持多值查询，查询条件格式：*public_border_group&#x3D;xxx&amp;public_border_group&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**： - center：表示中心站点的公网边界组 - 边缘站点名称：表示边缘站点的公网边界组  **默认取值**：不涉及
      * @param {Array<number>} [category] **参数解释**：可用区子类型编码。该字段主要用于区分在边缘场景下，边缘AZ的类型。 支持多值查询，查询条件格式：*category&#x3D;xxx&amp;category&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：0表示center，21表示homezone，41表示IES。  **默认取值**：不涉及
@@ -1372,8 +1686,8 @@ export class ElbClient {
      * @param {boolean} [adminStateUp] **参数解释**：健康检查的管理状态。  **约束限制**：不涉及  **取值范围**： - true：表示开启健康检查。 - false表示关闭健康检查。  **默认取值**：不涉及
      * @param {Array<number>} [maxRetriesDown] **参数解释**：健康检查连续失败多少次后，将后端服务器的健康检查状态由ONLINE判定为OFFLINE。 支持多值查询，查询条件格式：******max_retries_down&#x3D;xxx&amp;max_retries_down&#x3D;xxx******。  **约束限制**：不涉及  **取值范围**：1-10  **默认取值**：不涉及
      * @param {number} [timeout] **参数解释**：一次健康检查请求的超时时间。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
-     * @param {Array<string>} [type] **参数解释**：健康检查请求协议。 支持多值查询，查询条件格式：*****type&#x3D;xxx&amp;type&#x3D;xxx*****。  **约束限制**：不涉及  **取值范围**：TCP、UDP_CONNECT、HTTP、HTTPS、TLS和GRPC。  **默认取值**：不涉及
-     * @param {Array<string>} [expectedCodes] **参数解释**：期望响应状态码。 支持多值查询，查询条件格式：****expected_codes&#x3D;xxx&amp;expected_codes&#x3D;xxx****。  **约束限制**： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {Array<string>} [type] **参数解释**：健康检查请求协议。 支持多值查询，查询条件格式：*****type&#x3D;xxx&amp;type&#x3D;xxx*****。  **约束限制**：不涉及  **取值范围**：TCP、UDP_CONNECT、HTTP、HTTPS、TLS、GRPC[和GRPCS](tag:not_open)。  **默认取值**：不涉及
+     * @param {Array<string>} [expectedCodes] **参数解释**：期望响应状态码。 支持多值查询，查询条件格式：****expected_codes&#x3D;xxx&amp;expected_codes&#x3D;xxx****。  **约束限制**：不涉及  **取值范围**： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。  **默认取值**：不涉及
      * @param {Array<string>} [urlPath] **参数解释**：健康检查测试member健康时发送的http请求路径。 支持多值查询，查询条件格式：***url_path&#x3D;xxx&amp;url_path&#x3D;xxx***。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {Array<string>} [httpMethod] **参数解释**：HTTP请求方法。 支持多值查询，查询条件格式：**http_method&#x3D;xxx&amp;http_method&#x3D;xxx**。  **约束限制**：不涉及  **取值范围**：GET、HEAD、POST  **默认取值**：不涉及
      * @param {Array<string>} [enterpriseProjectId] **参数解释**：资源所属的企业项目ID。 支持多值查询，查询条件格式：*enterprise_project_id&#x3D;xxx&amp;enterprise_project_id&#x3D;xxx*。  **约束限制**： - 如果enterprise_project_id不传值，默认查询所有企业项目下的资源，鉴权按照细粒度权限鉴权，必须在用户组下分配elb:healthmonitors:list权限。 - 如果enterprise_project_id传值，鉴权按照企业项目权限鉴权，分为传入具体eps_id和all_granted_eps两种场景，前者查询指定eps_id的eps下的资源，后者查询的是所有有list权限的eps下的资源。  **取值范围**：不涉及  **默认取值**：不涉及  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
@@ -1399,8 +1713,8 @@ export class ElbClient {
      * @param {string} [marker] **参数解释**：上一页最后一条记录的ID。  **约束限制**： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {boolean} [pageReverse] **参数解释**：是否反向查询。  **约束限制**： - 必须与limit一起使用。 - 当page_reverse&#x3D;true时，若要查询上一页，marker取值为当前页返回值的previous_marker。  **取值范围**： - true：查询上一页。 - false：查询下一页。  **默认取值**：false
      * @param {string} [jobId] **参数解释**：任务ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
-     * @param {string} [jobType] **参数解释**：任务类型。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
-     * @param {string} [status] **参数解释**：任务状态。  **约束限制**：不涉及  **取值范围**：INIT,RUNNING,FAIL,SUCCESS,ROLLBACKING,COMPLETE,ROLLBACK_FAIL,CANCEL  **默认取值**：不涉及
+     * @param {string} [jobType] **参数解释**：任务类型。  **约束限制**：不涉及  **取值范围**： - cloneLoadbalancer：复制负载均衡器任务。 - cloneListener：复制监听器任务。 - batchCreateV2Loadbalancer：批量创建共享型负载均衡器任务。 - batchCreateV3Loadbalancer：批量创建独享型负载均衡器任务。 - batchDeleteLoadbalancer：批量删除负载均衡器任务。 - batchDeleteListener：批量删除监听器任务。  **默认取值**：不涉及
+     * @param {string} [status] **参数解释**：任务状态。  **约束限制**：不涉及  **取值范围**： - INIT：初始状态。 - RUNNING：任务处理中。 - FAIL：任务处理失败。 - SUCCESS：任务处理成功。 - ROLLBACKING：任务正在回退。 - COMPLETE：任务完成。 - ROLLBACK_FAIL：回退失败。 - CANCEL：已取消。  **默认取值**：不涉及
      * @param {string} [errorCode] **参数解释**：任务的错误码。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {string} [resourceId] **参数解释**：资源ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {string} [beginTime] **参数解释**：查询任务的开始时间大于等于传入时间的任务。格式：yyyy-MM-dd\&#39;T\&#39;HH:mm:ss  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
@@ -1463,18 +1777,36 @@ export class ElbClient {
      * @param {boolean} [pageReverse] **参数解释**：是否反向查询。  **约束限制**： - 必须与limit一起使用。 - 当page_reverse&#x3D;true时，若要查询上一页，marker取值为当前页返回值的previous_marker。  **取值范围**： - true：查询上一页。 - false：查询下一页。  **默认取值**：false
      * @param {Array<string>} [id] **参数解释**：转发规则ID。 支持多值查询，查询条件格式：*id&#x3D;xxx&amp;id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {Array<string>} [compareType] **参数解释**：转发匹配方式。 支持多值查询，查询条件格式：*compare_type&#x3D;xxx&amp;compare_type&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**： - EQUAL_TO 表示精确匹配。 - REGEX 表示正则匹配。 - STARTS_WITH 表示前缀匹配。  **默认取值**：不涉及
-     * @param {Array<string>} [provisioningStatus] **参数解释**：转发规则的配置状态。 支持多值查询，查询条件格式：*provisioning_status&#x3D;xxx&amp;provisioning_status&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：ACTIVE 表示正常。  **默认取值**：不涉及
+     * @param {Array<string>} [provisioningStatus] **参数解释**：转发规则的配置状态。 支持多值查询，查询条件格式：*provisioning_status&#x3D;xxx&amp;provisioning_status&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**： - ACTIVE：已生效。 - PENDING_CREATE：创建中。 - ERROR：当前配置有误。  **默认取值**：不涉及
      * @param {boolean} [invert] **参数解释**：是否反向匹配。  **约束限制**：不涉及  **取值范围**：false  **默认取值**：不涉及
      * @param {boolean} [adminStateUp] **参数解释**：转发规则的管理状态。 不支持该字段，请勿使用。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {Array<string>} [value] **参数解释**：匹配内容的值。 支持多值查询，查询条件格式：*value&#x3D;xxx&amp;value&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {Array<string>} [key] **参数解释**：匹配内容的键值，用于标识规则。 支持多值查询，查询条件格式：*key&#x3D;xxx&amp;key&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
-     * @param {Array<string>} [type] **参数解释**：匹配类别，可以为HOST_NAME，PATH。 支持多值查询，查询条件格式：*type&#x3D;xxx&amp;type&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {Array<string>} [type] **参数解释**：匹配类别。 支持多值查询，查询条件格式：*type&#x3D;xxx&amp;type&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**： - HOST_NAME：匹配域名。 - PATH：匹配请求路径。  **默认取值**：不涉及
      * @param {Array<string>} [enterpriseProjectId] **参数解释**：资源所属的企业项目ID。 支持多值查询，查询条件格式：*enterprise_project_id&#x3D;xxx&amp;enterprise_project_id&#x3D;xxx*。  **约束限制**： - 如果enterprise_project_id不传值，默认查询所有企业项目下的资源，鉴权按照细粒度权限鉴权，必须在用户组下分配elb:l7rules:list权限。 - 如果enterprise_project_id传值，鉴权按照企业项目权限鉴权，分为传入具体eps_id和all_granted_eps两种场景，前者查询指定eps_id的eps下的资源，后者查询的是所有有list权限的eps下的资源。  **取值范围**：不涉及  **默认取值**：不涉及  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     public listL7Rules(listL7RulesRequest?: ListL7RulesRequest): Promise<ListL7RulesResponse> {
         const options = ParamCreater().listL7Rules(listL7RulesRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询指定项目下所有监听器的标签列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询所有监听器的标签列表
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listListenerTags(listListenerTagsRequest?: ListListenerTagsRequest): Promise<ListListenerTagsResponse> {
+        const options = ParamCreater().listListenerTags();
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -1492,7 +1824,7 @@ export class ElbClient {
      * @param {string} [marker] **参数解释**：上一页最后一条记录的ID。  **约束限制**： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {boolean} [pageReverse] **参数解释**：是否反向查询。  **约束限制**： - 必须与limit一起使用。 - 当page_reverse&#x3D;true时，若要查询上一页，marker取值为当前页返回值的previous_marker。  **取值范围**： - true：查询上一页。 - false：查询下一页。  **默认取值**：false
      * @param {Array<string>} [protocolPort] **参数解释**：监听器的前端监听端口。 支持多值查询，查询条件格式：*protocol_port&#x3D;xxx&amp;protocol_port&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
-     * @param {Array<string>} [protocol] **参数解释**：监听器的监听协议。 支持多值查询，查询条件格式：*protocol&#x3D;xxx&amp;protocol&#x3D;xxx*。  **约束限制**：不涉及  [取值范围：TCP、UDP、HTTP、HTTPS、TERMINATED_HTTPS、QUIC、TLS。 说明：TERMINATED_HTTPS为共享型LB上的监听器独有的协议。](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,srg,fcs,dt)  [取值范围：TCP、UDP、HTTP、HTTPS。](tag:hcso_dt) [取值范围：TCP、UDP、IP、HTTP、HTTPS。IP为网关型LB上的监听器独有的协议。](tag:hws_eu)  **默认取值**：不涉及  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt)
+     * @param {Array<string>} [protocol] **参数解释**：监听器的监听协议。 支持多值查询，查询条件格式：*protocol&#x3D;xxx&amp;protocol&#x3D;xxx*。  **约束限制**：不涉及  [**取值范围**：TCP、UDP、HTTP、HTTPS、TERMINATED_HTTPS、QUIC、TLS、IP。IP为网关型LB上的监听器独有的协议。 说明：TERMINATED_HTTPS为共享型LB上的监听器独有的协议。](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,srg,fcs,dt)  [**取值范围**：TCP、UDP、HTTP、HTTPS。](tag:hcso_dt) [**取值范围**：TCP、UDP、IP、HTTP、HTTPS。IP为网关型LB上的监听器独有的协议。](tag:hws_eu)  **默认取值**：不涉及  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt)
      * @param {Array<string>} [description] **参数解释**：监听器的描述信息。 支持多值查询，查询条件格式：*description&#x3D;xxx&amp;description&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {Array<string>} [defaultTlsContainerRef] **参数解释**：监听器的服务器证书ID。 支持多值查询，查询条件格式： *default_tls_container_ref&#x3D;xxx&amp;default_tls_container_ref&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {Array<string>} [clientCaTlsContainerRef] **参数解释**：监听器的CA证书ID。 支持多值查询，查询条件格式： *client_ca_tls_container_ref&#x3D;xxx&amp;client_ca_tls_container_ref&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
@@ -1548,7 +1880,7 @@ export class ElbClient {
      * @param {Array<string>} [provisioningStatus] **参数解释**：负载均衡器的配置状态。 支持多值查询，查询条件格式： *provisioning_status&#x3D;xxx&amp;provisioning_status&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**： - ACTIVE：使用中。 - PENDING_DELETE：删除中。  **默认取值**：不涉及
      * @param {Array<string>} [operatingStatus] **参数解释**：负载均衡器的操作状态。 支持多值查询，查询条件格式： *operating_status&#x3D;xxx&amp;operating_status&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**： - ONLINE：正常运行。 - FROZEN：已冻结。  **默认取值**：不涉及
      * @param {boolean} [guaranteed] **参数解释**：是否独享型LB。  **约束限制**：不涉及  **取值范围**： - false：共享型 - true：独享型  **默认取值**：不涉及
-     * @param {Array<string>} [vpcId] **参数解释**：负载均衡器所在的VPC ID。 支持多值查询，查询条件格式： *vpc_id&#x3D;xxx&amp;vpc_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {Array<string>} [vpcId] **参数解释**：负载均衡器所在的VPC ID。 支持多值查询，查询条件格式：*vpc_id&#x3D;xxx&amp;vpc_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {Array<string>} [vipPortId] **参数解释**：负载均衡器的IPv4对应的port ID。 支持多值查询，查询条件格式： *vip_port_id&#x3D;xxx&amp;vip_port_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {Array<string>} [vipAddress] **参数解释**：负载均衡器的IPv4私网IP地址。 支持多值查询，查询条件格式： *vip_address&#x3D;xxx&amp;vip_address&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {Array<string>} [vipSubnetCidrId] **参数解释**：负载均衡器所在子网的IPv4子网ID，也称为该负载均衡器实例的前端子网。 支持多值查询，查询条件格式： *vip_subnet_cidr_id&#x3D;xxx&amp;vip_subnet_cidr_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
@@ -1556,7 +1888,7 @@ export class ElbClient {
      * @param {Array<string>} [ipv6VipAddress] **参数解释**：双栈类型负载均衡器的IPv6地址。 支持多值查询，查询条件格式： *ipv6_vip_address&#x3D;xxx&amp;ipv6_vip_address&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  [不支持IPv6，请勿使用。](tag:dt)
      * @param {Array<string>} [ipv6VipVirsubnetId] **参数解释**：双栈类型负载均衡器所在的子网IPv6网络ID，也称为该负载均衡器实例的前端子网。 支持多值查询，查询条件格式： *ipv6_vip_virsubnet_id&#x3D;xxx&amp;ipv6_vip_virsubnet_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  [不支持IPv6，请勿使用。](tag:dt)
      * @param {Array<string>} [eips] **参数解释**：负载均衡器绑定的EIP。例如要查询绑定以下EIP的LB： \&quot;eips\&quot;: [     {         \&quot;eip_id\&quot;: \&quot;e9b72a9d-4275-455e-a724-853504e4d9c6\&quot;,         \&quot;eip_address\&quot;: \&quot;88.88.14.122\&quot;,         \&quot;ip_version\&quot;: 4     } ] 可以通如下查询： eips&#x3D;ip_version%3D4&amp;eips&#x3D;eip_address%3D88.88.14.122&amp;eips&#x3D;eip_id%3De9b72a9d-4275-455e-a724-853504e4d9c6 支持多值查询，查询条件格式： - eip_id作为查询条件：*eips&#x3D;eip_id&#x3D;xxx&amp;eips&#x3D;eip_id&#x3D;xxx*。 - eip_address作为查询条件：*eips&#x3D;eip_address&#x3D;xxx&amp;eips&#x3D;eip_address&#x3D;xxx*。 - ip_version作为查询条件：*eips&#x3D;ip_version&#x3D;xxx&amp;eips&#x3D;ip_version&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  注：该字段与publicips字段一致。
-     * @param {Array<string>} [publicips] **参数解释**：负载均衡器绑定的公网IP。例如要查询绑定以下公网IP的LB： \&quot;publicips&#x3D;\&quot;: [     {         \&quot;public_id\&quot;: \&quot;e9b72a9d-4275-455e-a724-853504e4d9c6\&quot;,         \&quot;public_address\&quot;: \&quot;88.88.14.122\&quot;,         \&quot;ip_version\&quot;: 4     } ] 可以通如下查询： publicips&#x3D;ip_version%3D4&amp;publicips&#x3D;public_address%3D88.88.14.122&amp;publicips&#x3D;public_id%3De9b72a9d-4275-455e-a724-853504e4d9c6 支持多值查询，查询条件格式： - publicip_id作为查询条件： *publicips&#x3D;publicip_id&#x3D;xxx&amp;publicips&#x3D;publicip_id&#x3D;xxx* - publicip_address作为查询条件： *publicips&#x3D;publicip_address&#x3D;xxx&amp;publicips&#x3D;publicip_address&#x3D;xxx* - ip_version作为查询条件： *publicips&#x3D;ip_version&#x3D;xxx&amp;publicips&#x3D;ip_version&#x3D;xxx*  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  注：该字段与eips字段一致。
+     * @param {Array<string>} [publicips] **参数解释**：负载均衡器绑定的公网IP。例如要查询绑定以下公网IP的LB： \&quot;publicips\&quot;: [     {         \&quot;public_id\&quot;: \&quot;e9b72a9d-4275-455e-a724-853504e4d9c6\&quot;,         \&quot;public_address\&quot;: \&quot;88.88.14.122\&quot;,         \&quot;ip_version\&quot;: 4     } ] 可以通如下查询： publicips&#x3D;ip_version%3D4&amp;publicips&#x3D;public_address%3D88.88.14.122&amp;publicips&#x3D;public_id%3De9b72a9d-4275-455e-a724-853504e4d9c6 支持多值查询，查询条件格式： - publicip_id作为查询条件： *publicips&#x3D;publicip_id&#x3D;xxx&amp;publicips&#x3D;publicip_id&#x3D;xxx* - publicip_address作为查询条件： *publicips&#x3D;publicip_address&#x3D;xxx&amp;publicips&#x3D;publicip_address&#x3D;xxx* - ip_version作为查询条件： *publicips&#x3D;ip_version&#x3D;xxx&amp;publicips&#x3D;ip_version&#x3D;xxx*  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  注：该字段与eips字段一致。
      * @param {Array<string>} [availabilityZoneList] **参数解释**：负载均衡器所在可用区列表。 支持多值查询，查询条件格式： *availability_zone_list&#x3D;xxx&amp;availability_zone_list&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {Array<string>} [l4FlavorId] **参数解释**：网络型规格ID。 支持多值查询，查询条件格式： *l4_flavor_id&#x3D;xxx&amp;l4_flavor_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  [不支持该字段，请勿使用。](tag:hk_vdf,srg,fcs)
      * @param {Array<string>} [l4ScaleFlavorId] **参数解释**：四层弹性Flavor ID。 支持多值查询，查询条件格式： *l4_scale_flavor_id&#x3D;xxx&amp;l4_scale_flavor_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  不支持该字段，请勿使用。
@@ -1606,6 +1938,24 @@ export class ElbClient {
     }
 
     /**
+     * 查询指定项目下所有负载均衡器的标签列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询所有负载均衡器的标签列表
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listLoadbalancerTags(listLoadbalancerTagsRequest?: ListLoadbalancerTagsRequest): Promise<ListLoadbalancerTagsResponse> {
+        const options = ParamCreater().listLoadbalancerTags();
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 查询云日志列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -1645,7 +1995,7 @@ export class ElbClient {
      * @param {Array<string>} [id] **参数解释**：后端服务器组的ID。 支持多值查询，查询条件格式：*id&#x3D;xxx&amp;id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {Array<string>} [name] **参数解释**：后端服务器组的名称。 支持多值查询，查询条件格式：*name&#x3D;xxx&amp;name&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {Array<string>} [loadbalancerId] **参数解释**：后端服务器组绑定的负载均衡器ID。 支持多值查询，查询条件格式：*loadbalancer_id&#x3D;xxx&amp;loadbalancer_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
-     * @param {Array<string>} [protocol] **参数解释**：后端服务器组的后端协议。 支持多值查询，查询条件格式：*protocol&#x3D;xxx&amp;protocol&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：TCP、UDP、[IP、](tag:hws_eu)TLS、GRPC、HTTP、HTTPS和QUIC。  **默认取值**：不涉及
+     * @param {Array<string>} [protocol] **参数解释**：后端服务器组的后端协议。 支持多值查询，查询条件格式：*protocol&#x3D;xxx&amp;protocol&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：TCP、UDP、IP、TLS、GRPC、HTTP、HTTPS和QUIC。  **默认取值**：不涉及
      * @param {Array<string>} [lbAlgorithm] **参数解释**：后端服务器组的负载均衡算法。 支持多值查询，查询条件格式：*lb_algorithm&#x3D;xxx&amp;lb_algorithm&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**： 1、ROUND_ROBIN：加权轮询算法。 2、LEAST_CONNECTIONS：加权最少连接算法。 3、SOURCE_IP：源IP算法。 4、QUIC_CID：连接ID算法。  **默认取值**：不涉及
      * @param {Array<string>} [enterpriseProjectId] **参数解释**：资源所属的企业项目ID。 支持多值查询，查询条件格式：*enterprise_project_id&#x3D;xxx&amp;enterprise_project_id&#x3D;xxx*。  **约束限制**： - 如果enterprise_project_id不传值，默认查询所有企业项目下的资源，鉴权按照细粒度权限鉴权，必须在用户组下分配elb:pools:list权限。 - 如果enterprise_project_id传值，鉴权按照企业项目权限鉴权，分为传入具体eps_id和all_granted_eps两种场景，前者查询指定eps_id的eps下的资源，后者查询的是所有有list权限的eps下的资源。  **取值范围**：不涉及  **默认取值**：不涉及  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
      * @param {Array<string>} [ipVersion] **参数解释**：后端服务器组支持的IP版本。 支持多值查询，查询条件格式：*ip_version&#x3D;xxx&amp;ip_version&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
@@ -1656,6 +2006,7 @@ export class ElbClient {
      * @param {Array<string>} [vpcId] **参数解释**：后端服务器组关联的虚拟私有云的ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {Array<string>} [type] **参数解释**：后端服务器组的类型。  **约束限制**：不涉及  **取值范围**： - instance：允许任意类型的后端，type指定为该类型时，vpc_id是必选字段。 - ip：只能添加IP类型后端，type指定为该类型时，vpc_id不允许指定。 - 空字符串（\&quot;\&quot;）：允许任意类型的后端  **默认取值**：不涉及
      * @param {boolean} [connectionDrain] **参数解释**：查询是否开启延迟注销的功能，查询条件格式：*connection_drain&#x3D;true或者*connection_drain&#x3D;false  **约束限制**：不涉及  **取值范围**：true 开启，false 不开启。  **默认取值**：不涉及
+     * @param {Array<string>} [publicBorderGroup] **参数解释**：公网边界组。 支持多值查询，查询条件格式：*public_border_group&#x3D;xxx&amp;public_border_group&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**： - center：表示中心站点的公网边界组 - 边缘站点名称：表示边缘站点的公网边界组  **默认取值**：不涉及
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -1718,8 +2069,8 @@ export class ElbClient {
      * @param {Array<string>} [id] **参数解释**：后端服务器组的ID。 支持多值查询，查询条件格式：*id&#x3D;xxx&amp;id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {Array<string>} [name] **参数解释**：后端服务器组的名称。 支持多值查询，查询条件格式：*name&#x3D;xxx&amp;name&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {Array<string>} [loadbalancerId] **参数解释**：后端服务器组绑定的负载均衡器ID。 支持多值查询，查询条件格式：*loadbalancer_id&#x3D;xxx&amp;loadbalancer_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
-     * @param {Array<string>} [protocol] **参数解释**：后端服务器组的后端协议。 支持多值查询，查询条件格式：*protocol&#x3D;xxx&amp;protocol&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：TCP、UDP、[IP、](tag:hws_eu)TLS、HTTP、HTTPS、QUIC和GRPC。  **默认取值**：不涉及  [荷兰region不支持QUIC。](tag:dt)
-     * @param {Array<string>} [lbAlgorithm] **参数解释**：后端服务器组的负载均衡算法。 支持多值查询，查询条件格式：*lb_algorithm&#x3D;xxx&amp;lb_algorithm&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。 [- 2_TUPLE_HASH：二元组hash算法，仅IP类型的pool支持。 - 3_TUPLE_HASH：三元组hash算法，仅IP类型的pool支持。 - 5_TUPLE_HASH：五元组hash算法，仅IP类型的pool支持。 - IP型pool不指定该字段时，默认设置为5_TUPLE_HASH。](tag:hws_eu)  **默认取值**：不涉及
+     * @param {Array<string>} [protocol] **参数解释**：后端服务器组的后端协议。 支持多值查询，查询条件格式：*protocol&#x3D;xxx&amp;protocol&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：TCP、UDP、IP、TLS、HTTP、HTTPS、QUIC和GRPC。  **默认取值**：不涉及  [荷兰region不支持QUIC。](tag:dt)
+     * @param {Array<string>} [lbAlgorithm] **参数解释**：后端服务器组的负载均衡算法。 支持多值查询，查询条件格式：*lb_algorithm&#x3D;xxx&amp;lb_algorithm&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。 - 2_TUPLE_HASH：二元组hash算法，仅IP类型的pool支持。 - 3_TUPLE_HASH：三元组hash算法，仅IP类型的pool支持。 - 5_TUPLE_HASH：五元组hash算法，仅IP类型的pool支持。 - IP型pool不指定该字段时，默认设置为5_TUPLE_HASH。  **默认取值**：不涉及
      * @param {Array<string>} [enterpriseProjectId] **参数解释**：资源所属的企业项目ID。 支持多值查询，查询条件格式： *enterprise_project_id&#x3D;xxx&amp;enterprise_project_id&#x3D;xxx*。  **约束限制**： 如果enterprise_project_id不传值，默认查询所有企业项目下的资源，鉴权按照细粒度权限鉴权，必须在用户组下分配elb:pools:list权限。 如果enterprise_project_id传值，鉴权按照企业项目权限鉴权，分为传入具体eps_id和all_granted_eps两种场景，前者查询指定eps_id的eps下的资源，后者查询的是所有有list权限的eps下的资源。  **取值范围**：不涉及  **默认取值**：不涉及  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
      * @param {Array<string>} [ipVersion] **参数解释**：后端服务器组支持的IP版本。 支持多值查询，查询条件格式：*ip_version&#x3D;xxx&amp;ip_version&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {Array<string>} [memberAddress] **参数解释**：后端服务器的IP地址。仅用于查询条件，不作为响应参数字段。 支持多值查询，查询条件格式：*member_address&#x3D;xxx&amp;member_address&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
@@ -1755,7 +2106,7 @@ export class ElbClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 查询配额使用详情
-     * @param {Array<string>} [quotaKey] **参数解释**：配额类型。支持多值查询，查询条件格式：quota_key&#x3D;xxx&amp;quota_key&#x3D;xxx。  **约束限制**：不涉及  **取值范围**： loadbalancer、listener、ipgroup、pool、member、healthmonitor、l7policy、certificate、security_policy、listeners_per_loadbalancer、listeners_per_pool、members_per_pool、condition_per_policy、ipgroup_bindings、ipgroup_max_length、ipgroups_per_listener、pools_per_l7policy、l7policies_per_listener、free_instance_members_per_pool、free_instance_listeners_per_loadbalancer。  **默认取值**：不涉及
+     * @param {Array<string>} [quotaKey] **参数解释**：配额类型。支持多值查询，查询条件格式：quota_key&#x3D;xxx&amp;quota_key&#x3D;xxx。  **约束限制**：不涉及  **取值范围**： - loadbalancer：负载均衡器配额。 - listener：监听器配额。 - ipgroup：IP地址组配额。 - pool：后端服务器组配额。 - member：后端服务器配额。 - healthmonitor：健康检查配额。 - l7policy：转发策略配额。 - certificate：证书配额。 - security_policy：自定义安全策略配额。 - listeners_per_loadbalancer：单个LB实例下的监听器配额。 - listeners_per_pool：单个pool关联的监听器配额。 - members_per_pool：单个pool下的member的配额。 - condition_per_policy：单个转发策略下所有转发规则的condition总数配额。 - ipgroup_bindings：单个IP地址组可以关联的监听器数量配额。 - ipgroup_max_length：单个监听器下关联的所有IP地址组的ip列表中的IP总数不能超过ipgroup_max_length。 - ipgroups_per_listener：单个监听器下的IP地址组配额。 - pools_per_l7policy：单个转发策略下的后端服务器组配额。 - l7policies_per_listener：单个监听器下的转发策略配额。 - free_instance_members_per_pool：单个pool实例下的免费member配额。 - free_instance_listeners_per_loadbalancer：单个LB实例下的免费监听器配额。  **默认取值**：不涉及
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -1777,36 +2128,36 @@ export class ElbClient {
      * @param {string} [marker] **参数解释**：上一页最后一条记录的ID。  **约束限制**： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {number} [limit] **参数解释**：每页返回的个数。  **约束限制**：不涉及  **取值范围**：0-2000  **默认取值**：2000
      * @param {boolean} [pageReverse] **参数解释**：是否反向查询。  **约束限制**： - 必须与limit一起使用。 - 当page_reverse&#x3D;true时，若要查询上一页，marker取值为当前页返回值的previous_marker。  **取值范围**： - true：查询上一页。 - false：查询下一页。  **默认取值**：false
-     * @param {Array<string>} [id] 负载均衡器ID。  支持多值查询，查询条件格式：*id&#x3D;xxx&amp;id&#x3D;xxx*。
-     * @param {Array<string>} [name] 负载均衡器名称。  支持多值查询，查询条件格式：*name&#x3D;xxx&amp;name&#x3D;xxx*。
-     * @param {Array<string>} [description] 负载均衡器的描述信息。  支持多值查询，查询条件格式：*description&#x3D;xxx&amp;description&#x3D;xxx*。
-     * @param {boolean} [adminStateUp] **参数解释**：负载均衡器的启用状态。  **取值范围**： - true ：启用。 - false：停用。  [不支持该字段，请勿使用。](tag:dt)
-     * @param {Array<string>} [operatingStatus] 负载均衡器的操作状态。  取值： - ONLINE：正常运行。 - FROZEN：已冻结。  支持多值查询，查询条件格式：*operating_status&#x3D;xxx&amp;operating_status&#x3D;xxx*。
-     * @param {boolean} [guaranteed] 是否独享型LB。  取值： - false：共享型 - true：独享型  [仅支持独享型，固定为true。](tag:hws_eu,hcso_dt)
-     * @param {Array<string>} [vpcId] 负载均衡器所在的VPC ID。  支持多值查询，查询条件格式：*vpc_id&#x3D;xxx&amp;vpc_id&#x3D;xxx*。
-     * @param {Array<string>} [vipPortId] 负载均衡器的IPv4对应的port ID。  支持多值查询，查询条件格式：*vip_port_id&#x3D;xxx&amp;vip_port_id&#x3D;xxx*。
-     * @param {Array<string>} [vipAddress] 负载均衡器的IPv4私网IP地址。  支持多值查询，查询条件格式：*vip_address&#x3D;xxx&amp;vip_address&#x3D;xxx*。
-     * @param {Array<string>} [vipSubnetCidrId] 负载均衡器所在子网的IPv4子网ID，也称为该负载均衡器实例的前端子网。  支持多值查询，查询条件格式：*vip_subnet_cidr_id&#x3D;xxx&amp;vip_subnet_cidr_id&#x3D;xxx*。
-     * @param {Array<string>} [ipv6VipPortId] 双栈类型负载均衡器的IPv6对应的port ID。  支持多值查询，查询条件格式：*ipv6_vip_port_id&#x3D;xxx&amp;ipv6_vip_port_id&#x3D;xxx*。  [不支持IPv6，请勿使用。](tag:dt)
-     * @param {Array<string>} [ipv6VipAddress] 双栈类型负载均衡器的IPv6地址。  支持多值查询，查询条件格式：*ipv6_vip_address&#x3D;xxx&amp;ipv6_vip_address&#x3D;xxx*。  [不支持IPv6，请勿使用。](tag:dt)
-     * @param {Array<string>} [ipv6VipVirsubnetId] 双栈类型负载均衡器所在的子网IPv6网络ID，也称为该负载均衡器实例的前端子网。  支持多值查询，查询条件格式：*ipv6_vip_virsubnet_id&#x3D;xxx&amp;ipv6_vip_virsubnet_id&#x3D;xxx*。  [不支持IPv6，请勿使用。](tag:dt)
-     * @param {Array<string>} [eips] 负载均衡器绑定的EIP。例如要查询绑定以下EIP的LB： \&quot;eips\&quot;: [     {         \&quot;eip_id\&quot;: \&quot;e9b72a9d-4275-455e-a724-853504e4d9c6\&quot;,         \&quot;eip_address\&quot;: \&quot;88.88.14.122\&quot;,         \&quot;ip_version\&quot;: 4     } ] 可以通如下查询： eips&#x3D;ip_version%3D4&amp;eips&#x3D;eip_address%3D88.88.14.122&amp;eips&#x3D;eip_id%3De9b72a9d-4275-455e-a724-853504e4d9c6  支持多值查询，查询条件格式： - eip_id作为查询条件：*eips&#x3D;eip_id&#x3D;xxx&amp;eips&#x3D;eip_id&#x3D;xxx*。 - eip_address作为查询条件：*eips&#x3D;eip_address&#x3D;xxx&amp;eips&#x3D;eip_address&#x3D;xxx*。 - ip_version作为查询条件：*eips&#x3D;ip_version&#x3D;xxx&amp;eips&#x3D;ip_version&#x3D;xxx*。  注：该字段与publicips字段一致。
-     * @param {Array<string>} [publicips] 负载均衡器绑定的公网IP。例如要查询绑定以下公网IP的LB： \&quot;publicips&#x3D;\&quot;: [     {         \&quot;public_id\&quot;: \&quot;e9b72a9d-4275-455e-a724-853504e4d9c6\&quot;,         \&quot;public_address\&quot;: \&quot;88.88.14.122\&quot;,         \&quot;ip_version\&quot;: 4     } ] 可以通如下查询： publicips&#x3D;ip_version%3D4&amp;publicips&#x3D;public_address%3D88.88.14.122&amp;publicips&#x3D;public_id%3De9b72a9d-4275-455e-a724-853504e4d9c6  支持多值查询，查询条件格式： - publicip_id作为查询条件： *publicips&#x3D;publicip_id&#x3D;xxx&amp;publicips&#x3D;publicip_id&#x3D;xxx* - publicip_address作为查询条件： *publicips&#x3D;publicip_address&#x3D;xxx&amp;publicips&#x3D;publicip_address&#x3D;xxx* - ip_version作为查询条件： *publicips&#x3D;ip_version&#x3D;xxx&amp;publicips&#x3D;ip_version&#x3D;xxx*  注：该字段与eips字段一致。
-     * @param {Array<string>} [availabilityZoneList] 负载均衡器所在可用区列表。  支持多值查询，查询条件格式： *availability_zone_list&#x3D;xxx&amp;availability_zone_list&#x3D;xxx*。
-     * @param {Array<string>} [l4FlavorId] 网络型规格ID。  支持多值查询，查询条件格式：*l4_flavor_id&#x3D;xxx&amp;l4_flavor_id&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:hcso,hk_vdf,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
-     * @param {Array<string>} [l7FlavorId] 应用型规格ID。  支持多值查询，查询条件格式：*l7_flavor_id&#x3D;xxx&amp;l7_flavor_id&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:hcso,hk_vdf,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
-     * @param {Array<string>} [billingInfo] 资源账单信息。  支持多值查询，查询条件格式：*billing_info&#x3D;xxx&amp;billing_info&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_test,hcs,hcs_sm,hcso,hk_vdf,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b,hcso_dt,dt,ocb,ctc,cmcc,tm,sbc,g42,hws_ocb,hk_sbc,hk_tm,hk_g42)
-     * @param {Array<string>} [memberDeviceId] 负载均衡器中的后端服务器对应的弹性云服务器的ID。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_device_id&#x3D;xxx&amp;member_device_id&#x3D;xxx*。
-     * @param {Array<string>} [memberAddress] 负载均衡器中的后端服务器对应的弹性云服务器的IP地址。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_address&#x3D;xxx&amp;member_address&#x3D;xxx*。
+     * @param {Array<string>} [id] **参数解释**：负载均衡器ID。 支持多值查询，查询条件格式： *id&#x3D;xxx&amp;id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {Array<string>} [name] **参数解释**：负载均衡器名称。 支持多值查询，查询条件格式： *name&#x3D;xxx&amp;name&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {Array<string>} [description] **参数解释**：负载均衡器的描述信息。 支持多值查询，查询条件格式： *description&#x3D;xxx&amp;description&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {boolean} [adminStateUp] **参数解释**：负载均衡器的启用状态。  **约束限制**：不涉及  **取值范围**： - true ：启用。 - false：停用。  **默认取值**：不涉及  [不支持该字段，请勿使用。](tag:dt)
+     * @param {Array<string>} [operatingStatus] **参数解释**：负载均衡器的操作状态。 支持多值查询，查询条件格式： *operating_status&#x3D;xxx&amp;operating_status&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**： - ONLINE：正常运行。 - FROZEN：已冻结。  **默认取值**：不涉及
+     * @param {boolean} [guaranteed] **参数解释**：是否独享型LB。  **约束限制**：不涉及  **取值范围**： - false：共享型 - true：独享型  **默认取值**：不涉及
+     * @param {Array<string>} [vpcId] **参数解释**：负载均衡器所在的VPC ID。 支持多值查询，查询条件格式：*vpc_id&#x3D;xxx&amp;vpc_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {Array<string>} [vipPortId] **参数解释**：负载均衡器的IPv4对应的port ID。 支持多值查询，查询条件格式： *vip_port_id&#x3D;xxx&amp;vip_port_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {Array<string>} [vipAddress] **参数解释**：负载均衡器的IPv4私网IP地址。 支持多值查询，查询条件格式： *vip_address&#x3D;xxx&amp;vip_address&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {Array<string>} [vipSubnetCidrId] **参数解释**：负载均衡器所在子网的IPv4子网ID，也称为该负载均衡器实例的前端子网。 支持多值查询，查询条件格式： *vip_subnet_cidr_id&#x3D;xxx&amp;vip_subnet_cidr_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {Array<string>} [ipv6VipPortId] **参数解释**：双栈类型负载均衡器的IPv6对应的port ID。 支持多值查询，查询条件格式： *ipv6_vip_port_id&#x3D;xxx&amp;ipv6_vip_port_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  [不支持IPv6，请勿使用。](tag:dt)
+     * @param {Array<string>} [ipv6VipAddress] **参数解释**：双栈类型负载均衡器的IPv6地址。 支持多值查询，查询条件格式： *ipv6_vip_address&#x3D;xxx&amp;ipv6_vip_address&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  [不支持IPv6，请勿使用。](tag:dt)
+     * @param {Array<string>} [ipv6VipVirsubnetId] **参数解释**：双栈类型负载均衡器所在的子网IPv6网络ID，也称为该负载均衡器实例的前端子网。 支持多值查询，查询条件格式： *ipv6_vip_virsubnet_id&#x3D;xxx&amp;ipv6_vip_virsubnet_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  [不支持IPv6，请勿使用。](tag:dt)
+     * @param {Array<string>} [eips] **参数解释**：负载均衡器绑定的EIP。例如要查询绑定以下EIP的LB： \&quot;eips\&quot;: [     {         \&quot;eip_id\&quot;: \&quot;e9b72a9d-4275-455e-a724-853504e4d9c6\&quot;,         \&quot;eip_address\&quot;: \&quot;88.88.14.122\&quot;,         \&quot;ip_version\&quot;: 4     } ] 可以通如下查询： eips&#x3D;ip_version%3D4&amp;eips&#x3D;eip_address%3D88.88.14.122&amp;eips&#x3D;eip_id%3De9b72a9d-4275-455e-a724-853504e4d9c6 支持多值查询，查询条件格式： - eip_id作为查询条件：*eips&#x3D;eip_id&#x3D;xxx&amp;eips&#x3D;eip_id&#x3D;xxx*。 - eip_address作为查询条件：*eips&#x3D;eip_address&#x3D;xxx&amp;eips&#x3D;eip_address&#x3D;xxx*。 - ip_version作为查询条件：*eips&#x3D;ip_version&#x3D;xxx&amp;eips&#x3D;ip_version&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  注：该字段与publicips字段一致。
+     * @param {Array<string>} [publicips] **参数解释**：负载均衡器绑定的公网IP。例如要查询绑定以下公网IP的LB： \&quot;publicips\&quot;: [     {         \&quot;public_id\&quot;: \&quot;e9b72a9d-4275-455e-a724-853504e4d9c6\&quot;,         \&quot;public_address\&quot;: \&quot;88.88.14.122\&quot;,         \&quot;ip_version\&quot;: 4     } ] 可以通如下查询： publicips&#x3D;ip_version%3D4&amp;publicips&#x3D;public_address%3D88.88.14.122&amp;publicips&#x3D;public_id%3De9b72a9d-4275-455e-a724-853504e4d9c6 支持多值查询，查询条件格式： - publicip_id作为查询条件： *publicips&#x3D;publicip_id&#x3D;xxx&amp;publicips&#x3D;publicip_id&#x3D;xxx* - publicip_address作为查询条件： *publicips&#x3D;publicip_address&#x3D;xxx&amp;publicips&#x3D;publicip_address&#x3D;xxx* - ip_version作为查询条件： *publicips&#x3D;ip_version&#x3D;xxx&amp;publicips&#x3D;ip_version&#x3D;xxx*  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  注：该字段与eips字段一致。
+     * @param {Array<string>} [availabilityZoneList] **参数解释**：负载均衡器所在可用区列表。 支持多值查询，查询条件格式： *availability_zone_list&#x3D;xxx&amp;availability_zone_list&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {Array<string>} [l4FlavorId] **参数解释**：网络型规格ID。 支持多值查询，查询条件格式： *l4_flavor_id&#x3D;xxx&amp;l4_flavor_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  [不支持该字段，请勿使用。](tag:hk_vdf,srg,fcs)
+     * @param {Array<string>} [l7FlavorId] **参数解释**：应用型规格ID。 支持多值查询，查询条件格式： *l7_flavor_id&#x3D;xxx&amp;l7_flavor_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  [不支持该字段，请勿使用。](tag:hk_vdf,srg,fcs)
+     * @param {Array<string>} [billingInfo] **参数解释**：资源账单信息。 支持多值查询，查询条件格式： *billing_info&#x3D;xxx&amp;billing_info&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_eu_wb,hws_test,fcs,dt,hcso_dt,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,srg)
+     * @param {Array<string>} [memberDeviceId] **参数解释**：负载均衡器中的后端服务器对应的弹性云服务器的ID。仅用于查询条件，不作为响应参数字段。 支持多值查询，查询条件格式： *member_device_id&#x3D;xxx&amp;member_device_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {Array<string>} [memberAddress] **参数解释**：负载均衡器中的后端服务器对应的弹性云服务器的IP地址。仅用于查询条件，不作为响应参数字段。 支持多值查询，查询条件格式： *member_address&#x3D;xxx&amp;member_address&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {Array<string>} [enterpriseProjectId] **参数解释**：资源所属的企业项目ID。 支持多值查询，查询条件格式： *enterprise_project_id&#x3D;xxx&amp;enterprise_project_id&#x3D;xxx*。  **约束限制**： 如果enterprise_project_id不传值，默认查询所有企业项目下的资源，鉴权按照细粒度权限鉴权，必须在用户组下分配elb:loadbalancers:list权限。 如果enterprise_project_id传值，鉴权按照企业项目权限鉴权，分为传入具体eps_id和all_granted_eps两种场景，前者查询指定eps_id的eps下的资源，后者查询的是所有有list权限的eps下的资源。  **取值范围**：不涉及  **默认取值**：不涉及  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
-     * @param {Array<number>} [ipVersion] IP版本信息。  取值：4代表IPv4，6代表IPv6。  支持多值查询，查询条件格式：*ip_version&#x3D;xxx&amp;ip_version&#x3D;xxx*。  [不支持IPv6，请勿设置为6。](tag:dt)
-     * @param {boolean} [deletionProtectionEnable] 是否开启删除保护，false 不开启，true 开启。[不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt)
-     * @param {Array<string>} [elbVirsubnetType] 下联面子网类型。  取值： - ipv4：ipv4。 - dualstack：双栈。  支持多值查询，查询条件格式： *elb_virsubnet_type&#x3D;ipv4&amp;elb_virsubnet_type&#x3D;dualstack*。
-     * @param {Array<string>} [autoscaling] 是否开启弹性扩缩容。示例如下： \&quot;autoscaling\&quot;: {             \&quot;enable\&quot;: \&quot;true\&quot;         }  支持多值查询，查询条件格式：  *autoscaling&#x3D;enable&#x3D;true&amp;autoscaling&#x3D;enable&#x3D;false*。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
-     * @param {Array<string>} [protectionStatus] 修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护
-     * @param {Array<string>} [globalEips] 负载均衡器绑定的公网IP。示例如下：  {     \&quot;global_eips\&quot;: [         {             \&quot;global_eip_id\&quot;: \&quot;24000000-0000-0000-0000-100000000001\&quot;,             \&quot;global_eip_address\&quot;: \&quot;10.10.10.10\&quot;,             \&quot;ip_version\&quot;: 4         }     ] }  支持多值查询，查询条件格式：  - global_eip_id作为查询条件：*global_eips&#x3D;global_eip_id&#x3D;xxx&amp;global_eips&#x3D;global_eip_id&#x3D;xxx*。  - global_eip_address作为查询条件：*global_eips&#x3D;global_eip_address&#x3D;xxx&amp;global_eips&#x3D;global_eip_address&#x3D;xxx*。  - ip_version作为查询条件：*global_eips&#x3D;ip_version&#x3D;xxx&amp;global_eips&#x3D;ip_version&#x3D;xxx*。
-     * @param {string} [logTopicId] LB实例绑定的logtank的topic id信息，支持多值查询，查询条件格式：*log_topic_id&#x3D;xxx&amp;log_topic_id&#x3D;xxx*。
-     * @param {string} [logGroupId] LB实例绑定的logtank的group id信息，支持多值查询，查询条件格式：*log_group_id&#x3D;xxx&amp;log_group_id&#x3D;xxx*。
+     * @param {Array<number>} [ipVersion] **参数解释**：IP版本信息。 支持多值查询，查询条件格式： *ip_version&#x3D;xxx&amp;ip_version&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：4代表IPv4，6代表IPv6。  **默认取值**：不涉及  [不支持IPv6，请勿设置为6。](tag:dt)
+     * @param {boolean} [deletionProtectionEnable] **参数解释**：是否开启删除保护。  **约束限制**：不涉及  **取值范围**：false 不开启，true 开启。  **默认取值**：不涉及  [荷兰region不支持该字段，请勿使用。](tag:dt) [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)
+     * @param {Array<string>} [elbVirsubnetType] **参数解释**：下联面子网类型。 支持多值查询，查询条件格式： *elb_virsubnet_type&#x3D;ipv4&amp;elb_virsubnet_type&#x3D;dualstack*。  **约束限制**：不涉及  **取值范围**： - ipv4：ipv4。 - dualstack：双栈，同时支持IPv4和IPv6的子网。  **默认取值**：不涉及
+     * @param {Array<string>} [autoscaling] **参数解释**：是否开启弹性扩缩容。示例如下： \&quot;autoscaling\&quot;: {     \&quot;enable\&quot;: \&quot;true\&quot; }  支持多值查询，查询条件格式： *autoscaling&#x3D;enable&#x3D;true&amp;autoscaling&#x3D;enable&#x3D;false*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,hcso,srg,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
+     * @param {Array<string>} [protectionStatus] **参数解释**：修改保护状态。  **约束限制**：不涉及  **取值范围**： - nonProtection: 不保护，默认值为nonProtection。 - consoleProtection: 控制台修改保护。  **默认取值**：不涉及
+     * @param {Array<string>} [globalEips] **参数解释**：负载均衡器绑定的公网IP。示例如下： {     \&quot;global_eips\&quot;: [         {             \&quot;global_eip_id\&quot;: \&quot;24000000-0000-0000-0000-100000000001\&quot;,             \&quot;global_eip_address\&quot;: \&quot;10.10.10.10\&quot;,             \&quot;ip_version\&quot;: 4         }     ] } 支持多值查询，查询条件格式： - global_eip_id作为查询条件：*global_eips&#x3D;global_eip_id&#x3D;xxx&amp;global_eips&#x3D;global_eip_id&#x3D;xxx*。 - global_eip_address作为查询条件：*global_eips&#x3D;global_eip_address&#x3D;xxx&amp;global_eips&#x3D;global_eip_address&#x3D;xxx*。 - ip_version作为查询条件：*global_eips&#x3D;ip_version&#x3D;xxx&amp;global_eips&#x3D;ip_version&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {string} [logTopicId] **参数解释**：LB所关联的云日志服务（LTS）的日志流ID。 支持多值查询，查询条件格式： *log_topic_id&#x3D;xxx&amp;log_topic_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {string} [logGroupId] **参数解释**：LB所关联的云日志服务（LTS）的日志组ID。 支持多值查询，查询条件格式： *log_group_id&#x3D;xxx&amp;log_group_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -1828,11 +2179,11 @@ export class ElbClient {
      * @param {string} [marker] **参数解释**：上一页最后一条记录的ID。  **约束限制**： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {number} [limit] **参数解释**：每页返回的个数。  **约束限制**：不涉及  **取值范围**：0-2000  **默认取值**：2000
      * @param {boolean} [pageReverse] **参数解释**：是否反向查询。  **约束限制**： - 必须与limit一起使用。 - 当page_reverse&#x3D;true时，若要查询上一页，marker取值为当前页返回值的previous_marker。  **取值范围**： - true：查询上一页。 - false：查询下一页。  **默认取值**：false
-     * @param {Array<string>} [id] **参数解释**：自定义安全策略的ID。 支持多值查询，查询条件格式：*id&#x3D;xxx&amp;id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
-     * @param {Array<string>} [name] **参数解释**：自定义安全策略的名称。 支持多值查询，查询条件格式：*name&#x3D;xxx&amp;name&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
-     * @param {Array<string>} [description] **参数解释**：自定义安全策略的描述信息。 支持多值查询，查询条件格式：*description&#x3D;xxx&amp;description&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
-     * @param {Array<string>} [protocols] **参数解释**：空格分隔的自定义安全策略的TLS协议。 支持多值查询，查询条件格式：*protocols&#x3D;xxx&amp;protocols&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
-     * @param {Array<string>} [ciphers] **参数解释**：冒号分隔的自定义安全策略的加密套件。 支持多值查询，查询条件格式：*ciphers&#x3D;xxx&amp;ciphers&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {Array<string>} [id] **参数解释**：自定义安全策略的ID。  支持多值查询，查询条件格式：*id&#x3D;xxx&amp;id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {Array<string>} [name] **参数解释**：自定义安全策略的名称。  支持多值查询，查询条件格式：*name&#x3D;xxx&amp;name&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {Array<string>} [description] **参数解释**：自定义安全策略的描述信息。  支持多值查询，查询条件格式：*description&#x3D;xxx&amp;description&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {Array<string>} [protocols] **参数解释**：空格分隔的自定义安全策略的TLS协议。  支持多值查询，查询条件格式：*protocols&#x3D;xxx&amp;protocols&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {Array<string>} [ciphers] **参数解释**：冒号分隔的自定义安全策略的加密套件。  支持多值查询，查询条件格式：*ciphers&#x3D;xxx&amp;ciphers&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -1890,7 +2241,7 @@ export class ElbClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 查询证书详情
-     * @param {string} certificateId 证书ID。
+     * @param {string} certificateId **参数解释**：证书ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -1965,7 +2316,7 @@ export class ElbClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 查询异步任务的job状态
-     * @param {string} jobId 任务ID
+     * @param {string} jobId **参数解释**：任务ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -2037,6 +2388,25 @@ export class ElbClient {
     }
 
     /**
+     * 查询指定监听器的所有标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询监听器的标签
+     * @param {string} listenerId **参数解释**：监听器ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showListenerTags(showListenerTagsRequest?: ShowListenerTagsRequest): Promise<ShowListenerTagsResponse> {
+        const options = ParamCreater().showListenerTags(showListenerTagsRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 查询负载均衡器详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -2056,13 +2426,13 @@ export class ElbClient {
     }
 
     /**
-     * 查询负载均衡器占用的下联面子网端口和IP地址信息。
+     * 查询负载均衡内部转发用的IP。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @summary 查询负载均衡器占用的下联面子网端口列表
+     * @summary 查询负载均衡内部转发用的IP
      * @param {string} loadbalancerId **参数解释**：负载均衡器ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
-     * @param {Array<string>} [portId] **参数解释**：负载均衡器占用的端口ID。  支持多值查询，查询条件格式：*port_id&#x3D;xxx&amp;port_id&#x3D;xxx*。
+     * @param {Array<string>} [portId] **参数解释**：负载均衡器占用的端口ID。  支持多值查询，查询条件格式：*port_id&#x3D;xxx&amp;port_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {Array<string>} [ipAddress] **参数解释**：负载均衡器占用的私有IPv4地址。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  支持多值查询，查询条件格式：*ip_address&#x3D;xxx&amp;ip_address&#x3D;xxx*。
      * @param {Array<string>} [ipv6Address] **参数解释**：负载均衡器占用的IPv6地址。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  支持多值查询，查询条件格式：*ipv6_address&#x3D;xxx&amp;ipv6_address&#x3D;xxx*。
      * @param {Array<string>} [type] **参数解释**：子网端口类型。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  支持多值查询，查询条件格式：*type&#x3D;xxx&amp;type&#x3D;xxx*。
@@ -2094,6 +2464,50 @@ export class ElbClient {
      */
     public showLoadBalancerStatus(showLoadBalancerStatusRequest?: ShowLoadBalancerStatusRequest): Promise<ShowLoadBalancerStatusResponse> {
         const options = ParamCreater().showLoadBalancerStatus(showLoadBalancerStatusRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询负载均衡拓扑，将负载均衡器及其包含的监听器、后端服务器组以拓扑的形式展示。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询负载均衡器拓扑
+     * @param {string} loadbalancerId **参数解释**：负载均衡器ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {string} [listenerId] **参数解释**：监听器的ID。  支持多值查询，查询条件格式：*listener_id&#x3D;xxx&amp;listener_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {string} [poolId] **参数解释**：后端服务器组的ID。  支持多值查询，查询条件格式：*pool_id&#x3D;xxx&amp;pool_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {string} [listenerName] **参数解释**：监听器的名称。  支持多值查询，查询条件格式：*listener_name&#x3D;xxx&amp;listener_name&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {string} [listenerProtocol] **参数解释**：监听器的协议。  支持多值查询，查询条件格式：*listener_protocol&#x3D;xxx&amp;listener_protocol&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {number} [listenerProtocolPort] **参数解释**：监听器的监听端口。  支持多值查询，查询条件格式：*listener_protocol_port&#x3D;xxx&amp;listener_protocol_port&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {string} [poolName] **参数解释**：后端服务器组的名称。  支持多值查询，查询条件格式：*pool_name&#x3D;xxx&amp;pool_name&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showLoadBalancerTopology(showLoadBalancerTopologyRequest?: ShowLoadBalancerTopologyRequest): Promise<ShowLoadBalancerTopologyResponse> {
+        const options = ParamCreater().showLoadBalancerTopology(showLoadBalancerTopologyRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询指定负载均衡器的所有标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询负载均衡器的标签
+     * @param {string} loadbalancerId **参数解释**：负载均衡器ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showLoadbalancerTags(showLoadbalancerTagsRequest?: ShowLoadbalancerTagsRequest): Promise<ShowLoadbalancerTagsResponse> {
+        const options = ParamCreater().showLoadbalancerTags(showLoadbalancerTagsRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -2146,7 +2560,7 @@ export class ElbClient {
      *
      * @summary 查询后端服务器详情
      * @param {string} poolId **参数解释**：后端服务器组ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
-     * @param {string} memberId 后端服务器ID。 &gt; 此处并非ECS服务器的ID，而是ELB为绑定的后端服务器自动生成的member ID。
+     * @param {string} memberId **参数解释**：后端服务器ID。member ID可以通过[查询后端服务器列表](ListMembers.xml)获取。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  &gt; 此处并非ECS服务器的ID，而是ELB为绑定的后端服务器自动生成的member ID。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -2165,7 +2579,7 @@ export class ElbClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 查询后端服务器检测任务的结果
-     * @param {string} jobId **参数解释**：创建后端服务器检测任务的接口返回的job_id。
+     * @param {string} jobId **参数解释**：创建后端服务器检测任务的接口返回的job_id。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -2239,7 +2653,7 @@ export class ElbClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 查询自定义安全策略详情
-     * @param {string} securityPolicyId 自定义安全策略ID。
+     * @param {string} securityPolicyId **参数解释**：自定义安全策略的ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -2259,7 +2673,7 @@ export class ElbClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 更新证书
-     * @param {string} certificateId 证书ID。
+     * @param {string} certificateId **参数解释**：证书ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {UpdateCertificateRequestBody} updateCertificateRequestBody This is a auto create Body Object
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -2340,7 +2754,7 @@ export class ElbClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 更新监听器
-     * @param {string} listenerId 监听器ID。
+     * @param {string} listenerId **参数解释**：监听器ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {UpdateListenerRequestBody} updateListenerRequestBody This is a auto create Body Object
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -2400,7 +2814,7 @@ export class ElbClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 更新后端服务器
-     * @param {string} memberId **参数解释**：后端服务器ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  &gt; 此处并非ECS服务器的ID，而是ELB为绑定的后端服务器自动生成的member ID。
+     * @param {string} memberId **参数解释**：后端服务器ID。member ID可以通过[查询后端服务器列表](ListMembers.xml)获取。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  &gt; 此处并非ECS服务器的ID，而是ELB为绑定的后端服务器自动生成的member ID。
      * @param {string} poolId **参数解释**：后端服务器组ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {UpdateMemberRequestBody} updateMemberRequestBody This is a auto create Body Object
      * @param {*} [options] Override http request option.
@@ -2479,13 +2893,53 @@ export class ElbClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 更新自定义安全策略
-     * @param {string} securityPolicyId 自定义安全策略的ID。
+     * @param {string} securityPolicyId **参数解释**：自定义安全策略的ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {UpdateSecurityPolicyRequestBody} updateSecurityPolicyRequestBody This is a auto create Body Object
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     public updateSecurityPolicy(updateSecurityPolicyRequest?: UpdateSecurityPolicyRequest): Promise<UpdateSecurityPolicyResponse> {
         const options = ParamCreater().updateSecurityPolicy(updateSecurityPolicyRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 配置系统默认的负载均衡器域名解析。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 配置系统默认的负载均衡器域名解析
+     * @param {string} loadbalancerId **参数解释**：负载均衡器ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {UpdateSystemDefaultDomainConfigRequestBody} updateSystemDefaultDomainConfigRequestBody 配置系统默认的负载均衡器域名解析的请求体。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public updateSystemDefaultDomainConfig(updateSystemDefaultDomainConfigRequest?: UpdateSystemDefaultDomainConfigRequest): Promise<UpdateSystemDefaultDomainConfigResponse> {
+        const options = ParamCreater().updateSystemDefaultDomainConfig(updateSystemDefaultDomainConfigRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 自定义配置负载均衡器域名解析。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 自定义配置负载均衡器域名解析
+     * @param {string} loadbalancerId **参数解释**：负载均衡器ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * @param {UpdateUserDefinedDomainConfigRequestBody} updateUserDefinedDomainConfigRequestBody 配置负载均衡器自定义域名解析的请求体。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public updateUserDefinedDomainConfig(updateUserDefinedDomainConfigRequest?: UpdateUserDefinedDomainConfigRequest): Promise<UpdateUserDefinedDomainConfigResponse> {
+        const options = ParamCreater().updateUserDefinedDomainConfig(updateUserDefinedDomainConfigRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -2575,7 +3029,7 @@ export class ElbClient {
      *
      * @summary 计算预占IP数
      * @param {string} [l7FlavorId] **参数解释**：负载均衡器七层规格的ID。传入该字段表示计算创建该规格的LB的预占IP数量，或变更LB的原七层规格到该规格所需要的新增预占IP数量。  **约束限制**：仅支持创建LB、变更LB规格场景。  **取值范围**：不涉及  **默认取值**：不涉及  [不支持传入l7_flavor_id。](tag:hcso,hk_vdf,srg,fcs)
-     * @param {boolean} [ipTargetEnable] **参数解释**：IP类型后端转发开关。  **约束限制**：仅支持创建LB、LB开启IP类型后端转发场景。  **取值范围**： - 取值true表示计算创建开启IP类型后端转发的LB的预占IP数量，或开启IP类型后端转发所需要的新增预占IP数量。 - 取值false表示计算创建不开启IP类型后端转发的LB的预占IP。 - 不传等价false。  **默认取值**：false [荷兰region不支持该字段，请勿使用。](tag:dt)
+     * @param {boolean} [ipTargetEnable] **参数解释**：IP类型后端转发开关。  **约束限制**：仅支持创建LB、LB开启IP类型后端转发场景。  **取值范围**： - 取值true表示计算创建开启IP类型后端转发的LB的预占IP数量，或开启IP类型后端转发所需要的新增预占IP数量。 - 取值false表示计算创建不开启IP类型后端转发的LB的预占IP。 - 不传等价false。  **默认取值**：false  [荷兰region不支持该字段，请勿使用。](tag:dt)
      * @param {number} [ipVersion] **参数解释**：负载均衡器IP地址类型，取值4、6 。  **约束限制**：仅支持创建LB场景。  **取值范围**： - 取值4表示计算创建支持IPv4地址的LB的预占IP。 - 取值6表示计算创建支持IPv6地址的LB的预占IP。  **默认取值**：不涉及  [不支持IPv6，请勿设置为6。](tag:dt)
      * @param {string} [loadbalancerId] **参数解释**：负载均衡器ID。计算LB变更或创建LB中的第一个七层监听器的新增预占IP。  **约束限制**：仅支持变更LB规格、开启IP类型后端转发、开启/不开启地址转换功能、创建LB中的第一个七层监听器场景。  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {Array<string>} [availabilityZoneId] **参数解释**：计算创建AZ列表为availability_zone_id的负载均衡器实例的预占IP。  **约束限制**： - 仅支持创建LB场景。 - 传入loadbalancer_id时，该参数无效。  **取值范围**：不涉及  **默认取值**：不涉及
@@ -2668,7 +3122,7 @@ export class ElbClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 查询IP地址组详情
-     * @param {string} ipgroupId **参数解释**：IP地址组ID。
+     * @param {string} ipgroupId **参数解释**：IP地址组ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -2900,6 +3354,120 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 批量删除证书。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        batchDeleteCertificates(batchDeleteCertificatesRequest?: BatchDeleteCertificatesRequest) {
+            const options = {
+                method: "POST",
+                url: "/v3/{project_id}/elb/certificates/batch-delete",
+                contentType: "application/json;charset=UTF-8",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+
+            if (batchDeleteCertificatesRequest !== null && batchDeleteCertificatesRequest !== undefined) {
+                if (batchDeleteCertificatesRequest instanceof BatchDeleteCertificatesRequest) {
+                    body = batchDeleteCertificatesRequest.body
+                } else {
+                    body = batchDeleteCertificatesRequest['body'];
+                }
+            }
+
+        
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json;charset=UTF-8';
+
+            options.data = body !== undefined ? body : {};
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 批量删除监听器。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        batchDeleteListeners(batchDeleteListenersRequest?: BatchDeleteListenersRequest) {
+            const options = {
+                method: "POST",
+                url: "/v3/{project_id}/elb/listeners/batch-delete",
+                contentType: "application/json;charset=UTF-8",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+
+            if (batchDeleteListenersRequest !== null && batchDeleteListenersRequest !== undefined) {
+                if (batchDeleteListenersRequest instanceof BatchDeleteListenersRequest) {
+                    body = batchDeleteListenersRequest.body
+                } else {
+                    body = batchDeleteListenersRequest['body'];
+                }
+            }
+
+        
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json;charset=UTF-8';
+
+            options.data = body !== undefined ? body : {};
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 批量删除负载均衡器。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        batchDeleteLoadbalancers(batchDeleteLoadbalancersRequest?: BatchDeleteLoadbalancersRequest) {
+            const options = {
+                method: "POST",
+                url: "/v3/{project_id}/elb/loadbalancers/batch-delete",
+                contentType: "application/json;charset=UTF-8",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+
+            if (batchDeleteLoadbalancersRequest !== null && batchDeleteLoadbalancersRequest !== undefined) {
+                if (batchDeleteLoadbalancersRequest instanceof BatchDeleteLoadbalancersRequest) {
+                    body = batchDeleteLoadbalancersRequest.body
+                } else {
+                    body = batchDeleteLoadbalancersRequest['body'];
+                }
+            }
+
+        
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json;charset=UTF-8';
+
+            options.data = body !== undefined ? body : {};
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 在指定pool下批量删除后端服务器。一次最多添加200个。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -2941,6 +3509,136 @@ export const ParamCreater = function () {
 
             options.data = body !== undefined ? body : {};
             options.pathParams = { 'pool_id': poolId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 批量删除后端服务器组。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        batchDeletePools(batchDeletePoolsRequest?: BatchDeletePoolsRequest) {
+            const options = {
+                method: "POST",
+                url: "/v3/{project_id}/elb/pools/batch-delete",
+                contentType: "application/json;charset=UTF-8",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+
+            if (batchDeletePoolsRequest !== null && batchDeletePoolsRequest !== undefined) {
+                if (batchDeletePoolsRequest instanceof BatchDeletePoolsRequest) {
+                    body = batchDeletePoolsRequest.body
+                } else {
+                    body = batchDeletePoolsRequest['body'];
+                }
+            }
+
+        
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json;charset=UTF-8';
+
+            options.data = body !== undefined ? body : {};
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 批量将IP地址从ELB实例域名解析中移除。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        batchDisableDomainIPs(batchDisableDomainIPsRequest?: BatchDisableDomainIPsRequest) {
+            const options = {
+                method: "POST",
+                url: "/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/dns/ips/batch-disable",
+                contentType: "application/json;charset=UTF-8",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let loadbalancerId;
+
+            if (batchDisableDomainIPsRequest !== null && batchDisableDomainIPsRequest !== undefined) {
+                if (batchDisableDomainIPsRequest instanceof BatchDisableDomainIPsRequest) {
+                    loadbalancerId = batchDisableDomainIPsRequest.loadbalancerId;
+                    body = batchDisableDomainIPsRequest.body
+                } else {
+                    loadbalancerId = batchDisableDomainIPsRequest['loadbalancer_id'];
+                    body = batchDisableDomainIPsRequest['body'];
+                }
+            }
+
+        
+            if (loadbalancerId === null || loadbalancerId === undefined) {
+            throw new RequiredError('loadbalancerId','Required parameter loadbalancerId was null or undefined when calling batchDisableDomainIPs.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json;charset=UTF-8';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'loadbalancer_id': loadbalancerId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 批量将IP地址加入ELB实例域名解析中。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        batchEnableDomainIPs(batchEnableDomainIPsRequest?: BatchEnableDomainIPsRequest) {
+            const options = {
+                method: "POST",
+                url: "/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/dns/ips/batch-enable",
+                contentType: "application/json;charset=UTF-8",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let loadbalancerId;
+
+            if (batchEnableDomainIPsRequest !== null && batchEnableDomainIPsRequest !== undefined) {
+                if (batchEnableDomainIPsRequest instanceof BatchEnableDomainIPsRequest) {
+                    loadbalancerId = batchEnableDomainIPsRequest.loadbalancerId;
+                    body = batchEnableDomainIPsRequest.body
+                } else {
+                    loadbalancerId = batchEnableDomainIPsRequest['loadbalancer_id'];
+                    body = batchEnableDomainIPsRequest['body'];
+                }
+            }
+
+        
+            if (loadbalancerId === null || loadbalancerId === undefined) {
+            throw new RequiredError('loadbalancerId','Required parameter loadbalancerId was null or undefined when calling batchEnableDomainIPs.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json;charset=UTF-8';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'loadbalancer_id': loadbalancerId, };
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -3074,6 +3772,52 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 批量添加或删除指定监听器器标签。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        changeListenerTags(changeListenerTagsRequest?: ChangeListenerTagsRequest) {
+            const options = {
+                method: "POST",
+                url: "/v3/{project_id}/listeners/{listener_id}/tags/action",
+                contentType: "application/json;charset=UTF-8",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let listenerId;
+
+            if (changeListenerTagsRequest !== null && changeListenerTagsRequest !== undefined) {
+                if (changeListenerTagsRequest instanceof ChangeListenerTagsRequest) {
+                    listenerId = changeListenerTagsRequest.listenerId;
+                    body = changeListenerTagsRequest.body
+                } else {
+                    listenerId = changeListenerTagsRequest['listener_id'];
+                    body = changeListenerTagsRequest['body'];
+                }
+            }
+
+        
+            if (listenerId === null || listenerId === undefined) {
+            throw new RequiredError('listenerId','Required parameter listenerId was null or undefined when calling changeListenerTags.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json;charset=UTF-8';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'listener_id': listenerId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 负载均衡器计费模式变更，当前支持的计费模式变更为：
          * 1. 按需计费转包周期计费。
          * 2. 按需按规格计费转按需按使用量计费。
@@ -3110,6 +3854,105 @@ export const ParamCreater = function () {
             localVarHeaderParameter['Content-Type'] = 'application/json;charset=UTF-8';
 
             options.data = body !== undefined ? body : {};
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 批量添加或删除指定负载均衡器标签。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        changeLoadbalancerTags(changeLoadbalancerTagsRequest?: ChangeLoadbalancerTagsRequest) {
+            const options = {
+                method: "POST",
+                url: "/v3/{project_id}/loadbalancers/{loadbalancer_id}/tags/action",
+                contentType: "application/json;charset=UTF-8",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let loadbalancerId;
+
+            if (changeLoadbalancerTagsRequest !== null && changeLoadbalancerTagsRequest !== undefined) {
+                if (changeLoadbalancerTagsRequest instanceof ChangeLoadbalancerTagsRequest) {
+                    loadbalancerId = changeLoadbalancerTagsRequest.loadbalancerId;
+                    body = changeLoadbalancerTagsRequest.body
+                } else {
+                    loadbalancerId = changeLoadbalancerTagsRequest['loadbalancer_id'];
+                    body = changeLoadbalancerTagsRequest['body'];
+                }
+            }
+
+        
+            if (loadbalancerId === null || loadbalancerId === undefined) {
+            throw new RequiredError('loadbalancerId','Required parameter loadbalancerId was null or undefined when calling changeLoadbalancerTags.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json;charset=UTF-8';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'loadbalancer_id': loadbalancerId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 复制已有的监听器到同VPC内的负载均衡器。
+         * - 仅支持同VPC实例间使用监听器复制功能。
+         * - 不支持网关型LB下监听器进行复制，也不支持复制到网关型LB下。
+         * - 仅同类型实例之间可以使用监听器复制功能。
+         * - 对复制的源监听器有如下限制：后端服务器总数不能超过1000；转发策略总数不能超过100。
+         * - 源监听器所在负载均衡器和目的监听器所在负载均衡器不能处于冻结、迁移状态。
+         * - 源监听器中若配置quic_config，复制后为null。
+         * - 七层转发策略配置为重定向到监听器，该转发策略不会进行复制。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        cloneListener(cloneListenerRequest?: CloneListenerRequest) {
+            const options = {
+                method: "POST",
+                url: "/v3/{project_id}/elb/listeners/{listener_id}/clone",
+                contentType: "application/json;charset=UTF-8",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let listenerId;
+
+            if (cloneListenerRequest !== null && cloneListenerRequest !== undefined) {
+                if (cloneListenerRequest instanceof CloneListenerRequest) {
+                    listenerId = cloneListenerRequest.listenerId;
+                    body = cloneListenerRequest.body
+                } else {
+                    listenerId = cloneListenerRequest['listener_id'];
+                    body = cloneListenerRequest['body'];
+                }
+            }
+
+        
+            if (listenerId === null || listenerId === undefined) {
+            throw new RequiredError('listenerId','Required parameter listenerId was null or undefined when calling cloneListener.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json;charset=UTF-8';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'listener_id': listenerId, };
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -3161,7 +4004,7 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 创建用于弹性负载均衡器HTTPS/TLS/QUIC协议监听器的证书。支持关联云证书管理服务(CCM)的证书，或者使用自有证书。
+         * 创建用于弹性负载均衡器HTTPS/TLS/QUIC协议监听器的证书。支持关联云证书与管理服务(CCM)的证书，或者使用自有证书。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -3359,7 +4202,7 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 创建监听器。支持通过该接口创建独享型及共享型LB实例下的监听器。
+         * 创建监听器。支持通过该接口创建独享型及共享型ELB实例下的监听器。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -3409,11 +4252,12 @@ export const ParamCreater = function () {
          * - 若要创建网络型负载均衡器，则需要传入l4_flavor_id（网络型规格ID）；若要创建应用型负载均衡器，则需要传入l7_flavor_id（应用型规格ID）；若要创建网络型+应用型负载均衡器，则需要传入l4_flavor_id和l7_flavor_id。
          * [- 若要创建包周期负载均衡器，则需要传入prepaid_options，否则创建按需计费负载均衡器。](tag:hws)
          * - 按需计费分为固定规格计费和弹性规格计费，根据创建时所选规格的类型决定计费方式。具体规格说明见创建LB请求参数l4_flavor_id和l7_flavor_id。
-         * [- 若要创建gateway类型的负载均衡器，则需要：
+         * - 若要创建gateway类型的负载均衡器，则需要：
          *    - 指定loadbalancer_type&#x3D;\&quot;gateway\&quot;，且不支持指定vip_address，ipv6_vip_address。
-         *    - vip_subnet_cidr_id和ipv6_subnet_cidr_id两者不能都为空，如果两者都传入，则必须属于同一子网。 
+         *    - vip_subnet_cidr_id和ipv6_subnet_cidr_id两者不能都为空，如果两者都传入，则必须属于同一子网。
          *    - 不支持创建公网gateway类型LB。
-         *    - 如果要指定规格，则从请求参数gw_flavor_id传入。](tag:hws_eu)
+         *    - 不支持传入autoscaling字段，不支持l4_flavor_id和l7_flavor_id。
+         *    - 必须要指定网关型规格，通过参数gw_flavor_id传入。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -3697,7 +4541,7 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 删除ELB证书。若是删除source&#x3D;scm的证书，关联的云证书管理服务（CCM）中的证书不会被删除。若想删除已关联到监听器的证书，则需要先解除监听器和证书的绑定关系。
+         * 删除ELB证书。若是删除source&#x3D;scm的证书，关联的云证书与管理服务（CCM）中的证书不会被删除。若想删除已关联到监听器的证书，则需要先解除监听器和证书的绑定关系。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -4011,8 +4855,11 @@ export const ParamCreater = function () {
         /**
          * 删除负载均衡器且级联删除其下子资源（删除负载均衡器及其绑定的监听器、后端服务器组、后端服务器等一系列资源）。
          * - 若LB关联了EIP，则只解绑EIP，不会删除EIP。
+         * - 若LB已开启了误删保护开关，则级联删除失败。
+         * - 若LB下任意一个后端服务器组开启了误删保护开关，则级联删除失败。
+         * - 修改保护开关开启不影响级联删除，仍能正常删除。
          * [- 若已开启多挂特性，且关联了多个LB，则只做解绑；否则删除。
-         * - 若是共享型LB下的后端服务器组，无论是否多挂都只删除，不解绑。](tag:hc,hk)
+         * - 若是共享型LB下的后端服务器组，无论是否多挂都只删除，不解绑。](tag:hws,hws_hk)
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -4310,6 +5157,127 @@ export const ParamCreater = function () {
             }
 
             options.pathParams = { 'security_policy_id': securityPolicyId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询当前项目下所有转发规则列表
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listAllL7Rules(listAllL7RulesRequest?: ListAllL7RulesRequest) {
+            const options = {
+                method: "GET",
+                url: "/v3/{project_id}/elb/l7policies/rules",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let limit;
+            
+            let marker;
+            
+            let pageReverse;
+            
+            let id;
+            
+            let compareType;
+            
+            let provisioningStatus;
+            
+            let invert;
+            
+            let adminStateUp;
+            
+            let value;
+            
+            let key;
+            
+            let type;
+            
+            let enterpriseProjectId;
+            
+            let l7policyId;
+
+            if (listAllL7RulesRequest !== null && listAllL7RulesRequest !== undefined) {
+                if (listAllL7RulesRequest instanceof ListAllL7RulesRequest) {
+                    limit = listAllL7RulesRequest.limit;
+                    marker = listAllL7RulesRequest.marker;
+                    pageReverse = listAllL7RulesRequest.pageReverse;
+                    id = listAllL7RulesRequest.id;
+                    compareType = listAllL7RulesRequest.compareType;
+                    provisioningStatus = listAllL7RulesRequest.provisioningStatus;
+                    invert = listAllL7RulesRequest.invert;
+                    adminStateUp = listAllL7RulesRequest.adminStateUp;
+                    value = listAllL7RulesRequest.value;
+                    key = listAllL7RulesRequest.key;
+                    type = listAllL7RulesRequest.type;
+                    enterpriseProjectId = listAllL7RulesRequest.enterpriseProjectId;
+                    l7policyId = listAllL7RulesRequest.l7policyId;
+                } else {
+                    limit = listAllL7RulesRequest['limit'];
+                    marker = listAllL7RulesRequest['marker'];
+                    pageReverse = listAllL7RulesRequest['page_reverse'];
+                    id = listAllL7RulesRequest['id'];
+                    compareType = listAllL7RulesRequest['compare_type'];
+                    provisioningStatus = listAllL7RulesRequest['provisioning_status'];
+                    invert = listAllL7RulesRequest['invert'];
+                    adminStateUp = listAllL7RulesRequest['admin_state_up'];
+                    value = listAllL7RulesRequest['value'];
+                    key = listAllL7RulesRequest['key'];
+                    type = listAllL7RulesRequest['type'];
+                    enterpriseProjectId = listAllL7RulesRequest['enterprise_project_id'];
+                    l7policyId = listAllL7RulesRequest['l7policy_id'];
+                }
+            }
+
+        
+            if (limit !== null && limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+            if (marker !== null && marker !== undefined) {
+                localVarQueryParameter['marker'] = marker;
+            }
+            if (pageReverse !== null && pageReverse !== undefined) {
+                localVarQueryParameter['page_reverse'] = pageReverse;
+            }
+            if (id !== null && id !== undefined) {
+                localVarQueryParameter['id'] = id;
+            }
+            if (compareType !== null && compareType !== undefined) {
+                localVarQueryParameter['compare_type'] = compareType;
+            }
+            if (provisioningStatus !== null && provisioningStatus !== undefined) {
+                localVarQueryParameter['provisioning_status'] = provisioningStatus;
+            }
+            if (invert !== null && invert !== undefined) {
+                localVarQueryParameter['invert'] = invert;
+            }
+            if (adminStateUp !== null && adminStateUp !== undefined) {
+                localVarQueryParameter['admin_state_up'] = adminStateUp;
+            }
+            if (value !== null && value !== undefined) {
+                localVarQueryParameter['value'] = value;
+            }
+            if (key !== null && key !== undefined) {
+                localVarQueryParameter['key'] = key;
+            }
+            if (type !== null && type !== undefined) {
+                localVarQueryParameter['type'] = type;
+            }
+            if (enterpriseProjectId !== null && enterpriseProjectId !== undefined) {
+                localVarQueryParameter['enterprise_project_id'] = enterpriseProjectId;
+            }
+            if (l7policyId !== null && l7policyId !== undefined) {
+                localVarQueryParameter['l7policy_id'] = l7policyId;
+            }
+
+            options.queryParams = localVarQueryParameter;
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -4641,6 +5609,66 @@ export const ParamCreater = function () {
             }
 
             options.queryParams = localVarQueryParameter;
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询负载均衡器所有IP的域名解析配置信息，即负载均衡器的IP是否加入了域名解析，以及对应的域名。
+         * 注意：只返回启用的域名类型对应的配置。若只开启公网域名解析，则只返回该负载均衡器的公网IP的域名解析配置；若负载均衡器的公网域名解析和私网域名解析都没有开启，则该返回空列表。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listDomainIPs(listDomainIPsRequest?: ListDomainIPsRequest) {
+            const options = {
+                method: "GET",
+                url: "/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/dns/ips",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let loadbalancerId;
+            
+            let marker;
+            
+            let limit;
+            
+            let pageReverse;
+
+            if (listDomainIPsRequest !== null && listDomainIPsRequest !== undefined) {
+                if (listDomainIPsRequest instanceof ListDomainIPsRequest) {
+                    loadbalancerId = listDomainIPsRequest.loadbalancerId;
+                    marker = listDomainIPsRequest.marker;
+                    limit = listDomainIPsRequest.limit;
+                    pageReverse = listDomainIPsRequest.pageReverse;
+                } else {
+                    loadbalancerId = listDomainIPsRequest['loadbalancer_id'];
+                    marker = listDomainIPsRequest['marker'];
+                    limit = listDomainIPsRequest['limit'];
+                    pageReverse = listDomainIPsRequest['page_reverse'];
+                }
+            }
+
+        
+            if (loadbalancerId === null || loadbalancerId === undefined) {
+            throw new RequiredError('loadbalancerId','Required parameter loadbalancerId was null or undefined when calling listDomainIPs.');
+            }
+            if (marker !== null && marker !== undefined) {
+                localVarQueryParameter['marker'] = marker;
+            }
+            if (limit !== null && limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+            if (pageReverse !== null && pageReverse !== undefined) {
+                localVarQueryParameter['page_reverse'] = pageReverse;
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.pathParams = { 'loadbalancer_id': loadbalancerId, };
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -5303,6 +6331,27 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 查询指定项目下所有监听器的标签列表
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listListenerTags() {
+            const options = {
+                method: "GET",
+                url: "/v3/{project_id}/listeners/tags",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 查询监听器列表。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -5876,6 +6925,27 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 查询指定项目下所有负载均衡器的标签列表
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listLoadbalancerTags() {
+            const options = {
+                method: "GET",
+                url: "/v3/{project_id}/loadbalancers/tags",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 查询云日志列表。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -6015,6 +7085,8 @@ export const ParamCreater = function () {
             let type;
             
             let connectionDrain;
+            
+            let publicBorderGroup;
 
             if (listMasterSlavePoolsRequest !== null && listMasterSlavePoolsRequest !== undefined) {
                 if (listMasterSlavePoolsRequest instanceof ListMasterSlavePoolsRequest) {
@@ -6037,6 +7109,7 @@ export const ParamCreater = function () {
                     vpcId = listMasterSlavePoolsRequest.vpcId;
                     type = listMasterSlavePoolsRequest.type;
                     connectionDrain = listMasterSlavePoolsRequest.connectionDrain;
+                    publicBorderGroup = listMasterSlavePoolsRequest.publicBorderGroup;
                 } else {
                     marker = listMasterSlavePoolsRequest['marker'];
                     limit = listMasterSlavePoolsRequest['limit'];
@@ -6057,6 +7130,7 @@ export const ParamCreater = function () {
                     vpcId = listMasterSlavePoolsRequest['vpc_id'];
                     type = listMasterSlavePoolsRequest['type'];
                     connectionDrain = listMasterSlavePoolsRequest['connection_drain'];
+                    publicBorderGroup = listMasterSlavePoolsRequest['public_border_group'];
                 }
             }
 
@@ -6117,6 +7191,9 @@ export const ParamCreater = function () {
             }
             if (connectionDrain !== null && connectionDrain !== undefined) {
                 localVarQueryParameter['connection_drain'] = connectionDrain;
+            }
+            if (publicBorderGroup !== null && publicBorderGroup !== undefined) {
+                localVarQueryParameter['public_border_group'] = publicBorderGroup;
             }
 
             options.queryParams = localVarQueryParameter;
@@ -7232,6 +8309,43 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 查询指定监听器的所有标签。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showListenerTags(showListenerTagsRequest?: ShowListenerTagsRequest) {
+            const options = {
+                method: "GET",
+                url: "/v3/{project_id}/listeners/{listener_id}/tags",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let listenerId;
+
+            if (showListenerTagsRequest !== null && showListenerTagsRequest !== undefined) {
+                if (showListenerTagsRequest instanceof ShowListenerTagsRequest) {
+                    listenerId = showListenerTagsRequest.listenerId;
+                } else {
+                    listenerId = showListenerTagsRequest['listener_id'];
+                }
+            }
+
+        
+            if (listenerId === null || listenerId === undefined) {
+            throw new RequiredError('listenerId','Required parameter listenerId was null or undefined when calling showListenerTags.');
+            }
+
+            options.pathParams = { 'listener_id': listenerId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 查询负载均衡器详情。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -7269,7 +8383,7 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 查询负载均衡器占用的下联面子网端口和IP地址信息。
+         * 查询负载均衡内部转发用的IP。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -7374,6 +8488,123 @@ export const ParamCreater = function () {
         
             if (loadbalancerId === null || loadbalancerId === undefined) {
             throw new RequiredError('loadbalancerId','Required parameter loadbalancerId was null or undefined when calling showLoadBalancerStatus.');
+            }
+
+            options.pathParams = { 'loadbalancer_id': loadbalancerId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询负载均衡拓扑，将负载均衡器及其包含的监听器、后端服务器组以拓扑的形式展示。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showLoadBalancerTopology(showLoadBalancerTopologyRequest?: ShowLoadBalancerTopologyRequest) {
+            const options = {
+                method: "GET",
+                url: "/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/topology",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let loadbalancerId;
+            
+            let listenerId;
+            
+            let poolId;
+            
+            let listenerName;
+            
+            let listenerProtocol;
+            
+            let listenerProtocolPort;
+            
+            let poolName;
+
+            if (showLoadBalancerTopologyRequest !== null && showLoadBalancerTopologyRequest !== undefined) {
+                if (showLoadBalancerTopologyRequest instanceof ShowLoadBalancerTopologyRequest) {
+                    loadbalancerId = showLoadBalancerTopologyRequest.loadbalancerId;
+                    listenerId = showLoadBalancerTopologyRequest.listenerId;
+                    poolId = showLoadBalancerTopologyRequest.poolId;
+                    listenerName = showLoadBalancerTopologyRequest.listenerName;
+                    listenerProtocol = showLoadBalancerTopologyRequest.listenerProtocol;
+                    listenerProtocolPort = showLoadBalancerTopologyRequest.listenerProtocolPort;
+                    poolName = showLoadBalancerTopologyRequest.poolName;
+                } else {
+                    loadbalancerId = showLoadBalancerTopologyRequest['loadbalancer_id'];
+                    listenerId = showLoadBalancerTopologyRequest['listener_id'];
+                    poolId = showLoadBalancerTopologyRequest['pool_id'];
+                    listenerName = showLoadBalancerTopologyRequest['listener_name'];
+                    listenerProtocol = showLoadBalancerTopologyRequest['listener_protocol'];
+                    listenerProtocolPort = showLoadBalancerTopologyRequest['listener_protocol_port'];
+                    poolName = showLoadBalancerTopologyRequest['pool_name'];
+                }
+            }
+
+        
+            if (loadbalancerId === null || loadbalancerId === undefined) {
+            throw new RequiredError('loadbalancerId','Required parameter loadbalancerId was null or undefined when calling showLoadBalancerTopology.');
+            }
+            if (listenerId !== null && listenerId !== undefined) {
+                localVarQueryParameter['listener_id'] = listenerId;
+            }
+            if (poolId !== null && poolId !== undefined) {
+                localVarQueryParameter['pool_id'] = poolId;
+            }
+            if (listenerName !== null && listenerName !== undefined) {
+                localVarQueryParameter['listener_name'] = listenerName;
+            }
+            if (listenerProtocol !== null && listenerProtocol !== undefined) {
+                localVarQueryParameter['listener_protocol'] = listenerProtocol;
+            }
+            if (listenerProtocolPort !== null && listenerProtocolPort !== undefined) {
+                localVarQueryParameter['listener_protocol_port'] = listenerProtocolPort;
+            }
+            if (poolName !== null && poolName !== undefined) {
+                localVarQueryParameter['pool_name'] = poolName;
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.pathParams = { 'loadbalancer_id': loadbalancerId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询指定负载均衡器的所有标签
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showLoadbalancerTags(showLoadbalancerTagsRequest?: ShowLoadbalancerTagsRequest) {
+            const options = {
+                method: "GET",
+                url: "/v3/{project_id}/loadbalancers/{loadbalancer_id}/tags",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let loadbalancerId;
+
+            if (showLoadbalancerTagsRequest !== null && showLoadbalancerTagsRequest !== undefined) {
+                if (showLoadbalancerTagsRequest instanceof ShowLoadbalancerTagsRequest) {
+                    loadbalancerId = showLoadbalancerTagsRequest.loadbalancerId;
+                } else {
+                    loadbalancerId = showLoadbalancerTagsRequest['loadbalancer_id'];
+                }
+            }
+
+        
+            if (loadbalancerId === null || loadbalancerId === undefined) {
+            throw new RequiredError('loadbalancerId','Required parameter loadbalancerId was null or undefined when calling showLoadbalancerTags.');
             }
 
             options.pathParams = { 'loadbalancer_id': loadbalancerId, };
@@ -8199,6 +9430,98 @@ export const ParamCreater = function () {
 
             options.data = body !== undefined ? body : {};
             options.pathParams = { 'security_policy_id': securityPolicyId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 配置系统默认的负载均衡器域名解析。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        updateSystemDefaultDomainConfig(updateSystemDefaultDomainConfigRequest?: UpdateSystemDefaultDomainConfigRequest) {
+            const options = {
+                method: "POST",
+                url: "/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/dns/system-default-config",
+                contentType: "application/json;charset=UTF-8",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let loadbalancerId;
+
+            if (updateSystemDefaultDomainConfigRequest !== null && updateSystemDefaultDomainConfigRequest !== undefined) {
+                if (updateSystemDefaultDomainConfigRequest instanceof UpdateSystemDefaultDomainConfigRequest) {
+                    loadbalancerId = updateSystemDefaultDomainConfigRequest.loadbalancerId;
+                    body = updateSystemDefaultDomainConfigRequest.body
+                } else {
+                    loadbalancerId = updateSystemDefaultDomainConfigRequest['loadbalancer_id'];
+                    body = updateSystemDefaultDomainConfigRequest['body'];
+                }
+            }
+
+        
+            if (loadbalancerId === null || loadbalancerId === undefined) {
+            throw new RequiredError('loadbalancerId','Required parameter loadbalancerId was null or undefined when calling updateSystemDefaultDomainConfig.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json;charset=UTF-8';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'loadbalancer_id': loadbalancerId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 自定义配置负载均衡器域名解析。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        updateUserDefinedDomainConfig(updateUserDefinedDomainConfigRequest?: UpdateUserDefinedDomainConfigRequest) {
+            const options = {
+                method: "POST",
+                url: "/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/dns/user-defined-config",
+                contentType: "application/json;charset=UTF-8",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let loadbalancerId;
+
+            if (updateUserDefinedDomainConfigRequest !== null && updateUserDefinedDomainConfigRequest !== undefined) {
+                if (updateUserDefinedDomainConfigRequest instanceof UpdateUserDefinedDomainConfigRequest) {
+                    loadbalancerId = updateUserDefinedDomainConfigRequest.loadbalancerId;
+                    body = updateUserDefinedDomainConfigRequest.body
+                } else {
+                    loadbalancerId = updateUserDefinedDomainConfigRequest['loadbalancer_id'];
+                    body = updateUserDefinedDomainConfigRequest['body'];
+                }
+            }
+
+        
+            if (loadbalancerId === null || loadbalancerId === undefined) {
+            throw new RequiredError('loadbalancerId','Required parameter loadbalancerId was null or undefined when calling updateUserDefinedDomainConfig.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json;charset=UTF-8';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'loadbalancer_id': loadbalancerId, };
             options.headers = localVarHeaderParameter;
             return options;
         },

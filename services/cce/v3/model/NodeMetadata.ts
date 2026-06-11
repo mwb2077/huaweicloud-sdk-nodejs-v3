@@ -1,4 +1,4 @@
-import { NodeOwnerReference } from './NodeOwnerReference';
+import { NodeMetadataOwnerReferences } from './NodeMetadataOwnerReferences';
 
 
 export class NodeMetadata {
@@ -8,7 +8,7 @@ export class NodeMetadata {
     public annotations?: { [key: string]: string; };
     public creationTimestamp?: string;
     public updateTimestamp?: string;
-    public ownerReference?: NodeOwnerReference;
+    public ownerReferences?: NodeMetadataOwnerReferences;
     public constructor() { 
     }
     public withName(name: string): NodeMetadata {
@@ -35,8 +35,8 @@ export class NodeMetadata {
         this['updateTimestamp'] = updateTimestamp;
         return this;
     }
-    public withOwnerReference(ownerReference: NodeOwnerReference): NodeMetadata {
-        this['ownerReference'] = ownerReference;
+    public withOwnerReferences(ownerReferences: NodeMetadataOwnerReferences): NodeMetadata {
+        this['ownerReferences'] = ownerReferences;
         return this;
     }
 }

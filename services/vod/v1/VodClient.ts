@@ -18,6 +18,7 @@ import { CancelAssetTranscodeTaskRequest } from './model/CancelAssetTranscodeTas
 import { CancelAssetTranscodeTaskResponse } from './model/CancelAssetTranscodeTaskResponse';
 import { CancelExtractAudioTaskRequest } from './model/CancelExtractAudioTaskRequest';
 import { CancelExtractAudioTaskResponse } from './model/CancelExtractAudioTaskResponse';
+import { CategoryInfo } from './model/CategoryInfo';
 import { CdnLog } from './model/CdnLog';
 import { CheckMd5DuplicationRequest } from './model/CheckMd5DuplicationRequest';
 import { CheckMd5DuplicationResponse } from './model/CheckMd5DuplicationResponse';
@@ -35,6 +36,9 @@ import { CreateAssetByFileUploadRequest } from './model/CreateAssetByFileUploadR
 import { CreateAssetByFileUploadResponse } from './model/CreateAssetByFileUploadResponse';
 import { CreateAssetCategoryRequest } from './model/CreateAssetCategoryRequest';
 import { CreateAssetCategoryResponse } from './model/CreateAssetCategoryResponse';
+import { CreateAssetEditTaskReq } from './model/CreateAssetEditTaskReq';
+import { CreateAssetEditTaskRequest } from './model/CreateAssetEditTaskRequest';
+import { CreateAssetEditTaskResponse } from './model/CreateAssetEditTaskResponse';
 import { CreateAssetProcessTaskRequest } from './model/CreateAssetProcessTaskRequest';
 import { CreateAssetProcessTaskResponse } from './model/CreateAssetProcessTaskResponse';
 import { CreateAssetReviewTaskRequest } from './model/CreateAssetReviewTaskRequest';
@@ -76,6 +80,8 @@ import { CreateWatermarkTemplateRequest } from './model/CreateWatermarkTemplateR
 import { CreateWatermarkTemplateResponse } from './model/CreateWatermarkTemplateResponse';
 import { DeleteAssetCategoryRequest } from './model/DeleteAssetCategoryRequest';
 import { DeleteAssetCategoryResponse } from './model/DeleteAssetCategoryResponse';
+import { DeleteAssetEditTaskRequest } from './model/DeleteAssetEditTaskRequest';
+import { DeleteAssetEditTaskResponse } from './model/DeleteAssetEditTaskResponse';
 import { DeleteAssetsRequest } from './model/DeleteAssetsRequest';
 import { DeleteAssetsResponse } from './model/DeleteAssetsResponse';
 import { DeleteDyAssetRequest } from './model/DeleteDyAssetRequest';
@@ -86,6 +92,9 @@ import { DeleteTemplateGroupCollectionRequest } from './model/DeleteTemplateGrou
 import { DeleteTemplateGroupCollectionResponse } from './model/DeleteTemplateGroupCollectionResponse';
 import { DeleteTemplateGroupRequest } from './model/DeleteTemplateGroupRequest';
 import { DeleteTemplateGroupResponse } from './model/DeleteTemplateGroupResponse';
+import { DeleteThumbnailResult } from './model/DeleteThumbnailResult';
+import { DeleteThumbnailsRequest } from './model/DeleteThumbnailsRequest';
+import { DeleteThumbnailsResponse } from './model/DeleteThumbnailsResponse';
 import { DeleteTranscodeProductReq } from './model/DeleteTranscodeProductReq';
 import { DeleteTranscodeProductRequest } from './model/DeleteTranscodeProductRequest';
 import { DeleteTranscodeProductResponse } from './model/DeleteTranscodeProductResponse';
@@ -93,9 +102,11 @@ import { DeleteTranscodeTemplateRequest } from './model/DeleteTranscodeTemplateR
 import { DeleteTranscodeTemplateResponse } from './model/DeleteTranscodeTemplateResponse';
 import { DeleteWatermarkTemplateRequest } from './model/DeleteWatermarkTemplateRequest';
 import { DeleteWatermarkTemplateResponse } from './model/DeleteWatermarkTemplateResponse';
+import { EditInput } from './model/EditInput';
 import { EditMediaTask } from './model/EditMediaTask';
 import { EditMediaTaskInput } from './model/EditMediaTaskInput';
 import { EditingSetting } from './model/EditingSetting';
+import { EditingTaskInfo } from './model/EditingTaskInfo';
 import { ExtractAudioTaskReq } from './model/ExtractAudioTaskReq';
 import { FileAddr } from './model/FileAddr';
 import { ImageSpriteTask } from './model/ImageSpriteTask';
@@ -105,8 +116,16 @@ import { ListAssetCategoryRequest } from './model/ListAssetCategoryRequest';
 import { ListAssetCategoryResponse } from './model/ListAssetCategoryResponse';
 import { ListAssetDailySummaryLogRequest } from './model/ListAssetDailySummaryLogRequest';
 import { ListAssetDailySummaryLogResponse } from './model/ListAssetDailySummaryLogResponse';
+import { ListAssetEditTaskRequest } from './model/ListAssetEditTaskRequest';
+import { ListAssetEditTaskResponse } from './model/ListAssetEditTaskResponse';
 import { ListAssetListRequest } from './model/ListAssetListRequest';
 import { ListAssetListResponse } from './model/ListAssetListResponse';
+import { ListAssetTaskInfoRequest } from './model/ListAssetTaskInfoRequest';
+import { ListAssetTaskInfoResponse } from './model/ListAssetTaskInfoResponse';
+import { ListCategoryInfoRequest } from './model/ListCategoryInfoRequest';
+import { ListCategoryInfoResponse } from './model/ListCategoryInfoResponse';
+import { ListCdnStatisticsRequest } from './model/ListCdnStatisticsRequest';
+import { ListCdnStatisticsResponse } from './model/ListCdnStatisticsResponse';
 import { ListDomainLogsRequest } from './model/ListDomainLogsRequest';
 import { ListDomainLogsResponse } from './model/ListDomainLogsResponse';
 import { ListTakeOverTaskRequest } from './model/ListTakeOverTaskRequest';
@@ -115,6 +134,10 @@ import { ListTemplateGroupCollectionRequest } from './model/ListTemplateGroupCol
 import { ListTemplateGroupCollectionResponse } from './model/ListTemplateGroupCollectionResponse';
 import { ListTemplateGroupRequest } from './model/ListTemplateGroupRequest';
 import { ListTemplateGroupResponse } from './model/ListTemplateGroupResponse';
+import { ListThumbnailDetailsRequest } from './model/ListThumbnailDetailsRequest';
+import { ListThumbnailDetailsResponse } from './model/ListThumbnailDetailsResponse';
+import { ListThumbnailInfoRequest } from './model/ListThumbnailInfoRequest';
+import { ListThumbnailInfoResponse } from './model/ListThumbnailInfoResponse';
 import { ListTopStatisticsRequest } from './model/ListTopStatisticsRequest';
 import { ListTopStatisticsResponse } from './model/ListTopStatisticsResponse';
 import { ListTranscodeTemplateRequest } from './model/ListTranscodeTemplateRequest';
@@ -155,11 +178,14 @@ import { PublishAssetsRequest } from './model/PublishAssetsRequest';
 import { PublishAssetsResponse } from './model/PublishAssetsResponse';
 import { QualityInfo } from './model/QualityInfo';
 import { QualityInfoList } from './model/QualityInfoList';
+import { QueryCategoryInfoRsp } from './model/QueryCategoryInfoRsp';
 import { QueryCategoryRsp } from './model/QueryCategoryRsp';
+import { QueryThumbnailInfo } from './model/QueryThumbnailInfo';
 import { RefreshAssetRequest } from './model/RefreshAssetRequest';
 import { RefreshAssetResponse } from './model/RefreshAssetResponse';
 import { RefreshResult } from './model/RefreshResult';
 import { RefreshTaskReq } from './model/RefreshTaskReq';
+import { Result } from './model/Result';
 import { Review } from './model/Review';
 import { ReviewDetail } from './model/ReviewDetail';
 import { ReviewInfo } from './model/ReviewInfo';
@@ -212,6 +238,7 @@ import { TransTemplateGroup } from './model/TransTemplateGroup';
 import { TransTemplateGroupCollection } from './model/TransTemplateGroupCollection';
 import { TransTemplateRsp } from './model/TransTemplateRsp';
 import { TranscodeInfo } from './model/TranscodeInfo';
+import { TranscodeInfoResult } from './model/TranscodeInfoResult';
 import { TranscodeTask } from './model/TranscodeTask';
 import { UnpublishAssetsRequest } from './model/UnpublishAssetsRequest';
 import { UnpublishAssetsResponse } from './model/UnpublishAssetsResponse';
@@ -255,6 +282,7 @@ import { VideoInfo } from './model/VideoInfo';
 import { VideoProcess } from './model/VideoProcess';
 import { VideoTemplateInfo } from './model/VideoTemplateInfo';
 import { VideoTypeRef } from './model/VideoTypeRef';
+import { VodEditingSetting } from './model/VodEditingSetting';
 import { VodRetrievalData } from './model/VodRetrievalData';
 import { VodSampleData } from './model/VodSampleData';
 import { WatermarkRequest } from './model/WatermarkRequest';
@@ -415,6 +443,26 @@ export class VodClient {
      */
     public createAssetCategory(createAssetCategoryRequest?: CreateAssetCategoryRequest): Promise<CreateAssetCategoryResponse> {
         const options = ParamCreater().createAssetCategory(createAssetCategoryRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 创建编辑任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 创建编辑任务
+     * @param {CreateAssetEditTaskReq} createAssetEditTaskRequestBody 创建编辑任务
+     * @param {string} [xSdkDate] 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public createAssetEditTask(createAssetEditTaskRequest?: CreateAssetEditTaskRequest): Promise<CreateAssetEditTaskResponse> {
+        const options = ParamCreater().createAssetEditTask(createAssetEditTaskRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -752,6 +800,26 @@ export class VodClient {
     }
 
     /**
+     * 取消编辑任务，仅支持取消等待中的任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 取消编辑任务
+     * @param {string} taskId 任务ID
+     * @param {string} [xSdkDate] 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public deleteAssetEditTask(deleteAssetEditTaskRequest?: DeleteAssetEditTaskRequest): Promise<DeleteAssetEditTaskResponse> {
+        const options = ParamCreater().deleteAssetEditTask(deleteAssetEditTaskRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 删除媒资。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -829,6 +897,27 @@ export class VodClient {
      */
     public deleteTemplateGroupCollection(deleteTemplateGroupCollectionRequest?: DeleteTemplateGroupCollectionRequest): Promise<DeleteTemplateGroupCollectionResponse> {
         const options = ParamCreater().deleteTemplateGroupCollection(deleteTemplateGroupCollectionRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 删除媒资对应的截图，支持批量删除单个媒资下的多个截图结果，一次最多能删除十个。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 删除媒资下的多个截图
+     * @param {string} [xSdkDate] 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @param {string} [assetId] 媒资ID
+     * @param {Array<string>} [taskId] 删除指定截图任务的截图结果，一次最多10个
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public deleteThumbnails(deleteThumbnailsRequest?: DeleteThumbnailsRequest): Promise<DeleteThumbnailsResponse> {
+        const options = ParamCreater().deleteThumbnails(deleteThumbnailsRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -944,6 +1033,28 @@ export class VodClient {
     }
 
     /**
+     * 查询编辑任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询编辑任务
+     * @param {string} [xSdkDate] 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @param {string} [taskId] 编辑任务ID
+     * @param {number} [offset] 查询偏移量，默认0
+     * @param {number} [limit] 查询一页返回数，默认10，最大支持100
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listAssetEditTask(listAssetEditTaskRequest?: ListAssetEditTaskRequest): Promise<ListAssetEditTaskResponse> {
+        const options = ParamCreater().listAssetEditTask(listAssetEditTaskRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 查询媒资列表，列表中的每一条记录包含媒资的概要信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -966,6 +1077,80 @@ export class VodClient {
      */
     public listAssetList(listAssetListRequest?: ListAssetListRequest): Promise<ListAssetListResponse> {
         const options = ParamCreater().listAssetList(listAssetListRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * ## 典型场景 ##
+     *   查询媒资任务信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询媒资任务信息
+     * @param {string} [xSdkDate] 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @param {string} [type] 任务类型
+     * @param {string} [assetId] 媒资Id
+     * @param {string} [createTimeAfter] 根据任务创建时间匹配该时间之后的，包含该时间点，格式按照RFC3339，UTC时间，如2020-09-01T18:50:20Z
+     * @param {string} [createTimeBefore] 根据任务创建时间匹配该时间之前的，不包含该时间点，格式按照RFC3339，UTC时间，如2020-09-01T18:50:20Z
+     * @param {string} [endTimeAfter] 根据任务结束时间匹配该时间之后的，包含该时间点，格式按照RFC3339，UTC时间，如2020-09-01T18:50:20Z
+     * @param {string} [endTimeBefore] 根据任务结束时间匹配该时间之前的，不包含该时间点，格式按照RFC3339，UTC时间，如2020-09-01T18:50:20Z
+     * @param {Array<string>} [status] 任务状态
+     * @param {string} [marker] 标志位，不传默认表示从第一条开始
+     * @param {number} [limit] 返回的每页个数，默认10，最大100，最小1
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listAssetTaskInfo(listAssetTaskInfoRequest?: ListAssetTaskInfoRequest): Promise<ListAssetTaskInfoResponse> {
+        const options = ParamCreater().listAssetTaskInfo(listAssetTaskInfoRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * ## 典型场景 ##
+     *   查询指定分类信息，及其子分类（即下一级分类）的列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询指定分类信息
+     * @param {Array<number>} id 视频分类ID，最多支持10个，传0表示查询所有一级分类
+     * @param {string} [xSdkDate] 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listCategoryInfo(listCategoryInfoRequest?: ListCategoryInfoRequest): Promise<ListCategoryInfoResponse> {
+        const options = ParamCreater().listCategoryInfo(listCategoryInfoRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询CDN的统计数据，包括流量、峰值带宽、请求总数、请求命中率、流量命中率。查询存在1小时误差。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询CDN统计信息
+     * @param {string} startTime 开始时间，格式为yyyymmddhhmmss。   - interval为300时，end_time设置为整5分钟时刻点，如：20240601000000。   - interval为3600时，end_time设置为整小时时刻点，如：20240601120000。   - interval为86400时，end_time设置为东8区零点时刻点，如：20240601000000。   - 只能查询最近三个月内的数据，且时间跨度不能超过31天。
+     * @param {string} endTime 结束时间，格式为yyyymmddhhmmss。   - interval为300时，end_time设置为整5分钟时刻点，如：20240601000000。   - interval为3600时，end_time设置为整小时时刻点，如：20240601120000。   - interval为86400时，end_time设置为东8区零点时刻点，如：20240601000000。   - 只能查询最近三个月内的数据，且时间跨度不能超过31天。
+     * @param {string} statType 统计数据类型。  取值如下： - bw：CDN峰值带宽 - flux：CDN流量 - req_num：请求总数 - req_hit_rate：请求命中率 - flux_hit_rate：流量命中率 - http_code_2xx 状态码汇总2xx - http_code_3xx 状态码汇总3xx - http_code_4xx 状态码汇总4xx - http_code_5xx 状态码汇总5xx  每次只能查询一种统计数据。
+     * @param {string} domain 域名列表，多个域名以逗号（半角）分隔。  示例：example.test1.com,example.test2.com。  ALL表示查询名下全部域名。一次最多查询20个域名。
+     * @param {string} [xSdkDate] 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @param {number} [interval] 查询粒度间隔。  取值如下： - 300(5分钟)：最大查询跨度2天。 - 3600(1小时)：最大查询跨度7天。 - 86400(1天)：最大查询跨度31天，最少跨度为2天。  单位：秒。  若不设置，小于1天 300，大于1天小于7天3600，大于7天86400。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listCdnStatistics(listCdnStatisticsRequest?: ListCdnStatisticsRequest): Promise<ListCdnStatisticsResponse> {
+        const options = ParamCreater().listCdnStatistics(listCdnStatisticsRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -1034,6 +1219,51 @@ export class VodClient {
      */
     public listTemplateGroupCollection(listTemplateGroupCollectionRequest?: ListTemplateGroupCollectionRequest): Promise<ListTemplateGroupCollectionResponse> {
         const options = ParamCreater().listTemplateGroupCollection(listTemplateGroupCollectionRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询截图结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询截图详情
+     * @param {string} taskId 截图对应的任务id
+     * @param {string} [xSdkDate] 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @param {number} [offset] 查询偏移量。取值范围[0,20480]，默认值：0。
+     * @param {number} [limit] 查询一页返回数。取值范围[1,100]，默认值：20。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listThumbnailDetails(listThumbnailDetailsRequest?: ListThumbnailDetailsRequest): Promise<ListThumbnailDetailsResponse> {
+        const options = ParamCreater().listThumbnailDetails(listThumbnailDetailsRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询截图任务结果列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询截图任务结果列表
+     * @param {string} [xSdkDate] 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @param {string} [assetId] 截图对应媒资id的截图，只支持单个媒资。
+     * @param {string} [taskId] 截图对应的任务id，只支持单个任务查询。
+     * @param {number} [offset] 查询偏移量。取值范围[0,20000]，默认值：0。
+     * @param {number} [limit] 查询一页返回数。取值范围[1,100]，默认值：10。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listThumbnailInfo(listThumbnailInfoRequest?: ListThumbnailInfoRequest): Promise<ListThumbnailInfoResponse> {
+        const options = ParamCreater().listThumbnailInfo(listThumbnailInfoRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -2138,6 +2368,51 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 创建编辑任务
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        createAssetEditTask(createAssetEditTaskRequest?: CreateAssetEditTaskRequest) {
+            const options = {
+                method: "POST",
+                url: "/v1/{project_id}/asset/editing/tasks",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let xSdkDate;
+
+            if (createAssetEditTaskRequest !== null && createAssetEditTaskRequest !== undefined) {
+                if (createAssetEditTaskRequest instanceof CreateAssetEditTaskRequest) {
+                    body = createAssetEditTaskRequest.body
+                    xSdkDate = createAssetEditTaskRequest.xSdkDate;
+                } else {
+                    body = createAssetEditTaskRequest['body'];
+                    xSdkDate = createAssetEditTaskRequest['X-Sdk-Date'];
+                }
+            }
+
+        
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            if (xSdkDate !== undefined && xSdkDate !== null) {
+                localVarHeaderParameter['X-Sdk-Date'] = String(xSdkDate);
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 实现视频转码、截图、加密等处理。既可以同时启动多种操作，也可以只启动一种操作。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -2843,6 +3118,53 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 取消编辑任务，仅支持取消等待中的任务。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        deleteAssetEditTask(deleteAssetEditTaskRequest?: DeleteAssetEditTaskRequest) {
+            const options = {
+                method: "DELETE",
+                url: "/v1/{project_id}/asset/editing/tasks",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let taskId;
+            
+            let xSdkDate;
+
+            if (deleteAssetEditTaskRequest !== null && deleteAssetEditTaskRequest !== undefined) {
+                if (deleteAssetEditTaskRequest instanceof DeleteAssetEditTaskRequest) {
+                    taskId = deleteAssetEditTaskRequest.taskId;
+                    xSdkDate = deleteAssetEditTaskRequest.xSdkDate;
+                } else {
+                    taskId = deleteAssetEditTaskRequest['task_id'];
+                    xSdkDate = deleteAssetEditTaskRequest['X-Sdk-Date'];
+                }
+            }
+
+        
+            if (taskId === null || taskId === undefined) {
+                throw new RequiredError('taskId','Required parameter taskId was null or undefined when calling deleteAssetEditTask.');
+            }
+            if (taskId !== null && taskId !== undefined) {
+                localVarQueryParameter['task_id'] = taskId;
+            }
+            if (xSdkDate !== undefined && xSdkDate !== null) {
+                localVarHeaderParameter['X-Sdk-Date'] = String(xSdkDate);
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 删除媒资。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -3052,6 +3374,57 @@ export const ParamCreater = function () {
             }
             if (groupCollectionId !== null && groupCollectionId !== undefined) {
                 localVarQueryParameter['group_collection_id'] = groupCollectionId;
+            }
+            if (xSdkDate !== undefined && xSdkDate !== null) {
+                localVarHeaderParameter['X-Sdk-Date'] = String(xSdkDate);
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 删除媒资对应的截图，支持批量删除单个媒资下的多个截图结果，一次最多能删除十个。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        deleteThumbnails(deleteThumbnailsRequest?: DeleteThumbnailsRequest) {
+            const options = {
+                method: "DELETE",
+                url: "/v1/{project_id}/asset/thumbnails",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let xSdkDate;
+            
+            let assetId;
+            
+            let taskId;
+
+            if (deleteThumbnailsRequest !== null && deleteThumbnailsRequest !== undefined) {
+                if (deleteThumbnailsRequest instanceof DeleteThumbnailsRequest) {
+                    xSdkDate = deleteThumbnailsRequest.xSdkDate;
+                    assetId = deleteThumbnailsRequest.assetId;
+                    taskId = deleteThumbnailsRequest.taskId;
+                } else {
+                    xSdkDate = deleteThumbnailsRequest['X-Sdk-Date'];
+                    assetId = deleteThumbnailsRequest['asset_id'];
+                    taskId = deleteThumbnailsRequest['task_id'];
+                }
+            }
+
+        
+            if (assetId !== null && assetId !== undefined) {
+                localVarQueryParameter['asset_id'] = assetId;
+            }
+            if (taskId !== null && taskId !== undefined) {
+                localVarQueryParameter['task_id'] = taskId;
             }
             if (xSdkDate !== undefined && xSdkDate !== null) {
                 localVarHeaderParameter['X-Sdk-Date'] = String(xSdkDate);
@@ -3324,6 +3697,64 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 查询编辑任务
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listAssetEditTask(listAssetEditTaskRequest?: ListAssetEditTaskRequest) {
+            const options = {
+                method: "GET",
+                url: "/v1/{project_id}/asset/editing/tasks",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let xSdkDate;
+            
+            let taskId;
+            
+            let offset;
+            
+            let limit;
+
+            if (listAssetEditTaskRequest !== null && listAssetEditTaskRequest !== undefined) {
+                if (listAssetEditTaskRequest instanceof ListAssetEditTaskRequest) {
+                    xSdkDate = listAssetEditTaskRequest.xSdkDate;
+                    taskId = listAssetEditTaskRequest.taskId;
+                    offset = listAssetEditTaskRequest.offset;
+                    limit = listAssetEditTaskRequest.limit;
+                } else {
+                    xSdkDate = listAssetEditTaskRequest['X-Sdk-Date'];
+                    taskId = listAssetEditTaskRequest['task_id'];
+                    offset = listAssetEditTaskRequest['offset'];
+                    limit = listAssetEditTaskRequest['limit'];
+                }
+            }
+
+        
+            if (taskId !== null && taskId !== undefined) {
+                localVarQueryParameter['task_id'] = taskId;
+            }
+            if (offset !== null && offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
+            }
+            if (limit !== null && limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+            if (xSdkDate !== undefined && xSdkDate !== null) {
+                localVarHeaderParameter['X-Sdk-Date'] = String(xSdkDate);
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 查询媒资列表，列表中的每一条记录包含媒资的概要信息。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -3427,6 +3858,239 @@ export const ParamCreater = function () {
             }
             if (order !== null && order !== undefined) {
                 localVarQueryParameter['order'] = order;
+            }
+            if (xSdkDate !== undefined && xSdkDate !== null) {
+                localVarHeaderParameter['X-Sdk-Date'] = String(xSdkDate);
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * ## 典型场景 ##
+         *   查询媒资任务信息
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listAssetTaskInfo(listAssetTaskInfoRequest?: ListAssetTaskInfoRequest) {
+            const options = {
+                method: "GET",
+                url: "/v1/{project_id}/asset/tasks",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let xSdkDate;
+            
+            let type;
+            
+            let assetId;
+            
+            let createTimeAfter;
+            
+            let createTimeBefore;
+            
+            let endTimeAfter;
+            
+            let endTimeBefore;
+            
+            let status;
+            
+            let marker;
+            
+            let limit;
+
+            if (listAssetTaskInfoRequest !== null && listAssetTaskInfoRequest !== undefined) {
+                if (listAssetTaskInfoRequest instanceof ListAssetTaskInfoRequest) {
+                    xSdkDate = listAssetTaskInfoRequest.xSdkDate;
+                    type = listAssetTaskInfoRequest.type;
+                    assetId = listAssetTaskInfoRequest.assetId;
+                    createTimeAfter = listAssetTaskInfoRequest.createTimeAfter;
+                    createTimeBefore = listAssetTaskInfoRequest.createTimeBefore;
+                    endTimeAfter = listAssetTaskInfoRequest.endTimeAfter;
+                    endTimeBefore = listAssetTaskInfoRequest.endTimeBefore;
+                    status = listAssetTaskInfoRequest.status;
+                    marker = listAssetTaskInfoRequest.marker;
+                    limit = listAssetTaskInfoRequest.limit;
+                } else {
+                    xSdkDate = listAssetTaskInfoRequest['X-Sdk-Date'];
+                    type = listAssetTaskInfoRequest['type'];
+                    assetId = listAssetTaskInfoRequest['asset_id'];
+                    createTimeAfter = listAssetTaskInfoRequest['create_time_after'];
+                    createTimeBefore = listAssetTaskInfoRequest['create_time_before'];
+                    endTimeAfter = listAssetTaskInfoRequest['end_time_after'];
+                    endTimeBefore = listAssetTaskInfoRequest['end_time_before'];
+                    status = listAssetTaskInfoRequest['status'];
+                    marker = listAssetTaskInfoRequest['marker'];
+                    limit = listAssetTaskInfoRequest['limit'];
+                }
+            }
+
+        
+            if (type !== null && type !== undefined) {
+                localVarQueryParameter['type'] = type;
+            }
+            if (assetId !== null && assetId !== undefined) {
+                localVarQueryParameter['asset_id'] = assetId;
+            }
+            if (createTimeAfter !== null && createTimeAfter !== undefined) {
+                localVarQueryParameter['create_time_after'] = createTimeAfter;
+            }
+            if (createTimeBefore !== null && createTimeBefore !== undefined) {
+                localVarQueryParameter['create_time_before'] = createTimeBefore;
+            }
+            if (endTimeAfter !== null && endTimeAfter !== undefined) {
+                localVarQueryParameter['end_time_after'] = endTimeAfter;
+            }
+            if (endTimeBefore !== null && endTimeBefore !== undefined) {
+                localVarQueryParameter['end_time_before'] = endTimeBefore;
+            }
+            if (status !== null && status !== undefined) {
+                localVarQueryParameter['status'] = status;
+            }
+            if (marker !== null && marker !== undefined) {
+                localVarQueryParameter['marker'] = marker;
+            }
+            if (limit !== null && limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+            if (xSdkDate !== undefined && xSdkDate !== null) {
+                localVarHeaderParameter['X-Sdk-Date'] = String(xSdkDate);
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * ## 典型场景 ##
+         *   查询指定分类信息，及其子分类（即下一级分类）的列表。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listCategoryInfo(listCategoryInfoRequest?: ListCategoryInfoRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2/{project_id}/asset/categories",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let id;
+            
+            let xSdkDate;
+
+            if (listCategoryInfoRequest !== null && listCategoryInfoRequest !== undefined) {
+                if (listCategoryInfoRequest instanceof ListCategoryInfoRequest) {
+                    id = listCategoryInfoRequest.id;
+                    xSdkDate = listCategoryInfoRequest.xSdkDate;
+                } else {
+                    id = listCategoryInfoRequest['id'];
+                    xSdkDate = listCategoryInfoRequest['X-Sdk-Date'];
+                }
+            }
+
+        
+            if (id === null || id === undefined) {
+                throw new RequiredError('id','Required parameter id was null or undefined when calling listCategoryInfo.');
+            }
+            if (id !== null && id !== undefined) {
+                localVarQueryParameter['id'] = id;
+            }
+            if (xSdkDate !== undefined && xSdkDate !== null) {
+                localVarHeaderParameter['X-Sdk-Date'] = String(xSdkDate);
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询CDN的统计数据，包括流量、峰值带宽、请求总数、请求命中率、流量命中率。查询存在1小时误差。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listCdnStatistics(listCdnStatisticsRequest?: ListCdnStatisticsRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2/{project_id}/asset/cdn-statistics",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let startTime;
+            
+            let endTime;
+            
+            let statType;
+            
+            let domain;
+            
+            let xSdkDate;
+            
+            let interval;
+
+            if (listCdnStatisticsRequest !== null && listCdnStatisticsRequest !== undefined) {
+                if (listCdnStatisticsRequest instanceof ListCdnStatisticsRequest) {
+                    startTime = listCdnStatisticsRequest.startTime;
+                    endTime = listCdnStatisticsRequest.endTime;
+                    statType = listCdnStatisticsRequest.statType;
+                    domain = listCdnStatisticsRequest.domain;
+                    xSdkDate = listCdnStatisticsRequest.xSdkDate;
+                    interval = listCdnStatisticsRequest.interval;
+                } else {
+                    startTime = listCdnStatisticsRequest['start_time'];
+                    endTime = listCdnStatisticsRequest['end_time'];
+                    statType = listCdnStatisticsRequest['stat_type'];
+                    domain = listCdnStatisticsRequest['domain'];
+                    xSdkDate = listCdnStatisticsRequest['X-Sdk-Date'];
+                    interval = listCdnStatisticsRequest['interval'];
+                }
+            }
+
+        
+            if (startTime === null || startTime === undefined) {
+                throw new RequiredError('startTime','Required parameter startTime was null or undefined when calling listCdnStatistics.');
+            }
+            if (startTime !== null && startTime !== undefined) {
+                localVarQueryParameter['start_time'] = startTime;
+            }
+            if (endTime === null || endTime === undefined) {
+                throw new RequiredError('endTime','Required parameter endTime was null or undefined when calling listCdnStatistics.');
+            }
+            if (endTime !== null && endTime !== undefined) {
+                localVarQueryParameter['end_time'] = endTime;
+            }
+            if (statType === null || statType === undefined) {
+                throw new RequiredError('statType','Required parameter statType was null or undefined when calling listCdnStatistics.');
+            }
+            if (statType !== null && statType !== undefined) {
+                localVarQueryParameter['stat_type'] = statType;
+            }
+            if (domain === null || domain === undefined) {
+                throw new RequiredError('domain','Required parameter domain was null or undefined when calling listCdnStatistics.');
+            }
+            if (domain !== null && domain !== undefined) {
+                localVarQueryParameter['domain'] = domain;
+            }
+            if (interval !== null && interval !== undefined) {
+                localVarQueryParameter['interval'] = interval;
             }
             if (xSdkDate !== undefined && xSdkDate !== null) {
                 localVarHeaderParameter['X-Sdk-Date'] = String(xSdkDate);
@@ -3615,6 +4279,132 @@ export const ParamCreater = function () {
         
             if (groupCollectionId !== null && groupCollectionId !== undefined) {
                 localVarQueryParameter['group_collection_id'] = groupCollectionId;
+            }
+            if (offset !== null && offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
+            }
+            if (limit !== null && limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+            if (xSdkDate !== undefined && xSdkDate !== null) {
+                localVarHeaderParameter['X-Sdk-Date'] = String(xSdkDate);
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询截图结果
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listThumbnailDetails(listThumbnailDetailsRequest?: ListThumbnailDetailsRequest) {
+            const options = {
+                method: "GET",
+                url: "/v1/{project_id}/asset/thumbnail/details",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let taskId;
+            
+            let xSdkDate;
+            
+            let offset;
+            
+            let limit;
+
+            if (listThumbnailDetailsRequest !== null && listThumbnailDetailsRequest !== undefined) {
+                if (listThumbnailDetailsRequest instanceof ListThumbnailDetailsRequest) {
+                    taskId = listThumbnailDetailsRequest.taskId;
+                    xSdkDate = listThumbnailDetailsRequest.xSdkDate;
+                    offset = listThumbnailDetailsRequest.offset;
+                    limit = listThumbnailDetailsRequest.limit;
+                } else {
+                    taskId = listThumbnailDetailsRequest['task_id'];
+                    xSdkDate = listThumbnailDetailsRequest['X-Sdk-Date'];
+                    offset = listThumbnailDetailsRequest['offset'];
+                    limit = listThumbnailDetailsRequest['limit'];
+                }
+            }
+
+        
+            if (taskId === null || taskId === undefined) {
+                throw new RequiredError('taskId','Required parameter taskId was null or undefined when calling listThumbnailDetails.');
+            }
+            if (taskId !== null && taskId !== undefined) {
+                localVarQueryParameter['task_id'] = taskId;
+            }
+            if (offset !== null && offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
+            }
+            if (limit !== null && limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+            if (xSdkDate !== undefined && xSdkDate !== null) {
+                localVarHeaderParameter['X-Sdk-Date'] = String(xSdkDate);
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询截图任务结果列表
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listThumbnailInfo(listThumbnailInfoRequest?: ListThumbnailInfoRequest) {
+            const options = {
+                method: "GET",
+                url: "/v1/{project_id}/asset/thumbnails",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let xSdkDate;
+            
+            let assetId;
+            
+            let taskId;
+            
+            let offset;
+            
+            let limit;
+
+            if (listThumbnailInfoRequest !== null && listThumbnailInfoRequest !== undefined) {
+                if (listThumbnailInfoRequest instanceof ListThumbnailInfoRequest) {
+                    xSdkDate = listThumbnailInfoRequest.xSdkDate;
+                    assetId = listThumbnailInfoRequest.assetId;
+                    taskId = listThumbnailInfoRequest.taskId;
+                    offset = listThumbnailInfoRequest.offset;
+                    limit = listThumbnailInfoRequest.limit;
+                } else {
+                    xSdkDate = listThumbnailInfoRequest['X-Sdk-Date'];
+                    assetId = listThumbnailInfoRequest['asset_id'];
+                    taskId = listThumbnailInfoRequest['task_id'];
+                    offset = listThumbnailInfoRequest['offset'];
+                    limit = listThumbnailInfoRequest['limit'];
+                }
+            }
+
+        
+            if (assetId !== null && assetId !== undefined) {
+                localVarQueryParameter['asset_id'] = assetId;
+            }
+            if (taskId !== null && taskId !== undefined) {
+                localVarQueryParameter['task_id'] = taskId;
             }
             if (offset !== null && offset !== undefined) {
                 localVarQueryParameter['offset'] = offset;

@@ -35,6 +35,9 @@ import { BatchTagActionResponse } from './model/BatchTagActionResponse';
 import { BatchUpgradeDatabaseVersionRequest } from './model/BatchUpgradeDatabaseVersionRequest';
 import { BatchUpgradeDatabaseVersionRequestBody } from './model/BatchUpgradeDatabaseVersionRequestBody';
 import { BatchUpgradeDatabaseVersionResponse } from './model/BatchUpgradeDatabaseVersionResponse';
+import { BindPublicGatewayRequest } from './model/BindPublicGatewayRequest';
+import { BindPublicGatewayRequestBody } from './model/BindPublicGatewayRequestBody';
+import { BindPublicGatewayResponse } from './model/BindPublicGatewayResponse';
 import { CancelEipRequest } from './model/CancelEipRequest';
 import { CancelEipResponse } from './model/CancelEipResponse';
 import { CancelScheduledTaskRequest } from './model/CancelScheduledTaskRequest';
@@ -98,6 +101,9 @@ import { DeleteDatabaseUserRequestBody } from './model/DeleteDatabaseUserRequest
 import { DeleteDatabaseUserResponse } from './model/DeleteDatabaseUserResponse';
 import { DeleteInstanceRequest } from './model/DeleteInstanceRequest';
 import { DeleteInstanceResponse } from './model/DeleteInstanceResponse';
+import { DeleteIpRequest } from './model/DeleteIpRequest';
+import { DeleteIpRequestBody } from './model/DeleteIpRequestBody';
+import { DeleteIpResponse } from './model/DeleteIpResponse';
 import { DeleteKillOpRuleListRequest } from './model/DeleteKillOpRuleListRequest';
 import { DeleteKillOpRuleListRequestBody } from './model/DeleteKillOpRuleListRequestBody';
 import { DeleteKillOpRuleListResponse } from './model/DeleteKillOpRuleListResponse';
@@ -119,6 +125,7 @@ import { DeleteSessionResponse } from './model/DeleteSessionResponse';
 import { DiffConfigurationRequest } from './model/DiffConfigurationRequest';
 import { DiffDetails } from './model/DiffDetails';
 import { DiskAutoExpansionPolicy } from './model/DiskAutoExpansionPolicy';
+import { DiskSetAutoExpansionPolicy } from './model/DiskSetAutoExpansionPolicy';
 import { DiskVolumes } from './model/DiskVolumes';
 import { DownloadErrorlogRequest } from './model/DownloadErrorlogRequest';
 import { DownloadErrorlogRequestBody } from './model/DownloadErrorlogRequestBody';
@@ -363,11 +370,14 @@ import { SwitchSslRequest } from './model/SwitchSslRequest';
 import { SwitchSslRequestBody } from './model/SwitchSslRequestBody';
 import { SwitchSslResponse } from './model/SwitchSslResponse';
 import { SwitchoverReplicaSetRequest } from './model/SwitchoverReplicaSetRequest';
+import { SwitchoverReplicaSetRequestBody } from './model/SwitchoverReplicaSetRequestBody';
 import { SwitchoverReplicaSetResponse } from './model/SwitchoverReplicaSetResponse';
 import { TagItem } from './model/TagItem';
 import { TagResponse } from './model/TagResponse';
 import { TagWithKeyValue } from './model/TagWithKeyValue';
 import { Target } from './model/Target';
+import { UnbindPublicGatewayRequest } from './model/UnbindPublicGatewayRequest';
+import { UnbindPublicGatewayResponse } from './model/UnbindPublicGatewayResponse';
 import { UpdateBackupDownloadPolicyRequest } from './model/UpdateBackupDownloadPolicyRequest';
 import { UpdateBackupDownloadPolicyRequestBody } from './model/UpdateBackupDownloadPolicyRequestBody';
 import { UpdateBackupDownloadPolicyResponse } from './model/UpdateBackupDownloadPolicyResponse';
@@ -557,6 +567,27 @@ export class DdsClient {
      */
     public batchUpgradeDatabaseVersion(batchUpgradeDatabaseVersionRequest?: BatchUpgradeDatabaseVersionRequest): Promise<BatchUpgradeDatabaseVersionResponse> {
         const options = ParamCreater().batchUpgradeDatabaseVersion(batchUpgradeDatabaseVersionRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 为实例下的节点绑定公网网关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 绑定公网网关
+     * @param {string} instanceId **参数解释：** 实例ID，可以调用“查询实例列表和详情-QueryingInstancesandDetails”接口获取。如果未申请实例，可以调用“创建实例-CreatingaDBInstance”接口创建。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {string} nodeId **参数解释：** 需要绑定公网网关规则的节点ID。 **约束限制：** 集群实例选择mongos节点，副本集实例选择primary或者secondary节点。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {BindPublicGatewayRequestBody} bindPublicGatewayRequestBody 请求体。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public bindPublicGateway(bindPublicGatewayRequest?: BindPublicGatewayRequest): Promise<BindPublicGatewayResponse> {
+        const options = ParamCreater().bindPublicGateway(bindPublicGatewayRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -860,12 +891,12 @@ export class DdsClient {
     }
 
     /**
-     * 删除参数模板。
+     * 删除指定参数模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 删除参数模板
-     * @param {string} configId 参数模板ID。
+     * @param {string} configId **参数解释：** 参数模板ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -930,6 +961,26 @@ export class DdsClient {
      */
     public deleteInstance(deleteInstanceRequest?: DeleteInstanceRequest): Promise<DeleteInstanceResponse> {
         const options = ParamCreater().deleteInstance(deleteInstanceRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 删除集群的Shard/Config IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 删除集群的Shard/Config IP
+     * @param {string} instanceId **参数解释：** 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {DeleteIpRequestBody} deleteIpRequestBody 请求体。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public deleteIp(deleteIpRequest?: DeleteIpRequest): Promise<DeleteIpResponse> {
+        const options = ParamCreater().deleteIp(deleteIpRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -1101,7 +1152,7 @@ export class DdsClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 扩容副本集实例的节点数量
-     * @param {string} instanceId 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
+     * @param {string} instanceId **参数解释：** 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @param {EnlargeReplicasetNodeRequestBody} enlargeReplicasetNodeRequestBody 请求体。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1121,9 +1172,9 @@ export class DdsClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 查询可应用的实例
-     * @param {string} configId 参数模板ID。
-     * @param {number} [offset] 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
-     * @param {number} [limit] 查询记录数。默认为100，不能为负数，最小值为1，最大值为100。
+     * @param {string} configId **参数解释：** 参数模板ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {number} [offset] **参数解释：** 索引位置，偏移量。 **约束限制：** 必须为整数数字。 **取值范围：** &gt;&#x3D;0。 **默认取值：** 0。偏移0条数据，表示从第一条数据开始查询。
+     * @param {number} [limit] **参数解释：** 查询记录数。 **约束限制：** 正整数。 **取值范围：** 1~100。 **默认取值：** 100。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -1224,14 +1275,20 @@ export class DdsClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 查询备份列表
-     * @param {string} [instanceId] 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
-     * @param {string} [backupId] 备份ID。 - 当该字段传入的备份ID归属为自动增量备份时，实例ID必传。
-     * @param {'Auto' | 'Manual' | 'Incremental'} [backupType] 备份类型。 - 取值为“Auto”，表示自动全量备份。 - 取值为“Manual”，表示手动全量备份。 - 取值为“Incremental”，表示自动增量备份。 - 当该字段未传入值时，默认只查询所有的全量备份，包括自动全备备份和手动全量备份。当该字段取值为“Incremental”时，实例ID必传。
-     * @param {number} [offset] 索引位置偏移量，表示从指定project ID下最新的实例创建时间开始，按时间的先后顺序偏移offset条数据后查询对应的实例信息。 取值大于或等于0。不传该参数时，查询偏移量默认为0，表示从最新的实例创建时间对应的实例开始查询。
-     * @param {number} [limit] 查询备份个数上限值。 取值范围：1~100。不传该参数时，默认查询前100条实例信息。
-     * @param {string} [beginTime] 查询开始时间，格式为“yyyy-mm-dd hh:mm:ss”。该时间为UTC时间。 “end_time”有值时，“begin_time”必选。
-     * @param {string} [endTime] 查询结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”，且大于查询开始时间。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。 “begin_time”有值时，“end_time”必选。
-     * @param {'Sharding' | 'ReplicaSet' | 'Single'} [mode] 实例模式。 取值： - Sharding - ReplicaSet - Single
+     * @param {string} [instanceId] **参数解释：** 实例ID，可以调用“查询实例列表和详情-QueryingInstancesandDetails”接口获取。如果未申请实例，可以调用“创建实例-CreatingaDBInstance”接口创建。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {string} [backupId] **参数解释：** 备份ID。 **约束限制：** 当该字段传入的备份ID归属为自动增量备份时，实例ID必传。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {'Auto' | 'Manual' | 'Incremental'} [backupType] **参数解释：** 备份类型。 **约束限制：** 当该字段取值为“Incremental”时，实例ID必传。 **取值范围：** - 取值为“Auto”，表示自动全量备份。 - 取值为“Manual”，表示手动全量备份。 - 取值为“Incremental”，表示自动增量备份。 - 当该字段未传入值时，默认只查询所有的全量备份，包括自动全备备份和手动全量备份。当该字段取值为“Incremental”时，实例ID必传。  **默认取值：** 不涉及。
+     * @param {number} [offset] **参数解释：** 索引位置偏移量，表示从指定project ID下最新的备份创建时间开始，按时间的先后顺序偏移offset条数据后查询对应的备份信息。 **约束限制：** 不涉及。 **取值范围：** 大于或等于0。 **默认取值：** 0，表示从最新的备份创建时间对应的备份开始查询。
+     * @param {number} [limit] **参数解释：** 查询备份个数上限值。 **约束限制：** 不涉及。 **取值范围：** 1~100。 **默认取值：** 100。不传该参数时，默认查询前100条备份信息。
+     * @param {string} [beginTime] **参数解释：** 查询备份开始的时间，格式为“yyyy-mm-dd hh:mm:ss”。该时间为UTC时间。 **约束限制：** “end_time”有值时，“begin_time”必选。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {string} [endTime] **参数解释：** 查询备份开始的结束时间，格式为“yyyy-mm-dd hh:mm:ss”。该时间为UTC时间。 **约束限制：** “begin_time”有值时，“end_time”必选。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {'Sharding' | 'ReplicaSet' | 'Single'} [mode] **参数解释：** 实例模式。 **约束限制：** 不涉及。 **取值范围：** - Sharding - ReplicaSet - Single  **默认取值：** 不涉及。
+     * @param {string} [orderField] **参数解释：** 排序字段。 **约束限制：** “order_rule”有值时，“order_field”必选。 **取值范围：** - name，备份名称。 - instanceName，实例名称。 - type，备份类型。 - datastoreType，引擎类型。 - beginTime，开始时间。 - status，备份状态。  **默认取值：** 如果不传值，则默认根据备份开始时间，即响应参数的begin_time，倒序排序。
+     * @param {string} [orderRule] **参数解释：** 排序规则。 **约束限制：** “order_field”有值时，“order_rule”必选。 **取值范围：** - asc: 升序排序。 - desc: 降序排序。  **默认取值：** 如果不传值，则默认根据备份开始时间，即响应参数的begin_time，倒序排序。
+     * @param {string} [backupStatus] **参数解释：** 备份状态。 **约束限制：** 不涉及。 **取值范围：** - COMPLETED - BUILDING - FAILED  **默认取值：** 不涉及。
+     * @param {string} [backupName] **参数解释：** 备份名称，支持模糊匹配。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {string} [backupDescription] **参数解释：** 备份描述，支持模糊匹配。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {string} [instanceName] **参数解释：** 实例名称，支持模糊匹配。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -1250,8 +1307,8 @@ export class DdsClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 获取参数模板列表
-     * @param {number} [offset] 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
-     * @param {number} [limit] 每页显示的数量，默认是100。
+     * @param {number} [offset] **参数解释：** 索引位置，偏移量。 **约束限制：** 必须为数字。 **取值范围：** 不能为负数。 **默认取值：** 0。偏移0条数据，表示从第一条数据开始查询。
+     * @param {number} [limit] **参数解释：** 每页显示的数量。 **约束限制：** 不涉及。 **取值范围：** 1~100。 **默认取值：** 100。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -1523,12 +1580,12 @@ export class DdsClient {
     }
 
     /**
-     * 查询数据库慢日志信息。
+     * 查询数据库慢日志信息，支持关键字、数据库表名等搜索功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 查询数据库慢日志
-     * @param {string} instanceId 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
+     * @param {string} instanceId **参数解释：** 实例ID，可以调用“查询实例列表和详情-QueryingInstancesandDetails”接口获取。如果未申请实例，可以调用“创建实例-CreatingaDBInstance”接口创建。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @param {ListLtsSlowLogsRequestBody} listLtsSlowLogsRequestBody： 请求体。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1655,8 +1712,8 @@ export class DdsClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 查询定时任务
-     * @param {string} [jobName] 任务名称，默认为空。对应取值如下：  \&quot;RESIZE_FLAVOR\&quot;：变更实例的CPU和内存规格
-     * @param {string} [jobStatus] 任务执行状态，默认为空。 取值：  值为\&quot;Pending\&quot;，表示任务未执行。  值为\&quot;Running\&quot;，表示任务正在执行。  值为\&quot;Completed\&quot;，表示任务执行成功。  值为\&quot;Failed\&quot;，表示任务执行失败。  值为\&quot;Canceled\&quot;，表示任务取消执行。
+     * @param {string} [jobName] 任务名称，默认为空。对应取值如下： \&quot;RESIZE_FLAVOR\&quot;：变更实例的CPU和内存规格
+     * @param {string} [jobStatus] 任务执行状态，默认为空。 取值： - 值为\&quot;Pending\&quot;，表示任务未执行。 - 值为\&quot;Running\&quot;，表示任务正在执行。 - 值为\&quot;Completed\&quot;，表示任务执行成功。 - 值为\&quot;Failed\&quot;，表示任务执行失败。 - 值为\&quot;Canceled\&quot;，表示任务取消执行。
      * @param {string} [instanceId] 实例ID，不传该值默认查所有符合条件的实例。
      * @param {string} [startTime] 任务创建起始时间，格式为\&quot;yyyy-mm-ddThh:mm:ssZ\&quot;。 其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100，不传默认为当前时间前七天。
      * @param {string} [endTime] 任务创建结束时间，格式为\&quot;yyyy-mm-ddThh:mm:ssZ\&quot;。 其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100，不传默认为当前时间。
@@ -1772,6 +1829,7 @@ export class DdsClient {
      * @param {string} startTime 查询开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始，Z指时区偏移量
      * @param {string} endTime 查询结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”，且大于查询开始时间，时间跨度不超过30天。 其中，T指某个时间的开始，Z指时区偏移量。
      * @param {string} [status] 任务状态： 取值为“Running”为执行中； 取值为“Completed”为完成； 取值为“Failed” 为失败。
+     * @param {string} [id] 任务ID。
      * @param {string} [name] 任务名称。对应取值如下： - \&quot;CreateMongoDB\&quot;：创建集群实例 - \&quot;CreateMongoDBReplica\&quot;：创建副本集实例 - \&quot;CreateMongoDBReplicaSingle\&quot;：创建单节点实例 - \&quot;EnlargeMongoDBVolume\&quot;：磁盘扩容 - \&quot;ResizeMongoDBInstance\&quot;：社区版实例规格变更 - \&quot;ResizeDfvMongoDBInstance\&quot;：社区增强版实例规格变更 - \&quot;EnlargeMongoDBGroup\&quot;：添加节点 - \&quot;ReplicaSetEnlargeNode\&quot;：副本集添加备节点 - \&quot;AddReadonlyNode\&quot;：添加只读节点 - \&quot;RestartInstance\&quot;：重启集群实例 - \&quot;RestartGroup\&quot;：重启集群节点组 - \&quot;RestartNode\&quot;：重启集群节点 - \&quot;RestartReplicaSetInstance\&quot;：重启副本集实例 - \&quot;RestartReplicaSingleInstance\&quot;：重启单节点实例 - \&quot;SwitchPrimary\&quot;：主备切换 - \&quot;ModifyIp\&quot;：修改内网地址 - \&quot;ModifySecurityGroup\&quot;：修改安全组 - \&quot;ModifyPort\&quot;：修改数据库端口 - \&quot;BindPublicIP\&quot;：绑定弹性IP - \&quot;UnbindPublicIP\&quot;：解绑弹性IP - \&quot;SwitchInstanceSSL\&quot;：切换SSL - \&quot;AzMigrate\&quot;：迁移可用区 - \&quot;CreateIp\&quot;：显示shard/config IP - \&quot;ModifyOpLogSize\&quot;：修改oplog大小 - \&quot;RestoreMongoDB\&quot;：集群恢复到新实例 - \&quot;RestoreMongoDB_Replica\&quot;：副本集恢复到新实例 - \&quot;RestoreMongoDB_Replica_Single\&quot;：单节点恢复到新实例 - \&quot;RestoreMongoDB_Replica_PITR\&quot;：副本集恢复到指定时间点 - \&quot;MongodbSnapshotBackup\&quot;：创建物理备份 - \&quot;MongodbSnapshotEBackup\&quot;：创建快照备份 - \&quot;MongodbRestoreData2CurrentInstance\&quot;：备份恢复到当前实例 - \&quot;MongodbRestoreData2NewInstance\&quot;：备份恢复到新实例 - \&quot;MongodbPitr2CurrentInstance\&quot;：备份恢复到当前实例指定时间点 - \&quot;MongodbPitr2NewInstance\&quot;：备份恢复到新实例指定时间点 - \&quot;MongodbRecycleBackup\&quot;：备份回收 - \&quot;MongodbRestoreTable\&quot;：库表级时间点恢复 - \&quot;UpgradeDatabaseVersion\&quot;：升级数据库补丁
      * @param {number} [offset] 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
      * @param {number} [limit] 查询记录数。默认为100，不能为负数，最小值为1，最大值为100。
@@ -1892,7 +1950,7 @@ export class DdsClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 重启实例
-     * @param {string} instanceId 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
+     * @param {string} instanceId **参数解释：** 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @param {RestartInstanceRequestBody} restartInstanceRequestBody 请求体。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -2129,7 +2187,7 @@ export class DdsClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 查询磁盘自动扩容策略
-     * @param {string} instanceId 实例ID。
+     * @param {string} instanceId **参数解释：** 实例ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -2150,7 +2208,6 @@ export class DdsClient {
      * @summary 获取备份下载链接
      * @param {string} instanceId 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
      * @param {string} backupId 备份ID。
-     * @param {string} [xLanguage] 语言。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -2228,9 +2285,9 @@ export class DdsClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 查询参数模板修改历史
-     * @param {string} configId 参数模板ID。
-     * @param {number} [offset] 索引位置，偏移量。  从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询）。 取值必须为数字，不能为负数。
-     * @param {number} [limit] 查询个数上限值。 - 取值范围: 1~100。 - 不传该参数时，默认查询前100条信息。
+     * @param {string} configId **参数解释：** 参数模板ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {number} [offset] **参数解释：** 索引位置，偏移量。 **约束限制：** 从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询）。 取值必须为数字，不能为负数。 **取值范围：** 不涉及。 **默认取值：** 0。
+     * @param {number} [limit] **参数解释：** 查询个数上限值。 **约束限制：** 不传该参数时，默认查询前100条信息。 **取值范围：** 1~100。 **默认取值：** 100。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -2244,12 +2301,12 @@ export class DdsClient {
     }
 
     /**
-     * 获取参数模板的详情。
+     * 获取指定参数模板的参数信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 获取参数模板的详情
-     * @param {string} configId 参数模板ID。
+     * @param {string} configId **参数解释：** 参数模板ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -2303,12 +2360,13 @@ export class DdsClient {
     }
 
     /**
-     * 获取指定实例的参数，可以是实例，组，节点的参数模板。
+     * 获取指定实例的参数信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 获取指定实例的参数信息
-     * @param {string} instanceId 实例ID。
+     * @param {string} contentType 发送的实体的MIME类型。推荐用户默认使用application/json，如果API是对象、镜像上传等接口，媒体类型可按照流类型的不同进行确定。
+     * @param {string} instanceId 实例ID，可以调用“查询实例列表和详情-QueryingInstancesandDetails”接口获取。如果未申请实例，可以调用“创建实例-CreatingaDBInstance”接口创建。
      * @param {string} entityId - 实例ID或组ID或节点ID。可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 - 当获取的实例类型是集群，如果获取的是shard组或者config组的参数模板，传值为组ID。如果获取的是mongos节点的参数模板，传值为节点ID。 - 当获取的实例类型是副本集或单节点，传值为实例ID。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -2664,17 +2722,38 @@ export class DdsClient {
     }
 
     /**
-     * 切换副本集实例下的主备节点
+     * 切换实例下的主备节点
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @summary 切换副本集实例的主备节点
+     * @summary 切换实例的主备节点
      * @param {string} instanceId 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
+     * @param {SwitchoverReplicaSetRequestBody} [switchoverReplicaSetRequestBody] 集群实例的shard组ID或config组ID。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     public switchoverReplicaSet(switchoverReplicaSetRequest?: SwitchoverReplicaSetRequest): Promise<SwitchoverReplicaSetResponse> {
         const options = ParamCreater().switchoverReplicaSet(switchoverReplicaSetRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 为实例下的节点解绑公网网关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 解绑公网网关
+     * @param {string} instanceId **参数解释：** 实例ID，可以调用“查询实例列表和详情-QueryingInstancesandDetails”接口获取。如果未申请实例，可以调用“创建实例-CreatingaDBInstance”接口创建。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {string} nodeId **参数解释：** 需要绑定公网网关规则的节点ID。 **约束限制：** 集群实例选择mongos节点，副本集实例选择primary或者secondary节点。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public unbindPublicGateway(unbindPublicGatewayRequest?: UnbindPublicGatewayRequest): Promise<UnbindPublicGatewayResponse> {
+        const options = ParamCreater().unbindPublicGateway(unbindPublicGatewayRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -2727,7 +2806,7 @@ export class DdsClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 修改参数模板
-     * @param {string} configId 参数模板ID。
+     * @param {string} configId **参数解释：** 参数模板ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @param {UpdateConfigurationParameterRequestBody} updateConfigurationParameterRequestBody 请求体。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -2747,7 +2826,7 @@ export class DdsClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 修改指定实例的参数
-     * @param {string} instanceId 实例ID。
+     * @param {string} instanceId **参数解释：** 实例ID，可以调用“查询实例列表和详情-QueryingInstancesandDetails”接口获取。如果未申请实例，可以调用“创建实例-CreatingaDBInstance”接口创建。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @param {UpdateConfigurationParameterResult} updateConfigurationParameterResult 请求体。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -2908,7 +2987,7 @@ export class DdsClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 数据库补丁升级
-     * @param {string} instanceId 实例ID。
+     * @param {string} instanceId **参数解释：** 实例ID，可以调用“查询实例列表和详情-QueryingInstancesandDetails”接口获取。如果未申请实例，可以调用“创建实例-CreatingaDBInstance”接口创建。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @param {UpgradeDatabaseVersionRequestBody} upgradeDatabaseVersionRequestBody 请求体。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -2928,7 +3007,7 @@ export class DdsClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 校验参数模板名称是否存在
-     * @param {string} name 参数模板名称。
+     * @param {string} name **参数解释：** 参数模板名称。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -3291,6 +3370,59 @@ export const ParamCreater = function () {
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
             options.data = body !== undefined ? body : {};
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 为实例下的节点绑定公网网关。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        bindPublicGateway(bindPublicGatewayRequest?: BindPublicGatewayRequest) {
+            const options = {
+                method: "POST",
+                url: "/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/public-gateway",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let instanceId;
+            
+            let nodeId;
+
+            if (bindPublicGatewayRequest !== null && bindPublicGatewayRequest !== undefined) {
+                if (bindPublicGatewayRequest instanceof BindPublicGatewayRequest) {
+                    instanceId = bindPublicGatewayRequest.instanceId;
+                    nodeId = bindPublicGatewayRequest.nodeId;
+                    body = bindPublicGatewayRequest.body
+                } else {
+                    instanceId = bindPublicGatewayRequest['instance_id'];
+                    nodeId = bindPublicGatewayRequest['node_id'];
+                    body = bindPublicGatewayRequest['body'];
+                }
+            }
+
+        
+            if (instanceId === null || instanceId === undefined) {
+            throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling bindPublicGateway.');
+            }
+            if (nodeId === null || nodeId === undefined) {
+            throw new RequiredError('nodeId','Required parameter nodeId was null or undefined when calling bindPublicGateway.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'instance_id': instanceId,'node_id': nodeId, };
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -3942,7 +4074,7 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 删除参数模板。
+         * 删除指定参数模板。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -4102,6 +4234,52 @@ export const ParamCreater = function () {
             throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling deleteInstance.');
             }
 
+            options.pathParams = { 'instance_id': instanceId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 删除集群的Shard/Config IP
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        deleteIp(deleteIpRequest?: DeleteIpRequest) {
+            const options = {
+                method: "DELETE",
+                url: "/v3/{project_id}/instances/{instance_id}/ip",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let instanceId;
+
+            if (deleteIpRequest !== null && deleteIpRequest !== undefined) {
+                if (deleteIpRequest instanceof DeleteIpRequest) {
+                    instanceId = deleteIpRequest.instanceId;
+                    body = deleteIpRequest.body
+                } else {
+                    instanceId = deleteIpRequest['instance_id'];
+                    body = deleteIpRequest['body'];
+                }
+            }
+
+        
+            if (instanceId === null || instanceId === undefined) {
+            throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling deleteIp.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
             options.pathParams = { 'instance_id': instanceId, };
             options.headers = localVarHeaderParameter;
             return options;
@@ -4772,6 +4950,18 @@ export const ParamCreater = function () {
             let endTime;
             
             let mode;
+            
+            let orderField;
+            
+            let orderRule;
+            
+            let backupStatus;
+            
+            let backupName;
+            
+            let backupDescription;
+            
+            let instanceName;
 
             if (listBackupsRequest !== null && listBackupsRequest !== undefined) {
                 if (listBackupsRequest instanceof ListBackupsRequest) {
@@ -4783,6 +4973,12 @@ export const ParamCreater = function () {
                     beginTime = listBackupsRequest.beginTime;
                     endTime = listBackupsRequest.endTime;
                     mode = listBackupsRequest.mode;
+                    orderField = listBackupsRequest.orderField;
+                    orderRule = listBackupsRequest.orderRule;
+                    backupStatus = listBackupsRequest.backupStatus;
+                    backupName = listBackupsRequest.backupName;
+                    backupDescription = listBackupsRequest.backupDescription;
+                    instanceName = listBackupsRequest.instanceName;
                 } else {
                     instanceId = listBackupsRequest['instance_id'];
                     backupId = listBackupsRequest['backup_id'];
@@ -4792,6 +4988,12 @@ export const ParamCreater = function () {
                     beginTime = listBackupsRequest['begin_time'];
                     endTime = listBackupsRequest['end_time'];
                     mode = listBackupsRequest['mode'];
+                    orderField = listBackupsRequest['order_field'];
+                    orderRule = listBackupsRequest['order_rule'];
+                    backupStatus = listBackupsRequest['backup_status'];
+                    backupName = listBackupsRequest['backup_name'];
+                    backupDescription = listBackupsRequest['backup_description'];
+                    instanceName = listBackupsRequest['instance_name'];
                 }
             }
 
@@ -4819,6 +5021,24 @@ export const ParamCreater = function () {
             }
             if (mode !== null && mode !== undefined) {
                 localVarQueryParameter['mode'] = mode;
+            }
+            if (orderField !== null && orderField !== undefined) {
+                localVarQueryParameter['order_field'] = orderField;
+            }
+            if (orderRule !== null && orderRule !== undefined) {
+                localVarQueryParameter['order_rule'] = orderRule;
+            }
+            if (backupStatus !== null && backupStatus !== undefined) {
+                localVarQueryParameter['backup_status'] = backupStatus;
+            }
+            if (backupName !== null && backupName !== undefined) {
+                localVarQueryParameter['backup_name'] = backupName;
+            }
+            if (backupDescription !== null && backupDescription !== undefined) {
+                localVarQueryParameter['backup_description'] = backupDescription;
+            }
+            if (instanceName !== null && instanceName !== undefined) {
+                localVarQueryParameter['instance_name'] = instanceName;
             }
 
             options.queryParams = localVarQueryParameter;
@@ -5538,7 +5758,7 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 查询数据库慢日志信息。
+         * 查询数据库慢日志信息，支持关键字、数据库表名等搜索功能。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -6207,6 +6427,8 @@ export const ParamCreater = function () {
             
             let status;
             
+            let id;
+            
             let name;
             
             let offset;
@@ -6218,6 +6440,7 @@ export const ParamCreater = function () {
                     startTime = listTasksRequest.startTime;
                     endTime = listTasksRequest.endTime;
                     status = listTasksRequest.status;
+                    id = listTasksRequest.id;
                     name = listTasksRequest.name;
                     offset = listTasksRequest.offset;
                     limit = listTasksRequest.limit;
@@ -6225,6 +6448,7 @@ export const ParamCreater = function () {
                     startTime = listTasksRequest['start_time'];
                     endTime = listTasksRequest['end_time'];
                     status = listTasksRequest['status'];
+                    id = listTasksRequest['id'];
                     name = listTasksRequest['name'];
                     offset = listTasksRequest['offset'];
                     limit = listTasksRequest['limit'];
@@ -6246,6 +6470,9 @@ export const ParamCreater = function () {
             }
             if (status !== null && status !== undefined) {
                 localVarQueryParameter['status'] = status;
+            }
+            if (id !== null && id !== undefined) {
+                localVarQueryParameter['id'] = id;
             }
             if (name !== null && name !== undefined) {
                 localVarQueryParameter['name'] = name;
@@ -7062,18 +7289,14 @@ export const ParamCreater = function () {
             let instanceId;
             
             let backupId;
-            
-            let xLanguage;
 
             if (showBackupDownloadLinkRequest !== null && showBackupDownloadLinkRequest !== undefined) {
                 if (showBackupDownloadLinkRequest instanceof ShowBackupDownloadLinkRequest) {
                     instanceId = showBackupDownloadLinkRequest.instanceId;
                     backupId = showBackupDownloadLinkRequest.backupId;
-                    xLanguage = showBackupDownloadLinkRequest.xLanguage;
                 } else {
                     instanceId = showBackupDownloadLinkRequest['instance_id'];
                     backupId = showBackupDownloadLinkRequest['backup_id'];
-                    xLanguage = showBackupDownloadLinkRequest['X-Language'];
                 }
             }
 
@@ -7089,9 +7312,6 @@ export const ParamCreater = function () {
             }
             if (backupId !== null && backupId !== undefined) {
                 localVarQueryParameter['backup_id'] = backupId;
-            }
-            if (xLanguage !== undefined && xLanguage !== null) {
-                localVarHeaderParameter['X-Language'] = String(xLanguage);
             }
 
             options.queryParams = localVarQueryParameter;
@@ -7278,7 +7498,7 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 获取参数模板的详情。
+         * 获取指定参数模板的参数信息。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -7404,7 +7624,7 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 获取指定实例的参数，可以是实例，组，节点的参数模板。
+         * 获取指定实例的参数信息。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -7420,15 +7640,19 @@ export const ParamCreater = function () {
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
             
+            let contentType;
+            
             let instanceId;
             
             let entityId;
 
             if (showEntityConfigurationRequest !== null && showEntityConfigurationRequest !== undefined) {
                 if (showEntityConfigurationRequest instanceof ShowEntityConfigurationRequest) {
+                    contentType = showEntityConfigurationRequest.contentType;
                     instanceId = showEntityConfigurationRequest.instanceId;
                     entityId = showEntityConfigurationRequest.entityId;
                 } else {
+                    contentType = showEntityConfigurationRequest['Content-Type'];
                     instanceId = showEntityConfigurationRequest['instance_id'];
                     entityId = showEntityConfigurationRequest['entity_id'];
                 }
@@ -7443,6 +7667,9 @@ export const ParamCreater = function () {
             }
             if (entityId !== null && entityId !== undefined) {
                 localVarQueryParameter['entity_id'] = entityId;
+            }
+            if (contentType !== undefined && contentType !== null) {
+                localVarHeaderParameter['Content-Type'] = String(contentType);
             }
 
             options.queryParams = localVarQueryParameter;
@@ -8215,7 +8442,7 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 切换副本集实例下的主备节点
+         * 切换实例下的主备节点
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -8226,18 +8453,22 @@ export const ParamCreater = function () {
                 contentType: "application/json",
                 queryParams: {},
                 pathParams: {},
-                headers: {}
+                headers: {},
+                data: {}
             };
             const localVarHeaderParameter = {} as any;
 
+            let body: any;
             
             let instanceId;
 
             if (switchoverReplicaSetRequest !== null && switchoverReplicaSetRequest !== undefined) {
                 if (switchoverReplicaSetRequest instanceof SwitchoverReplicaSetRequest) {
                     instanceId = switchoverReplicaSetRequest.instanceId;
+                    body = switchoverReplicaSetRequest.body
                 } else {
                     instanceId = switchoverReplicaSetRequest['instance_id'];
+                    body = switchoverReplicaSetRequest['body'];
                 }
             }
 
@@ -8245,8 +8476,54 @@ export const ParamCreater = function () {
             if (instanceId === null || instanceId === undefined) {
             throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling switchoverReplicaSet.');
             }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
 
+            options.data = body !== undefined ? body : {};
             options.pathParams = { 'instance_id': instanceId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 为实例下的节点解绑公网网关。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        unbindPublicGateway(unbindPublicGatewayRequest?: UnbindPublicGatewayRequest) {
+            const options = {
+                method: "DELETE",
+                url: "/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/public-gateway",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let instanceId;
+            
+            let nodeId;
+
+            if (unbindPublicGatewayRequest !== null && unbindPublicGatewayRequest !== undefined) {
+                if (unbindPublicGatewayRequest instanceof UnbindPublicGatewayRequest) {
+                    instanceId = unbindPublicGatewayRequest.instanceId;
+                    nodeId = unbindPublicGatewayRequest.nodeId;
+                } else {
+                    instanceId = unbindPublicGatewayRequest['instance_id'];
+                    nodeId = unbindPublicGatewayRequest['node_id'];
+                }
+            }
+
+        
+            if (instanceId === null || instanceId === undefined) {
+            throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling unbindPublicGateway.');
+            }
+            if (nodeId === null || nodeId === undefined) {
+            throw new RequiredError('nodeId','Required parameter nodeId was null or undefined when calling unbindPublicGateway.');
+            }
+
+            options.pathParams = { 'instance_id': instanceId,'node_id': nodeId, };
             options.headers = localVarHeaderParameter;
             return options;
         },

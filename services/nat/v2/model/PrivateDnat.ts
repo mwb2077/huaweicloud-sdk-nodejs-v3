@@ -15,6 +15,7 @@ export class PrivateDnat {
     private 'enterprise_project_id'?: string;
     private 'created_at'?: Date;
     private 'updated_at'?: Date;
+    public status?: PrivateDnatStatusEnum | string;
     public constructor() { 
     }
     public withId(id: string): PrivateDnat {
@@ -133,6 +134,10 @@ export class PrivateDnat {
     public get updatedAt(): Date | undefined {
         return this['updated_at'];
     }
+    public withStatus(status: PrivateDnatStatusEnum | string): PrivateDnat {
+        this['status'] = status;
+        return this;
+    }
 }
 
 /**
@@ -143,4 +148,13 @@ export enum PrivateDnatProtocolEnum {
     TCP = 'tcp',
     UDP = 'udp',
     ANY = 'any'
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export enum PrivateDnatStatusEnum {
+    ACTIVE = 'ACTIVE',
+    FROZEN = 'FROZEN',
+    INACTIVE = 'INACTIVE'
 }

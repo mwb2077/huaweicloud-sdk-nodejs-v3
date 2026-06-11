@@ -1,0 +1,68 @@
+import { TableVolumeResult } from './TableVolumeResult';
+
+import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+
+export class ListTopTableVolumesResponse extends SdkResponse {
+    private 'table_volumes'?: Array<TableVolumeResult>;
+    private 'total_count'?: number;
+    public state?: ListTopTableVolumesResponseStateEnum | string;
+    private 'job_id'?: string;
+    private 'node_id'?: string;
+    public constructor() { 
+        super();
+    }
+    public withTableVolumes(tableVolumes: Array<TableVolumeResult>): ListTopTableVolumesResponse {
+        this['table_volumes'] = tableVolumes;
+        return this;
+    }
+    public set tableVolumes(tableVolumes: Array<TableVolumeResult>  | undefined) {
+        this['table_volumes'] = tableVolumes;
+    }
+    public get tableVolumes(): Array<TableVolumeResult> | undefined {
+        return this['table_volumes'];
+    }
+    public withTotalCount(totalCount: number): ListTopTableVolumesResponse {
+        this['total_count'] = totalCount;
+        return this;
+    }
+    public set totalCount(totalCount: number  | undefined) {
+        this['total_count'] = totalCount;
+    }
+    public get totalCount(): number | undefined {
+        return this['total_count'];
+    }
+    public withState(state: ListTopTableVolumesResponseStateEnum | string): ListTopTableVolumesResponse {
+        this['state'] = state;
+        return this;
+    }
+    public withJobId(jobId: string): ListTopTableVolumesResponse {
+        this['job_id'] = jobId;
+        return this;
+    }
+    public set jobId(jobId: string  | undefined) {
+        this['job_id'] = jobId;
+    }
+    public get jobId(): string | undefined {
+        return this['job_id'];
+    }
+    public withNodeId(nodeId: string): ListTopTableVolumesResponse {
+        this['node_id'] = nodeId;
+        return this;
+    }
+    public set nodeId(nodeId: string  | undefined) {
+        this['node_id'] = nodeId;
+    }
+    public get nodeId(): string | undefined {
+        return this['node_id'];
+    }
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum ListTopTableVolumesResponseStateEnum {
+    RUNNING = 'RUNNING',
+    ERROR = 'ERROR',
+    FINISHED = 'FINISHED'
+}

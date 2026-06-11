@@ -3,9 +3,12 @@
 export class AttachInstancesUserInfo {
     private 'user_id'?: string;
     private 'user_name'?: string;
+    public domain?: string;
     private 'user_group'?: string;
     public type?: AttachInstancesUserInfoTypeEnum | string;
-    public constructor() { 
+    public constructor(userName?: string, userGroup?: string) { 
+        this['user_name'] = userName;
+        this['user_group'] = userGroup;
     }
     public withUserId(userId: string): AttachInstancesUserInfo {
         this['user_id'] = userId;
@@ -26,6 +29,10 @@ export class AttachInstancesUserInfo {
     }
     public get userName(): string | undefined {
         return this['user_name'];
+    }
+    public withDomain(domain: string): AttachInstancesUserInfo {
+        this['domain'] = domain;
+        return this;
     }
     public withUserGroup(userGroup: string): AttachInstancesUserInfo {
         this['user_group'] = userGroup;

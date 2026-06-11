@@ -1,5 +1,6 @@
-import { ClusterInfoResponseDsInfo } from './ClusterInfoResponseDsInfo';
 import { CreateDaemonsetRequestBodyScheduleInfo } from './CreateDaemonsetRequestBodyScheduleInfo';
+import { DaemonsetYamlResponseInfoDsInfo } from './DaemonsetYamlResponseInfoDsInfo';
+import { DaemonsetYamlResponseInfoResourceInfo } from './DaemonsetYamlResponseInfoResourceInfo';
 import { RuntimeRequestBody } from './RuntimeRequestBody';
 
 import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
@@ -9,9 +10,10 @@ export class ShowAgentDaemonsetDetailInfoResponse extends SdkResponse {
     private 'node_num'?: number;
     private 'runtime_info'?: Array<RuntimeRequestBody>;
     private 'cluster_status'?: string;
-    private 'ds_info'?: ClusterInfoResponseDsInfo;
+    private 'ds_info'?: DaemonsetYamlResponseInfoDsInfo;
     private 'installed_status'?: string;
     private 'schedule_info'?: CreateDaemonsetRequestBodyScheduleInfo;
+    private 'resource_info'?: DaemonsetYamlResponseInfoResourceInfo;
     public constructor() { 
         super();
     }
@@ -55,14 +57,14 @@ export class ShowAgentDaemonsetDetailInfoResponse extends SdkResponse {
     public get clusterStatus(): string | undefined {
         return this['cluster_status'];
     }
-    public withDsInfo(dsInfo: ClusterInfoResponseDsInfo): ShowAgentDaemonsetDetailInfoResponse {
+    public withDsInfo(dsInfo: DaemonsetYamlResponseInfoDsInfo): ShowAgentDaemonsetDetailInfoResponse {
         this['ds_info'] = dsInfo;
         return this;
     }
-    public set dsInfo(dsInfo: ClusterInfoResponseDsInfo  | undefined) {
+    public set dsInfo(dsInfo: DaemonsetYamlResponseInfoDsInfo  | undefined) {
         this['ds_info'] = dsInfo;
     }
-    public get dsInfo(): ClusterInfoResponseDsInfo | undefined {
+    public get dsInfo(): DaemonsetYamlResponseInfoDsInfo | undefined {
         return this['ds_info'];
     }
     public withInstalledStatus(installedStatus: string): ShowAgentDaemonsetDetailInfoResponse {
@@ -84,5 +86,15 @@ export class ShowAgentDaemonsetDetailInfoResponse extends SdkResponse {
     }
     public get scheduleInfo(): CreateDaemonsetRequestBodyScheduleInfo | undefined {
         return this['schedule_info'];
+    }
+    public withResourceInfo(resourceInfo: DaemonsetYamlResponseInfoResourceInfo): ShowAgentDaemonsetDetailInfoResponse {
+        this['resource_info'] = resourceInfo;
+        return this;
+    }
+    public set resourceInfo(resourceInfo: DaemonsetYamlResponseInfoResourceInfo  | undefined) {
+        this['resource_info'] = resourceInfo;
+    }
+    public get resourceInfo(): DaemonsetYamlResponseInfoResourceInfo | undefined {
+        return this['resource_info'];
     }
 }

@@ -1,5 +1,6 @@
 import { FrequencyRespBody } from './FrequencyRespBody';
-import { SqlRequest } from './SqlRequest';
+import { SqlRequestResponse } from './SqlRequestResponse';
+import { TagsResBody } from './TagsResBody';
 import { Topics } from './Topics';
 
 
@@ -8,12 +9,11 @@ export class SqlAlarmRuleRespList {
     private 'is_css_sql'?: boolean;
     private 'sql_alarm_rule_id'?: string;
     private 'sql_alarm_rule_description'?: string;
-    private 'sql_requests'?: Array<SqlRequest>;
+    private 'sql_requests'?: Array<SqlRequestResponse>;
     public frequency?: FrequencyRespBody;
     private 'condition_expression'?: string;
     public topics?: Array<Topics>;
     private 'sql_alarm_level'?: SqlAlarmRuleRespListSqlAlarmLevelEnum | string;
-    private 'sql_alarm_send'?: boolean;
     private 'domain_id'?: string;
     private 'create_time'?: number;
     private 'update_time'?: number;
@@ -25,7 +25,8 @@ export class SqlAlarmRuleRespList {
     private 'recovery_policy'?: number;
     private 'notification_frequency'?: SqlAlarmRuleRespListNotificationFrequencyEnum | number;
     private 'alarm_action_rule_name'?: string;
-    public constructor(sqlAlarmRuleName?: string, sqlAlarmRuleId?: string, sqlAlarmRuleDescription?: string, sqlRequests?: Array<SqlRequest>, frequency?: FrequencyRespBody, conditionExpression?: string, topics?: Array<Topics>, sqlAlarmLevel?: string, sqlAlarmSend?: boolean, domainId?: string, createTime?: number, updateTime?: number, notificationFrequency?: number) { 
+    public tags?: Array<TagsResBody>;
+    public constructor(sqlAlarmRuleName?: string, sqlAlarmRuleId?: string, sqlAlarmRuleDescription?: string, sqlRequests?: Array<SqlRequestResponse>, frequency?: FrequencyRespBody, conditionExpression?: string, topics?: Array<Topics>, sqlAlarmLevel?: string, domainId?: string, createTime?: number, updateTime?: number, notificationFrequency?: number) { 
         this['sql_alarm_rule_name'] = sqlAlarmRuleName;
         this['sql_alarm_rule_id'] = sqlAlarmRuleId;
         this['sql_alarm_rule_description'] = sqlAlarmRuleDescription;
@@ -34,7 +35,6 @@ export class SqlAlarmRuleRespList {
         this['condition_expression'] = conditionExpression;
         this['topics'] = topics;
         this['sql_alarm_level'] = sqlAlarmLevel;
-        this['sql_alarm_send'] = sqlAlarmSend;
         this['domain_id'] = domainId;
         this['create_time'] = createTime;
         this['update_time'] = updateTime;
@@ -80,14 +80,14 @@ export class SqlAlarmRuleRespList {
     public get sqlAlarmRuleDescription(): string | undefined {
         return this['sql_alarm_rule_description'];
     }
-    public withSqlRequests(sqlRequests: Array<SqlRequest>): SqlAlarmRuleRespList {
+    public withSqlRequests(sqlRequests: Array<SqlRequestResponse>): SqlAlarmRuleRespList {
         this['sql_requests'] = sqlRequests;
         return this;
     }
-    public set sqlRequests(sqlRequests: Array<SqlRequest>  | undefined) {
+    public set sqlRequests(sqlRequests: Array<SqlRequestResponse>  | undefined) {
         this['sql_requests'] = sqlRequests;
     }
-    public get sqlRequests(): Array<SqlRequest> | undefined {
+    public get sqlRequests(): Array<SqlRequestResponse> | undefined {
         return this['sql_requests'];
     }
     public withFrequency(frequency: FrequencyRespBody): SqlAlarmRuleRespList {
@@ -117,16 +117,6 @@ export class SqlAlarmRuleRespList {
     }
     public get sqlAlarmLevel(): SqlAlarmRuleRespListSqlAlarmLevelEnum | string | undefined {
         return this['sql_alarm_level'];
-    }
-    public withSqlAlarmSend(sqlAlarmSend: boolean): SqlAlarmRuleRespList {
-        this['sql_alarm_send'] = sqlAlarmSend;
-        return this;
-    }
-    public set sqlAlarmSend(sqlAlarmSend: boolean  | undefined) {
-        this['sql_alarm_send'] = sqlAlarmSend;
-    }
-    public get sqlAlarmSend(): boolean | undefined {
-        return this['sql_alarm_send'];
     }
     public withDomainId(domainId: string): SqlAlarmRuleRespList {
         this['domain_id'] = domainId;
@@ -231,6 +221,10 @@ export class SqlAlarmRuleRespList {
     }
     public get alarmActionRuleName(): string | undefined {
         return this['alarm_action_rule_name'];
+    }
+    public withTags(tags: Array<TagsResBody>): SqlAlarmRuleRespList {
+        this['tags'] = tags;
+        return this;
     }
 }
 

@@ -69,6 +69,7 @@ import { CreateLogStreamRequest } from './model/CreateLogStreamRequest';
 import { CreateLogStreamResponse } from './model/CreateLogStreamResponse';
 import { CreateNotificationTemplateRequest } from './model/CreateNotificationTemplateRequest';
 import { CreateNotificationTemplateRequestBody } from './model/CreateNotificationTemplateRequestBody';
+import { CreateNotificationTemplateResBody } from './model/CreateNotificationTemplateResBody';
 import { CreateNotificationTemplateResponse } from './model/CreateNotificationTemplateResponse';
 import { CreateSearchCriteriasBody } from './model/CreateSearchCriteriasBody';
 import { CreateSearchCriteriasRequest } from './model/CreateSearchCriteriasRequest';
@@ -97,6 +98,8 @@ import { CreateTransferResponseBodyLogTransferInfoLogAgencyTransfer } from './mo
 import { CreatefavoriteReqbody } from './model/CreatefavoriteReqbody';
 import { CreatefavoriteRequest } from './model/CreatefavoriteRequest';
 import { CreatefavoriteResponse } from './model/CreatefavoriteResponse';
+import { CustomDate } from './model/CustomDate';
+import { CustomTimeInfo } from './model/CustomTimeInfo';
 import { DeleteAccessConfigRequest } from './model/DeleteAccessConfigRequest';
 import { DeleteAccessConfigRequestBody } from './model/DeleteAccessConfigRequestBody';
 import { DeleteAccessConfigResponse } from './model/DeleteAccessConfigResponse';
@@ -142,7 +145,6 @@ import { EnableLogCollectionRequest } from './model/EnableLogCollectionRequest';
 import { EnableLogCollectionResponse } from './model/EnableLogCollectionResponse';
 import { Event } from './model/Event';
 import { Events } from './model/Events';
-import { FieldModel } from './model/FieldModel';
 import { Frequency } from './model/Frequency';
 import { FrequencyRespBody } from './model/FrequencyRespBody';
 import { GetAccessConfigListRequestBody } from './model/GetAccessConfigListRequestBody';
@@ -157,6 +159,7 @@ import { GetQuerySearchCriteriasBody } from './model/GetQuerySearchCriteriasBody
 import { HostGroupTag } from './model/HostGroupTag';
 import { KeywordsAlarmRuleRespList } from './model/KeywordsAlarmRuleRespList';
 import { KeywordsRequest } from './model/KeywordsRequest';
+import { KeywordsRequestResponse } from './model/KeywordsRequestResponse';
 import { KeywordsResBody } from './model/KeywordsResBody';
 import { LTSAccessConfigInfoRespon200 } from './model/LTSAccessConfigInfoRespon200';
 import { LTSFieldsInfo } from './model/LTSFieldsInfo';
@@ -229,6 +232,8 @@ import { LogGroup } from './model/LogGroup';
 import { LogMappingConfig } from './model/LogMappingConfig';
 import { LogMappingStreamInfo } from './model/LogMappingStreamInfo';
 import { LogStreamResBody } from './model/LogStreamResBody';
+import { LogStreams } from './model/LogStreams';
+import { LogTransferDetail } from './model/LogTransferDetail';
 import { LtsStructTemplateInfo } from './model/LtsStructTemplateInfo';
 import { MemberGroupandStreamLogStreams } from './model/MemberGroupandStreamLogStreams';
 import { MemberGroupandStreamResults } from './model/MemberGroupandStreamResults';
@@ -248,7 +253,9 @@ import { RegisterDmsKafkaInstanceRequest } from './model/RegisterDmsKafkaInstanc
 import { RegisterDmsKafkaInstanceRequestBody } from './model/RegisterDmsKafkaInstanceRequestBody';
 import { RegisterDmsKafkaInstanceRequestBodyConnectInfo } from './model/RegisterDmsKafkaInstanceRequestBodyConnectInfo';
 import { RegisterDmsKafkaInstanceResponse } from './model/RegisterDmsKafkaInstanceResponse';
+import { ResourceTag } from './model/ResourceTag';
 import { Resulits } from './model/Resulits';
+import { Results } from './model/Results';
 import { ResultsTopnBody } from './model/ResultsTopnBody';
 import { Rule } from './model/Rule';
 import { SearchCriteriasBody } from './model/SearchCriteriasBody';
@@ -276,8 +283,8 @@ import { ShowStructTemplateRule } from './model/ShowStructTemplateRule';
 import { ShowStructTemplateclusterInfo } from './model/ShowStructTemplateclusterInfo';
 import { Sort } from './model/Sort';
 import { SqlAlarmRuleRespList } from './model/SqlAlarmRuleRespList';
-import { SqlNotificationSaveRule } from './model/SqlNotificationSaveRule';
 import { SqlRequest } from './model/SqlRequest';
+import { SqlRequestResponse } from './model/SqlRequestResponse';
 import { StructConfig } from './model/StructConfig';
 import { StructFieldInfo } from './model/StructFieldInfo';
 import { StructFieldInfoReturn } from './model/StructFieldInfoReturn';
@@ -285,10 +292,13 @@ import { StructLogContents } from './model/StructLogContents';
 import { StructTemplate } from './model/StructTemplate';
 import { StructTemplateModel } from './model/StructTemplateModel';
 import { SubTemplate } from './model/SubTemplate';
+import { SubTemplateResBody } from './model/SubTemplateResBody';
 import { TagField } from './model/TagField';
 import { TagFieldNew } from './model/TagFieldNew';
 import { TagFieldsInfo } from './model/TagFieldsInfo';
 import { TagsBody } from './model/TagsBody';
+import { TagsRequestBody } from './model/TagsRequestBody';
+import { TagsResBody } from './model/TagsResBody';
 import { TemplateRule } from './model/TemplateRule';
 import { TimeRange } from './model/TimeRange';
 import { TimelineTrafficStatisticsRequestBody } from './model/TimelineTrafficStatisticsRequestBody';
@@ -320,6 +330,7 @@ import { UpdateLogStreamParams } from './model/UpdateLogStreamParams';
 import { UpdateLogStreamRequest } from './model/UpdateLogStreamRequest';
 import { UpdateLogStreamResponse } from './model/UpdateLogStreamResponse';
 import { UpdateNotificationTemplateRequest } from './model/UpdateNotificationTemplateRequest';
+import { UpdateNotificationTemplateRequestBody } from './model/UpdateNotificationTemplateRequestBody';
 import { UpdateNotificationTemplateResponse } from './model/UpdateNotificationTemplateResponse';
 import { UpdateSqlAlarmRuleRequest } from './model/UpdateSqlAlarmRuleRequest';
 import { UpdateSqlAlarmRuleRequestBody } from './model/UpdateSqlAlarmRuleRequestBody';
@@ -328,6 +339,7 @@ import { UpdateStructConfigRequest } from './model/UpdateStructConfigRequest';
 import { UpdateStructConfigResponse } from './model/UpdateStructConfigResponse';
 import { UpdateStructTemplateRequest } from './model/UpdateStructTemplateRequest';
 import { UpdateStructTemplateResponse } from './model/UpdateStructTemplateResponse';
+import { UpdateSubTemplate } from './model/UpdateSubTemplate';
 import { UpdateSwitchRequest } from './model/UpdateSwitchRequest';
 import { UpdateSwitchResponse } from './model/UpdateSwitchResponse';
 import { UpdateTransferRequest } from './model/UpdateTransferRequest';
@@ -1775,7 +1787,7 @@ export class LtsClient {
      * @summary 修改消息模板
      * @param {string} domainId 账号id，获取方式请参见：获取账号ID、项目ID、日志组ID、日志流ID（https://support.huaweicloud.com/api-lts/lts_api_0006.html）。
      * @param {string} contentType 该字段填为：application/json;charset&#x3D;UTF-8。
-     * @param {CreateNotificationTemplateRequestBody} updateNotificationTemplateRequestBody 创建关键字告警的请求体
+     * @param {UpdateNotificationTemplateRequestBody} updateNotificationTemplateRequestBody 创建关键字告警的请求体
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */

@@ -36,6 +36,10 @@ export class RdsRegion {
     public static RU_MOSCOW_1 = new Region("ru-moscow-1", ["https://rds.ru-moscow-1.myhuaweicloud.com"]);
     public static ME_EAST_1 = new Region("me-east-1", ["https://rds.me-east-1.myhuaweicloud.com"]);
     public static AF_NORTH_1 = new Region("af-north-1", ["https://rds.af-north-1.myhuaweicloud.com"]);
+    public static CN_NORTH_12 = new Region("cn-north-12", ["https://rds.cn-north-12.myhuaweicloud.com"]);
+    public static CN_SOUTH_4 = new Region("cn-south-4", ["https://rds.cn-south-4.myhuaweicloud.com"]);
+    public static CN_SOUTHWEST_3 = new Region("cn-southwest-3", ["https://rds.cn-southwest-3.myhuaweicloud.com"]);
+    public static CN_NORTH_11 = new Region("cn-north-11", ["https://rds.cn-north-11.myhuaweicloud.com"]);
     
 
     private static REGION_MAP: RegionMap = {
@@ -68,7 +72,11 @@ export class RdsRegion {
         "my-kualalumpur-1":RdsRegion.MY_KUALALUMPUR_1,
         "ru-moscow-1":RdsRegion.RU_MOSCOW_1,
         "me-east-1":RdsRegion.ME_EAST_1,
-        "af-north-1":RdsRegion.AF_NORTH_1
+        "af-north-1":RdsRegion.AF_NORTH_1,
+        "cn-north-12":RdsRegion.CN_NORTH_12,
+        "cn-south-4":RdsRegion.CN_SOUTH_4,
+        "cn-southwest-3":RdsRegion.CN_SOUTHWEST_3,
+        "cn-north-11":RdsRegion.CN_NORTH_11
     };
   
     public static valueOf(regionId: string) {

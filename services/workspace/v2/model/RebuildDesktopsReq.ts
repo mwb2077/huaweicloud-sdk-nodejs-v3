@@ -1,14 +1,18 @@
+import { EncryptType } from './EncryptType';
 
 
 export class RebuildDesktopsReq {
     private 'desktop_ids'?: Array<string>;
     private 'image_type'?: string;
     private 'image_id'?: string;
+    private 'encrypt_type'?: EncryptType;
+    private 'kms_id'?: string;
     private 'os_type'?: string;
     private 'delay_time'?: number;
     public message?: string;
     private 'order_id'?: string;
     private 'enterprise_project_id'?: string;
+    private 'handle_type'?: string;
     public constructor(desktopIds?: Array<string>, imageType?: string, imageId?: string) { 
         this['desktop_ids'] = desktopIds;
         this['image_type'] = imageType;
@@ -43,6 +47,26 @@ export class RebuildDesktopsReq {
     }
     public get imageId(): string | undefined {
         return this['image_id'];
+    }
+    public withEncryptType(encryptType: EncryptType): RebuildDesktopsReq {
+        this['encrypt_type'] = encryptType;
+        return this;
+    }
+    public set encryptType(encryptType: EncryptType  | undefined) {
+        this['encrypt_type'] = encryptType;
+    }
+    public get encryptType(): EncryptType | undefined {
+        return this['encrypt_type'];
+    }
+    public withKmsId(kmsId: string): RebuildDesktopsReq {
+        this['kms_id'] = kmsId;
+        return this;
+    }
+    public set kmsId(kmsId: string  | undefined) {
+        this['kms_id'] = kmsId;
+    }
+    public get kmsId(): string | undefined {
+        return this['kms_id'];
     }
     public withOsType(osType: string): RebuildDesktopsReq {
         this['os_type'] = osType;
@@ -87,5 +111,15 @@ export class RebuildDesktopsReq {
     }
     public get enterpriseProjectId(): string | undefined {
         return this['enterprise_project_id'];
+    }
+    public withHandleType(handleType: string): RebuildDesktopsReq {
+        this['handle_type'] = handleType;
+        return this;
+    }
+    public set handleType(handleType: string  | undefined) {
+        this['handle_type'] = handleType;
+    }
+    public get handleType(): string | undefined {
+        return this['handle_type'];
     }
 }

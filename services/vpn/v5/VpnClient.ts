@@ -39,6 +39,11 @@ import { CreateConnectionMonitorRequest } from './model/CreateConnectionMonitorR
 import { CreateConnectionMonitorRequestBody } from './model/CreateConnectionMonitorRequestBody';
 import { CreateConnectionMonitorRequestBodyContent } from './model/CreateConnectionMonitorRequestBodyContent';
 import { CreateConnectionMonitorResponse } from './model/CreateConnectionMonitorResponse';
+import { CreateP2cRequestEip } from './model/CreateP2cRequestEip';
+import { CreateP2cVgwRequest } from './model/CreateP2cVgwRequest';
+import { CreateP2cVgwRequestBody } from './model/CreateP2cVgwRequestBody';
+import { CreateP2cVgwRequestBodyContent } from './model/CreateP2cVgwRequestBodyContent';
+import { CreateP2cVgwResponse } from './model/CreateP2cVgwResponse';
 import { CreateRequestEip } from './model/CreateRequestEip';
 import { CreateResourcesTagsRequestBody } from './model/CreateResourcesTagsRequestBody';
 import { CreateResponseVpnConnection } from './model/CreateResponseVpnConnection';
@@ -87,6 +92,10 @@ import { DeleteConnectionMonitorRequest } from './model/DeleteConnectionMonitorR
 import { DeleteConnectionMonitorResponse } from './model/DeleteConnectionMonitorResponse';
 import { DeleteP2cVgwConnectionRequest } from './model/DeleteP2cVgwConnectionRequest';
 import { DeleteP2cVgwConnectionResponse } from './model/DeleteP2cVgwConnectionResponse';
+import { DeleteP2cVgwRequest } from './model/DeleteP2cVgwRequest';
+import { DeleteP2cVgwResponse } from './model/DeleteP2cVgwResponse';
+import { DeleteP2cVpnGatewayJobRequest } from './model/DeleteP2cVpnGatewayJobRequest';
+import { DeleteP2cVpnGatewayJobResponse } from './model/DeleteP2cVpnGatewayJobResponse';
 import { DeleteResourcesTagsRequestBody } from './model/DeleteResourcesTagsRequestBody';
 import { DeleteVgwRequest } from './model/DeleteVgwRequest';
 import { DeleteVgwResponse } from './model/DeleteVgwResponse';
@@ -96,6 +105,8 @@ import { DeleteVpnConnectionRequest } from './model/DeleteVpnConnectionRequest';
 import { DeleteVpnConnectionResponse } from './model/DeleteVpnConnectionResponse';
 import { DeleteVpnConnectionsLogConfigRequest } from './model/DeleteVpnConnectionsLogConfigRequest';
 import { DeleteVpnConnectionsLogConfigResponse } from './model/DeleteVpnConnectionsLogConfigResponse';
+import { DeleteVpnGatewayJobRequest } from './model/DeleteVpnGatewayJobRequest';
+import { DeleteVpnGatewayJobResponse } from './model/DeleteVpnGatewayJobResponse';
 import { DeleteVpnUserGroupRequest } from './model/DeleteVpnUserGroupRequest';
 import { DeleteVpnUserGroupResponse } from './model/DeleteVpnUserGroupResponse';
 import { DeleteVpnUserRequest } from './model/DeleteVpnUserRequest';
@@ -113,6 +124,7 @@ import { ImportClientCaRequest } from './model/ImportClientCaRequest';
 import { ImportClientCaResponse } from './model/ImportClientCaResponse';
 import { InvalidVpnUser } from './model/InvalidVpnUser';
 import { IpsecPolicy } from './model/IpsecPolicy';
+import { Job } from './model/Job';
 import { ListAvailabilityZonesRequest } from './model/ListAvailabilityZonesRequest';
 import { ListAvailabilityZonesResponse } from './model/ListAvailabilityZonesResponse';
 import { ListCgwsRequest } from './model/ListCgwsRequest';
@@ -127,6 +139,8 @@ import { ListP2cVgwConnectionsRequest } from './model/ListP2cVgwConnectionsReque
 import { ListP2cVgwConnectionsResponse } from './model/ListP2cVgwConnectionsResponse';
 import { ListP2cVgwsRequest } from './model/ListP2cVgwsRequest';
 import { ListP2cVgwsResponse } from './model/ListP2cVgwsResponse';
+import { ListP2cVpnGatewayJobsRequest } from './model/ListP2cVpnGatewayJobsRequest';
+import { ListP2cVpnGatewayJobsResponse } from './model/ListP2cVpnGatewayJobsResponse';
 import { ListProjectTagsRequest } from './model/ListProjectTagsRequest';
 import { ListProjectTagsResponse } from './model/ListProjectTagsResponse';
 import { ListResourcesByTagsRequest } from './model/ListResourcesByTagsRequest';
@@ -137,6 +151,8 @@ import { ListVpnAccessPoliciesRequest } from './model/ListVpnAccessPoliciesReque
 import { ListVpnAccessPoliciesResponse } from './model/ListVpnAccessPoliciesResponse';
 import { ListVpnConnectionsRequest } from './model/ListVpnConnectionsRequest';
 import { ListVpnConnectionsResponse } from './model/ListVpnConnectionsResponse';
+import { ListVpnGatewayJobsRequest } from './model/ListVpnGatewayJobsRequest';
+import { ListVpnGatewayJobsResponse } from './model/ListVpnGatewayJobsResponse';
 import { ListVpnServersByProjectRequest } from './model/ListVpnServersByProjectRequest';
 import { ListVpnServersByProjectResponse } from './model/ListVpnServersByProjectResponse';
 import { ListVpnServersByVgwRequest } from './model/ListVpnServersByVgwRequest';
@@ -208,6 +224,7 @@ import { ShowVpnUserGroupRequest } from './model/ShowVpnUserGroupRequest';
 import { ShowVpnUserGroupResponse } from './model/ShowVpnUserGroupResponse';
 import { ShowVpnUserRequest } from './model/ShowVpnUserRequest';
 import { ShowVpnUserResponse } from './model/ShowVpnUserResponse';
+import { SubJob } from './model/SubJob';
 import { Tag } from './model/Tag';
 import { UpdateCgwRequest } from './model/UpdateCgwRequest';
 import { UpdateCgwRequestBody } from './model/UpdateCgwRequestBody';
@@ -270,6 +287,11 @@ import { UpdateVpnUserRequest } from './model/UpdateVpnUserRequest';
 import { UpdateVpnUserRequestBody } from './model/UpdateVpnUserRequestBody';
 import { UpdateVpnUserRequestBodyContent } from './model/UpdateVpnUserRequestBodyContent';
 import { UpdateVpnUserResponse } from './model/UpdateVpnUserResponse';
+import { UpgradeP2cVpnGatewayRequest } from './model/UpgradeP2cVpnGatewayRequest';
+import { UpgradeP2cVpnGatewayResponse } from './model/UpgradeP2cVpnGatewayResponse';
+import { UpgradeRequestBody } from './model/UpgradeRequestBody';
+import { UpgradeVpnGatewayRequest } from './model/UpgradeVpnGatewayRequest';
+import { UpgradeVpnGatewayResponse } from './model/UpgradeVpnGatewayResponse';
 import { VgwIkePolicy } from './model/VgwIkePolicy';
 import { VgwIpsecPolicy } from './model/VgwIpsecPolicy';
 import { VpnAccessPolicy } from './model/VpnAccessPolicy';
@@ -575,6 +597,45 @@ export class VpnClient {
     }
 
     /**
+     * 创建终端入云VPN网关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 创建P2C VPN网关
+     * @param {CreateP2cVgwRequestBody} createP2cVgwRequestBody 请求参数对象
+     * @param {string} [xClientToken] 幂等性标识
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public createP2cVgw(createP2cVgwRequest?: CreateP2cVgwRequest): Promise<CreateP2cVgwResponse> {
+        const options = ParamCreater().createP2cVgw(createP2cVgwRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = ['header-response-token'];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 根据P2C VPN网关ID，删除指定的VPN网关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 删除P2C VPN网关
+     * @param {string} p2cVgwId P2C VPN网关实例ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public deleteP2cVgw(deleteP2cVgwRequest?: DeleteP2cVgwRequest): Promise<DeleteP2cVgwResponse> {
+        const options = ParamCreater().deleteP2cVgw(deleteP2cVgwRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 断开P2C VPN网关连接
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -590,6 +651,25 @@ export class VpnClient {
 
          // @ts-ignore
         options['responseHeaders'] = ['header-response-token'];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * delete resource job
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 删除指定任务的记录
+     * @param {string} jobId 任务ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public deleteP2cVpnGatewayJob(deleteP2cVpnGatewayJobRequest?: DeleteP2cVpnGatewayJobRequest): Promise<DeleteP2cVpnGatewayJobResponse> {
+        const options = ParamCreater().deleteP2cVpnGatewayJob(deleteP2cVpnGatewayJobRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
 
         return this.hcClient.sendRequest(options);
     }
@@ -655,6 +735,25 @@ export class VpnClient {
     }
 
     /**
+     * list resource jobs
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询资源任务列表
+     * @param {string} [resourceId] 资源ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listP2cVpnGatewayJobs(listP2cVpnGatewayJobsRequest?: ListP2cVpnGatewayJobsRequest): Promise<ListP2cVpnGatewayJobsResponse> {
+        const options = ParamCreater().listP2cVpnGatewayJobs(listP2cVpnGatewayJobsRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 根据P2C VPN网关ID，查询指定的VPN网关
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -689,6 +788,26 @@ export class VpnClient {
 
          // @ts-ignore
         options['responseHeaders'] = ['header-response-token'];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * upgrade VPN resource
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 升级VPN资源
+     * @param {string} p2cVgwId P2C VPN网关实例ID
+     * @param {UpgradeRequestBody} upgradeRequestBody 请求参数对象
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public upgradeP2cVpnGateway(upgradeP2cVpnGatewayRequest?: UpgradeP2cVpnGatewayRequest): Promise<UpgradeP2cVpnGatewayResponse> {
+        const options = ParamCreater().upgradeP2cVpnGateway(upgradeP2cVpnGatewayRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
 
         return this.hcClient.sendRequest(options);
     }
@@ -1175,6 +1294,25 @@ export class VpnClient {
     }
 
     /**
+     * delete resource job
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 删除指定任务的记录
+     * @param {string} jobId 任务ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public deleteVpnGatewayJob(deleteVpnGatewayJobRequest?: DeleteVpnGatewayJobRequest): Promise<DeleteVpnGatewayJobResponse> {
+        const options = ParamCreater().deleteVpnGatewayJob(deleteVpnGatewayJobRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 查询VPN网关可用区
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -1223,6 +1361,25 @@ export class VpnClient {
      */
     public listVgws(listVgwsRequest?: ListVgwsRequest): Promise<ListVgwsResponse> {
         const options = ParamCreater().listVgws(listVgwsRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * list resource jobs
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询资源任务列表
+     * @param {string} [resourceId] 资源ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listVpnGatewayJobs(listVpnGatewayJobsRequest?: ListVpnGatewayJobsRequest): Promise<ListVpnGatewayJobsResponse> {
+        const options = ParamCreater().listVpnGatewayJobs(listVpnGatewayJobsRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -1307,6 +1464,26 @@ export class VpnClient {
 
          // @ts-ignore
         options['responseHeaders'] = ['header-response-token'];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * upgrade VPN resource
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 升级VPN资源
+     * @param {string} vgwId VPN网关实例ID
+     * @param {UpgradeRequestBody} upgradeRequestBody 请求参数对象
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public upgradeVpnGateway(upgradeVpnGatewayRequest?: UpgradeVpnGatewayRequest): Promise<UpgradeVpnGatewayResponse> {
+        const options = ParamCreater().upgradeVpnGateway(upgradeVpnGatewayRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
 
         return this.hcClient.sendRequest(options);
     }
@@ -2444,6 +2621,88 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 创建终端入云VPN网关
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        createP2cVgw(createP2cVgwRequest?: CreateP2cVgwRequest) {
+            const options = {
+                method: "POST",
+                url: "/v5/{project_id}/p2c-vpn-gateways",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let xClientToken;
+
+            if (createP2cVgwRequest !== null && createP2cVgwRequest !== undefined) {
+                if (createP2cVgwRequest instanceof CreateP2cVgwRequest) {
+                    body = createP2cVgwRequest.body
+                    xClientToken = createP2cVgwRequest.xClientToken;
+                } else {
+                    body = createP2cVgwRequest['body'];
+                    xClientToken = createP2cVgwRequest['X-Client-Token'];
+                }
+            }
+
+        
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            if (xClientToken !== undefined && xClientToken !== null) {
+                localVarHeaderParameter['X-Client-Token'] = String(xClientToken);
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 根据P2C VPN网关ID，删除指定的VPN网关
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        deleteP2cVgw(deleteP2cVgwRequest?: DeleteP2cVgwRequest) {
+            const options = {
+                method: "DELETE",
+                url: "/v5/{project_id}/p2c-vpn-gateways/{p2c_vgw_id}",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let p2cVgwId;
+
+            if (deleteP2cVgwRequest !== null && deleteP2cVgwRequest !== undefined) {
+                if (deleteP2cVgwRequest instanceof DeleteP2cVgwRequest) {
+                    p2cVgwId = deleteP2cVgwRequest.p2cVgwId;
+                } else {
+                    p2cVgwId = deleteP2cVgwRequest['p2c_vgw_id'];
+                }
+            }
+
+        
+            if (p2cVgwId === null || p2cVgwId === undefined) {
+            throw new RequiredError('p2cVgwId','Required parameter p2cVgwId was null or undefined when calling deleteP2cVgw.');
+            }
+
+            options.pathParams = { 'p2c_vgw_id': p2cVgwId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 断开P2C VPN网关连接
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -2483,6 +2742,43 @@ export const ParamCreater = function () {
             }
 
             options.pathParams = { 'p2c_vgw_id': p2cVgwId,'connection_id': connectionId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * delete resource job
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        deleteP2cVpnGatewayJob(deleteP2cVpnGatewayJobRequest?: DeleteP2cVpnGatewayJobRequest) {
+            const options = {
+                method: "DELETE",
+                url: "/v5/{project_id}/p2c-vpn-gateways/jobs/{job_id}",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let jobId;
+
+            if (deleteP2cVpnGatewayJobRequest !== null && deleteP2cVpnGatewayJobRequest !== undefined) {
+                if (deleteP2cVpnGatewayJobRequest instanceof DeleteP2cVpnGatewayJobRequest) {
+                    jobId = deleteP2cVpnGatewayJobRequest.jobId;
+                } else {
+                    jobId = deleteP2cVpnGatewayJobRequest['job_id'];
+                }
+            }
+
+        
+            if (jobId === null || jobId === undefined) {
+            throw new RequiredError('jobId','Required parameter jobId was null or undefined when calling deleteP2cVpnGatewayJob.');
+            }
+
+            options.pathParams = { 'job_id': jobId, };
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -2621,6 +2917,43 @@ export const ParamCreater = function () {
         },
     
         /**
+         * list resource jobs
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listP2cVpnGatewayJobs(listP2cVpnGatewayJobsRequest?: ListP2cVpnGatewayJobsRequest) {
+            const options = {
+                method: "GET",
+                url: "/v5/{project_id}/p2c-vpn-gateways/jobs",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let resourceId;
+
+            if (listP2cVpnGatewayJobsRequest !== null && listP2cVpnGatewayJobsRequest !== undefined) {
+                if (listP2cVpnGatewayJobsRequest instanceof ListP2cVpnGatewayJobsRequest) {
+                    resourceId = listP2cVpnGatewayJobsRequest.resourceId;
+                } else {
+                    resourceId = listP2cVpnGatewayJobsRequest['resource_id'];
+                }
+            }
+
+        
+            if (resourceId !== null && resourceId !== undefined) {
+                localVarQueryParameter['resource_id'] = resourceId;
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 根据P2C VPN网关ID，查询指定的VPN网关
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -2691,6 +3024,52 @@ export const ParamCreater = function () {
         
             if (p2cVgwId === null || p2cVgwId === undefined) {
             throw new RequiredError('p2cVgwId','Required parameter p2cVgwId was null or undefined when calling updateP2cVgw.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'p2c_vgw_id': p2cVgwId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * upgrade VPN resource
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        upgradeP2cVpnGateway(upgradeP2cVpnGatewayRequest?: UpgradeP2cVpnGatewayRequest) {
+            const options = {
+                method: "POST",
+                url: "/v5/{project_id}/p2c-vpn-gateways/{p2c_vgw_id}/upgrade",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let p2cVgwId;
+
+            if (upgradeP2cVpnGatewayRequest !== null && upgradeP2cVpnGatewayRequest !== undefined) {
+                if (upgradeP2cVpnGatewayRequest instanceof UpgradeP2cVpnGatewayRequest) {
+                    p2cVgwId = upgradeP2cVpnGatewayRequest.p2cVgwId;
+                    body = upgradeP2cVpnGatewayRequest.body
+                } else {
+                    p2cVgwId = upgradeP2cVpnGatewayRequest['p2c_vgw_id'];
+                    body = upgradeP2cVpnGatewayRequest['body'];
+                }
+            }
+
+        
+            if (p2cVgwId === null || p2cVgwId === undefined) {
+            throw new RequiredError('p2cVgwId','Required parameter p2cVgwId was null or undefined when calling upgradeP2cVpnGateway.');
             }
             if (body === null || body === undefined) {
                 throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
@@ -3788,6 +4167,43 @@ export const ParamCreater = function () {
         },
     
         /**
+         * delete resource job
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        deleteVpnGatewayJob(deleteVpnGatewayJobRequest?: DeleteVpnGatewayJobRequest) {
+            const options = {
+                method: "DELETE",
+                url: "/v5/{project_id}/vpn-gateways/jobs/{job_id}",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let jobId;
+
+            if (deleteVpnGatewayJobRequest !== null && deleteVpnGatewayJobRequest !== undefined) {
+                if (deleteVpnGatewayJobRequest instanceof DeleteVpnGatewayJobRequest) {
+                    jobId = deleteVpnGatewayJobRequest.jobId;
+                } else {
+                    jobId = deleteVpnGatewayJobRequest['job_id'];
+                }
+            }
+
+        
+            if (jobId === null || jobId === undefined) {
+            throw new RequiredError('jobId','Required parameter jobId was null or undefined when calling deleteVpnGatewayJob.');
+            }
+
+            options.pathParams = { 'job_id': jobId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 查询VPN网关可用区
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -3866,6 +4282,43 @@ export const ParamCreater = function () {
             }
             if (enterpriseProjectId !== null && enterpriseProjectId !== undefined) {
                 localVarQueryParameter['enterprise_project_id'] = enterpriseProjectId;
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * list resource jobs
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listVpnGatewayJobs(listVpnGatewayJobsRequest?: ListVpnGatewayJobsRequest) {
+            const options = {
+                method: "GET",
+                url: "/v5/{project_id}/vpn-gateways/jobs",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let resourceId;
+
+            if (listVpnGatewayJobsRequest !== null && listVpnGatewayJobsRequest !== undefined) {
+                if (listVpnGatewayJobsRequest instanceof ListVpnGatewayJobsRequest) {
+                    resourceId = listVpnGatewayJobsRequest.resourceId;
+                } else {
+                    resourceId = listVpnGatewayJobsRequest['resource_id'];
+                }
+            }
+
+        
+            if (resourceId !== null && resourceId !== undefined) {
+                localVarQueryParameter['resource_id'] = resourceId;
             }
 
             options.queryParams = localVarQueryParameter;
@@ -4055,6 +4508,52 @@ export const ParamCreater = function () {
         
             if (vgwId === null || vgwId === undefined) {
             throw new RequiredError('vgwId','Required parameter vgwId was null or undefined when calling updateVgw.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'vgw_id': vgwId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * upgrade VPN resource
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        upgradeVpnGateway(upgradeVpnGatewayRequest?: UpgradeVpnGatewayRequest) {
+            const options = {
+                method: "POST",
+                url: "/v5/{project_id}/vpn-gateways/{vgw_id}/upgrade",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let vgwId;
+
+            if (upgradeVpnGatewayRequest !== null && upgradeVpnGatewayRequest !== undefined) {
+                if (upgradeVpnGatewayRequest instanceof UpgradeVpnGatewayRequest) {
+                    vgwId = upgradeVpnGatewayRequest.vgwId;
+                    body = upgradeVpnGatewayRequest.body
+                } else {
+                    vgwId = upgradeVpnGatewayRequest['vgw_id'];
+                    body = upgradeVpnGatewayRequest['body'];
+                }
+            }
+
+        
+            if (vgwId === null || vgwId === undefined) {
+            throw new RequiredError('vgwId','Required parameter vgwId was null or undefined when calling upgradeVpnGateway.');
             }
             if (body === null || body === undefined) {
                 throw new RequiredError('body','Required parameter body was null or undefined when calling body.');

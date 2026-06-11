@@ -1,10 +1,12 @@
 import { AllowAddressNetmasksOption } from './AllowAddressNetmasksOption';
 import { AllowIpRangesOption } from './AllowIpRangesOption';
+import { AllowVpcEndpointsOption } from './AllowVpcEndpointsOption';
 
 
 export class AclPolicyOption {
     private 'allow_address_netmasks'?: Array<AllowAddressNetmasksOption>;
     private 'allow_ip_ranges'?: Array<AllowIpRangesOption>;
+    private 'allow_vpc_endpoints'?: Array<AllowVpcEndpointsOption>;
     public constructor() { 
     }
     public withAllowAddressNetmasks(allowAddressNetmasks: Array<AllowAddressNetmasksOption>): AclPolicyOption {
@@ -26,5 +28,15 @@ export class AclPolicyOption {
     }
     public get allowIpRanges(): Array<AllowIpRangesOption> | undefined {
         return this['allow_ip_ranges'];
+    }
+    public withAllowVpcEndpoints(allowVpcEndpoints: Array<AllowVpcEndpointsOption>): AclPolicyOption {
+        this['allow_vpc_endpoints'] = allowVpcEndpoints;
+        return this;
+    }
+    public set allowVpcEndpoints(allowVpcEndpoints: Array<AllowVpcEndpointsOption>  | undefined) {
+        this['allow_vpc_endpoints'] = allowVpcEndpoints;
+    }
+    public get allowVpcEndpoints(): Array<AllowVpcEndpointsOption> | undefined {
+        return this['allow_vpc_endpoints'];
     }
 }

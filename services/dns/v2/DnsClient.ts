@@ -6,17 +6,37 @@ import { AliasTarget } from './model/AliasTarget';
 import { AssociateEndpointIpaddressRequest } from './model/AssociateEndpointIpaddressRequest';
 import { AssociateEndpointIpaddressResponse } from './model/AssociateEndpointIpaddressResponse';
 import { AssociateOrDisassociateRouterWithRuleRequestBody } from './model/AssociateOrDisassociateRouterWithRuleRequestBody';
+import { AssociateResolverQueryLogConfigRequest } from './model/AssociateResolverQueryLogConfigRequest';
+import { AssociateResolverQueryLogConfigRequestBody } from './model/AssociateResolverQueryLogConfigRequestBody';
+import { AssociateResolverQueryLogConfigResponse } from './model/AssociateResolverQueryLogConfigResponse';
 import { AssociateResolverRuleRouterRequest } from './model/AssociateResolverRuleRouterRequest';
 import { AssociateResolverRuleRouterResponse } from './model/AssociateResolverRuleRouterResponse';
 import { AssociateRouterRequest } from './model/AssociateRouterRequest';
 import { AssociateRouterRequestBody } from './model/AssociateRouterRequestBody';
 import { AssociateRouterResponse } from './model/AssociateRouterResponse';
+import { BatchCreateCombinedPublicRecordsetsTaskRequest } from './model/BatchCreateCombinedPublicRecordsetsTaskRequest';
+import { BatchCreateCombinedPublicRecordsetsTaskRequestBody } from './model/BatchCreateCombinedPublicRecordsetsTaskRequestBody';
+import { BatchCreateCombinedPublicRecordsetsTaskResponse } from './model/BatchCreateCombinedPublicRecordsetsTaskResponse';
+import { BatchCreatePublicRecordsetsTaskItem } from './model/BatchCreatePublicRecordsetsTaskItem';
+import { BatchCreatePublicRecordsetsTaskRequest } from './model/BatchCreatePublicRecordsetsTaskRequest';
+import { BatchCreatePublicRecordsetsTaskRequestBody } from './model/BatchCreatePublicRecordsetsTaskRequestBody';
+import { BatchCreatePublicRecordsetsTaskResponse } from './model/BatchCreatePublicRecordsetsTaskResponse';
+import { BatchCreatePublicZonesTaskRequest } from './model/BatchCreatePublicZonesTaskRequest';
+import { BatchCreatePublicZonesTaskRequestBody } from './model/BatchCreatePublicZonesTaskRequestBody';
+import { BatchCreatePublicZonesTaskResponse } from './model/BatchCreatePublicZonesTaskResponse';
 import { BatchCreateRecordSetWithLine } from './model/BatchCreateRecordSetWithLine';
+import { BatchCreateRecordSetsTaskItem } from './model/BatchCreateRecordSetsTaskItem';
+import { BatchCreateRecordSetsTaskRequest } from './model/BatchCreateRecordSetsTaskRequest';
+import { BatchCreateRecordSetsTaskRequestBody } from './model/BatchCreateRecordSetsTaskRequestBody';
+import { BatchCreateRecordSetsTaskResponse } from './model/BatchCreateRecordSetsTaskResponse';
 import { BatchCreateTagRequest } from './model/BatchCreateTagRequest';
 import { BatchCreateTagResponse } from './model/BatchCreateTagResponse';
 import { BatchDeletePtrRecordsRequest } from './model/BatchDeletePtrRecordsRequest';
 import { BatchDeletePtrRecordsRequestBody } from './model/BatchDeletePtrRecordsRequestBody';
 import { BatchDeletePtrRecordsResponse } from './model/BatchDeletePtrRecordsResponse';
+import { BatchDeletePublicRecordsetsTaskRequest } from './model/BatchDeletePublicRecordsetsTaskRequest';
+import { BatchDeletePublicRecordsetsTaskRequestBody } from './model/BatchDeletePublicRecordsetsTaskRequestBody';
+import { BatchDeletePublicRecordsetsTaskResponse } from './model/BatchDeletePublicRecordsetsTaskResponse';
 import { BatchDeleteRecordSetWithLineRequest } from './model/BatchDeleteRecordSetWithLineRequest';
 import { BatchDeleteRecordSetWithLineRequestBody } from './model/BatchDeleteRecordSetWithLineRequestBody';
 import { BatchDeleteRecordSetWithLineResponse } from './model/BatchDeleteRecordSetWithLineResponse';
@@ -33,10 +53,24 @@ import { BatchSetRecordSetsStatusResponse } from './model/BatchSetRecordSetsStat
 import { BatchSetZonesStatusRequest } from './model/BatchSetZonesStatusRequest';
 import { BatchSetZonesStatusRequestBody } from './model/BatchSetZonesStatusRequestBody';
 import { BatchSetZonesStatusResponse } from './model/BatchSetZonesStatusResponse';
+import { BatchTransferPublicZonesTaskRequest } from './model/BatchTransferPublicZonesTaskRequest';
+import { BatchTransferPublicZonesTaskRequestBody } from './model/BatchTransferPublicZonesTaskRequestBody';
+import { BatchTransferPublicZonesTaskResponse } from './model/BatchTransferPublicZonesTaskResponse';
+import { BatchUpdatePublicRecordsetsConditionvalue } from './model/BatchUpdatePublicRecordsetsConditionvalue';
+import { BatchUpdatePublicRecordsetsFilter } from './model/BatchUpdatePublicRecordsetsFilter';
+import { BatchUpdatePublicRecordsetsTaskRequest } from './model/BatchUpdatePublicRecordsetsTaskRequest';
+import { BatchUpdatePublicRecordsetsTaskRequestBody } from './model/BatchUpdatePublicRecordsetsTaskRequestBody';
+import { BatchUpdatePublicRecordsetsTaskResponse } from './model/BatchUpdatePublicRecordsetsTaskResponse';
+import { BatchUpdatePublicRecordsetsUpdateValue } from './model/BatchUpdatePublicRecordsetsUpdateValue';
 import { BatchUpdateRecordSet } from './model/BatchUpdateRecordSet';
 import { BatchUpdateRecordSetWithLineRequest } from './model/BatchUpdateRecordSetWithLineRequest';
 import { BatchUpdateRecordSetWithLineRequestBody } from './model/BatchUpdateRecordSetWithLineRequestBody';
 import { BatchUpdateRecordSetWithLineResponse } from './model/BatchUpdateRecordSetWithLineResponse';
+import { CreateAuthorizeTxtRecordRequest } from './model/CreateAuthorizeTxtRecordRequest';
+import { CreateAuthorizeTxtRecordRequestBody } from './model/CreateAuthorizeTxtRecordRequestBody';
+import { CreateAuthorizeTxtRecordResponse } from './model/CreateAuthorizeTxtRecordResponse';
+import { CreateAuthorizeTxtRecordVerificationRequest } from './model/CreateAuthorizeTxtRecordVerificationRequest';
+import { CreateAuthorizeTxtRecordVerificationResponse } from './model/CreateAuthorizeTxtRecordVerificationResponse';
 import { CreateCustomLineRequest } from './model/CreateCustomLineRequest';
 import { CreateCustomLineRequestBody } from './model/CreateCustomLineRequestBody';
 import { CreateCustomLineResponse } from './model/CreateCustomLineResponse';
@@ -68,12 +102,22 @@ import { CreateRecordSetWithBatchLinesResponse } from './model/CreateRecordSetWi
 import { CreateRecordSetWithLineRequest } from './model/CreateRecordSetWithLineRequest';
 import { CreateRecordSetWithLineRequestBody } from './model/CreateRecordSetWithLineRequestBody';
 import { CreateRecordSetWithLineResponse } from './model/CreateRecordSetWithLineResponse';
+import { CreateResolverQueryLogConfigRequest } from './model/CreateResolverQueryLogConfigRequest';
+import { CreateResolverQueryLogConfigRequestBody } from './model/CreateResolverQueryLogConfigRequestBody';
+import { CreateResolverQueryLogConfigResponse } from './model/CreateResolverQueryLogConfigResponse';
 import { CreateResolverRuleRequest } from './model/CreateResolverRuleRequest';
 import { CreateResolverRuleRequestBody } from './model/CreateResolverRuleRequestBody';
 import { CreateResolverRuleResponse } from './model/CreateResolverRuleResponse';
+import { CreateRetrievalRequest } from './model/CreateRetrievalRequest';
+import { CreateRetrievalRequestBody } from './model/CreateRetrievalRequestBody';
+import { CreateRetrievalResponse } from './model/CreateRetrievalResponse';
+import { CreateRetrievalVerificationRequest } from './model/CreateRetrievalVerificationRequest';
+import { CreateRetrievalVerificationResponse } from './model/CreateRetrievalVerificationResponse';
 import { CreateTagReq } from './model/CreateTagReq';
 import { CreateTagRequest } from './model/CreateTagRequest';
 import { CreateTagResponse } from './model/CreateTagResponse';
+import { DeleteBatchCreateRecordSetsTaskRequest } from './model/DeleteBatchCreateRecordSetsTaskRequest';
+import { DeleteBatchCreateRecordSetsTaskResponse } from './model/DeleteBatchCreateRecordSetsTaskResponse';
 import { DeleteCustomLineRequest } from './model/DeleteCustomLineRequest';
 import { DeleteCustomLineResponse } from './model/DeleteCustomLineResponse';
 import { DeleteEndpointRequest } from './model/DeleteEndpointRequest';
@@ -90,6 +134,8 @@ import { DeleteRecordSetRequest } from './model/DeleteRecordSetRequest';
 import { DeleteRecordSetResponse } from './model/DeleteRecordSetResponse';
 import { DeleteRecordSetsRequest } from './model/DeleteRecordSetsRequest';
 import { DeleteRecordSetsResponse } from './model/DeleteRecordSetsResponse';
+import { DeleteResolverQueryLogConfigRequest } from './model/DeleteResolverQueryLogConfigRequest';
+import { DeleteResolverQueryLogConfigResponse } from './model/DeleteResolverQueryLogConfigResponse';
 import { DeleteResolverRuleRequest } from './model/DeleteResolverRuleRequest';
 import { DeleteResolverRuleResponse } from './model/DeleteResolverRuleResponse';
 import { DeleteTagRequest } from './model/DeleteTagRequest';
@@ -98,6 +144,8 @@ import { DisableDnssecConfigRequest } from './model/DisableDnssecConfigRequest';
 import { DisableDnssecConfigResponse } from './model/DisableDnssecConfigResponse';
 import { DisassociateEndpointIpaddressRequest } from './model/DisassociateEndpointIpaddressRequest';
 import { DisassociateEndpointIpaddressResponse } from './model/DisassociateEndpointIpaddressResponse';
+import { DisassociateResolverQueryLogConfigRequest } from './model/DisassociateResolverQueryLogConfigRequest';
+import { DisassociateResolverQueryLogConfigResponse } from './model/DisassociateResolverQueryLogConfigResponse';
 import { DisassociateResolverRuleRouterRequest } from './model/DisassociateResolverRuleRouterRequest';
 import { DisassociateResolverRuleRouterResponse } from './model/DisassociateResolverRuleRouterResponse';
 import { DisassociateRouterRequest } from './model/DisassociateRouterRequest';
@@ -119,6 +167,9 @@ import { LinksItem } from './model/LinksItem';
 import { ListApiVersionsItem } from './model/ListApiVersionsItem';
 import { ListApiVersionsRequest } from './model/ListApiVersionsRequest';
 import { ListApiVersionsResponse } from './model/ListApiVersionsResponse';
+import { ListBatchOperationTasksItem } from './model/ListBatchOperationTasksItem';
+import { ListBatchOperationTasksRequest } from './model/ListBatchOperationTasksRequest';
+import { ListBatchOperationTasksResponse } from './model/ListBatchOperationTasksResponse';
 import { ListCustomLineRequest } from './model/ListCustomLineRequest';
 import { ListCustomLineResponse } from './model/ListCustomLineResponse';
 import { ListEndpointIpaddressesRequest } from './model/ListEndpointIpaddressesRequest';
@@ -127,6 +178,9 @@ import { ListEndpointVpcsRequest } from './model/ListEndpointVpcsRequest';
 import { ListEndpointVpcsResponse } from './model/ListEndpointVpcsResponse';
 import { ListEndpointsRequest } from './model/ListEndpointsRequest';
 import { ListEndpointsResponse } from './model/ListEndpointsResponse';
+import { ListInstancesRequest } from './model/ListInstancesRequest';
+import { ListInstancesRequestBody } from './model/ListInstancesRequestBody';
+import { ListInstancesResponse } from './model/ListInstancesResponse';
 import { ListLineGroupsRequest } from './model/ListLineGroupsRequest';
 import { ListLineGroupsResponse } from './model/ListLineGroupsResponse';
 import { ListNameServersRequest } from './model/ListNameServersRequest';
@@ -150,9 +204,13 @@ import { ListRecordSetsResponse } from './model/ListRecordSetsResponse';
 import { ListRecordSetsWithLineRequest } from './model/ListRecordSetsWithLineRequest';
 import { ListRecordSetsWithLineResponse } from './model/ListRecordSetsWithLineResponse';
 import { ListRecordSetsWithTags } from './model/ListRecordSetsWithTags';
+import { ListResolverQueryLogConfigsRequest } from './model/ListResolverQueryLogConfigsRequest';
+import { ListResolverQueryLogConfigsResponse } from './model/ListResolverQueryLogConfigsResponse';
 import { ListResolverRuleParam } from './model/ListResolverRuleParam';
 import { ListResolverRulesRequest } from './model/ListResolverRulesRequest';
 import { ListResolverRulesResponse } from './model/ListResolverRulesResponse';
+import { ListSystemLinesRequest } from './model/ListSystemLinesRequest';
+import { ListSystemLinesResponse } from './model/ListSystemLinesResponse';
 import { ListTagReq } from './model/ListTagReq';
 import { ListTagRequest } from './model/ListTagRequest';
 import { ListTagResponse } from './model/ListTagResponse';
@@ -173,7 +231,10 @@ import { PublicZoneLines } from './model/PublicZoneLines';
 import { PublicZoneResp } from './model/PublicZoneResp';
 import { QueryRecordSetWithLineAndTagsResp } from './model/QueryRecordSetWithLineAndTagsResp';
 import { QueryRecordSetWithLineResp } from './model/QueryRecordSetWithLineResp';
+import { RecordInfo } from './model/RecordInfo';
 import { RecordsetData } from './model/RecordsetData';
+import { ResolutionInstances } from './model/ResolutionInstances';
+import { ResolverQueryLogConfig } from './model/ResolverQueryLogConfig';
 import { ResolverRuleParam } from './model/ResolverRuleParam';
 import { ResourceItem } from './model/ResourceItem';
 import { RestorePtrRecordRequest } from './model/RestorePtrRecordRequest';
@@ -182,6 +243,7 @@ import { RestorePtrReq } from './model/RestorePtrReq';
 import { Router } from './model/Router';
 import { RouterForRule } from './model/RouterForRule';
 import { RouterWithStatus } from './model/RouterWithStatus';
+import { RsetResolutionInstances } from './model/RsetResolutionInstances';
 import { SetPrivateZoneProxyPatternRequest } from './model/SetPrivateZoneProxyPatternRequest';
 import { SetPrivateZoneProxyPatternRequestBody } from './model/SetPrivateZoneProxyPatternRequestBody';
 import { SetPrivateZoneProxyPatternResponse } from './model/SetPrivateZoneProxyPatternResponse';
@@ -190,10 +252,22 @@ import { SetRecordSetsStatusRequestBody } from './model/SetRecordSetsStatusReque
 import { SetRecordSetsStatusResponse } from './model/SetRecordSetsStatusResponse';
 import { ShowApiInfoRequest } from './model/ShowApiInfoRequest';
 import { ShowApiInfoResponse } from './model/ShowApiInfoResponse';
+import { ShowAuthorizeTxtRecordRequest } from './model/ShowAuthorizeTxtRecordRequest';
+import { ShowAuthorizeTxtRecordResponse } from './model/ShowAuthorizeTxtRecordResponse';
+import { ShowBatchCreateRecordSetsTaskErrorItem } from './model/ShowBatchCreateRecordSetsTaskErrorItem';
+import { ShowBatchCreateRecordSetsTaskRequest } from './model/ShowBatchCreateRecordSetsTaskRequest';
+import { ShowBatchCreateRecordSetsTaskResponse } from './model/ShowBatchCreateRecordSetsTaskResponse';
+import { ShowBatchOperationTaskErrorItem } from './model/ShowBatchOperationTaskErrorItem';
+import { ShowBatchOperationTaskRequest } from './model/ShowBatchOperationTaskRequest';
+import { ShowBatchOperationTaskResponse } from './model/ShowBatchOperationTaskResponse';
 import { ShowDnssecConfigRequest } from './model/ShowDnssecConfigRequest';
 import { ShowDnssecConfigResponse } from './model/ShowDnssecConfigResponse';
+import { ShowDomainDetectionRequest } from './model/ShowDomainDetectionRequest';
+import { ShowDomainDetectionResponse } from './model/ShowDomainDetectionResponse';
 import { ShowDomainQuotaRequest } from './model/ShowDomainQuotaRequest';
 import { ShowDomainQuotaResponse } from './model/ShowDomainQuotaResponse';
+import { ShowEmailRecordSetRequest } from './model/ShowEmailRecordSetRequest';
+import { ShowEmailRecordSetResponse } from './model/ShowEmailRecordSetResponse';
 import { ShowEndpointRequest } from './model/ShowEndpointRequest';
 import { ShowEndpointResponse } from './model/ShowEndpointResponse';
 import { ShowLineGroupRequest } from './model/ShowLineGroupRequest';
@@ -217,11 +291,22 @@ import { ShowRecordSetRequest } from './model/ShowRecordSetRequest';
 import { ShowRecordSetResponse } from './model/ShowRecordSetResponse';
 import { ShowRecordSetWithLineRequest } from './model/ShowRecordSetWithLineRequest';
 import { ShowRecordSetWithLineResponse } from './model/ShowRecordSetWithLineResponse';
+import { ShowResolverQueryLogConfigRequest } from './model/ShowResolverQueryLogConfigRequest';
+import { ShowResolverQueryLogConfigResponse } from './model/ShowResolverQueryLogConfigResponse';
 import { ShowResolverRuleRequest } from './model/ShowResolverRuleRequest';
 import { ShowResolverRuleRespParam } from './model/ShowResolverRuleRespParam';
 import { ShowResolverRuleResponse } from './model/ShowResolverRuleResponse';
 import { ShowResourceTagRequest } from './model/ShowResourceTagRequest';
 import { ShowResourceTagResponse } from './model/ShowResourceTagResponse';
+import { ShowRetrievalRequest } from './model/ShowRetrievalRequest';
+import { ShowRetrievalResponse } from './model/ShowRetrievalResponse';
+import { ShowRetrievalVerificationRequest } from './model/ShowRetrievalVerificationRequest';
+import { ShowRetrievalVerificationResponse } from './model/ShowRetrievalVerificationResponse';
+import { ShowWebsiteRecordSetRequest } from './model/ShowWebsiteRecordSetRequest';
+import { ShowWebsiteRecordSetResponse } from './model/ShowWebsiteRecordSetResponse';
+import { ShowZoneNameServerRequest } from './model/ShowZoneNameServerRequest';
+import { ShowZoneNameServerResponse } from './model/ShowZoneNameServerResponse';
+import { SystemLine } from './model/SystemLine';
 import { Tag } from './model/Tag';
 import { TagValues } from './model/TagValues';
 import { UpdateCustomLineRequest } from './model/UpdateCustomLineRequest';
@@ -261,8 +346,11 @@ import { UpdateResolverRuleResponse } from './model/UpdateResolverRuleResponse';
 import { UpdateZoneStatusRequestBody } from './model/UpdateZoneStatusRequestBody';
 import { ValuesItem } from './model/ValuesItem';
 import { VersionItem } from './model/VersionItem';
+import { Vpc } from './model/Vpc';
+import { VpcResolutionInstances } from './model/VpcResolutionInstances';
 import { VpcsData } from './model/VpcsData';
 import { ZoneData } from './model/ZoneData';
+import { ZoneResolutionInstances } from './model/ZoneResolutionInstances';
 
 export class DnsClient {
     public static newBuilder(): ClientBuilder<DnsClient> {
@@ -293,6 +381,26 @@ export class DnsClient {
      */
     public associateEndpointIpaddress(associateEndpointIpaddressRequest?: AssociateEndpointIpaddressRequest): Promise<AssociateEndpointIpaddressResponse> {
         const options = ParamCreater().associateEndpointIpaddress(associateEndpointIpaddressRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 解析器访问日志关联VPC。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 解析器访问日志关联VPC
+     * @param {string} id 访问日志ID。
+     * @param {AssociateResolverQueryLogConfigRequestBody} associateResolverQueryLogConfigRequestBody 解析器访问日志关联VPC请求。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public associateResolverQueryLogConfig(associateResolverQueryLogConfigRequest?: AssociateResolverQueryLogConfigRequest): Promise<AssociateResolverQueryLogConfigResponse> {
+        const options = ParamCreater().associateResolverQueryLogConfig(associateResolverQueryLogConfigRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -341,12 +449,78 @@ export class DnsClient {
     }
 
     /**
+     * 提交批量创建公网记录集任务，返回任务ID。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 批量创建公网记录集
+     * @param {BatchCreateCombinedPublicRecordsetsTaskRequestBody} batchCreateCombinedPublicRecordsetsTaskRequestBody 批量创建公网记录集请求。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public batchCreateCombinedPublicRecordsetsTask(batchCreateCombinedPublicRecordsetsTaskRequest?: BatchCreateCombinedPublicRecordsetsTaskRequest): Promise<BatchCreateCombinedPublicRecordsetsTaskResponse> {
+        const options = ParamCreater().batchCreateCombinedPublicRecordsetsTask(batchCreateCombinedPublicRecordsetsTaskRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 提交批量创建公网记录集任务，返回任务ID。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 批量创建公网记录集
+     * @param {BatchCreatePublicRecordsetsTaskRequestBody} batchCreatePublicRecordsetsTaskRequestBody 批量创建公网记录集请求。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public batchCreatePublicRecordsetsTask(batchCreatePublicRecordsetsTaskRequest?: BatchCreatePublicRecordsetsTaskRequest): Promise<BatchCreatePublicRecordsetsTaskResponse> {
+        const options = ParamCreater().batchCreatePublicRecordsetsTask(batchCreatePublicRecordsetsTaskRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 提交批量创建公网域名任务，返回任务ID。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 批量创建公网域名
+     * @param {BatchCreatePublicZonesTaskRequestBody} batchCreatePublicZonesTaskRequestBody 批量创建公网域名请求。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public batchCreatePublicZonesTask(batchCreatePublicZonesTaskRequest?: BatchCreatePublicZonesTaskRequest): Promise<BatchCreatePublicZonesTaskResponse> {
+        const options = ParamCreater().batchCreatePublicZonesTask(batchCreatePublicZonesTaskRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 为指定实例批量添加或删除标签
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 为指定实例批量添加或删除标签
-     * @param {string} resourceType 资源的类型：DNS-public_zone，DNS-private_zone，DNS-public_recordset，DNS-private_recordset，DNS-ptr_record。
+     * @param {string} resourceType **参数解释：** 资源的类型。 **约束限制：** 不涉及。 **取值范围：** - DNS-public_zone：公网域名 - DNS-private_zone：内网域名 - DNS-public_recordset：公网记录集 - DNS-private_recordset：内网记录集 - DNS-ptr_record：反向解析  **默认取值：** 不涉及。
      * @param {string} resourceId 资源ID。
      * @param {BatchHandTags} [batchHandTags] 
      * @param {*} [options] Override http request option.
@@ -381,20 +555,20 @@ export class DnsClient {
     }
 
     /**
-     * 批量删除域名下的记录集，当删除的资源不存在时，则默认删除成功。
-     * 响应结果中只包含本次实际删除的资源。
-     * 支持公网域名和内网域名。
+     * 提交批量删除公网记录集任务，返回任务ID。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @summary 批量删除域名下的记录集
-     * @param {string} zoneId **参数解释：** 域名ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
-     * @param {BatchDeleteRecordSetWithLineRequestBody} batchDeleteRecordSetWithLineRequestBody 批量删除域名下的记录集请求。
+     * @summary 批量删除公网记录集
+     * @param {BatchDeletePublicRecordsetsTaskRequestBody} batchDeletePublicRecordsetsTaskRequestBody 批量删除公网记录集请求。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public batchDeleteRecordSetWithLine(batchDeleteRecordSetWithLineRequest?: BatchDeleteRecordSetWithLineRequest): Promise<BatchDeleteRecordSetWithLineResponse> {
-        const options = ParamCreater().batchDeleteRecordSetWithLine(batchDeleteRecordSetWithLineRequest);
+    public batchDeletePublicRecordsetsTask(batchDeletePublicRecordsetsTaskRequest?: BatchDeletePublicRecordsetsTaskRequest): Promise<BatchDeletePublicRecordsetsTaskResponse> {
+        const options = ParamCreater().batchDeletePublicRecordsetsTask(batchDeletePublicRecordsetsTaskRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -487,19 +661,88 @@ export class DnsClient {
     }
 
     /**
-     * 批量修改记录集。属于原子性操作，请求记录集将全部完成修改，或不做任何修改。
-     * 仅公网域名支持。
+     * 提交批量转移公网域名任务，返回任务ID。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @summary 批量修改记录集
-     * @param {string} zoneId **参数解释：** 域名ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
-     * @param {BatchUpdateRecordSetWithLineRequestBody} batchUpdateRecordSetWithLineRequestBody 批量修改记录集请求。
+     * @summary 批量转移公网域名
+     * @param {BatchTransferPublicZonesTaskRequestBody} batchTransferPublicZonesTaskRequestBody 批量转移公网域名请求。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public batchUpdateRecordSetWithLine(batchUpdateRecordSetWithLineRequest?: BatchUpdateRecordSetWithLineRequest): Promise<BatchUpdateRecordSetWithLineResponse> {
-        const options = ParamCreater().batchUpdateRecordSetWithLine(batchUpdateRecordSetWithLineRequest);
+    public batchTransferPublicZonesTask(batchTransferPublicZonesTaskRequest?: BatchTransferPublicZonesTaskRequest): Promise<BatchTransferPublicZonesTaskResponse> {
+        const options = ParamCreater().batchTransferPublicZonesTask(batchTransferPublicZonesTaskRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 提交批量修改公网记录集任务，返回任务ID。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 批量修改公网记录集
+     * @param {BatchUpdatePublicRecordsetsTaskRequestBody} batchUpdatePublicRecordsetsTaskRequestBody 批量修改公网记录集请求。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public batchUpdatePublicRecordsetsTask(batchUpdatePublicRecordsetsTaskRequest?: BatchUpdatePublicRecordsetsTaskRequest): Promise<BatchUpdatePublicRecordsetsTaskResponse> {
+        const options = ParamCreater().batchUpdatePublicRecordsetsTask(batchUpdatePublicRecordsetsTaskRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 当创建子域名时提示“域名与其他租户冲突，你需要添加TXT授权校验”，通过调用当前接口生成子域名授权的TXT记录验证信息。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * &gt; TXT记录验证信息生成后，请前往主域名所属的DNS服务商处添加相应的TXT类型解析记录，主机记录和记录值与验证信息保持一致。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 创建公网子域名授权
+     * @param {CreateAuthorizeTxtRecordRequestBody} createAuthorizeTxtRecordRequestBody 创建公网子域名授权请求。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public createAuthorizeTxtRecord(createAuthorizeTxtRecordRequest?: CreateAuthorizeTxtRecordRequest): Promise<CreateAuthorizeTxtRecordResponse> {
+        const options = ParamCreater().createAuthorizeTxtRecord(createAuthorizeTxtRecordRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 用户在主域名所属DNS服务商处添加TXT类型解析记录后，调用当前接口验证子域名授权状态。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 验证公网子域名授权
+     * @param {string} id 授权请求ID。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public createAuthorizeTxtRecordVerification(createAuthorizeTxtRecordVerificationRequest?: CreateAuthorizeTxtRecordVerificationRequest): Promise<CreateAuthorizeTxtRecordVerificationResponse> {
+        const options = ParamCreater().createAuthorizeTxtRecordVerification(createAuthorizeTxtRecordVerificationRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -606,18 +849,17 @@ export class DnsClient {
     }
 
     /**
-     * 批量线路创建记录集。属于原子性操作，如果存在一个参数校验不通过，则创建失败。仅公网域名支持。
+     * 创建解析器访问日志。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @summary 批量线路创建记录集
-     * @param {string} zoneId **参数解释：** 域名ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
-     * @param {CreateRSetBatchLinesReq} createRSetBatchLinesReq 
+     * @summary 创建解析器访问日志
+     * @param {CreateResolverQueryLogConfigRequestBody} createResolverQueryLogConfigRequestBody 创建解析器访问日志请求。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public createRecordSetWithBatchLines(createRecordSetWithBatchLinesRequest?: CreateRecordSetWithBatchLinesRequest): Promise<CreateRecordSetWithBatchLinesResponse> {
-        const options = ParamCreater().createRecordSetWithBatchLines(createRecordSetWithBatchLinesRequest);
+    public createResolverQueryLogConfig(createResolverQueryLogConfigRequest?: CreateResolverQueryLogConfigRequest): Promise<CreateResolverQueryLogConfigResponse> {
+        const options = ParamCreater().createResolverQueryLogConfig(createResolverQueryLogConfigRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -645,12 +887,56 @@ export class DnsClient {
     }
 
     /**
+     * 创建公网域名找回请求。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 创建公网域名找回
+     * @param {CreateRetrievalRequestBody} createRetrievalRequestBody 创建公网域名找回请求。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public createRetrieval(createRetrievalRequest?: CreateRetrievalRequest): Promise<CreateRetrievalResponse> {
+        const options = ParamCreater().createRetrieval(createRetrievalRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 验证公网域名找回。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 验证公网域名找回
+     * @param {string} id 找回请求ID。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public createRetrievalVerification(createRetrievalVerificationRequest?: CreateRetrievalVerificationRequest): Promise<CreateRetrievalVerificationResponse> {
+        const options = ParamCreater().createRetrievalVerification(createRetrievalVerificationRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 为指定实例添加标签
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 为指定实例添加标签
-     * @param {string} resourceType 资源的类型：DNS-public_zone，DNS-private_zone，DNS-public_recordset，DNS-private_recordset，DNS-ptr_record。
+     * @param {string} resourceType **参数解释：** 资源的类型。 **约束限制：** 不涉及。 **取值范围：** - DNS-public_zone：公网域名 - DNS-private_zone：内网域名 - DNS-public_recordset：公网记录集 - DNS-private_recordset：内网记录集 - DNS-ptr_record：反向解析  **默认取值：** 不涉及。
      * @param {string} resourceId 资源ID。
      * @param {CreateTagReq} [createTagReq] 
      * @param {*} [options] Override http request option.
@@ -764,6 +1050,25 @@ export class DnsClient {
     }
 
     /**
+     * 删除解析器访问日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 删除解析器访问日志
+     * @param {string} id 访问日志ID。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public deleteResolverQueryLogConfig(deleteResolverQueryLogConfigRequest?: DeleteResolverQueryLogConfigRequest): Promise<DeleteResolverQueryLogConfigResponse> {
+        const options = ParamCreater().deleteResolverQueryLogConfig(deleteResolverQueryLogConfigRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 删除解析器转发规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -788,7 +1093,7 @@ export class DnsClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 删除资源标签
-     * @param {string} resourceType 资源的类型：DNS-public_zone，DNS-private_zone，DNS-public_recordset，DNS-private_recordset，DNS-ptr_record。  
+     * @param {string} resourceType **参数解释：** 资源的类型。 **约束限制：** 不涉及。 **取值范围：** - DNS-public_zone：公网域名 - DNS-private_zone：内网域名 - DNS-public_recordset：公网记录集 - DNS-private_recordset：内网记录集 - DNS-ptr_record：反向解析  **默认取值：** 不涉及。
      * @param {string} resourceId 资源ID。
      * @param {string} key 标签key。  标签key不能为空或者空字符串。
      * @param {*} [options] Override http request option.
@@ -816,6 +1121,26 @@ export class DnsClient {
      */
     public disassociateEndpointIpaddress(disassociateEndpointIpaddressRequest?: DisassociateEndpointIpaddressRequest): Promise<DisassociateEndpointIpaddressResponse> {
         const options = ParamCreater().disassociateEndpointIpaddress(disassociateEndpointIpaddressRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 解析器访问日志解关联VPC。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 解析器访问日志解关联VPC
+     * @param {string} id 访问日志ID。
+     * @param {AssociateResolverQueryLogConfigRequestBody} disassociateResolverQueryLogConfigRequestBody 解析器访问日志解关联VPC请求。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public disassociateResolverQueryLogConfig(disassociateResolverQueryLogConfigRequest?: DisassociateResolverQueryLogConfigRequest): Promise<DisassociateResolverQueryLogConfigResponse> {
+        const options = ParamCreater().disassociateResolverQueryLogConfig(disassociateResolverQueryLogConfigRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -882,6 +1207,29 @@ export class DnsClient {
     }
 
     /**
+     * 查询批量操作任务列表。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询批量操作任务列表
+     * @param {number} [limit] **参数解释：** 分页查询时配置每页返回的资源个数。 **约束限制：** 不涉及。 **取值范围：** 0~500。 **默认取值：** 500
+     * @param {number} [offset] **参数解释：** 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。 **约束限制：** 当设置marker不为空时，以marker为分页起始标识，offset不生效。 **取值范围：** 0~2147483647。 **默认取值：** 0
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listBatchOperationTasks(listBatchOperationTasksRequest?: ListBatchOperationTasksRequest): Promise<ListBatchOperationTasksResponse> {
+        const options = ParamCreater().listBatchOperationTasks(listBatchOperationTasksRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 查询自定义线路。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -892,7 +1240,7 @@ export class DnsClient {
      * @param {number} [limit] 分页查询时配置每页返回的资源个数。 当查询详细信息时：取值范围：0~100取值一般为10，20，50默认为100。 当查询概要信息时：取值范围：0~3000默认为3000。
      * @param {number} [offset] 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。  取值范围：0~2147483647  默认值为0。  当设置marker不为空时，以marker为分页起始标识，offset不生效。
      * @param {boolean} [showDetail] 是否查询详细信息。  取值范围：  true：是，查询详细信息。 false：否，不查询详细信息。 默认为true。
-     * @param {string} [status] 资源状态。
+     * @param {string} [status] **参数解释：** 资源状态。 **约束限制：** 不涉及。 **取值范围：** - ACTIVE：正常 - PENDING_CREATE：创建中 - PENDING_UPDATE：更新中 - PENDING_DELETE：删除中 - PENDING_FREEZE：冻结中 - FREEZE：冻结 - ERROR：失败  **默认取值：** 不涉及。
      * @param {string} [ip] IP地址范围。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -962,6 +1310,25 @@ export class DnsClient {
      */
     public listEndpoints(listEndpointsRequest?: ListEndpointsRequest): Promise<ListEndpointsResponse> {
         const options = ParamCreater().listEndpoints(listEndpointsRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 批量查询DNS解析量统计相关的资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 批量查询DNS解析量统计相关的资源
+     * @param {ListInstancesRequestBody} listInstancesRequestBody 查询DNS资源请求。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listInstances(listInstancesRequest?: ListInstancesRequest): Promise<ListInstancesResponse> {
+        const options = ParamCreater().listInstances(listInstancesRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -1076,6 +1443,27 @@ export class DnsClient {
     }
 
     /**
+     * 查询解析器访问日志列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询解析器访问日志列表
+     * @param {number} [limit] **参数解释：** 分页查询时配置每页返回的资源个数。 **约束限制：** 不涉及。 **取值范围：** 0~500。 **默认取值：** 500
+     * @param {string} [marker] **参数解释：** 分页查询的起始资源ID。 - 查询第一页时，设置为空。 - 查询下一页时，设置为上一页最后一条资源的ID。  **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {string} [vpcId] VPC ID。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listResolverQueryLogConfigs(listResolverQueryLogConfigsRequest?: ListResolverQueryLogConfigsRequest): Promise<ListResolverQueryLogConfigsResponse> {
+        const options = ParamCreater().listResolverQueryLogConfigs(listResolverQueryLogConfigsRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 查询解析器转发规则列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -1106,7 +1494,7 @@ export class DnsClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 使用标签查询资源实例
-     * @param {string} resourceType 资源的类型：DNS-public_zone，DNS-private_zone，DNS-public_recordset，DNS-private_recordset，DNS-ptr_record。
+     * @param {string} resourceType **参数解释：** 资源的类型。 **约束限制：** 不涉及。 **取值范围：** - DNS-public_zone：公网域名 - DNS-private_zone：内网域名 - DNS-public_recordset：公网记录集 - DNS-private_recordset：内网记录集 - DNS-ptr_record：反向解析  **默认取值：** 不涉及。
      * @param {ListTagReq} [listTagReq] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1126,7 +1514,7 @@ export class DnsClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 查询指定实例类型的所有标签集合
-     * @param {string} resourceType 资源的类型：DNS-public_zone，DNS-private_zone，DNS-public_recordset，DNS-private_recordset，DNS-ptr_record。
+     * @param {string} resourceType **参数解释：** 资源的类型。 **约束限制：** 不涉及。 **取值范围：** - DNS-public_zone：公网域名 - DNS-private_zone：内网域名 - DNS-public_recordset：公网记录集 - DNS-private_recordset：内网记录集 - DNS-ptr_record：反向解析  **默认取值：** 不涉及。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -1179,6 +1567,76 @@ export class DnsClient {
     }
 
     /**
+     * 查询已生成的子域名授权TXT记录验证信息。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询公网子域名授权
+     * @param {string} zoneName 待创建的子域名。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showAuthorizeTxtRecord(showAuthorizeTxtRecordRequest?: ShowAuthorizeTxtRecordRequest): Promise<ShowAuthorizeTxtRecordResponse> {
+        const options = ParamCreater().showAuthorizeTxtRecord(showAuthorizeTxtRecordRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询批量操作任务，分页返回失败条目。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询批量操作任务
+     * @param {string} taskId **参数解释：** 批量操作任务的ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {number} [errorItemLimit] **参数解释：** 分页查询时配置每页返回的失败条目个数。 **约束限制：** 不涉及。 **取值范围：** 0~500。 **默认取值：** 500
+     * @param {number} [errorItemOffset] **参数解释：** 分页查询起始偏移量，表示从偏移量的下一个失败条目开始查询。 **约束限制：** 不涉及。 **取值范围：** 0~2147483647。 **默认取值：** 0
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showBatchOperationTask(showBatchOperationTaskRequest?: ShowBatchOperationTaskRequest): Promise<ShowBatchOperationTaskResponse> {
+        const options = ParamCreater().showBatchOperationTask(showBatchOperationTaskRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询公网域名的域名诊断。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询公网域名的域名诊断
+     * @param {string} zoneId **参数解释：** 域名ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {string} domainName 待诊断记录集的名称。
+     * @param {string} [type] **参数解释：** 待诊断记录集的类型。 **取值范围：** - MX：指定域名对应的邮件服务器。 - CNAME：将域名解析到另一域名，或者多个域名映射到同一域名上。 - TXT：用于对域名进行标识和说明。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showDomainDetection(showDomainDetectionRequest?: ShowDomainDetectionRequest): Promise<ShowDomainDetectionResponse> {
+        const options = ParamCreater().showDomainDetection(showDomainDetectionRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 查询租户在DNS服务下的资源配额，包括公网域名配额、内网域名配额、记录集配额、反向解析配额、自定义线路配额、线路分组配额、入站终端节点配额、出站终端节点配额、转发规则配额等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -1190,6 +1648,30 @@ export class DnsClient {
      */
     public showDomainQuota(showDomainQuotaRequest?: ShowDomainQuotaRequest): Promise<ShowDomainQuotaResponse> {
         const options = ParamCreater().showDomainQuota(showDomainQuotaRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询公网域名的邮箱域名。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询公网域名的邮箱域名
+     * @param {string} zoneId **参数解释：** 域名ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {number} [limit] **参数解释：** 分页查询时配置每页返回的资源个数。 **约束限制：** 不涉及。 **取值范围：** 0~500。 **默认取值：** 500
+     * @param {number} [offset] **参数解释：** 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。 **约束限制：** 当设置marker不为空时，以marker为分页起始标识，offset不生效。 **取值范围：** 0~2147483647。 **默认取值：** 0
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showEmailRecordSet(showEmailRecordSetRequest?: ShowEmailRecordSetRequest): Promise<ShowEmailRecordSetResponse> {
+        const options = ParamCreater().showEmailRecordSet(showEmailRecordSetRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -1318,6 +1800,25 @@ export class DnsClient {
     }
 
     /**
+     * 查询解析器访问日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询解析器访问日志
+     * @param {string} id 访问日志ID。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showResolverQueryLogConfig(showResolverQueryLogConfigRequest?: ShowResolverQueryLogConfigRequest): Promise<ShowResolverQueryLogConfigResponse> {
+        const options = ParamCreater().showResolverQueryLogConfig(showResolverQueryLogConfigRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 查询解析器转发规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -1342,13 +1843,103 @@ export class DnsClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 查询指定实例的标签信息
-     * @param {string} resourceType 资源的类型：DNS-public_zone，DNS-private_zone，DNS-public_recordset，DNS-private_recordset，DNS-ptr_record。
+     * @param {string} resourceType **参数解释：** 资源的类型。 **约束限制：** 不涉及。 **取值范围：** - DNS-public_zone：公网域名 - DNS-private_zone：内网域名 - DNS-public_recordset：公网记录集 - DNS-private_recordset：内网记录集 - DNS-ptr_record：反向解析  **默认取值：** 不涉及。
      * @param {string} resourceId 资源ID。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     public showResourceTag(showResourceTagRequest?: ShowResourceTagRequest): Promise<ShowResourceTagResponse> {
         const options = ParamCreater().showResourceTag(showResourceTagRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询公网域名找回请求。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询公网域名找回
+     * @param {string} name 公网域名。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showRetrieval(showRetrievalRequest?: ShowRetrievalRequest): Promise<ShowRetrievalResponse> {
+        const options = ParamCreater().showRetrieval(showRetrievalRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询公网域名找回结果。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询公网域名找回结果
+     * @param {string} id 找回请求ID。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showRetrievalVerification(showRetrievalVerificationRequest?: ShowRetrievalVerificationRequest): Promise<ShowRetrievalVerificationResponse> {
+        const options = ParamCreater().showRetrievalVerification(showRetrievalVerificationRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询公网域名的网站域名。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询公网域名的网站域名
+     * @param {string} zoneId **参数解释：** 域名ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {number} [limit] **参数解释：** 分页查询时配置每页返回的资源个数。 **约束限制：** 不涉及。 **取值范围：** 0~500。 **默认取值：** 500
+     * @param {number} [offset] **参数解释：** 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。 **约束限制：** 当设置marker不为空时，以marker为分页起始标识，offset不生效。 **取值范围：** 0~2147483647。 **默认取值：** 0
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showWebsiteRecordSet(showWebsiteRecordSetRequest?: ShowWebsiteRecordSetRequest): Promise<ShowWebsiteRecordSetResponse> {
+        const options = ParamCreater().showWebsiteRecordSet(showWebsiteRecordSetRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询域名当前DNS服务器地址及华为云提供的DNS服务器地址。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询公网域名的DNS服务器地址
+     * @param {string} domainName **参数解释：** 待查询的公网域名。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showZoneNameServer(showZoneNameServerRequest?: ShowZoneNameServerRequest): Promise<ShowZoneNameServerResponse> {
+        const options = ParamCreater().showZoneNameServer(showZoneNameServerRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -1525,6 +2116,9 @@ export class DnsClient {
     /**
      * 关闭公网域名的DNSSEC。
      * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 关闭DNSSEC
@@ -1544,6 +2138,9 @@ export class DnsClient {
     /**
      * 开启公网域名的DNSSEC。
      * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 开启DNSSEC
@@ -1562,6 +2159,9 @@ export class DnsClient {
 
     /**
      * 查询公网域名的DNSSEC。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1651,7 +2251,7 @@ export class DnsClient {
      * @param {number} [offset] 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。  取值范围：0~2147483647  默认值为0。  当设置marker不为空时，以marker为分页起始标识，offset不生效。
      * @param {string} [enterpriseProjectId] 反向解析关联的企业项目ID，长度不超过36个字符。
      * @param {string} [tags] 资源标签。  取值格式：key1,value1|key2,value2  多个标签之间用“|”分开，每个标签的键值用英文逗号“,”相隔。
-     * @param {string} [status] 资源状态。
+     * @param {string} [status] **参数解释：** 资源状态。 **约束限制：** 不涉及。 **取值范围：** - ACTIVE：正常 - PENDING_CREATE：创建中 - PENDING_UPDATE：更新中 - PENDING_DELETE：删除中 - PENDING_FREEZE：冻结中 - FREEZE：冻结 - ILLEGAL：违规冻结 - POLICE：公安冻结 - ERROR：失败  **默认取值：** 不涉及。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -1665,7 +2265,7 @@ export class DnsClient {
     }
 
     /**
-     * 当您的记录集创建成功后，您可以通过调用此接口查询指定域名下的所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+     * 当您的记录集创建成功后，您可以通过调用此接口查询所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1677,7 +2277,7 @@ export class DnsClient {
      * @param {number} [offset] **参数解释：** 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。 **约束限制：** 当设置marker不为空时，以marker为分页起始标识，offset不生效。 **取值范围：** 0~2147483647。 **默认取值：** 0
      * @param {string} [tags] **参数解释：** 记录集的标签，包括标签键和标签值。 取值格式：key1,value1|key2,value2。 **约束限制：** - 多个标签之间用“|”分开，每个标签的键值用英文逗号“,”相隔。 - 多个标签之间为“与”的关系。 - 搜索模式为精确搜索。如果资源标签值value是以&amp;ast;开头时，则按照&amp;ast;后面的值全模糊匹配。  **取值范围：** 最多可以查询20个标签。 **默认取值：** 不涉及。
      * @param {string} [status] **参数解释：** 记录集状态。 **约束限制：** 不涉及。 **取值范围：** - ACTIVE：正常 - PENDING_CREATE：创建中 - PENDING_UPDATE：更新中 - PENDING_DELETE：删除中 - PENDING_FREEZE：冻结中 - FREEZE：冻结 - ILLEGAL：违规冻结 - POLICE：公安冻结 - PENDING_DISABLE：暂停中 - DISABLE：暂停 - ERROR：失败  **默认取值：** 不涉及。
-     * @param {string} [type] **参数解释：** 记录集的类型。 **约束限制：** 不涉及。 **取值范围：** - 公网域名的记录类型: A、AAAA、MX、CNAME、TXT、SRV、NS、SOA、CAA。 - 内网域名的记录类型: A、AAAA、MX、CNAME、TXT、PTR、SRV、NS、SOA。  **默认取值：** 不涉及。
+     * @param {string} [type] **参数解释：** 记录集的类型。 **约束限制：** 不涉及。 **取值范围：** - A：将域名解析到指定的IPv4地址。 - AAAA：将域名解析到指定的IPv6地址。 - MX：指定域名对应的邮件服务器。 - CNAME：将域名解析到另一域名，或者多个域名映射到同一域名上。 - TXT：用于对域名进行标识和说明。 - SRV：用于记录某台服务器对外提供了哪些服务。 - NS：指定域名的权威DNS服务器。 - SOA：提供域名的基本信息和权威服务器的详细信息。 - CAA：指定为域名颁发HTTPS证书的授权CA机构，仅支持公网域名解析。 - PTR：指定IP地址反向解析记录，仅支持内网域名解析。  **默认取值：** 不涉及。
      * @param {string} [name] **参数解释：** 待查询的记录集的域名中包含此name。 搜索模式默认为模糊搜索。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @param {string} [id] **参数解释：** 待查询的记录集ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @param {string} [records] **参数解释：** 待查询的记录集的值。 搜索模式默认为模糊搜索。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
@@ -1708,7 +2308,7 @@ export class DnsClient {
      * @param {number} [offset] **参数解释：** 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。 **约束限制：** 当设置marker不为空时，以marker为分页起始标识，offset不生效。 **取值范围：** 0~2147483647。 **默认取值：** 0
      * @param {string} [tags] **参数解释：** 记录集的标签，包括标签键和标签值。 取值格式：key1,value1|key2,value2。 **约束限制：** - 多个标签之间用“|”分开，每个标签的键值用英文逗号“,”相隔。 - 多个标签之间为“与”的关系。 - 搜索模式为精确搜索。如果资源标签值value是以&amp;ast;开头时，则按照&amp;ast;后面的值全模糊匹配。  **取值范围：** 最多可以查询20个标签。 **默认取值：** 不涉及。
      * @param {string} [status] **参数解释：** 记录集状态。 **约束限制：** 不涉及。 **取值范围：** - ACTIVE：正常 - PENDING_CREATE：创建中 - PENDING_UPDATE：更新中 - PENDING_DELETE：删除中 - PENDING_FREEZE：冻结中 - FREEZE：冻结 - ILLEGAL：违规冻结 - POLICE：公安冻结 - PENDING_DISABLE：暂停中 - DISABLE：暂停 - ERROR：失败  **默认取值：** 不涉及。
-     * @param {string} [type] **参数解释：** 记录集的类型。 **约束限制：** 不涉及。 **取值范围：** - 公网域名的记录类型: A、AAAA、MX、CNAME、TXT、SRV、NS、SOA、CAA。 - 内网域名的记录类型: A、AAAA、MX、CNAME、TXT、PTR、SRV、NS、SOA。  **默认取值：** 不涉及。
+     * @param {string} [type] **参数解释：** 记录集的类型。 **约束限制：** 不涉及。 **取值范围：** - A：将域名解析到指定的IPv4地址。 - AAAA：将域名解析到指定的IPv6地址。 - MX：指定域名对应的邮件服务器。 - CNAME：将域名解析到另一域名，或者多个域名映射到同一域名上。 - TXT：用于对域名进行标识和说明。 - SRV：用于记录某台服务器对外提供了哪些服务。 - NS：指定域名的权威DNS服务器。 - SOA：提供域名的基本信息和权威服务器的详细信息。 - CAA：指定为域名颁发HTTPS证书的授权CA机构，仅支持公网域名解析。 - PTR：指定IP地址反向解析记录，仅支持内网域名解析。  **默认取值：** 不涉及。
      * @param {string} [name] **参数解释：** 待查询的记录集的域名中包含此name。 搜索模式默认为模糊搜索。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @param {string} [id] **参数解释：** 待查询的记录集ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @param {string} [sortKey] **参数解释：** 查询结果中记录集列表的排序字段。 **约束限制：** 不涉及。 **取值范围：** - name：记录集名称 - type：记录集类型  **默认取值：** 默认值为空，表示不排序。
@@ -1829,6 +2429,69 @@ export class DnsClient {
     }
 
     /**
+     * 提交批量创建记录集任务，返回任务ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 批量创建记录集
+     * @param {string} zoneId **参数解释：** 域名ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {BatchCreateRecordSetsTaskRequestBody} batchCreateRecordSetsTaskRequestBody 批量创建记录集请求。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public batchCreateRecordSetsTask(batchCreateRecordSetsTaskRequest?: BatchCreateRecordSetsTaskRequest): Promise<BatchCreateRecordSetsTaskResponse> {
+        const options = ParamCreater().batchCreateRecordSetsTask(batchCreateRecordSetsTaskRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 批量删除域名下的记录集，当删除的资源不存在时，则默认删除成功。
+     * 响应结果中只包含本次实际删除的资源。
+     * 支持公网域名和内网域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 批量删除域名下的记录集
+     * @param {string} zoneId **参数解释：** 域名ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {BatchDeleteRecordSetWithLineRequestBody} batchDeleteRecordSetWithLineRequestBody 批量删除域名下的记录集请求。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public batchDeleteRecordSetWithLine(batchDeleteRecordSetWithLineRequest?: BatchDeleteRecordSetWithLineRequest): Promise<BatchDeleteRecordSetWithLineResponse> {
+        const options = ParamCreater().batchDeleteRecordSetWithLine(batchDeleteRecordSetWithLineRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 批量修改记录集。属于原子性操作，请求记录集将全部完成修改，或不做任何修改。
+     * 仅公网域名支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 批量修改记录集
+     * @param {string} zoneId **参数解释：** 域名ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {BatchUpdateRecordSetWithLineRequestBody} batchUpdateRecordSetWithLineRequestBody 批量修改记录集请求。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public batchUpdateRecordSetWithLine(batchUpdateRecordSetWithLineRequest?: BatchUpdateRecordSetWithLineRequest): Promise<BatchUpdateRecordSetWithLineResponse> {
+        const options = ParamCreater().batchUpdateRecordSetWithLine(batchUpdateRecordSetWithLineRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 创建弹性公网IP的反向解析记录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -1840,6 +2503,26 @@ export class DnsClient {
      */
     public createPtr(createPtrRequest?: CreatePtrRequest): Promise<CreatePtrResponse> {
         const options = ParamCreater().createPtr(createPtrRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 批量线路创建记录集。属于原子性操作，如果存在一个参数校验不通过，则创建失败。仅公网域名支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 批量线路创建记录集
+     * @param {string} zoneId **参数解释：** 域名ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {CreateRSetBatchLinesReq} createRSetBatchLinesReq 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public createRecordSetWithBatchLines(createRecordSetWithBatchLinesRequest?: CreateRecordSetWithBatchLinesRequest): Promise<CreateRecordSetWithBatchLinesResponse> {
+        const options = ParamCreater().createRecordSetWithBatchLines(createRecordSetWithBatchLinesRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -1860,6 +2543,25 @@ export class DnsClient {
      */
     public createRecordSetWithLine(createRecordSetWithLineRequest?: CreateRecordSetWithLineRequest): Promise<CreateRecordSetWithLineResponse> {
         const options = ParamCreater().createRecordSetWithLine(createRecordSetWithLineRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 删除批量创建记录集任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 删除批量创建记录集任务
+     * @param {string} zoneId **参数解释：** 域名ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public deleteBatchCreateRecordSetsTask(deleteBatchCreateRecordSetsTaskRequest?: DeleteBatchCreateRecordSetsTaskRequest): Promise<DeleteBatchCreateRecordSetsTaskResponse> {
+        const options = ParamCreater().deleteBatchCreateRecordSetsTask(deleteBatchCreateRecordSetsTaskRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -1917,7 +2619,7 @@ export class DnsClient {
      * @param {number} [offset] 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。 取值范围：0~2147483647 默认值为0。 当设置marker不为空时，以marker为分页起始标识，offset不生效。
      * @param {string} [enterpriseProjectId] 反向解析关联的企业项目ID，长度不超过36个字符。
      * @param {string} [tags] 资源标签。 取值格式：key1,value1|key2,value2 多个标签之间用“|”分开，每个标签的键值用英文逗号“,”相隔。
-     * @param {string} [status] 资源状态。
+     * @param {string} [status] **参数解释：** 资源状态。 **约束限制：** 不涉及。 **取值范围：** - ACTIVE：正常 - PENDING_CREATE：创建中 - PENDING_UPDATE：更新中 - PENDING_DELETE：删除中 - PENDING_FREEZE：冻结中 - FREEZE：冻结 - ILLEGAL：违规冻结 - POLICE：公安冻结 - ERROR：失败  **默认取值：** 不涉及。
      * @param {string} [resourceType] 弹性公网IP类型。  取值范围： publicip：弹性公网IP（EIP）
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1953,7 +2655,7 @@ export class DnsClient {
     }
 
     /**
-     * 当您的记录集创建成功后，您可以通过调用此接口查询单个记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+     * 当您的记录集创建成功后，您可以通过调用此接口查询所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1966,7 +2668,7 @@ export class DnsClient {
      * @param {string} [lineId] **参数解释：** 解析线路ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @param {string} [tags] **参数解释：** 记录集的标签，包括标签键和标签值。 取值格式：key1,value1|key2,value2。 **约束限制：** - 多个标签之间用“|”分开，每个标签的键值用英文逗号“,”相隔。 - 多个标签之间为“与”的关系。 - 搜索模式为精确搜索。如果资源标签值value是以&amp;ast;开头时，则按照&amp;ast;后面的值全模糊匹配。  **取值范围：** 最多可以查询20个标签。 **默认取值：** 不涉及。
      * @param {string} [status] **参数解释：** 记录集状态。 **约束限制：** 不涉及。 **取值范围：** - ACTIVE：正常 - PENDING_CREATE：创建中 - PENDING_UPDATE：更新中 - PENDING_DELETE：删除中 - PENDING_FREEZE：冻结中 - FREEZE：冻结 - ILLEGAL：违规冻结 - POLICE：公安冻结 - PENDING_DISABLE：暂停中 - DISABLE：暂停 - ERROR：失败  **默认取值：** 不涉及。
-     * @param {string} [type] **参数解释：** 记录集的类型。 **约束限制：** 不涉及。 **取值范围：** - 公网域名的记录类型: A、AAAA、MX、CNAME、TXT、SRV、NS、SOA、CAA。 - 内网域名的记录类型: A、AAAA、MX、CNAME、TXT、PTR、SRV、NS、SOA。  **默认取值：** 不涉及。
+     * @param {string} [type] **参数解释：** 记录集的类型。 **约束限制：** 不涉及。 **取值范围：** - A：将域名解析到指定的IPv4地址。 - AAAA：将域名解析到指定的IPv6地址。 - MX：指定域名对应的邮件服务器。 - CNAME：将域名解析到另一域名，或者多个域名映射到同一域名上。 - TXT：用于对域名进行标识和说明。 - SRV：用于记录某台服务器对外提供了哪些服务。 - NS：指定域名的权威DNS服务器。 - SOA：提供域名的基本信息和权威服务器的详细信息。 - CAA：指定为域名颁发HTTPS证书的授权CA机构，仅支持公网域名解析。 - PTR：指定IP地址反向解析记录，仅支持内网域名解析。  **默认取值：** 不涉及。
      * @param {string} [name] **参数解释：** 待查询的记录集的域名中包含此name。 搜索模式默认为模糊搜索。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @param {string} [id] **参数解释：** 待查询的记录集ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @param {string} [records] **参数解释：** 待查询的记录集的值。 搜索模式默认为模糊搜索。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
@@ -1987,7 +2689,28 @@ export class DnsClient {
     }
 
     /**
-     * 当您的内网域名创建成功后，您可以通过调用此接口设置记录集的状态，包括暂停、启用。
+     * 查询系统预置解析线路。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询系统线路
+     * @param {string} [locale] **参数解释：** 指定显示语言。 **约束限制：** 不涉及。 **取值范围：** - zh-cn：中文 - en-us：英语             - es-us：西班牙语 - pt-br：葡萄牙语 **默认取值：** zh-cn
+     * @param {number} [limit] **参数解释：** 分页查询时配置每页返回的资源个数。 **约束限制：** 不涉及。 **取值范围：** 0~1000。 **默认取值：** 1000
+     * @param {number} [offset] **参数解释：** 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。 **约束限制：** 当设置marker不为空时，以marker为分页起始标识，offset不生效。 **取值范围：** 0~2147483647。 **默认取值：** 0
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listSystemLines(listSystemLinesRequest?: ListSystemLinesRequest): Promise<ListSystemLinesResponse> {
+        const options = ParamCreater().listSystemLines(listSystemLinesRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 当您的记录集创建成功后，您可以通过调用此接口设置记录集的状态，包括暂停、启用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1999,6 +2722,27 @@ export class DnsClient {
      */
     public setRecordSetsStatus(setRecordSetsStatusRequest?: SetRecordSetsStatusRequest): Promise<SetRecordSetsStatusResponse> {
         const options = ParamCreater().setRecordSetsStatus(setRecordSetsStatusRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询批量创建记录集任务，分页返回失败条目。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询批量创建记录集任务
+     * @param {string} zoneId **参数解释：** 域名ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {number} [errorItemLimit] **参数解释：** 分页查询时配置每页返回的失败条目个数。 **约束限制：** 不涉及。 **取值范围：** 0~2000。 **默认取值：** 2000
+     * @param {number} [errorItemOffset] **参数解释：** 分页查询起始偏移量，表示从偏移量的下一个失败条目开始查询。 **约束限制：** 不涉及。 **取值范围：** 0~2000。 **默认取值：** 0
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showBatchCreateRecordSetsTask(showBatchCreateRecordSetsTaskRequest?: ShowBatchCreateRecordSetsTaskRequest): Promise<ShowBatchCreateRecordSetsTaskResponse> {
+        const options = ParamCreater().showBatchCreateRecordSetsTask(showBatchCreateRecordSetsTaskRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -2026,7 +2770,7 @@ export class DnsClient {
     }
 
     /**
-     * 当您的记录集创建成功后，您可以通过调用此接口查询单个记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+     * 当您的记录集创建成功后，您可以通过调用此接口查询指定域名下的所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2038,7 +2782,7 @@ export class DnsClient {
      * @param {string} [lineId] **参数解释：** 解析线路ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @param {string} [tags] **参数解释：** 记录集的标签，包括标签键和标签值。 取值格式：key1,value1|key2,value2。 **约束限制：** - 多个标签之间用“|”分开，每个标签的键值用英文逗号“,”相隔。 - 多个标签之间为“与”的关系。 - 搜索模式为精确搜索。如果资源标签值value是以&amp;ast;开头时，则按照&amp;ast;后面的值全模糊匹配。  **取值范围：** 最多可以查询20个标签。 **默认取值：** 不涉及。
      * @param {string} [status] **参数解释：** 记录集状态。 **约束限制：** 不涉及。 **取值范围：** - ACTIVE：正常 - PENDING_CREATE：创建中 - PENDING_UPDATE：更新中 - PENDING_DELETE：删除中 - PENDING_FREEZE：冻结中 - FREEZE：冻结 - ILLEGAL：违规冻结 - POLICE：公安冻结 - PENDING_DISABLE：暂停中 - DISABLE：暂停 - ERROR：失败  **默认取值：** 不涉及。
-     * @param {string} [type] **参数解释：** 记录集的类型。 **约束限制：** 不涉及。 **取值范围：** - 公网域名的记录类型: A、AAAA、MX、CNAME、TXT、SRV、NS、SOA、CAA。 - 内网域名的记录类型: A、AAAA、MX、CNAME、TXT、PTR、SRV、NS、SOA。  **默认取值：** 不涉及。
+     * @param {string} [type] **参数解释：** 记录集的类型。 **约束限制：** 不涉及。 **取值范围：** - A：将域名解析到指定的IPv4地址。 - AAAA：将域名解析到指定的IPv6地址。 - MX：指定域名对应的邮件服务器。 - CNAME：将域名解析到另一域名，或者多个域名映射到同一域名上。 - TXT：用于对域名进行标识和说明。 - SRV：用于记录某台服务器对外提供了哪些服务。 - NS：指定域名的权威DNS服务器。 - SOA：提供域名的基本信息和权威服务器的详细信息。 - CAA：指定为域名颁发HTTPS证书的授权CA机构，仅支持公网域名解析。 - PTR：指定IP地址反向解析记录，仅支持内网域名解析。  **默认取值：** 不涉及。
      * @param {string} [name] **参数解释：** 待查询的记录集的域名中包含此name。 搜索模式默认为模糊搜索。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @param {string} [id] **参数解释：** 待查询的记录集ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @param {string} [sortKey] **参数解释：** 查询结果中记录集列表的排序字段。 **约束限制：** 不涉及。 **取值范围：** - name：记录集名称 - type：记录集类型 - created_at：创建时间 - updated_at：更新时间  **默认取值：** created_at
@@ -2168,6 +2912,52 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 解析器访问日志关联VPC。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        associateResolverQueryLogConfig(associateResolverQueryLogConfigRequest?: AssociateResolverQueryLogConfigRequest) {
+            const options = {
+                method: "POST",
+                url: "/v2/resolver/queryloggingconfig/{id}/associatevpc",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let id;
+
+            if (associateResolverQueryLogConfigRequest !== null && associateResolverQueryLogConfigRequest !== undefined) {
+                if (associateResolverQueryLogConfigRequest instanceof AssociateResolverQueryLogConfigRequest) {
+                    id = associateResolverQueryLogConfigRequest.id;
+                    body = associateResolverQueryLogConfigRequest.body
+                } else {
+                    id = associateResolverQueryLogConfigRequest['id'];
+                    body = associateResolverQueryLogConfigRequest['body'];
+                }
+            }
+
+        
+            if (id === null || id === undefined) {
+            throw new RequiredError('id','Required parameter id was null or undefined when calling associateResolverQueryLogConfig.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'id': id, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 解析器转发规则关联VPC。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -2255,6 +3045,129 @@ export const ParamCreater = function () {
 
             options.data = body !== undefined ? body : {};
             options.pathParams = { 'zone_id': zoneId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 提交批量创建公网记录集任务，返回任务ID。
+         * 
+         * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+         * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        batchCreateCombinedPublicRecordsetsTask(batchCreateCombinedPublicRecordsetsTaskRequest?: BatchCreateCombinedPublicRecordsetsTaskRequest) {
+            const options = {
+                method: "POST",
+                url: "/v2.1/operation-task/batch-create-combined-recordset",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+
+            if (batchCreateCombinedPublicRecordsetsTaskRequest !== null && batchCreateCombinedPublicRecordsetsTaskRequest !== undefined) {
+                if (batchCreateCombinedPublicRecordsetsTaskRequest instanceof BatchCreateCombinedPublicRecordsetsTaskRequest) {
+                    body = batchCreateCombinedPublicRecordsetsTaskRequest.body
+                } else {
+                    body = batchCreateCombinedPublicRecordsetsTaskRequest['body'];
+                }
+            }
+
+        
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 提交批量创建公网记录集任务，返回任务ID。
+         * 
+         * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+         * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        batchCreatePublicRecordsetsTask(batchCreatePublicRecordsetsTaskRequest?: BatchCreatePublicRecordsetsTaskRequest) {
+            const options = {
+                method: "POST",
+                url: "/v2.1/operation-task/batch-create-recordset",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+
+            if (batchCreatePublicRecordsetsTaskRequest !== null && batchCreatePublicRecordsetsTaskRequest !== undefined) {
+                if (batchCreatePublicRecordsetsTaskRequest instanceof BatchCreatePublicRecordsetsTaskRequest) {
+                    body = batchCreatePublicRecordsetsTaskRequest.body
+                } else {
+                    body = batchCreatePublicRecordsetsTaskRequest['body'];
+                }
+            }
+
+        
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 提交批量创建公网域名任务，返回任务ID。
+         * 
+         * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+         * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        batchCreatePublicZonesTask(batchCreatePublicZonesTaskRequest?: BatchCreatePublicZonesTaskRequest) {
+            const options = {
+                method: "POST",
+                url: "/v2.1/operation-task/batch-create-zone",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+
+            if (batchCreatePublicZonesTaskRequest !== null && batchCreatePublicZonesTaskRequest !== undefined) {
+                if (batchCreatePublicZonesTaskRequest instanceof BatchCreatePublicZonesTaskRequest) {
+                    body = batchCreatePublicZonesTaskRequest.body
+                } else {
+                    body = batchCreatePublicZonesTaskRequest['body'];
+                }
+            }
+
+        
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -2348,16 +3261,17 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 批量删除域名下的记录集，当删除的资源不存在时，则默认删除成功。
-         * 响应结果中只包含本次实际删除的资源。
-         * 支持公网域名和内网域名。
+         * 提交批量删除公网记录集任务，返回任务ID。
+         * 
+         * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+         * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
-        batchDeleteRecordSetWithLine(batchDeleteRecordSetWithLineRequest?: BatchDeleteRecordSetWithLineRequest) {
+        batchDeletePublicRecordsetsTask(batchDeletePublicRecordsetsTaskRequest?: BatchDeletePublicRecordsetsTaskRequest) {
             const options = {
-                method: "DELETE",
-                url: "/v2.1/zones/{zone_id}/recordsets",
+                method: "POST",
+                url: "/v2.1/operation-task/batch-delete-recordset",
                 contentType: "application/json",
                 queryParams: {},
                 pathParams: {},
@@ -2367,30 +3281,22 @@ export const ParamCreater = function () {
             const localVarHeaderParameter = {} as any;
 
             let body: any;
-            
-            let zoneId;
 
-            if (batchDeleteRecordSetWithLineRequest !== null && batchDeleteRecordSetWithLineRequest !== undefined) {
-                if (batchDeleteRecordSetWithLineRequest instanceof BatchDeleteRecordSetWithLineRequest) {
-                    zoneId = batchDeleteRecordSetWithLineRequest.zoneId;
-                    body = batchDeleteRecordSetWithLineRequest.body
+            if (batchDeletePublicRecordsetsTaskRequest !== null && batchDeletePublicRecordsetsTaskRequest !== undefined) {
+                if (batchDeletePublicRecordsetsTaskRequest instanceof BatchDeletePublicRecordsetsTaskRequest) {
+                    body = batchDeletePublicRecordsetsTaskRequest.body
                 } else {
-                    zoneId = batchDeleteRecordSetWithLineRequest['zone_id'];
-                    body = batchDeleteRecordSetWithLineRequest['body'];
+                    body = batchDeletePublicRecordsetsTaskRequest['body'];
                 }
             }
 
         
-            if (zoneId === null || zoneId === undefined) {
-            throw new RequiredError('zoneId','Required parameter zoneId was null or undefined when calling batchDeleteRecordSetWithLine.');
-            }
             if (body === null || body === undefined) {
                 throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
             }
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
             options.data = body !== undefined ? body : {};
-            options.pathParams = { 'zone_id': zoneId, };
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -2556,15 +3462,17 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 批量修改记录集。属于原子性操作，请求记录集将全部完成修改，或不做任何修改。
-         * 仅公网域名支持。
+         * 提交批量转移公网域名任务，返回任务ID。
+         * 
+         * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+         * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
-        batchUpdateRecordSetWithLine(batchUpdateRecordSetWithLineRequest?: BatchUpdateRecordSetWithLineRequest) {
+        batchTransferPublicZonesTask(batchTransferPublicZonesTaskRequest?: BatchTransferPublicZonesTaskRequest) {
             const options = {
-                method: "PUT",
-                url: "/v2.1/zones/{zone_id}/recordsets",
+                method: "POST",
+                url: "/v2.1/operation-task/batch-transfer",
                 contentType: "application/json",
                 queryParams: {},
                 pathParams: {},
@@ -2574,30 +3482,146 @@ export const ParamCreater = function () {
             const localVarHeaderParameter = {} as any;
 
             let body: any;
-            
-            let zoneId;
 
-            if (batchUpdateRecordSetWithLineRequest !== null && batchUpdateRecordSetWithLineRequest !== undefined) {
-                if (batchUpdateRecordSetWithLineRequest instanceof BatchUpdateRecordSetWithLineRequest) {
-                    zoneId = batchUpdateRecordSetWithLineRequest.zoneId;
-                    body = batchUpdateRecordSetWithLineRequest.body
+            if (batchTransferPublicZonesTaskRequest !== null && batchTransferPublicZonesTaskRequest !== undefined) {
+                if (batchTransferPublicZonesTaskRequest instanceof BatchTransferPublicZonesTaskRequest) {
+                    body = batchTransferPublicZonesTaskRequest.body
                 } else {
-                    zoneId = batchUpdateRecordSetWithLineRequest['zone_id'];
-                    body = batchUpdateRecordSetWithLineRequest['body'];
+                    body = batchTransferPublicZonesTaskRequest['body'];
                 }
             }
 
         
-            if (zoneId === null || zoneId === undefined) {
-            throw new RequiredError('zoneId','Required parameter zoneId was null or undefined when calling batchUpdateRecordSetWithLine.');
-            }
             if (body === null || body === undefined) {
                 throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
             }
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
             options.data = body !== undefined ? body : {};
-            options.pathParams = { 'zone_id': zoneId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 提交批量修改公网记录集任务，返回任务ID。
+         * 
+         * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+         * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        batchUpdatePublicRecordsetsTask(batchUpdatePublicRecordsetsTaskRequest?: BatchUpdatePublicRecordsetsTaskRequest) {
+            const options = {
+                method: "POST",
+                url: "/v2.1/operation-task/batch-update-recordset",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+
+            if (batchUpdatePublicRecordsetsTaskRequest !== null && batchUpdatePublicRecordsetsTaskRequest !== undefined) {
+                if (batchUpdatePublicRecordsetsTaskRequest instanceof BatchUpdatePublicRecordsetsTaskRequest) {
+                    body = batchUpdatePublicRecordsetsTaskRequest.body
+                } else {
+                    body = batchUpdatePublicRecordsetsTaskRequest['body'];
+                }
+            }
+
+        
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 当创建子域名时提示“域名与其他租户冲突，你需要添加TXT授权校验”，通过调用当前接口生成子域名授权的TXT记录验证信息。
+         * 
+         * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+         * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+         * 
+         * &gt; TXT记录验证信息生成后，请前往主域名所属的DNS服务商处添加相应的TXT类型解析记录，主机记录和记录值与验证信息保持一致。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        createAuthorizeTxtRecord(createAuthorizeTxtRecordRequest?: CreateAuthorizeTxtRecordRequest) {
+            const options = {
+                method: "POST",
+                url: "/v2/authorize-txtrecord",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+
+            if (createAuthorizeTxtRecordRequest !== null && createAuthorizeTxtRecordRequest !== undefined) {
+                if (createAuthorizeTxtRecordRequest instanceof CreateAuthorizeTxtRecordRequest) {
+                    body = createAuthorizeTxtRecordRequest.body
+                } else {
+                    body = createAuthorizeTxtRecordRequest['body'];
+                }
+            }
+
+        
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 用户在主域名所属DNS服务商处添加TXT类型解析记录后，调用当前接口验证子域名授权状态。
+         * 
+         * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+         * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        createAuthorizeTxtRecordVerification(createAuthorizeTxtRecordVerificationRequest?: CreateAuthorizeTxtRecordVerificationRequest) {
+            const options = {
+                method: "POST",
+                url: "/v2/authorize-txtrecord/{id}/verify",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let id;
+
+            if (createAuthorizeTxtRecordVerificationRequest !== null && createAuthorizeTxtRecordVerificationRequest !== undefined) {
+                if (createAuthorizeTxtRecordVerificationRequest instanceof CreateAuthorizeTxtRecordVerificationRequest) {
+                    id = createAuthorizeTxtRecordVerificationRequest.id;
+                } else {
+                    id = createAuthorizeTxtRecordVerificationRequest['id'];
+                }
+            }
+
+        
+            if (id === null || id === undefined) {
+            throw new RequiredError('id','Required parameter id was null or undefined when calling createAuthorizeTxtRecordVerification.');
+            }
+
+            options.pathParams = { 'id': id, };
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -2793,14 +3817,14 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 批量线路创建记录集。属于原子性操作，如果存在一个参数校验不通过，则创建失败。仅公网域名支持。
+         * 创建解析器访问日志。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
-        createRecordSetWithBatchLines(createRecordSetWithBatchLinesRequest?: CreateRecordSetWithBatchLinesRequest) {
+        createResolverQueryLogConfig(createResolverQueryLogConfigRequest?: CreateResolverQueryLogConfigRequest) {
             const options = {
                 method: "POST",
-                url: "/v2.1/zones/{zone_id}/recordsets/batch/lines",
+                url: "/v2/resolver/queryloggingconfig",
                 contentType: "application/json",
                 queryParams: {},
                 pathParams: {},
@@ -2810,30 +3834,22 @@ export const ParamCreater = function () {
             const localVarHeaderParameter = {} as any;
 
             let body: any;
-            
-            let zoneId;
 
-            if (createRecordSetWithBatchLinesRequest !== null && createRecordSetWithBatchLinesRequest !== undefined) {
-                if (createRecordSetWithBatchLinesRequest instanceof CreateRecordSetWithBatchLinesRequest) {
-                    zoneId = createRecordSetWithBatchLinesRequest.zoneId;
-                    body = createRecordSetWithBatchLinesRequest.body
+            if (createResolverQueryLogConfigRequest !== null && createResolverQueryLogConfigRequest !== undefined) {
+                if (createResolverQueryLogConfigRequest instanceof CreateResolverQueryLogConfigRequest) {
+                    body = createResolverQueryLogConfigRequest.body
                 } else {
-                    zoneId = createRecordSetWithBatchLinesRequest['zone_id'];
-                    body = createRecordSetWithBatchLinesRequest['body'];
+                    body = createResolverQueryLogConfigRequest['body'];
                 }
             }
 
         
-            if (zoneId === null || zoneId === undefined) {
-            throw new RequiredError('zoneId','Required parameter zoneId was null or undefined when calling createRecordSetWithBatchLines.');
-            }
             if (body === null || body === undefined) {
                 throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
             }
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
             options.data = body !== undefined ? body : {};
-            options.pathParams = { 'zone_id': zoneId, };
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -2872,6 +3888,87 @@ export const ParamCreater = function () {
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
             options.data = body !== undefined ? body : {};
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 创建公网域名找回请求。
+         * 
+         * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+         * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        createRetrieval(createRetrievalRequest?: CreateRetrievalRequest) {
+            const options = {
+                method: "POST",
+                url: "/v2/retrieval",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+
+            if (createRetrievalRequest !== null && createRetrievalRequest !== undefined) {
+                if (createRetrievalRequest instanceof CreateRetrievalRequest) {
+                    body = createRetrievalRequest.body
+                } else {
+                    body = createRetrievalRequest['body'];
+                }
+            }
+
+        
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 验证公网域名找回。
+         * 
+         * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+         * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        createRetrievalVerification(createRetrievalVerificationRequest?: CreateRetrievalVerificationRequest) {
+            const options = {
+                method: "POST",
+                url: "/v2/retrieval/verification/{id}",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let id;
+
+            if (createRetrievalVerificationRequest !== null && createRetrievalVerificationRequest !== undefined) {
+                if (createRetrievalVerificationRequest instanceof CreateRetrievalVerificationRequest) {
+                    id = createRetrievalVerificationRequest.id;
+                } else {
+                    id = createRetrievalVerificationRequest['id'];
+                }
+            }
+
+        
+            if (id === null || id === undefined) {
+            throw new RequiredError('id','Required parameter id was null or undefined when calling createRetrievalVerification.');
+            }
+
+            options.pathParams = { 'id': id, };
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -3115,6 +4212,43 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 删除解析器访问日志。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        deleteResolverQueryLogConfig(deleteResolverQueryLogConfigRequest?: DeleteResolverQueryLogConfigRequest) {
+            const options = {
+                method: "DELETE",
+                url: "/v2/resolver/queryloggingconfig/{id}",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let id;
+
+            if (deleteResolverQueryLogConfigRequest !== null && deleteResolverQueryLogConfigRequest !== undefined) {
+                if (deleteResolverQueryLogConfigRequest instanceof DeleteResolverQueryLogConfigRequest) {
+                    id = deleteResolverQueryLogConfigRequest.id;
+                } else {
+                    id = deleteResolverQueryLogConfigRequest['id'];
+                }
+            }
+
+        
+            if (id === null || id === undefined) {
+            throw new RequiredError('id','Required parameter id was null or undefined when calling deleteResolverQueryLogConfig.');
+            }
+
+            options.pathParams = { 'id': id, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 删除解析器转发规则。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -3247,6 +4381,52 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 解析器访问日志解关联VPC。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        disassociateResolverQueryLogConfig(disassociateResolverQueryLogConfigRequest?: DisassociateResolverQueryLogConfigRequest) {
+            const options = {
+                method: "POST",
+                url: "/v2/resolver/queryloggingconfig/{id}/disassociatevpc",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let id;
+
+            if (disassociateResolverQueryLogConfigRequest !== null && disassociateResolverQueryLogConfigRequest !== undefined) {
+                if (disassociateResolverQueryLogConfigRequest instanceof DisassociateResolverQueryLogConfigRequest) {
+                    id = disassociateResolverQueryLogConfigRequest.id;
+                    body = disassociateResolverQueryLogConfigRequest.body
+                } else {
+                    id = disassociateResolverQueryLogConfigRequest['id'];
+                    body = disassociateResolverQueryLogConfigRequest['body'];
+                }
+            }
+
+        
+            if (id === null || id === undefined) {
+            throw new RequiredError('id','Required parameter id was null or undefined when calling disassociateResolverQueryLogConfig.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'id': id, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 解析器转发规则解关联VPC。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -3355,6 +4535,53 @@ export const ParamCreater = function () {
             const localVarHeaderParameter = {} as any;
 
 
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询批量操作任务列表。
+         * 
+         * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+         * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listBatchOperationTasks(listBatchOperationTasksRequest?: ListBatchOperationTasksRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2.1/batch-operation-tasks",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let limit;
+            
+            let offset;
+
+            if (listBatchOperationTasksRequest !== null && listBatchOperationTasksRequest !== undefined) {
+                if (listBatchOperationTasksRequest instanceof ListBatchOperationTasksRequest) {
+                    limit = listBatchOperationTasksRequest.limit;
+                    offset = listBatchOperationTasksRequest.offset;
+                } else {
+                    limit = listBatchOperationTasksRequest['limit'];
+                    offset = listBatchOperationTasksRequest['offset'];
+                }
+            }
+
+        
+            if (limit !== null && limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+            if (offset !== null && offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
+            }
+
+            options.queryParams = localVarQueryParameter;
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -3590,6 +4817,44 @@ export const ParamCreater = function () {
             }
 
             options.queryParams = localVarQueryParameter;
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 批量查询DNS解析量统计相关的资源。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listInstances(listInstancesRequest?: ListInstancesRequest) {
+            const options = {
+                method: "POST",
+                url: "/v2.1/batch-query-instances",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+
+            if (listInstancesRequest !== null && listInstancesRequest !== undefined) {
+                if (listInstancesRequest instanceof ListInstancesRequest) {
+                    body = listInstancesRequest.body
+                } else {
+                    body = listInstancesRequest['body'];
+                }
+            }
+
+        
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -3938,6 +5203,57 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 查询解析器访问日志列表。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listResolverQueryLogConfigs(listResolverQueryLogConfigsRequest?: ListResolverQueryLogConfigsRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2/resolver/queryloggingconfig",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let limit;
+            
+            let marker;
+            
+            let vpcId;
+
+            if (listResolverQueryLogConfigsRequest !== null && listResolverQueryLogConfigsRequest !== undefined) {
+                if (listResolverQueryLogConfigsRequest instanceof ListResolverQueryLogConfigsRequest) {
+                    limit = listResolverQueryLogConfigsRequest.limit;
+                    marker = listResolverQueryLogConfigsRequest.marker;
+                    vpcId = listResolverQueryLogConfigsRequest.vpcId;
+                } else {
+                    limit = listResolverQueryLogConfigsRequest['limit'];
+                    marker = listResolverQueryLogConfigsRequest['marker'];
+                    vpcId = listResolverQueryLogConfigsRequest['vpc_id'];
+                }
+            }
+
+        
+            if (limit !== null && limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+            if (marker !== null && marker !== undefined) {
+                localVarQueryParameter['marker'] = marker;
+            }
+            if (vpcId !== null && vpcId !== undefined) {
+                localVarQueryParameter['vpc_id'] = vpcId;
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 查询解析器转发规则列表。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -4180,6 +5496,162 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 查询已生成的子域名授权TXT记录验证信息。
+         * 
+         * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+         * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showAuthorizeTxtRecord(showAuthorizeTxtRecordRequest?: ShowAuthorizeTxtRecordRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2/authorize-txtrecord",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let zoneName;
+
+            if (showAuthorizeTxtRecordRequest !== null && showAuthorizeTxtRecordRequest !== undefined) {
+                if (showAuthorizeTxtRecordRequest instanceof ShowAuthorizeTxtRecordRequest) {
+                    zoneName = showAuthorizeTxtRecordRequest.zoneName;
+                } else {
+                    zoneName = showAuthorizeTxtRecordRequest['zone_name'];
+                }
+            }
+
+        
+            if (zoneName === null || zoneName === undefined) {
+                throw new RequiredError('zoneName','Required parameter zoneName was null or undefined when calling showAuthorizeTxtRecord.');
+            }
+            if (zoneName !== null && zoneName !== undefined) {
+                localVarQueryParameter['zone_name'] = zoneName;
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询批量操作任务，分页返回失败条目。
+         * 
+         * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+         * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showBatchOperationTask(showBatchOperationTaskRequest?: ShowBatchOperationTaskRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2.1/batch-operation-tasks/{task_id}",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let taskId;
+            
+            let errorItemLimit;
+            
+            let errorItemOffset;
+
+            if (showBatchOperationTaskRequest !== null && showBatchOperationTaskRequest !== undefined) {
+                if (showBatchOperationTaskRequest instanceof ShowBatchOperationTaskRequest) {
+                    taskId = showBatchOperationTaskRequest.taskId;
+                    errorItemLimit = showBatchOperationTaskRequest.errorItemLimit;
+                    errorItemOffset = showBatchOperationTaskRequest.errorItemOffset;
+                } else {
+                    taskId = showBatchOperationTaskRequest['task_id'];
+                    errorItemLimit = showBatchOperationTaskRequest['error_item_limit'];
+                    errorItemOffset = showBatchOperationTaskRequest['error_item_offset'];
+                }
+            }
+
+        
+            if (taskId === null || taskId === undefined) {
+            throw new RequiredError('taskId','Required parameter taskId was null or undefined when calling showBatchOperationTask.');
+            }
+            if (errorItemLimit !== null && errorItemLimit !== undefined) {
+                localVarQueryParameter['error_item_limit'] = errorItemLimit;
+            }
+            if (errorItemOffset !== null && errorItemOffset !== undefined) {
+                localVarQueryParameter['error_item_offset'] = errorItemOffset;
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.pathParams = { 'task_id': taskId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询公网域名的域名诊断。
+         * 
+         * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+         * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showDomainDetection(showDomainDetectionRequest?: ShowDomainDetectionRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2.1/zones/{zone_id}/detection",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let zoneId;
+            
+            let domainName;
+            
+            let type;
+
+            if (showDomainDetectionRequest !== null && showDomainDetectionRequest !== undefined) {
+                if (showDomainDetectionRequest instanceof ShowDomainDetectionRequest) {
+                    zoneId = showDomainDetectionRequest.zoneId;
+                    domainName = showDomainDetectionRequest.domainName;
+                    type = showDomainDetectionRequest.type;
+                } else {
+                    zoneId = showDomainDetectionRequest['zone_id'];
+                    domainName = showDomainDetectionRequest['domain_name'];
+                    type = showDomainDetectionRequest['type'];
+                }
+            }
+
+        
+            if (zoneId === null || zoneId === undefined) {
+            throw new RequiredError('zoneId','Required parameter zoneId was null or undefined when calling showDomainDetection.');
+            }
+            if (domainName === null || domainName === undefined) {
+                throw new RequiredError('domainName','Required parameter domainName was null or undefined when calling showDomainDetection.');
+            }
+            if (domainName !== null && domainName !== undefined) {
+                localVarQueryParameter['domain_name'] = domainName;
+            }
+            if (type !== null && type !== undefined) {
+                localVarQueryParameter['type'] = type;
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.pathParams = { 'zone_id': zoneId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 查询租户在DNS服务下的资源配额，包括公网域名配额、内网域名配额、记录集配额、反向解析配额、自定义线路配额、线路分组配额、入站终端节点配额、出站终端节点配额、转发规则配额等。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -4215,6 +5687,61 @@ export const ParamCreater = function () {
             }
 
             options.queryParams = localVarQueryParameter;
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询公网域名的邮箱域名。
+         * 
+         * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+         * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showEmailRecordSet(showEmailRecordSetRequest?: ShowEmailRecordSetRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2.1/zones/{zone_id}/email-recordsets",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let zoneId;
+            
+            let limit;
+            
+            let offset;
+
+            if (showEmailRecordSetRequest !== null && showEmailRecordSetRequest !== undefined) {
+                if (showEmailRecordSetRequest instanceof ShowEmailRecordSetRequest) {
+                    zoneId = showEmailRecordSetRequest.zoneId;
+                    limit = showEmailRecordSetRequest.limit;
+                    offset = showEmailRecordSetRequest.offset;
+                } else {
+                    zoneId = showEmailRecordSetRequest['zone_id'];
+                    limit = showEmailRecordSetRequest['limit'];
+                    offset = showEmailRecordSetRequest['offset'];
+                }
+            }
+
+        
+            if (zoneId === null || zoneId === undefined) {
+            throw new RequiredError('zoneId','Required parameter zoneId was null or undefined when calling showEmailRecordSet.');
+            }
+            if (limit !== null && limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+            if (offset !== null && offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.pathParams = { 'zone_id': zoneId, };
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -4448,6 +5975,43 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 查询解析器访问日志。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showResolverQueryLogConfig(showResolverQueryLogConfigRequest?: ShowResolverQueryLogConfigRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2/resolver/queryloggingconfig/{id}",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let id;
+
+            if (showResolverQueryLogConfigRequest !== null && showResolverQueryLogConfigRequest !== undefined) {
+                if (showResolverQueryLogConfigRequest instanceof ShowResolverQueryLogConfigRequest) {
+                    id = showResolverQueryLogConfigRequest.id;
+                } else {
+                    id = showResolverQueryLogConfigRequest['id'];
+                }
+            }
+
+        
+            if (id === null || id === undefined) {
+            throw new RequiredError('id','Required parameter id was null or undefined when calling showResolverQueryLogConfig.');
+            }
+
+            options.pathParams = { 'id': id, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 查询解析器转发规则。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -4524,6 +6088,184 @@ export const ParamCreater = function () {
             }
 
             options.pathParams = { 'resource_type': resourceType,'resource_id': resourceId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询公网域名找回请求。
+         * 
+         * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+         * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showRetrieval(showRetrievalRequest?: ShowRetrievalRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2/retrieval",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let name;
+
+            if (showRetrievalRequest !== null && showRetrievalRequest !== undefined) {
+                if (showRetrievalRequest instanceof ShowRetrievalRequest) {
+                    name = showRetrievalRequest.name;
+                } else {
+                    name = showRetrievalRequest['name'];
+                }
+            }
+
+        
+            if (name === null || name === undefined) {
+                throw new RequiredError('name','Required parameter name was null or undefined when calling showRetrieval.');
+            }
+            if (name !== null && name !== undefined) {
+                localVarQueryParameter['name'] = name;
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询公网域名找回结果。
+         * 
+         * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+         * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showRetrievalVerification(showRetrievalVerificationRequest?: ShowRetrievalVerificationRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2/retrieval/verification/{id}",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let id;
+
+            if (showRetrievalVerificationRequest !== null && showRetrievalVerificationRequest !== undefined) {
+                if (showRetrievalVerificationRequest instanceof ShowRetrievalVerificationRequest) {
+                    id = showRetrievalVerificationRequest.id;
+                } else {
+                    id = showRetrievalVerificationRequest['id'];
+                }
+            }
+
+        
+            if (id === null || id === undefined) {
+            throw new RequiredError('id','Required parameter id was null or undefined when calling showRetrievalVerification.');
+            }
+
+            options.pathParams = { 'id': id, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询公网域名的网站域名。
+         * 
+         * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+         * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showWebsiteRecordSet(showWebsiteRecordSetRequest?: ShowWebsiteRecordSetRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2.1/zones/{zone_id}/website-recordsets",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let zoneId;
+            
+            let limit;
+            
+            let offset;
+
+            if (showWebsiteRecordSetRequest !== null && showWebsiteRecordSetRequest !== undefined) {
+                if (showWebsiteRecordSetRequest instanceof ShowWebsiteRecordSetRequest) {
+                    zoneId = showWebsiteRecordSetRequest.zoneId;
+                    limit = showWebsiteRecordSetRequest.limit;
+                    offset = showWebsiteRecordSetRequest.offset;
+                } else {
+                    zoneId = showWebsiteRecordSetRequest['zone_id'];
+                    limit = showWebsiteRecordSetRequest['limit'];
+                    offset = showWebsiteRecordSetRequest['offset'];
+                }
+            }
+
+        
+            if (zoneId === null || zoneId === undefined) {
+            throw new RequiredError('zoneId','Required parameter zoneId was null or undefined when calling showWebsiteRecordSet.');
+            }
+            if (limit !== null && limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+            if (offset !== null && offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.pathParams = { 'zone_id': zoneId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询域名当前DNS服务器地址及华为云提供的DNS服务器地址。
+         * 
+         * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+         * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showZoneNameServer(showZoneNameServerRequest?: ShowZoneNameServerRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2/public-zones/dns-servers/{domain_name}",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let domainName;
+
+            if (showZoneNameServerRequest !== null && showZoneNameServerRequest !== undefined) {
+                if (showZoneNameServerRequest instanceof ShowZoneNameServerRequest) {
+                    domainName = showZoneNameServerRequest.domainName;
+                } else {
+                    domainName = showZoneNameServerRequest['domain_name'];
+                }
+            }
+
+        
+            if (domainName === null || domainName === undefined) {
+            throw new RequiredError('domainName','Required parameter domainName was null or undefined when calling showZoneNameServer.');
+            }
+
+            options.pathParams = { 'domain_name': domainName, };
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -4905,6 +6647,9 @@ export const ParamCreater = function () {
         /**
          * 关闭公网域名的DNSSEC。
          * 
+         * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+         * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+         * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
         disableDnssecConfig(disableDnssecConfigRequest?: DisableDnssecConfigRequest) {
@@ -4942,6 +6687,9 @@ export const ParamCreater = function () {
         /**
          * 开启公网域名的DNSSEC。
          * 
+         * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+         * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+         * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
         enableDnssecConfig(enableDnssecConfigRequest?: EnableDnssecConfigRequest) {
@@ -4978,6 +6726,9 @@ export const ParamCreater = function () {
     
         /**
          * 查询公网域名的DNSSEC。
+         * 
+         * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+         * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -5229,7 +6980,7 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 当您的记录集创建成功后，您可以通过调用此接口查询指定域名下的所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+         * 当您的记录集创建成功后，您可以通过调用此接口查询所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -5703,6 +7454,147 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 提交批量创建记录集任务，返回任务ID。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        batchCreateRecordSetsTask(batchCreateRecordSetsTaskRequest?: BatchCreateRecordSetsTaskRequest) {
+            const options = {
+                method: "POST",
+                url: "/v2.1/zones/{zone_id}/recordsets/batch-create-task",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let zoneId;
+
+            if (batchCreateRecordSetsTaskRequest !== null && batchCreateRecordSetsTaskRequest !== undefined) {
+                if (batchCreateRecordSetsTaskRequest instanceof BatchCreateRecordSetsTaskRequest) {
+                    zoneId = batchCreateRecordSetsTaskRequest.zoneId;
+                    body = batchCreateRecordSetsTaskRequest.body
+                } else {
+                    zoneId = batchCreateRecordSetsTaskRequest['zone_id'];
+                    body = batchCreateRecordSetsTaskRequest['body'];
+                }
+            }
+
+        
+            if (zoneId === null || zoneId === undefined) {
+            throw new RequiredError('zoneId','Required parameter zoneId was null or undefined when calling batchCreateRecordSetsTask.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'zone_id': zoneId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 批量删除域名下的记录集，当删除的资源不存在时，则默认删除成功。
+         * 响应结果中只包含本次实际删除的资源。
+         * 支持公网域名和内网域名。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        batchDeleteRecordSetWithLine(batchDeleteRecordSetWithLineRequest?: BatchDeleteRecordSetWithLineRequest) {
+            const options = {
+                method: "DELETE",
+                url: "/v2.1/zones/{zone_id}/recordsets",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let zoneId;
+
+            if (batchDeleteRecordSetWithLineRequest !== null && batchDeleteRecordSetWithLineRequest !== undefined) {
+                if (batchDeleteRecordSetWithLineRequest instanceof BatchDeleteRecordSetWithLineRequest) {
+                    zoneId = batchDeleteRecordSetWithLineRequest.zoneId;
+                    body = batchDeleteRecordSetWithLineRequest.body
+                } else {
+                    zoneId = batchDeleteRecordSetWithLineRequest['zone_id'];
+                    body = batchDeleteRecordSetWithLineRequest['body'];
+                }
+            }
+
+        
+            if (zoneId === null || zoneId === undefined) {
+            throw new RequiredError('zoneId','Required parameter zoneId was null or undefined when calling batchDeleteRecordSetWithLine.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'zone_id': zoneId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 批量修改记录集。属于原子性操作，请求记录集将全部完成修改，或不做任何修改。
+         * 仅公网域名支持。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        batchUpdateRecordSetWithLine(batchUpdateRecordSetWithLineRequest?: BatchUpdateRecordSetWithLineRequest) {
+            const options = {
+                method: "PUT",
+                url: "/v2.1/zones/{zone_id}/recordsets",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let zoneId;
+
+            if (batchUpdateRecordSetWithLineRequest !== null && batchUpdateRecordSetWithLineRequest !== undefined) {
+                if (batchUpdateRecordSetWithLineRequest instanceof BatchUpdateRecordSetWithLineRequest) {
+                    zoneId = batchUpdateRecordSetWithLineRequest.zoneId;
+                    body = batchUpdateRecordSetWithLineRequest.body
+                } else {
+                    zoneId = batchUpdateRecordSetWithLineRequest['zone_id'];
+                    body = batchUpdateRecordSetWithLineRequest['body'];
+                }
+            }
+
+        
+            if (zoneId === null || zoneId === undefined) {
+            throw new RequiredError('zoneId','Required parameter zoneId was null or undefined when calling batchUpdateRecordSetWithLine.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'zone_id': zoneId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 创建弹性公网IP的反向解析记录。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -5736,6 +7628,52 @@ export const ParamCreater = function () {
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
             options.data = body !== undefined ? body : {};
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 批量线路创建记录集。属于原子性操作，如果存在一个参数校验不通过，则创建失败。仅公网域名支持。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        createRecordSetWithBatchLines(createRecordSetWithBatchLinesRequest?: CreateRecordSetWithBatchLinesRequest) {
+            const options = {
+                method: "POST",
+                url: "/v2.1/zones/{zone_id}/recordsets/batch/lines",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let zoneId;
+
+            if (createRecordSetWithBatchLinesRequest !== null && createRecordSetWithBatchLinesRequest !== undefined) {
+                if (createRecordSetWithBatchLinesRequest instanceof CreateRecordSetWithBatchLinesRequest) {
+                    zoneId = createRecordSetWithBatchLinesRequest.zoneId;
+                    body = createRecordSetWithBatchLinesRequest.body
+                } else {
+                    zoneId = createRecordSetWithBatchLinesRequest['zone_id'];
+                    body = createRecordSetWithBatchLinesRequest['body'];
+                }
+            }
+
+        
+            if (zoneId === null || zoneId === undefined) {
+            throw new RequiredError('zoneId','Required parameter zoneId was null or undefined when calling createRecordSetWithBatchLines.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'zone_id': zoneId, };
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -5781,6 +7719,43 @@ export const ParamCreater = function () {
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
             options.data = body !== undefined ? body : {};
+            options.pathParams = { 'zone_id': zoneId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 删除批量创建记录集任务。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        deleteBatchCreateRecordSetsTask(deleteBatchCreateRecordSetsTaskRequest?: DeleteBatchCreateRecordSetsTaskRequest) {
+            const options = {
+                method: "DELETE",
+                url: "/v2.1/zones/{zone_id}/recordsets/batch-create-task",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let zoneId;
+
+            if (deleteBatchCreateRecordSetsTaskRequest !== null && deleteBatchCreateRecordSetsTaskRequest !== undefined) {
+                if (deleteBatchCreateRecordSetsTaskRequest instanceof DeleteBatchCreateRecordSetsTaskRequest) {
+                    zoneId = deleteBatchCreateRecordSetsTaskRequest.zoneId;
+                } else {
+                    zoneId = deleteBatchCreateRecordSetsTaskRequest['zone_id'];
+                }
+            }
+
+        
+            if (zoneId === null || zoneId === undefined) {
+            throw new RequiredError('zoneId','Required parameter zoneId was null or undefined when calling deleteBatchCreateRecordSetsTask.');
+            }
+
             options.pathParams = { 'zone_id': zoneId, };
             options.headers = localVarHeaderParameter;
             return options;
@@ -5999,7 +7974,7 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 当您的记录集创建成功后，您可以通过调用此接口查询单个记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+         * 当您的记录集创建成功后，您可以通过调用此接口查询所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -6141,7 +8116,58 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 当您的内网域名创建成功后，您可以通过调用此接口设置记录集的状态，包括暂停、启用。
+         * 查询系统预置解析线路。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listSystemLines(listSystemLinesRequest?: ListSystemLinesRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2.1/system-lines",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let locale;
+            
+            let limit;
+            
+            let offset;
+
+            if (listSystemLinesRequest !== null && listSystemLinesRequest !== undefined) {
+                if (listSystemLinesRequest instanceof ListSystemLinesRequest) {
+                    locale = listSystemLinesRequest.locale;
+                    limit = listSystemLinesRequest.limit;
+                    offset = listSystemLinesRequest.offset;
+                } else {
+                    locale = listSystemLinesRequest['locale'];
+                    limit = listSystemLinesRequest['limit'];
+                    offset = listSystemLinesRequest['offset'];
+                }
+            }
+
+        
+            if (locale !== null && locale !== undefined) {
+                localVarQueryParameter['locale'] = locale;
+            }
+            if (limit !== null && limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+            if (offset !== null && offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 当您的记录集创建成功后，您可以通过调用此接口设置记录集的状态，包括暂停、启用。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -6184,6 +8210,58 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 查询批量创建记录集任务，分页返回失败条目。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showBatchCreateRecordSetsTask(showBatchCreateRecordSetsTaskRequest?: ShowBatchCreateRecordSetsTaskRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2.1/zones/{zone_id}/recordsets/batch-create-task",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let zoneId;
+            
+            let errorItemLimit;
+            
+            let errorItemOffset;
+
+            if (showBatchCreateRecordSetsTaskRequest !== null && showBatchCreateRecordSetsTaskRequest !== undefined) {
+                if (showBatchCreateRecordSetsTaskRequest instanceof ShowBatchCreateRecordSetsTaskRequest) {
+                    zoneId = showBatchCreateRecordSetsTaskRequest.zoneId;
+                    errorItemLimit = showBatchCreateRecordSetsTaskRequest.errorItemLimit;
+                    errorItemOffset = showBatchCreateRecordSetsTaskRequest.errorItemOffset;
+                } else {
+                    zoneId = showBatchCreateRecordSetsTaskRequest['zone_id'];
+                    errorItemLimit = showBatchCreateRecordSetsTaskRequest['error_item_limit'];
+                    errorItemOffset = showBatchCreateRecordSetsTaskRequest['error_item_offset'];
+                }
+            }
+
+        
+            if (zoneId === null || zoneId === undefined) {
+            throw new RequiredError('zoneId','Required parameter zoneId was null or undefined when calling showBatchCreateRecordSetsTask.');
+            }
+            if (errorItemLimit !== null && errorItemLimit !== undefined) {
+                localVarQueryParameter['error_item_limit'] = errorItemLimit;
+            }
+            if (errorItemOffset !== null && errorItemOffset !== undefined) {
+                localVarQueryParameter['error_item_offset'] = errorItemOffset;
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.pathParams = { 'zone_id': zoneId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 查询弹性公网IP的反向解析记录。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -6221,7 +8299,7 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 当您的记录集创建成功后，您可以通过调用此接口查询单个记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+         * 当您的记录集创建成功后，您可以通过调用此接口查询指定域名下的所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */

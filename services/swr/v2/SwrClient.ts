@@ -3,6 +3,7 @@ import { ClientBuilder } from "@huaweicloud/huaweicloud-sdk-core/ClientBuilder";
 import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
 
 import { Accessory } from './model/Accessory';
+import { AccessoryListAccessories } from './model/AccessoryListAccessories';
 import { AddDomainNameRequest } from './model/AddDomainNameRequest';
 import { AddDomainNameRequestBody } from './model/AddDomainNameRequestBody';
 import { AddDomainNameResponse } from './model/AddDomainNameResponse';
@@ -12,6 +13,12 @@ import { AuditLog } from './model/AuditLog';
 import { AuthInfo } from './model/AuthInfo';
 import { AuthToken } from './model/AuthToken';
 import { BuildHistory } from './model/BuildHistory';
+import { CVEAllowlist } from './model/CVEAllowlist';
+import { CVEAllowlistItem } from './model/CVEAllowlistItem';
+import { CheckAgencyRequest } from './model/CheckAgencyRequest';
+import { CheckAgencyResponse } from './model/CheckAgencyResponse';
+import { CreateAgencyRequest } from './model/CreateAgencyRequest';
+import { CreateAgencyResponse } from './model/CreateAgencyResponse';
 import { CreateAuthorizationTokenRequest } from './model/CreateAuthorizationTokenRequest';
 import { CreateAuthorizationTokenResponse } from './model/CreateAuthorizationTokenResponse';
 import { CreateEndpointPolicyRequestBody } from './model/CreateEndpointPolicyRequestBody';
@@ -144,6 +151,8 @@ import { DeleteUserRepositoryAuthRequest } from './model/DeleteUserRepositoryAut
 import { DeleteUserRepositoryAuthResponse } from './model/DeleteUserRepositoryAuthResponse';
 import { DnsConf } from './model/DnsConf';
 import { DomainNameInfo } from './model/DomainNameInfo';
+import { ExecuteGcScheduleRequest } from './model/ExecuteGcScheduleRequest';
+import { ExecuteGcScheduleResponse } from './model/ExecuteGcScheduleResponse';
 import { ExecuteInstanceReplicationPolicyRequest } from './model/ExecuteInstanceReplicationPolicyRequest';
 import { ExecuteInstanceReplicationPolicyResponse } from './model/ExecuteInstanceReplicationPolicyResponse';
 import { ExecuteInstanceRetentionPolicyRequest } from './model/ExecuteInstanceRetentionPolicyRequest';
@@ -151,17 +160,25 @@ import { ExecuteInstanceRetentionPolicyResponse } from './model/ExecuteInstanceR
 import { ExecuteInstanceSignPolicyRequest } from './model/ExecuteInstanceSignPolicyRequest';
 import { ExecuteInstanceSignPolicyResponse } from './model/ExecuteInstanceSignPolicyResponse';
 import { ExecuteRetentionPolicyRequestBody } from './model/ExecuteRetentionPolicyRequestBody';
+import { ExecuteScheduleObj } from './model/ExecuteScheduleObj';
+import { ExecuteScheduleRequestBody } from './model/ExecuteScheduleRequestBody';
 import { Execution } from './model/Execution';
 import { Filter } from './model/Filter';
+import { GcParameters } from './model/GcParameters';
+import { GcTask } from './model/GcTask';
 import { ImageRetention } from './model/ImageRetention';
 import { ImageTag } from './model/ImageTag';
 import { ImmutableRule } from './model/ImmutableRule';
 import { Instance } from './model/Instance';
+import { InstanceRepository } from './model/InstanceRepository';
 import { InternalEndpoint } from './model/InternalEndpoint';
 import { IpInfo } from './model/IpInfo';
 import { Job } from './model/Job';
 import { JobDetail } from './model/JobDetail';
+import { JobParameters } from './model/JobParameters';
 import { Link } from './model/Link';
+import { ListAllInstanceRepositoriesRequest } from './model/ListAllInstanceRepositoriesRequest';
+import { ListAllInstanceRepositoriesResponse } from './model/ListAllInstanceRepositoriesResponse';
 import { ListApiVersionsRequest } from './model/ListApiVersionsRequest';
 import { ListApiVersionsResponse } from './model/ListApiVersionsResponse';
 import { ListAuditLogsRequest } from './model/ListAuditLogsRequest';
@@ -170,6 +187,8 @@ import { ListDomainNamesRequest } from './model/ListDomainNamesRequest';
 import { ListDomainNamesResponse } from './model/ListDomainNamesResponse';
 import { ListFeatureGatesRequest } from './model/ListFeatureGatesRequest';
 import { ListFeatureGatesResponse } from './model/ListFeatureGatesResponse';
+import { ListGcTasksRequest } from './model/ListGcTasksRequest';
+import { ListGcTasksResponse } from './model/ListGcTasksResponse';
 import { ListGlobalFeatureGatesRequest } from './model/ListGlobalFeatureGatesRequest';
 import { ListGlobalFeatureGatesResponse } from './model/ListGlobalFeatureGatesResponse';
 import { ListImageAutoSyncReposDetailsRequest } from './model/ListImageAutoSyncReposDetailsRequest';
@@ -180,6 +199,8 @@ import { ListInstanceAccessoriesRequest } from './model/ListInstanceAccessoriesR
 import { ListInstanceAccessoriesResponse } from './model/ListInstanceAccessoriesResponse';
 import { ListInstanceAllArtifactsRequest } from './model/ListInstanceAllArtifactsRequest';
 import { ListInstanceAllArtifactsResponse } from './model/ListInstanceAllArtifactsResponse';
+import { ListInstanceArtifactVulnerabilitiesRequest } from './model/ListInstanceArtifactVulnerabilitiesRequest';
+import { ListInstanceArtifactVulnerabilitiesResponse } from './model/ListInstanceArtifactVulnerabilitiesResponse';
 import { ListInstanceArtifactsRequest } from './model/ListInstanceArtifactsRequest';
 import { ListInstanceArtifactsResponse } from './model/ListInstanceArtifactsResponse';
 import { ListInstanceInternalEndpointsRequest } from './model/ListInstanceInternalEndpointsRequest';
@@ -242,6 +263,10 @@ import { ListNamespacesRequest } from './model/ListNamespacesRequest';
 import { ListNamespacesResponse } from './model/ListNamespacesResponse';
 import { ListQuotasRequest } from './model/ListQuotasRequest';
 import { ListQuotasResponse } from './model/ListQuotasResponse';
+import { ListReferencesRequest } from './model/ListReferencesRequest';
+import { ListReferencesResponse } from './model/ListReferencesResponse';
+import { ListRepoAccessoriesRequest } from './model/ListRepoAccessoriesRequest';
+import { ListRepoAccessoriesResponse } from './model/ListRepoAccessoriesResponse';
 import { ListRepoDetailsRequest } from './model/ListRepoDetailsRequest';
 import { ListRepoDetailsResponse } from './model/ListRepoDetailsResponse';
 import { ListRepoDomainsRequest } from './model/ListRepoDomainsRequest';
@@ -265,11 +290,16 @@ import { ListSubResourceInstancesRequest } from './model/ListSubResourceInstance
 import { ListSubResourceInstancesResponse } from './model/ListSubResourceInstancesResponse';
 import { ListSubResourceTagsRequest } from './model/ListSubResourceTagsRequest';
 import { ListSubResourceTagsResponse } from './model/ListSubResourceTagsResponse';
+import { ListSyncRegionsRequest } from './model/ListSyncRegionsRequest';
+import { ListSyncRegionsResponse } from './model/ListSyncRegionsResponse';
 import { ListTriggersDetailsRequest } from './model/ListTriggersDetailsRequest';
 import { ListTriggersDetailsResponse } from './model/ListTriggersDetailsResponse';
 import { Namespace } from './model/Namespace';
 import { NamespaceMetadata } from './model/NamespaceMetadata';
+import { NativeReportSummary } from './model/NativeReportSummary';
+import { PageInfo } from './model/PageInfo';
 import { ProjectTag } from './model/ProjectTag';
+import { RegionInfo } from './model/RegionInfo';
 import { Registry } from './model/Registry';
 import { ReplicationPolicy } from './model/ReplicationPolicy';
 import { ReplicationRegistry } from './model/ReplicationRegistry';
@@ -286,6 +316,9 @@ import { RetentionRuleResponseBody } from './model/RetentionRuleResponseBody';
 import { RetentionSelector } from './model/RetentionSelector';
 import { Rule } from './model/Rule';
 import { RuleSelector } from './model/RuleSelector';
+import { Scanner } from './model/Scanner';
+import { ScheduleDetails } from './model/ScheduleDetails';
+import { ScheduleObj } from './model/ScheduleObj';
 import { ScopeRule } from './model/ScopeRule';
 import { ShowAccessDomainRequest } from './model/ShowAccessDomainRequest';
 import { ShowAccessDomainResponse } from './model/ShowAccessDomainResponse';
@@ -295,6 +328,10 @@ import { ShowDomainOverviewRequest } from './model/ShowDomainOverviewRequest';
 import { ShowDomainOverviewResponse } from './model/ShowDomainOverviewResponse';
 import { ShowDomainResourceReportsRequest } from './model/ShowDomainResourceReportsRequest';
 import { ShowDomainResourceReportsResponse } from './model/ShowDomainResourceReportsResponse';
+import { ShowGcScheduleRequest } from './model/ShowGcScheduleRequest';
+import { ShowGcScheduleResponse } from './model/ShowGcScheduleResponse';
+import { ShowGcTaskRequest } from './model/ShowGcTaskRequest';
+import { ShowGcTaskResponse } from './model/ShowGcTaskResponse';
 import { ShowInstanceArtifactAdditionRequest } from './model/ShowInstanceArtifactAdditionRequest';
 import { ShowInstanceArtifactAdditionResponse } from './model/ShowInstanceArtifactAdditionResponse';
 import { ShowInstanceArtifactRequest } from './model/ShowInstanceArtifactRequest';
@@ -357,6 +394,10 @@ import { SignRuleSelector } from './model/SignRuleSelector';
 import { SignScopeRule } from './model/SignScopeRule';
 import { SignatureExecutionSubTask } from './model/SignatureExecutionSubTask';
 import { SignatureExecutionTask } from './model/SignatureExecutionTask';
+import { StartManualScanningRequest } from './model/StartManualScanningRequest';
+import { StartManualScanningResponse } from './model/StartManualScanningResponse';
+import { StopGcTaskRequest } from './model/StopGcTaskRequest';
+import { StopGcTaskResponse } from './model/StopGcTaskResponse';
 import { StopInstanceReplicationPolicyExecutionRequest } from './model/StopInstanceReplicationPolicyExecutionRequest';
 import { StopInstanceReplicationPolicyExecutionResponse } from './model/StopInstanceReplicationPolicyExecutionResponse';
 import { Subtask } from './model/Subtask';
@@ -372,9 +413,12 @@ import { Trigger } from './model/Trigger';
 import { TriggerConfig } from './model/TriggerConfig';
 import { TriggerHistories } from './model/TriggerHistories';
 import { TriggerSetting } from './model/TriggerSetting';
+import { UpdateCVEAllowlistRequest } from './model/UpdateCVEAllowlistRequest';
 import { UpdateDomainNameRequest } from './model/UpdateDomainNameRequest';
 import { UpdateDomainNameRequestBody } from './model/UpdateDomainNameRequestBody';
 import { UpdateDomainNameResponse } from './model/UpdateDomainNameResponse';
+import { UpdateGcScheduleRequest } from './model/UpdateGcScheduleRequest';
+import { UpdateGcScheduleResponse } from './model/UpdateGcScheduleResponse';
 import { UpdateImmutableRuleBody } from './model/UpdateImmutableRuleBody';
 import { UpdateImmutableRuleRequest } from './model/UpdateImmutableRuleRequest';
 import { UpdateImmutableRuleResponse } from './model/UpdateImmutableRuleResponse';
@@ -416,6 +460,7 @@ import { UpdateRetentionPolicyRequestBody } from './model/UpdateRetentionPolicyR
 import { UpdateRetentionRequest } from './model/UpdateRetentionRequest';
 import { UpdateRetentionRequestBody } from './model/UpdateRetentionRequestBody';
 import { UpdateRetentionResponse } from './model/UpdateRetentionResponse';
+import { UpdateScheduleRequestBody } from './model/UpdateScheduleRequestBody';
 import { UpdateSignaturePolicyRequestBody } from './model/UpdateSignaturePolicyRequestBody';
 import { UpdateTriggerRequest } from './model/UpdateTriggerRequest';
 import { UpdateTriggerRequestBody } from './model/UpdateTriggerRequestBody';
@@ -426,6 +471,10 @@ import { UpdateWebhookPolicyRequestBody } from './model/UpdateWebhookPolicyReque
 import { UpdateWhiteListRequestBody } from './model/UpdateWhiteListRequestBody';
 import { UserAuth } from './model/UserAuth';
 import { VersionDetail } from './model/VersionDetail';
+import { Vulnerability } from './model/Vulnerability';
+import { VulnerabilityPreferredCvss } from './model/VulnerabilityPreferredCvss';
+import { VulnerabilityReports } from './model/VulnerabilityReports';
+import { VulnerabilitySummary } from './model/VulnerabilitySummary';
 import { WebhookPolicyDetail } from './model/WebhookPolicyDetail';
 
 export class SwrClient {
@@ -443,6 +492,43 @@ export class SwrClient {
         return __dirname;
     }
 
+
+    /**
+     * 检查租户是否已委托SWR服务通过触发器功能调用CCE、CCI服务，一般由前端控制台自动调用，用户无需手动调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询委托是否存在
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public checkAgency(checkAgencyRequest?: CheckAgencyRequest): Promise<CheckAgencyResponse> {
+        const options = ParamCreater().checkAgency();
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 租户首次使用SWR服务时创建SWR服务内部委托，一般由前端控制台自动调用，用户无需手动调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 创建委托
+     * @param {'application/json;charset=utf-8' | 'application/json'} contentType 消息体的类型（格式），下方类型可任选其一使用： application/json;charset&#x3D;utf-8 application/json
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public createAgency(createAgencyRequest?: CreateAgencyRequest): Promise<CreateAgencyResponse> {
+        const options = ParamCreater().createAgency(createAgencyRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
 
     /**
      * 调用该接口，通过获取响应消息头的X-Swr-Dockerlogin的值及响应消息体的host值，可生成增强型登录指令,注：此接口只支持IAM新平面的调用方式。
@@ -650,7 +736,7 @@ export class SwrClient {
         const options = ParamCreater().createSecret(createSecretRequest);
 
          // @ts-ignore
-        options['responseHeaders'] = ['X-Swr-Dockerlogin'];
+        options['responseHeaders'] = ['X-Swr-Dockerlogin', 'X-Swr-Expireat'];
 
         return this.hcClient.sendRequest(options);
     }
@@ -955,6 +1041,54 @@ export class SwrClient {
     }
 
     /**
+     * 获取签名镜像关联的被签名镜像版本列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 获取签名镜像关联的被签名镜像版本列表
+     * @param {'application/json;charset=utf-8' | 'application/json'} contentType 消息体的类型（格式），下方类型可任选其一使用： application/json;charset&#x3D;utf-8 application/json
+     * @param {string} namespace 组织名称。小写字母开头，后面跟小写字母、数字、小数点、下划线或中划线（其中下划线最多允许连续两个，小数点、下划线、中划线不能直接相连），小写字母或数字结尾，1-64个字符。
+     * @param {string} repository 镜像仓库名称
+     * @param {string} tag 签名镜像的版本号
+     * @param {number} [limit] 返回条数。如果不传该参数默认返回10条记录，最大支持10条记录
+     * @param {string} [marker] 分页查询时的起始标记，接口的返回值next_marker为下一次查询的起始标记
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listReferences(listReferencesRequest?: ListReferencesRequest): Promise<ListReferencesResponse> {
+        const options = ParamCreater().listReferences(listReferencesRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 获取共享仓的镜像的附件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询镜像的附件列表
+     * @param {'application/json;charset=utf-8' | 'application/json'} contentType 消息体的类型（格式），下方类型可任选其一使用： application/json;charset&#x3D;utf-8 application/json
+     * @param {string} namespace 组织名称。小写字母开头，后面跟小写字母、数字、小数点、下划线或中划线（其中下划线最多允许连续两个，小数点、下划线、中划线不能直接相连），小写字母或数字结尾，1-64个字符。
+     * @param {string} repository 镜像仓库名称
+     * @param {string} tag 镜像版本
+     * @param {number} [limit] 返回条数。如果不传该参数默认返回10条记录，最大支持100条记录
+     * @param {number} [offset] 起始索引,默认值为0
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listRepoAccessories(listRepoAccessoriesRequest?: ListRepoAccessoriesRequest): Promise<ListRepoAccessoriesResponse> {
+        const options = ParamCreater().listRepoAccessories(listRepoAccessoriesRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 查询镜像仓库列表详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -1039,6 +1173,8 @@ export class SwrClient {
      * @param {number} [limit] 返回条数,默认返回100条，最多返回1000条数据。
      * @param {string} [marker] Start position of the cursor for querying the next page in pagination query.
      * @param {string} [tag] 镜像版本名。
+     * @param {string} [orderColumn] 按列排序，可设置为updated_at（按更新时间排序）或者tag（按照镜像版本排序）。注意：order_column和order_type参数需要配套使用。
+     * @param {string} [orderType] 排序类型，可设置为desc（降序）、asc（升序）。注意：order_column和order_type参数需要配套使用。
      * @param {boolean} [withManifest] 是否返回镜像的manifest信息
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1172,6 +1308,24 @@ export class SwrClient {
 
          // @ts-ignore
         options['responseHeaders'] = ['Content-Range'];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 获取可进行镜像同步的区域列表，用户可以将镜像手动或自动同步到此接口返回的区域。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 获取可进行镜像同步的区域列表
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listSyncRegions(listSyncRegionsRequest?: ListSyncRegionsRequest): Promise<ListSyncRegionsResponse> {
+        const options = ParamCreater().listSyncRegions();
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
 
         return this.hcClient.sendRequest(options);
     }
@@ -2279,6 +2433,26 @@ export class SwrClient {
     }
 
     /**
+     * 执行制品清理计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 执行制品清理计划
+     * @param {string} instanceId 企业仓库实例ID
+     * @param {ExecuteScheduleRequestBody} schedule 计划信息。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public executeGcSchedule(executeGcScheduleRequest?: ExecuteGcScheduleRequest): Promise<ExecuteGcScheduleResponse> {
+        const options = ParamCreater().executeGcSchedule(executeGcScheduleRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 手动执行同步策略
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -2342,6 +2516,27 @@ export class SwrClient {
     }
 
     /**
+     * 获取当前项目下所有企业仓库实例的仓库列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 获取当前项目下所有企业仓库实例的仓库列表
+     * @param {string} [marker] 分页查询时的查询标记，使用上一次接口调用返回的next_marker值，默认值从第一条数据查询。**注意：marker和limit参数需要配套使用。**
+     * @param {number} [limit] 条目数量，用于分页查询，默认值为100，最大值为100
+     * @param {string} [name] 仓库名称
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listAllInstanceRepositories(listAllInstanceRepositoriesRequest?: ListAllInstanceRepositoriesRequest): Promise<ListAllInstanceRepositoriesResponse> {
+        const options = ParamCreater().listAllInstanceRepositories(listAllInstanceRepositoriesRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 获取上传下载的相关审计日志列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -2396,6 +2591,28 @@ export class SwrClient {
      */
     public listFeatureGates(listFeatureGatesRequest?: ListFeatureGatesRequest): Promise<ListFeatureGatesResponse> {
         const options = ParamCreater().listFeatureGates(listFeatureGatesRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询制品清理的任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询制品清理的任务列表
+     * @param {string} instanceId 企业仓库实例ID
+     * @param {string} [marker] 分页查询时的查询标记，使用上一次接口调用返回的next_marker值，默认值从第一条数据查询。**注意：marker和limit参数需要配套使用。**
+     * @param {number} [limit] 条目数量，用于分页查询，默认值为10，最大值为100
+     * @param {'Success' | 'Stopped' | 'Running' | 'Pending' | 'Error'} [status] 任务状态，Success：已完成，Stopped：已停止，Running：清理中，Pending：排队中，Error：失败。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listGcTasks(listGcTasksRequest?: ListGcTasksRequest): Promise<ListGcTasksResponse> {
+        const options = ParamCreater().listGcTasks(listGcTasksRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -2512,6 +2729,28 @@ export class SwrClient {
     }
 
     /**
+     * 获取制品扫描的漏洞信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 获取制品扫描的漏洞信息
+     * @param {string} instanceId 企业仓库实例ID
+     * @param {string} namespaceName 命名空间名称
+     * @param {string} repositoryName 仓库名称
+     * @param {string} reference 制品摘要
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listInstanceArtifactVulnerabilities(listInstanceArtifactVulnerabilitiesRequest?: ListInstanceArtifactVulnerabilitiesRequest): Promise<ListInstanceArtifactVulnerabilitiesResponse> {
+        const options = ParamCreater().listInstanceArtifactVulnerabilities(listInstanceArtifactVulnerabilitiesRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 获取制品版本列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -2587,6 +2826,7 @@ export class SwrClient {
      * @param {string} instanceId 企业仓库实例ID
      * @param {number} [offset] 起始索引，默认为0。**注意：offset和limit参数需要配套使用。**
      * @param {number} [limit] 返回条数，默认为100，最大值为100。**注意：offset和limit参数需要配套使用。**
+     * @param {boolean} [selfOnly] 值为false的时候，拥有te_admin角色的用户可以查询实例下所有的长期登录凭证，默认情况下只查询自己创建的长期登录凭证
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -3199,6 +3439,45 @@ export class SwrClient {
     }
 
     /**
+     * 获取制品清理的计划信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 获取制品清理的计划信息
+     * @param {string} instanceId 企业仓库实例ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showGcSchedule(showGcScheduleRequest?: ShowGcScheduleRequest): Promise<ShowGcScheduleResponse> {
+        const options = ParamCreater().showGcSchedule(showGcScheduleRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询制品清理的任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询制品清理的任务详情
+     * @param {string} instanceId 企业仓库实例ID
+     * @param {number} gcId 任务ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showGcTask(showGcTaskRequest?: ShowGcTaskRequest): Promise<ShowGcTaskResponse> {
+        const options = ParamCreater().showGcTask(showGcTaskRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 获取实例详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -3227,6 +3506,7 @@ export class SwrClient {
      * @param {string} namespaceName 命名空间名称
      * @param {string} repositoryName 制品名称
      * @param {string} reference 制品摘要
+     * @param {boolean} [withScanOverview] 是否返回制品扫描摘要
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -3526,6 +3806,48 @@ export class SwrClient {
     }
 
     /**
+     * 手动启动制品扫描
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 手动启动制品扫描
+     * @param {string} instanceId 企业仓库实例ID
+     * @param {string} namespaceName 命名空间名称
+     * @param {string} repositoryName 仓库名称
+     * @param {string} reference 制品摘要
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public startManualScanning(startManualScanningRequest?: StartManualScanningRequest): Promise<StartManualScanningResponse> {
+        const options = ParamCreater().startManualScanning(startManualScanningRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 停止制品清理任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 停止制品清理任务
+     * @param {string} instanceId 企业仓库实例ID
+     * @param {number} gcId 任务ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public stopGcTask(stopGcTaskRequest?: StopGcTaskRequest): Promise<StopGcTaskResponse> {
+        const options = ParamCreater().stopGcTask(stopGcTaskRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 停止镜像同步任务
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -3559,6 +3881,26 @@ export class SwrClient {
      */
     public updateDomainName(updateDomainNameRequest?: UpdateDomainNameRequest): Promise<UpdateDomainNameResponse> {
         const options = ParamCreater().updateDomainName(updateDomainNameRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 配置制品清理计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 配置制品清理计划
+     * @param {string} instanceId 企业仓库实例ID
+     * @param {UpdateScheduleRequestBody} schedule 计划信息。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public updateGcSchedule(updateGcScheduleRequest?: UpdateGcScheduleRequest): Promise<UpdateGcScheduleResponse> {
+        const options = ParamCreater().updateGcSchedule(updateGcScheduleRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -3803,6 +4145,63 @@ export class SwrClient {
 
 export const ParamCreater = function () {
     return {
+    
+        /**
+         * 检查租户是否已委托SWR服务通过触发器功能调用CCE、CCI服务，一般由前端控制台自动调用，用户无需手动调用。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        checkAgency() {
+            const options = {
+                method: "GET",
+                url: "/v2/manage/agency",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 租户首次使用SWR服务时创建SWR服务内部委托，一般由前端控制台自动调用，用户无需手动调用。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        createAgency(createAgencyRequest?: CreateAgencyRequest) {
+            const options = {
+                method: "POST",
+                url: "/v2/manage/agency",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let contentType;
+
+            if (createAgencyRequest !== null && createAgencyRequest !== undefined) {
+                if (createAgencyRequest instanceof CreateAgencyRequest) {
+                    contentType = createAgencyRequest.contentType;
+                } else {
+                    contentType = createAgencyRequest['Content-Type'];
+                }
+            }
+
+        
+            if (contentType !== undefined && contentType !== null) {
+                localVarHeaderParameter['Content-Type'] = String(contentType);
+            }
+
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
     
         /**
          * 调用该接口，通过获取响应消息头的X-Swr-Dockerlogin的值及响应消息体的host值，可生成增强型登录指令,注：此接口只支持IAM新平面的调用方式。
@@ -5094,6 +5493,152 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 获取签名镜像关联的被签名镜像版本列表
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listReferences(listReferencesRequest?: ListReferencesRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2/manage/namespaces/{namespace}/repos/{repository}/{tag}/references",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let contentType;
+            
+            let namespace;
+            
+            let repository;
+            
+            let tag;
+            
+            let limit;
+            
+            let marker;
+
+            if (listReferencesRequest !== null && listReferencesRequest !== undefined) {
+                if (listReferencesRequest instanceof ListReferencesRequest) {
+                    contentType = listReferencesRequest.contentType;
+                    namespace = listReferencesRequest.namespace;
+                    repository = listReferencesRequest.repository;
+                    tag = listReferencesRequest.tag;
+                    limit = listReferencesRequest.limit;
+                    marker = listReferencesRequest.marker;
+                } else {
+                    contentType = listReferencesRequest['Content-Type'];
+                    namespace = listReferencesRequest['namespace'];
+                    repository = listReferencesRequest['repository'];
+                    tag = listReferencesRequest['tag'];
+                    limit = listReferencesRequest['limit'];
+                    marker = listReferencesRequest['marker'];
+                }
+            }
+
+        
+            if (namespace === null || namespace === undefined) {
+            throw new RequiredError('namespace','Required parameter namespace was null or undefined when calling listReferences.');
+            }
+            if (repository === null || repository === undefined) {
+            throw new RequiredError('repository','Required parameter repository was null or undefined when calling listReferences.');
+            }
+            if (tag === null || tag === undefined) {
+            throw new RequiredError('tag','Required parameter tag was null or undefined when calling listReferences.');
+            }
+            if (limit !== null && limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+            if (marker !== null && marker !== undefined) {
+                localVarQueryParameter['marker'] = marker;
+            }
+            if (contentType !== undefined && contentType !== null) {
+                localVarHeaderParameter['Content-Type'] = String(contentType);
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.pathParams = { 'namespace': namespace,'repository': repository,'tag': tag, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 获取共享仓的镜像的附件列表
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listRepoAccessories(listRepoAccessoriesRequest?: ListRepoAccessoriesRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2/manage/namespaces/{namespace}/repos/{repository}/{tag}/accessories",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let contentType;
+            
+            let namespace;
+            
+            let repository;
+            
+            let tag;
+            
+            let limit;
+            
+            let offset;
+
+            if (listRepoAccessoriesRequest !== null && listRepoAccessoriesRequest !== undefined) {
+                if (listRepoAccessoriesRequest instanceof ListRepoAccessoriesRequest) {
+                    contentType = listRepoAccessoriesRequest.contentType;
+                    namespace = listRepoAccessoriesRequest.namespace;
+                    repository = listRepoAccessoriesRequest.repository;
+                    tag = listRepoAccessoriesRequest.tag;
+                    limit = listRepoAccessoriesRequest.limit;
+                    offset = listRepoAccessoriesRequest.offset;
+                } else {
+                    contentType = listRepoAccessoriesRequest['Content-Type'];
+                    namespace = listRepoAccessoriesRequest['namespace'];
+                    repository = listRepoAccessoriesRequest['repository'];
+                    tag = listRepoAccessoriesRequest['tag'];
+                    limit = listRepoAccessoriesRequest['limit'];
+                    offset = listRepoAccessoriesRequest['offset'];
+                }
+            }
+
+        
+            if (namespace === null || namespace === undefined) {
+            throw new RequiredError('namespace','Required parameter namespace was null or undefined when calling listRepoAccessories.');
+            }
+            if (repository === null || repository === undefined) {
+            throw new RequiredError('repository','Required parameter repository was null or undefined when calling listRepoAccessories.');
+            }
+            if (tag === null || tag === undefined) {
+            throw new RequiredError('tag','Required parameter tag was null or undefined when calling listRepoAccessories.');
+            }
+            if (limit !== null && limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+            if (offset !== null && offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
+            }
+            if (contentType !== undefined && contentType !== null) {
+                localVarHeaderParameter['Content-Type'] = String(contentType);
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.pathParams = { 'namespace': namespace,'repository': repository,'tag': tag, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 查询镜像仓库列表详情
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -5345,6 +5890,10 @@ export const ParamCreater = function () {
             
             let tag;
             
+            let orderColumn;
+            
+            let orderType;
+            
             let withManifest;
 
             if (listRepositoryTagRequest !== null && listRepositoryTagRequest !== undefined) {
@@ -5355,6 +5904,8 @@ export const ParamCreater = function () {
                     limit = listRepositoryTagRequest.limit;
                     marker = listRepositoryTagRequest.marker;
                     tag = listRepositoryTagRequest.tag;
+                    orderColumn = listRepositoryTagRequest.orderColumn;
+                    orderType = listRepositoryTagRequest.orderType;
                     withManifest = listRepositoryTagRequest.withManifest;
                 } else {
                     contentType = listRepositoryTagRequest['Content-Type'];
@@ -5363,6 +5914,8 @@ export const ParamCreater = function () {
                     limit = listRepositoryTagRequest['limit'];
                     marker = listRepositoryTagRequest['marker'];
                     tag = listRepositoryTagRequest['tag'];
+                    orderColumn = listRepositoryTagRequest['order_column'];
+                    orderType = listRepositoryTagRequest['order_type'];
                     withManifest = listRepositoryTagRequest['with_manifest'];
                 }
             }
@@ -5382,6 +5935,12 @@ export const ParamCreater = function () {
             }
             if (tag !== null && tag !== undefined) {
                 localVarQueryParameter['tag'] = tag;
+            }
+            if (orderColumn !== null && orderColumn !== undefined) {
+                localVarQueryParameter['order_column'] = orderColumn;
+            }
+            if (orderType !== null && orderType !== undefined) {
+                localVarQueryParameter['order_type'] = orderType;
             }
             if (withManifest !== null && withManifest !== undefined) {
                 localVarQueryParameter['with_manifest'] = withManifest;
@@ -5788,6 +6347,27 @@ export const ParamCreater = function () {
             }
 
             options.queryParams = localVarQueryParameter;
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 获取可进行镜像同步的区域列表，用户可以将镜像手动或自动同步到此接口返回的区域。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listSyncRegions() {
+            const options = {
+                method: "GET",
+                url: "/v2/manage/regions",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -8454,6 +9034,52 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 执行制品清理计划
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        executeGcSchedule(executeGcScheduleRequest?: ExecuteGcScheduleRequest) {
+            const options = {
+                method: "POST",
+                url: "/v2/{project_id}/instances/{instance_id}/system/gc/schedule",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let instanceId;
+
+            if (executeGcScheduleRequest !== null && executeGcScheduleRequest !== undefined) {
+                if (executeGcScheduleRequest instanceof ExecuteGcScheduleRequest) {
+                    instanceId = executeGcScheduleRequest.instanceId;
+                    body = executeGcScheduleRequest.body
+                } else {
+                    instanceId = executeGcScheduleRequest['instance_id'];
+                    body = executeGcScheduleRequest['body'];
+                }
+            }
+
+        
+            if (instanceId === null || instanceId === undefined) {
+            throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling executeGcSchedule.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'instance_id': instanceId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 手动执行同步策略
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -8611,6 +9237,57 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 获取当前项目下所有企业仓库实例的仓库列表
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listAllInstanceRepositories(listAllInstanceRepositoriesRequest?: ListAllInstanceRepositoriesRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2/{project_id}/repositories",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let marker;
+            
+            let limit;
+            
+            let name;
+
+            if (listAllInstanceRepositoriesRequest !== null && listAllInstanceRepositoriesRequest !== undefined) {
+                if (listAllInstanceRepositoriesRequest instanceof ListAllInstanceRepositoriesRequest) {
+                    marker = listAllInstanceRepositoriesRequest.marker;
+                    limit = listAllInstanceRepositoriesRequest.limit;
+                    name = listAllInstanceRepositoriesRequest.name;
+                } else {
+                    marker = listAllInstanceRepositoriesRequest['marker'];
+                    limit = listAllInstanceRepositoriesRequest['limit'];
+                    name = listAllInstanceRepositoriesRequest['name'];
+                }
+            }
+
+        
+            if (marker !== null && marker !== undefined) {
+                localVarQueryParameter['marker'] = marker;
+            }
+            if (limit !== null && limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+            if (name !== null && name !== undefined) {
+                localVarQueryParameter['name'] = name;
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 获取上传下载的相关审计日志列表
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -8756,6 +9433,65 @@ export const ParamCreater = function () {
             throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling listFeatureGates.');
             }
 
+            options.pathParams = { 'instance_id': instanceId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询制品清理的任务列表
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listGcTasks(listGcTasksRequest?: ListGcTasksRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2/{project_id}/instances/{instance_id}/system/gc",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let instanceId;
+            
+            let marker;
+            
+            let limit;
+            
+            let status;
+
+            if (listGcTasksRequest !== null && listGcTasksRequest !== undefined) {
+                if (listGcTasksRequest instanceof ListGcTasksRequest) {
+                    instanceId = listGcTasksRequest.instanceId;
+                    marker = listGcTasksRequest.marker;
+                    limit = listGcTasksRequest.limit;
+                    status = listGcTasksRequest.status;
+                } else {
+                    instanceId = listGcTasksRequest['instance_id'];
+                    marker = listGcTasksRequest['marker'];
+                    limit = listGcTasksRequest['limit'];
+                    status = listGcTasksRequest['status'];
+                }
+            }
+
+        
+            if (instanceId === null || instanceId === undefined) {
+            throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling listGcTasks.');
+            }
+            if (marker !== null && marker !== undefined) {
+                localVarQueryParameter['marker'] = marker;
+            }
+            if (limit !== null && limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+            if (status !== null && status !== undefined) {
+                localVarQueryParameter['status'] = status;
+            }
+
+            options.queryParams = localVarQueryParameter;
             options.pathParams = { 'instance_id': instanceId, };
             options.headers = localVarHeaderParameter;
             return options;
@@ -9032,6 +9768,64 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 获取制品扫描的漏洞信息
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listInstanceArtifactVulnerabilities(listInstanceArtifactVulnerabilitiesRequest?: ListInstanceArtifactVulnerabilitiesRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}/vulnerabilities",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let instanceId;
+            
+            let namespaceName;
+            
+            let repositoryName;
+            
+            let reference;
+
+            if (listInstanceArtifactVulnerabilitiesRequest !== null && listInstanceArtifactVulnerabilitiesRequest !== undefined) {
+                if (listInstanceArtifactVulnerabilitiesRequest instanceof ListInstanceArtifactVulnerabilitiesRequest) {
+                    instanceId = listInstanceArtifactVulnerabilitiesRequest.instanceId;
+                    namespaceName = listInstanceArtifactVulnerabilitiesRequest.namespaceName;
+                    repositoryName = listInstanceArtifactVulnerabilitiesRequest.repositoryName;
+                    reference = listInstanceArtifactVulnerabilitiesRequest.reference;
+                } else {
+                    instanceId = listInstanceArtifactVulnerabilitiesRequest['instance_id'];
+                    namespaceName = listInstanceArtifactVulnerabilitiesRequest['namespace_name'];
+                    repositoryName = listInstanceArtifactVulnerabilitiesRequest['repository_name'];
+                    reference = listInstanceArtifactVulnerabilitiesRequest['reference'];
+                }
+            }
+
+        
+            if (instanceId === null || instanceId === undefined) {
+            throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling listInstanceArtifactVulnerabilities.');
+            }
+            if (namespaceName === null || namespaceName === undefined) {
+            throw new RequiredError('namespaceName','Required parameter namespaceName was null or undefined when calling listInstanceArtifactVulnerabilities.');
+            }
+            if (repositoryName === null || repositoryName === undefined) {
+            throw new RequiredError('repositoryName','Required parameter repositoryName was null or undefined when calling listInstanceArtifactVulnerabilities.');
+            }
+            if (reference === null || reference === undefined) {
+            throw new RequiredError('reference','Required parameter reference was null or undefined when calling listInstanceArtifactVulnerabilities.');
+            }
+
+            options.pathParams = { 'instance_id': instanceId,'namespace_name': namespaceName,'repository_name': repositoryName,'reference': reference, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 获取制品版本列表
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -9236,16 +10030,20 @@ export const ParamCreater = function () {
             let offset;
             
             let limit;
+            
+            let selfOnly;
 
             if (listInstanceLtCredentialsRequest !== null && listInstanceLtCredentialsRequest !== undefined) {
                 if (listInstanceLtCredentialsRequest instanceof ListInstanceLtCredentialsRequest) {
                     instanceId = listInstanceLtCredentialsRequest.instanceId;
                     offset = listInstanceLtCredentialsRequest.offset;
                     limit = listInstanceLtCredentialsRequest.limit;
+                    selfOnly = listInstanceLtCredentialsRequest.selfOnly;
                 } else {
                     instanceId = listInstanceLtCredentialsRequest['instance_id'];
                     offset = listInstanceLtCredentialsRequest['offset'];
                     limit = listInstanceLtCredentialsRequest['limit'];
+                    selfOnly = listInstanceLtCredentialsRequest['self_only'];
                 }
             }
 
@@ -9258,6 +10056,9 @@ export const ParamCreater = function () {
             }
             if (limit !== null && limit !== undefined) {
                 localVarQueryParameter['limit'] = limit;
+            }
+            if (selfOnly !== null && selfOnly !== undefined) {
+                localVarQueryParameter['self_only'] = selfOnly;
             }
 
             options.queryParams = localVarQueryParameter;
@@ -10980,6 +11781,87 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 获取制品清理的计划信息
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showGcSchedule(showGcScheduleRequest?: ShowGcScheduleRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2/{project_id}/instances/{instance_id}/system/gc/schedule",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let instanceId;
+
+            if (showGcScheduleRequest !== null && showGcScheduleRequest !== undefined) {
+                if (showGcScheduleRequest instanceof ShowGcScheduleRequest) {
+                    instanceId = showGcScheduleRequest.instanceId;
+                } else {
+                    instanceId = showGcScheduleRequest['instance_id'];
+                }
+            }
+
+        
+            if (instanceId === null || instanceId === undefined) {
+            throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling showGcSchedule.');
+            }
+
+            options.pathParams = { 'instance_id': instanceId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询制品清理的任务详情
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showGcTask(showGcTaskRequest?: ShowGcTaskRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2/{project_id}/instances/{instance_id}/system/gc/{gc_id}",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let instanceId;
+            
+            let gcId;
+
+            if (showGcTaskRequest !== null && showGcTaskRequest !== undefined) {
+                if (showGcTaskRequest instanceof ShowGcTaskRequest) {
+                    instanceId = showGcTaskRequest.instanceId;
+                    gcId = showGcTaskRequest.gcId;
+                } else {
+                    instanceId = showGcTaskRequest['instance_id'];
+                    gcId = showGcTaskRequest['gc_id'];
+                }
+            }
+
+        
+            if (instanceId === null || instanceId === undefined) {
+            throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling showGcTask.');
+            }
+            if (gcId === null || gcId === undefined) {
+            throw new RequiredError('gcId','Required parameter gcId was null or undefined when calling showGcTask.');
+            }
+
+            options.pathParams = { 'instance_id': instanceId,'gc_id': gcId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 获取实例详情
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -11031,7 +11913,7 @@ export const ParamCreater = function () {
                 headers: {}
             };
             const localVarHeaderParameter = {} as any;
-
+            const localVarQueryParameter = {} as any;
             
             let instanceId;
             
@@ -11040,6 +11922,8 @@ export const ParamCreater = function () {
             let repositoryName;
             
             let reference;
+            
+            let withScanOverview;
 
             if (showInstanceArtifactRequest !== null && showInstanceArtifactRequest !== undefined) {
                 if (showInstanceArtifactRequest instanceof ShowInstanceArtifactRequest) {
@@ -11047,11 +11931,13 @@ export const ParamCreater = function () {
                     namespaceName = showInstanceArtifactRequest.namespaceName;
                     repositoryName = showInstanceArtifactRequest.repositoryName;
                     reference = showInstanceArtifactRequest.reference;
+                    withScanOverview = showInstanceArtifactRequest.withScanOverview;
                 } else {
                     instanceId = showInstanceArtifactRequest['instance_id'];
                     namespaceName = showInstanceArtifactRequest['namespace_name'];
                     repositoryName = showInstanceArtifactRequest['repository_name'];
                     reference = showInstanceArtifactRequest['reference'];
+                    withScanOverview = showInstanceArtifactRequest['with_scan_overview'];
                 }
             }
 
@@ -11068,7 +11954,11 @@ export const ParamCreater = function () {
             if (reference === null || reference === undefined) {
             throw new RequiredError('reference','Required parameter reference was null or undefined when calling showInstanceArtifact.');
             }
+            if (withScanOverview !== null && withScanOverview !== undefined) {
+                localVarQueryParameter['with_scan_overview'] = withScanOverview;
+            }
 
+            options.queryParams = localVarQueryParameter;
             options.pathParams = { 'instance_id': instanceId,'namespace_name': namespaceName,'repository_name': repositoryName,'reference': reference, };
             options.headers = localVarHeaderParameter;
             return options;
@@ -11737,6 +12627,108 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 手动启动制品扫描
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        startManualScanning(startManualScanningRequest?: StartManualScanningRequest) {
+            const options = {
+                method: "POST",
+                url: "/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}/scan",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let instanceId;
+            
+            let namespaceName;
+            
+            let repositoryName;
+            
+            let reference;
+
+            if (startManualScanningRequest !== null && startManualScanningRequest !== undefined) {
+                if (startManualScanningRequest instanceof StartManualScanningRequest) {
+                    instanceId = startManualScanningRequest.instanceId;
+                    namespaceName = startManualScanningRequest.namespaceName;
+                    repositoryName = startManualScanningRequest.repositoryName;
+                    reference = startManualScanningRequest.reference;
+                } else {
+                    instanceId = startManualScanningRequest['instance_id'];
+                    namespaceName = startManualScanningRequest['namespace_name'];
+                    repositoryName = startManualScanningRequest['repository_name'];
+                    reference = startManualScanningRequest['reference'];
+                }
+            }
+
+        
+            if (instanceId === null || instanceId === undefined) {
+            throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling startManualScanning.');
+            }
+            if (namespaceName === null || namespaceName === undefined) {
+            throw new RequiredError('namespaceName','Required parameter namespaceName was null or undefined when calling startManualScanning.');
+            }
+            if (repositoryName === null || repositoryName === undefined) {
+            throw new RequiredError('repositoryName','Required parameter repositoryName was null or undefined when calling startManualScanning.');
+            }
+            if (reference === null || reference === undefined) {
+            throw new RequiredError('reference','Required parameter reference was null or undefined when calling startManualScanning.');
+            }
+
+            options.pathParams = { 'instance_id': instanceId,'namespace_name': namespaceName,'repository_name': repositoryName,'reference': reference, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 停止制品清理任务
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        stopGcTask(stopGcTaskRequest?: StopGcTaskRequest) {
+            const options = {
+                method: "PUT",
+                url: "/v2/{project_id}/instances/{instance_id}/system/gc/{gc_id}",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let instanceId;
+            
+            let gcId;
+
+            if (stopGcTaskRequest !== null && stopGcTaskRequest !== undefined) {
+                if (stopGcTaskRequest instanceof StopGcTaskRequest) {
+                    instanceId = stopGcTaskRequest.instanceId;
+                    gcId = stopGcTaskRequest.gcId;
+                } else {
+                    instanceId = stopGcTaskRequest['instance_id'];
+                    gcId = stopGcTaskRequest['gc_id'];
+                }
+            }
+
+        
+            if (instanceId === null || instanceId === undefined) {
+            throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling stopGcTask.');
+            }
+            if (gcId === null || gcId === undefined) {
+            throw new RequiredError('gcId','Required parameter gcId was null or undefined when calling stopGcTask.');
+            }
+
+            options.pathParams = { 'instance_id': instanceId,'gc_id': gcId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 停止镜像同步任务
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -11829,6 +12821,52 @@ export const ParamCreater = function () {
 
             options.data = body !== undefined ? body : {};
             options.pathParams = { 'instance_id': instanceId,'domainname_id': domainnameId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 配置制品清理计划
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        updateGcSchedule(updateGcScheduleRequest?: UpdateGcScheduleRequest) {
+            const options = {
+                method: "PUT",
+                url: "/v2/{project_id}/instances/{instance_id}/system/gc/schedule",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let instanceId;
+
+            if (updateGcScheduleRequest !== null && updateGcScheduleRequest !== undefined) {
+                if (updateGcScheduleRequest instanceof UpdateGcScheduleRequest) {
+                    instanceId = updateGcScheduleRequest.instanceId;
+                    body = updateGcScheduleRequest.body
+                } else {
+                    instanceId = updateGcScheduleRequest['instance_id'];
+                    body = updateGcScheduleRequest['body'];
+                }
+            }
+
+        
+            if (instanceId === null || instanceId === undefined) {
+            throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling updateGcSchedule.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'instance_id': instanceId, };
             options.headers = localVarHeaderParameter;
             return options;
         },

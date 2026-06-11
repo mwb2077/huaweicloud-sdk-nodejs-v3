@@ -34,6 +34,13 @@ export class SwrRegion {
     public static ME_EAST_1 = new Region("me-east-1", ["https://swr-api.me-east-1.myhuaweicloud.com"]);
     public static EU_WEST_0 = new Region("eu-west-0", ["https://swr-api.eu-west-0.myhuaweicloud.com"]);
     public static AP_SOUTHEAST_5 = new Region("ap-southeast-5", ["https://swr-api.ap-southeast-5.myhuaweicloud.com"]);
+    public static CN_EAST_5 = new Region("cn-east-5", ["https://swr-api.cn-east-5.myhuaweicloud.com"]);
+    public static AF_NORTH_1 = new Region("af-north-1", ["https://swr-api.af-north-1.myhuaweicloud.com"]);
+    public static AP_SOUTHEAST_4 = new Region("ap-southeast-4", ["https://swr-api.ap-southeast-4.myhuaweicloud.com"]);
+    public static CN_SOUTH_4 = new Region("cn-south-4", ["https://swr-api.cn-south-4.myhuaweicloud.com"]);
+    public static CN_SOUTHWEST_3 = new Region("cn-southwest-3", ["https://swr-api.cn-southwest-3.myhuaweicloud.com"]);
+    public static CN_NORTH_12 = new Region("cn-north-12", ["https://swr-api.cn-north-12.myhuaweicloud.com"]);
+    public static SA_PERU_1 = new Region("sa-peru-1", ["https://swr-api.sa-peru-1.myhuaweicloud.com"]);
     
 
     private static REGION_MAP: RegionMap = {
@@ -64,7 +71,14 @@ export class SwrRegion {
         "my-kualalumpur-1":SwrRegion.MY_KUALALUMPUR_1,
         "me-east-1":SwrRegion.ME_EAST_1,
         "eu-west-0":SwrRegion.EU_WEST_0,
-        "ap-southeast-5":SwrRegion.AP_SOUTHEAST_5
+        "ap-southeast-5":SwrRegion.AP_SOUTHEAST_5,
+        "cn-east-5":SwrRegion.CN_EAST_5,
+        "af-north-1":SwrRegion.AF_NORTH_1,
+        "ap-southeast-4":SwrRegion.AP_SOUTHEAST_4,
+        "cn-south-4":SwrRegion.CN_SOUTH_4,
+        "cn-southwest-3":SwrRegion.CN_SOUTHWEST_3,
+        "cn-north-12":SwrRegion.CN_NORTH_12,
+        "sa-peru-1":SwrRegion.SA_PERU_1
     };
   
     public static valueOf(regionId: string) {

@@ -1,12 +1,14 @@
 
 
 export class SlowSQLInfoResult {
+    private 'db_name'?: string;
+    private 'schema_name'?: string;
     public sql?: string;
     private 'sql_id'?: string;
     private 'user_name'?: string;
     private 'sql_text'?: string;
     private 'query_plan'?: string;
-    public calls?: string;
+    public calls?: number;
     private 'avg_exec_time'?: string;
     private 'avg_cpu_time'?: string;
     private 'avg_io_time'?: string;
@@ -17,6 +19,26 @@ export class SlowSQLInfoResult {
     private 'node_id'?: string;
     private 'node_name'?: string;
     public constructor() { 
+    }
+    public withDbName(dbName: string): SlowSQLInfoResult {
+        this['db_name'] = dbName;
+        return this;
+    }
+    public set dbName(dbName: string  | undefined) {
+        this['db_name'] = dbName;
+    }
+    public get dbName(): string | undefined {
+        return this['db_name'];
+    }
+    public withSchemaName(schemaName: string): SlowSQLInfoResult {
+        this['schema_name'] = schemaName;
+        return this;
+    }
+    public set schemaName(schemaName: string  | undefined) {
+        this['schema_name'] = schemaName;
+    }
+    public get schemaName(): string | undefined {
+        return this['schema_name'];
     }
     public withSql(sql: string): SlowSQLInfoResult {
         this['sql'] = sql;
@@ -62,7 +84,7 @@ export class SlowSQLInfoResult {
     public get queryPlan(): string | undefined {
         return this['query_plan'];
     }
-    public withCalls(calls: string): SlowSQLInfoResult {
+    public withCalls(calls: number): SlowSQLInfoResult {
         this['calls'] = calls;
         return this;
     }

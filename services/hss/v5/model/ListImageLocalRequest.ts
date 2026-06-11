@@ -2,10 +2,10 @@
 
 export class ListImageLocalRequest {
     private 'enterprise_project_id'?: string;
-    private 'image_name'?: string;
-    private 'image_version'?: string;
     public offset?: number;
     public limit?: number;
+    private 'image_name'?: string;
+    private 'image_version'?: string;
     private 'scan_status'?: string;
     private 'local_image_type'?: string;
     private 'image_size'?: number;
@@ -22,6 +22,7 @@ export class ListImageLocalRequest {
     private 'pod_id'?: string;
     private 'pod_name'?: string;
     private 'app_name'?: string;
+    private 'has_container'?: boolean;
     public constructor() { 
     }
     public withEnterpriseProjectId(enterpriseProjectId: string): ListImageLocalRequest {
@@ -33,6 +34,14 @@ export class ListImageLocalRequest {
     }
     public get enterpriseProjectId(): string | undefined {
         return this['enterprise_project_id'];
+    }
+    public withOffset(offset: number): ListImageLocalRequest {
+        this['offset'] = offset;
+        return this;
+    }
+    public withLimit(limit: number): ListImageLocalRequest {
+        this['limit'] = limit;
+        return this;
     }
     public withImageName(imageName: string): ListImageLocalRequest {
         this['image_name'] = imageName;
@@ -53,14 +62,6 @@ export class ListImageLocalRequest {
     }
     public get imageVersion(): string | undefined {
         return this['image_version'];
-    }
-    public withOffset(offset: number): ListImageLocalRequest {
-        this['offset'] = offset;
-        return this;
-    }
-    public withLimit(limit: number): ListImageLocalRequest {
-        this['limit'] = limit;
-        return this;
     }
     public withScanStatus(scanStatus: string): ListImageLocalRequest {
         this['scan_status'] = scanStatus;
@@ -221,5 +222,15 @@ export class ListImageLocalRequest {
     }
     public get appName(): string | undefined {
         return this['app_name'];
+    }
+    public withHasContainer(hasContainer: boolean): ListImageLocalRequest {
+        this['has_container'] = hasContainer;
+        return this;
+    }
+    public set hasContainer(hasContainer: boolean  | undefined) {
+        this['has_container'] = hasContainer;
+    }
+    public get hasContainer(): boolean | undefined {
+        return this['has_container'];
     }
 }

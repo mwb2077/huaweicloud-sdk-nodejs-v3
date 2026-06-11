@@ -12,13 +12,12 @@ export class SyncTaskInfo {
     private 'dst_region'?: string;
     public description?: string;
     public status?: SyncTaskInfoStatusEnum | string;
-    private 'enable_kms'?: boolean;
     private 'enable_metadata_migration'?: boolean;
     private 'enable_restore'?: boolean;
-    private 'object_overwrite_mode'?: SyncTaskInfoObjectOverwriteModeEnum | string;
-    private 'dst_storage_policy'?: SyncTaskInfoDstStoragePolicyEnum | string;
     private 'app_id'?: string;
     private 'source_cdn'?: SourceCdnResp;
+    private 'object_overwrite_mode'?: SyncTaskInfoObjectOverwriteModeEnum | string;
+    private 'dst_storage_policy'?: SyncTaskInfoDstStoragePolicyEnum | string;
     private 'consistency_check'?: SyncTaskInfoConsistencyCheckEnum | string;
     public constructor() { 
     }
@@ -110,16 +109,6 @@ export class SyncTaskInfo {
         this['status'] = status;
         return this;
     }
-    public withEnableKms(enableKms: boolean): SyncTaskInfo {
-        this['enable_kms'] = enableKms;
-        return this;
-    }
-    public set enableKms(enableKms: boolean  | undefined) {
-        this['enable_kms'] = enableKms;
-    }
-    public get enableKms(): boolean | undefined {
-        return this['enable_kms'];
-    }
     public withEnableMetadataMigration(enableMetadataMigration: boolean): SyncTaskInfo {
         this['enable_metadata_migration'] = enableMetadataMigration;
         return this;
@@ -140,26 +129,6 @@ export class SyncTaskInfo {
     public get enableRestore(): boolean | undefined {
         return this['enable_restore'];
     }
-    public withObjectOverwriteMode(objectOverwriteMode: SyncTaskInfoObjectOverwriteModeEnum | string): SyncTaskInfo {
-        this['object_overwrite_mode'] = objectOverwriteMode;
-        return this;
-    }
-    public set objectOverwriteMode(objectOverwriteMode: SyncTaskInfoObjectOverwriteModeEnum | string  | undefined) {
-        this['object_overwrite_mode'] = objectOverwriteMode;
-    }
-    public get objectOverwriteMode(): SyncTaskInfoObjectOverwriteModeEnum | string | undefined {
-        return this['object_overwrite_mode'];
-    }
-    public withDstStoragePolicy(dstStoragePolicy: SyncTaskInfoDstStoragePolicyEnum | string): SyncTaskInfo {
-        this['dst_storage_policy'] = dstStoragePolicy;
-        return this;
-    }
-    public set dstStoragePolicy(dstStoragePolicy: SyncTaskInfoDstStoragePolicyEnum | string  | undefined) {
-        this['dst_storage_policy'] = dstStoragePolicy;
-    }
-    public get dstStoragePolicy(): SyncTaskInfoDstStoragePolicyEnum | string | undefined {
-        return this['dst_storage_policy'];
-    }
     public withAppId(appId: string): SyncTaskInfo {
         this['app_id'] = appId;
         return this;
@@ -179,6 +148,26 @@ export class SyncTaskInfo {
     }
     public get sourceCdn(): SourceCdnResp | undefined {
         return this['source_cdn'];
+    }
+    public withObjectOverwriteMode(objectOverwriteMode: SyncTaskInfoObjectOverwriteModeEnum | string): SyncTaskInfo {
+        this['object_overwrite_mode'] = objectOverwriteMode;
+        return this;
+    }
+    public set objectOverwriteMode(objectOverwriteMode: SyncTaskInfoObjectOverwriteModeEnum | string  | undefined) {
+        this['object_overwrite_mode'] = objectOverwriteMode;
+    }
+    public get objectOverwriteMode(): SyncTaskInfoObjectOverwriteModeEnum | string | undefined {
+        return this['object_overwrite_mode'];
+    }
+    public withDstStoragePolicy(dstStoragePolicy: SyncTaskInfoDstStoragePolicyEnum | string): SyncTaskInfo {
+        this['dst_storage_policy'] = dstStoragePolicy;
+        return this;
+    }
+    public set dstStoragePolicy(dstStoragePolicy: SyncTaskInfoDstStoragePolicyEnum | string  | undefined) {
+        this['dst_storage_policy'] = dstStoragePolicy;
+    }
+    public get dstStoragePolicy(): SyncTaskInfoDstStoragePolicyEnum | string | undefined {
+        return this['dst_storage_policy'];
     }
     public withConsistencyCheck(consistencyCheck: SyncTaskInfoConsistencyCheckEnum | string): SyncTaskInfo {
         this['consistency_check'] = consistencyCheck;
@@ -206,8 +195,7 @@ export enum SyncTaskInfoSrcCloudTypeEnum {
     KINGSOFTCLOUD = 'KingsoftCloud',
     BAIDU = 'Baidu',
     QINIU = 'Qiniu',
-    UCLOUD = 'UCloud',
-    GOOGLE = 'Google'
+    UCLOUD = 'UCloud'
 }
 /**
     * @export

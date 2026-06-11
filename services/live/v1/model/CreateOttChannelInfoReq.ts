@@ -11,19 +11,20 @@ export class CreateOttChannelInfoReq {
     public id?: string;
     public name?: string;
     public state?: CreateOttChannelInfoReqStateEnum | string;
+    public mode?: CreateOttChannelInfoReqModeEnum | string;
+    public region?: string;
     public input?: InputStreamInfo;
     private 'encoder_settings'?: Array<ModifyOttChannelEncoderSettingsEncoderSettings>;
     private 'record_settings'?: CreateOttChannelInfoReqRecordSettings;
     public endpoints?: Array<EndpointItem>;
     private 'encoder_settings_expand'?: EncoderSettingsExpand;
-    public constructor(domain?: string, appName?: string, id?: string, state?: string, input?: InputStreamInfo, recordSettings?: CreateOttChannelInfoReqRecordSettings, endpoints?: Array<EndpointItem>) { 
+    public constructor(domain?: string, appName?: string, id?: string, state?: string, input?: InputStreamInfo, recordSettings?: CreateOttChannelInfoReqRecordSettings) { 
         this['domain'] = domain;
         this['app_name'] = appName;
         this['id'] = id;
         this['state'] = state;
         this['input'] = input;
         this['record_settings'] = recordSettings;
-        this['endpoints'] = endpoints;
     }
     public withDomain(domain: string): CreateOttChannelInfoReq {
         this['domain'] = domain;
@@ -49,6 +50,14 @@ export class CreateOttChannelInfoReq {
     }
     public withState(state: CreateOttChannelInfoReqStateEnum | string): CreateOttChannelInfoReq {
         this['state'] = state;
+        return this;
+    }
+    public withMode(mode: CreateOttChannelInfoReqModeEnum | string): CreateOttChannelInfoReq {
+        this['mode'] = mode;
+        return this;
+    }
+    public withRegion(region: string): CreateOttChannelInfoReq {
+        this['region'] = region;
         return this;
     }
     public withInput(input: InputStreamInfo): CreateOttChannelInfoReq {
@@ -98,4 +107,12 @@ export class CreateOttChannelInfoReq {
 export enum CreateOttChannelInfoReqStateEnum {
     ON = 'ON',
     OFF = 'OFF'
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export enum CreateOttChannelInfoReqModeEnum {
+    ADD_CDN = 'ADD_CDN',
+    ONLY_OS = 'ONLY_OS'
 }

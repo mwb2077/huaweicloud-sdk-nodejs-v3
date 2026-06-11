@@ -1,30 +1,32 @@
+import { AfterHbaConfOption } from './AfterHbaConfOption';
+import { BeforeHbaConfOption } from './BeforeHbaConfOption';
 
 
 export class ModifyHbaConfRequestBody {
-    private 'before_confs'?: object;
-    private 'after_confs'?: object;
-    public constructor(beforeConfs?: object, afterConfs?: object) { 
-        this['before_confs'] = beforeConfs;
-        this['after_confs'] = afterConfs;
+    private 'before_conf'?: BeforeHbaConfOption;
+    private 'after_conf'?: AfterHbaConfOption;
+    public constructor(beforeConf?: BeforeHbaConfOption, afterConf?: AfterHbaConfOption) { 
+        this['before_conf'] = beforeConf;
+        this['after_conf'] = afterConf;
     }
-    public withBeforeConfs(beforeConfs: object): ModifyHbaConfRequestBody {
-        this['before_confs'] = beforeConfs;
+    public withBeforeConf(beforeConf: BeforeHbaConfOption): ModifyHbaConfRequestBody {
+        this['before_conf'] = beforeConf;
         return this;
     }
-    public set beforeConfs(beforeConfs: object  | undefined) {
-        this['before_confs'] = beforeConfs;
+    public set beforeConf(beforeConf: BeforeHbaConfOption  | undefined) {
+        this['before_conf'] = beforeConf;
     }
-    public get beforeConfs(): object | undefined {
-        return this['before_confs'];
+    public get beforeConf(): BeforeHbaConfOption | undefined {
+        return this['before_conf'];
     }
-    public withAfterConfs(afterConfs: object): ModifyHbaConfRequestBody {
-        this['after_confs'] = afterConfs;
+    public withAfterConf(afterConf: AfterHbaConfOption): ModifyHbaConfRequestBody {
+        this['after_conf'] = afterConf;
         return this;
     }
-    public set afterConfs(afterConfs: object  | undefined) {
-        this['after_confs'] = afterConfs;
+    public set afterConf(afterConf: AfterHbaConfOption  | undefined) {
+        this['after_conf'] = afterConf;
     }
-    public get afterConfs(): object | undefined {
-        return this['after_confs'];
+    public get afterConf(): AfterHbaConfOption | undefined {
+        return this['after_conf'];
     }
 }

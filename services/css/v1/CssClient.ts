@@ -2,7 +2,6 @@ import { HcClient } from "@huaweicloud/huaweicloud-sdk-core/HcClient";
 import { ClientBuilder } from "@huaweicloud/huaweicloud-sdk-core/ClientBuilder";
 import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
 
-import { AIOpsRiskInfo } from './model/AIOpsRiskInfo';
 import { Actions } from './model/Actions';
 import { AddFavoriteReq } from './model/AddFavoriteReq';
 import { AddFavoriteReqTemplate } from './model/AddFavoriteReqTemplate';
@@ -11,6 +10,10 @@ import { AddFavoriteResponse } from './model/AddFavoriteResponse';
 import { AddIndependentNodeRequest } from './model/AddIndependentNodeRequest';
 import { AddIndependentNodeResponse } from './model/AddIndependentNodeResponse';
 import { AddressAndPorts } from './model/AddressAndPorts';
+import { AiOps } from './model/AiOps';
+import { AiOpsDetector } from './model/AiOpsDetector';
+import { AiOpsRiskObject } from './model/AiOpsRiskObject';
+import { AiOpsSetting } from './model/AiOpsSetting';
 import { BackupRsp } from './model/BackupRsp';
 import { BatchAddOrDeleteTagOnClusterReq } from './model/BatchAddOrDeleteTagOnClusterReq';
 import { BindPublicReq } from './model/BindPublicReq';
@@ -18,6 +21,7 @@ import { BindPublicReqEip } from './model/BindPublicReqEip';
 import { BindPublicReqEipBandWidth } from './model/BindPublicReqEipBandWidth';
 import { BindPublicReqEipReq } from './model/BindPublicReqEipReq';
 import { CertificatesResource } from './model/CertificatesResource';
+import { CertsRecordsDatastore } from './model/CertsRecordsDatastore';
 import { ChangeClusterSubnetRequest } from './model/ChangeClusterSubnetRequest';
 import { ChangeClusterSubnetResponse } from './model/ChangeClusterSubnetResponse';
 import { ChangeModeReq } from './model/ChangeModeReq';
@@ -26,6 +30,8 @@ import { ChangeModeResponse } from './model/ChangeModeResponse';
 import { ChangeSecurityGroupReq } from './model/ChangeSecurityGroupReq';
 import { ChangeSecurityGroupRequest } from './model/ChangeSecurityGroupRequest';
 import { ChangeSecurityGroupResponse } from './model/ChangeSecurityGroupResponse';
+import { CloseAiOpsSettingRequest } from './model/CloseAiOpsSettingRequest';
+import { CloseAiOpsSettingResponse } from './model/CloseAiOpsSettingResponse';
 import { CloseKibanaPublicReq } from './model/CloseKibanaPublicReq';
 import { ClusterChangeMainSubnet } from './model/ClusterChangeMainSubnet';
 import { ClusterDetailDatastore } from './model/ClusterDetailDatastore';
@@ -41,8 +47,9 @@ import { ClusterLogRecord } from './model/ClusterLogRecord';
 import { ClusterVolumeRsp } from './model/ClusterVolumeRsp';
 import { ConfigListRsp } from './model/ConfigListRsp';
 import { Confs } from './model/Confs';
-import { Confsetting } from './model/Confsetting';
 import { Connections } from './model/Connections';
+import { CreateAgencyRequest } from './model/CreateAgencyRequest';
+import { CreateAgencyResponse } from './model/CreateAgencyResponse';
 import { CreateAiOpsRequest } from './model/CreateAiOpsRequest';
 import { CreateAiOpsRequestBody } from './model/CreateAiOpsRequestBody';
 import { CreateAiOpsRequestBodyAlarm } from './model/CreateAiOpsRequestBodyAlarm';
@@ -78,11 +85,11 @@ import { CreateSnapshotReq } from './model/CreateSnapshotReq';
 import { CreateSnapshotRequest } from './model/CreateSnapshotRequest';
 import { CreateSnapshotResponse } from './model/CreateSnapshotResponse';
 import { CurrentNodeDetail } from './model/CurrentNodeDetail';
-import { CustomCertsResource } from './model/CustomCertsResource';
 import { CustomTemplates } from './model/CustomTemplates';
-import { DefaultCertsResource } from './model/DefaultCertsResource';
 import { DeleteAiOpsRequest } from './model/DeleteAiOpsRequest';
 import { DeleteAiOpsResponse } from './model/DeleteAiOpsResponse';
+import { DeleteCertsRequest } from './model/DeleteCertsRequest';
+import { DeleteCertsResponse } from './model/DeleteCertsResponse';
 import { DeleteClusterRequest } from './model/DeleteClusterRequest';
 import { DeleteClusterResponse } from './model/DeleteClusterResponse';
 import { DeleteClustersTagsRequest } from './model/DeleteClustersTagsRequest';
@@ -99,34 +106,32 @@ import { DeleteSnapshotResponse } from './model/DeleteSnapshotResponse';
 import { DeleteTemplateReq } from './model/DeleteTemplateReq';
 import { DeleteTemplateRequest } from './model/DeleteTemplateRequest';
 import { DeleteTemplateResponse } from './model/DeleteTemplateResponse';
+import { DiskType } from './model/DiskType';
 import { DownloadCertRequest } from './model/DownloadCertRequest';
 import { DownloadCertResponse } from './model/DownloadCertResponse';
 import { ElbWhiteListResp } from './model/ElbWhiteListResp';
+import { Elbv3Listener } from './model/Elbv3Listener';
 import { EnableOrDisableElbRequest } from './model/EnableOrDisableElbRequest';
 import { EnableOrDisableElbResponse } from './model/EnableOrDisableElbResponse';
-import { EsHealthIpgroupResource } from './model/EsHealthIpgroupResource';
-import { EsHealthmonitorsResource } from './model/EsHealthmonitorsResource';
 import { EsIpgroupResource } from './model/EsIpgroupResource';
 import { EsListenerRequest } from './model/EsListenerRequest';
 import { EsListenerResponse } from './model/EsListenerResponse';
-import { EsListenersResource } from './model/EsListenersResource';
-import { EsLoadBalancerResource } from './model/EsLoadBalancerResource';
-import { EsPublicipsResource } from './model/EsPublicipsResource';
 import { EsflavorsVersionsFlavorsResp } from './model/EsflavorsVersionsFlavorsResp';
 import { EsflavorsVersionsResp } from './model/EsflavorsVersionsResp';
 import { ExtendClusterGrowReq } from './model/ExtendClusterGrowReq';
 import { ExtendClusterReq } from './model/ExtendClusterReq';
+import { Flavor } from './model/Flavor';
+import { FlavorRespVersionBody } from './model/FlavorRespVersionBody';
 import { GetLogBackupReq } from './model/GetLogBackupReq';
 import { GetTargetImageIdDetail } from './model/GetTargetImageIdDetail';
 import { GetUpgradeDetailInfo } from './model/GetUpgradeDetailInfo';
+import { IdListWrapper } from './model/IdListWrapper';
 import { IndependentBodyReq } from './model/IndependentBodyReq';
 import { IndependentReq } from './model/IndependentReq';
 import { KibanaElbWhiteListResp } from './model/KibanaElbWhiteListResp';
 import { ListActionsRequest } from './model/ListActionsRequest';
 import { ListActionsResponse } from './model/ListActionsResponse';
 import { ListAiOpsRequest } from './model/ListAiOpsRequest';
-import { ListAiOpsRequestBodyAiopsList } from './model/ListAiOpsRequestBodyAiopsList';
-import { ListAiOpsRequestBodySummary } from './model/ListAiOpsRequestBodySummary';
 import { ListAiOpsResponse } from './model/ListAiOpsResponse';
 import { ListCertsRequest } from './model/ListCertsRequest';
 import { ListCertsResponse } from './model/ListCertsResponse';
@@ -136,6 +141,8 @@ import { ListClustersTagsRequest } from './model/ListClustersTagsRequest';
 import { ListClustersTagsResponse } from './model/ListClustersTagsResponse';
 import { ListConfsRequest } from './model/ListConfsRequest';
 import { ListConfsResponse } from './model/ListConfsResponse';
+import { ListDiskTypeRequest } from './model/ListDiskTypeRequest';
+import { ListDiskTypeResponse } from './model/ListDiskTypeResponse';
 import { ListElbCertsRequest } from './model/ListElbCertsRequest';
 import { ListElbCertsResponse } from './model/ListElbCertsResponse';
 import { ListElbsRequest } from './model/ListElbsRequest';
@@ -148,6 +155,8 @@ import { ListLogsJobRequest } from './model/ListLogsJobRequest';
 import { ListLogsJobResponse } from './model/ListLogsJobResponse';
 import { ListPipelinesRequest } from './model/ListPipelinesRequest';
 import { ListPipelinesResponse } from './model/ListPipelinesResponse';
+import { ListRoutesRequest } from './model/ListRoutesRequest';
+import { ListRoutesResponse } from './model/ListRoutesResponse';
 import { ListSmnTopicsRequest } from './model/ListSmnTopicsRequest';
 import { ListSmnTopicsResponse } from './model/ListSmnTopicsResponse';
 import { ListSnapshotBackupsDatastoreResp } from './model/ListSnapshotBackupsDatastoreResp';
@@ -160,18 +169,30 @@ import { ListYmlsJobRequest } from './model/ListYmlsJobRequest';
 import { ListYmlsJobResponse } from './model/ListYmlsJobResponse';
 import { ListYmlsRequest } from './model/ListYmlsRequest';
 import { ListYmlsResponse } from './model/ListYmlsResponse';
+import { ListenerIpGroup } from './model/ListenerIpGroup';
+import { LoadBalancer } from './model/LoadBalancer';
 import { LoadCustomThesaurusReq } from './model/LoadCustomThesaurusReq';
 import { LoadbalancersResource } from './model/LoadbalancersResource';
 import { LogConfiguration } from './model/LogConfiguration';
 import { LogList } from './model/LogList';
+import { Member } from './model/Member';
+import { Model } from './model/Model';
+import { ModelList } from './model/ModelList';
 import { PayInfoBody } from './model/PayInfoBody';
 import { PeriodReq } from './model/PeriodReq';
 import { PermissionInfo } from './model/PermissionInfo';
 import { Pipelines } from './model/Pipelines';
+import { PublicIpInfo } from './model/PublicIpInfo';
 import { PublicKibanaRespBody } from './model/PublicKibanaRespBody';
+import { RealTimeLogCollect } from './model/RealTimeLogCollect';
+import { RebootClusterRequest } from './model/RebootClusterRequest';
+import { RebootClusterResponse } from './model/RebootClusterResponse';
 import { ResetPasswordReq } from './model/ResetPasswordReq';
 import { ResetPasswordRequest } from './model/ResetPasswordRequest';
 import { ResetPasswordResponse } from './model/ResetPasswordResponse';
+import { ResizeFlavor } from './model/ResizeFlavor';
+import { ResizeFlavorRspVersionBody } from './model/ResizeFlavorRspVersionBody';
+import { ResourceTenant } from './model/ResourceTenant';
 import { RestartClusterRequest } from './model/RestartClusterRequest';
 import { RestartClusterResponse } from './model/RestartClusterResponse';
 import { RestoreSnapshotReq } from './model/RestoreSnapshotReq';
@@ -182,18 +203,32 @@ import { RetryUpgradeTaskRequest } from './model/RetryUpgradeTaskRequest';
 import { RetryUpgradeTaskResponse } from './model/RetryUpgradeTaskResponse';
 import { RoleExtendGrowReq } from './model/RoleExtendGrowReq';
 import { RoleExtendReq } from './model/RoleExtendReq';
+import { RouteRespsResource } from './model/RouteRespsResource';
 import { SetRDSBackupCnfReq } from './model/SetRDSBackupCnfReq';
 import { Setting } from './model/Setting';
+import { ShowAiOpsDetectorRequest } from './model/ShowAiOpsDetectorRequest';
+import { ShowAiOpsDetectorResponse } from './model/ShowAiOpsDetectorResponse';
+import { ShowAiOpsSettingRequest } from './model/ShowAiOpsSettingRequest';
+import { ShowAiOpsSettingResponse } from './model/ShowAiOpsSettingResponse';
 import { ShowAllTagsTagsResp } from './model/ShowAllTagsTagsResp';
 import { ShowAutoCreatePolicyRequest } from './model/ShowAutoCreatePolicyRequest';
 import { ShowAutoCreatePolicyResponse } from './model/ShowAutoCreatePolicyResponse';
+import { ShowCertsDetailRequest } from './model/ShowCertsDetailRequest';
+import { ShowCertsDetailResponse } from './model/ShowCertsDetailResponse';
 import { ShowClusterDetailRequest } from './model/ShowClusterDetailRequest';
 import { ShowClusterDetailResponse } from './model/ShowClusterDetailResponse';
 import { ShowClusterTagRequest } from './model/ShowClusterTagRequest';
 import { ShowClusterTagResponse } from './model/ShowClusterTagResponse';
 import { ShowClusterVolumeRsp } from './model/ShowClusterVolumeRsp';
+import { ShowClusterVolumeUsageRequest } from './model/ShowClusterVolumeUsageRequest';
+import { ShowClusterVolumeUsageResponse } from './model/ShowClusterVolumeUsageResponse';
+import { ShowDataStoreFlavorDetailRequest } from './model/ShowDataStoreFlavorDetailRequest';
+import { ShowDataStoreFlavorDetailResponse } from './model/ShowDataStoreFlavorDetailResponse';
 import { ShowElbDetailRequest } from './model/ShowElbDetailRequest';
 import { ShowElbDetailResponse } from './model/ShowElbDetailResponse';
+import { ShowFlavorDetailRequest } from './model/ShowFlavorDetailRequest';
+import { ShowFlavorDetailResponse } from './model/ShowFlavorDetailResponse';
+import { ShowFlavorDetailRspFlavorDetail } from './model/ShowFlavorDetailRspFlavorDetail';
 import { ShowGetConfDetailRequest } from './model/ShowGetConfDetailRequest';
 import { ShowGetConfDetailResponse } from './model/ShowGetConfDetailResponse';
 import { ShowGetLogSettingRequest } from './model/ShowGetLogSettingRequest';
@@ -202,17 +237,23 @@ import { ShowIkThesaurusRequest } from './model/ShowIkThesaurusRequest';
 import { ShowIkThesaurusResponse } from './model/ShowIkThesaurusResponse';
 import { ShowLogBackupRequest } from './model/ShowLogBackupRequest';
 import { ShowLogBackupResponse } from './model/ShowLogBackupResponse';
+import { ShowResizeFlavorsRequest } from './model/ShowResizeFlavorsRequest';
+import { ShowResizeFlavorsResponse } from './model/ShowResizeFlavorsResponse';
 import { ShowTagsTagsResp } from './model/ShowTagsTagsResp';
 import { ShowVpcepConnectionRequest } from './model/ShowVpcepConnectionRequest';
 import { ShowVpcepConnectionResponse } from './model/ShowVpcepConnectionResponse';
 import { ShrinkClusterReq } from './model/ShrinkClusterReq';
 import { ShrinkNodeReq } from './model/ShrinkNodeReq';
 import { ShrinkNodesReq } from './model/ShrinkNodesReq';
+import { SnapshotPolicyResp } from './model/SnapshotPolicyResp';
 import { StartAutoSettingRequest } from './model/StartAutoSettingRequest';
 import { StartAutoSettingResponse } from './model/StartAutoSettingResponse';
 import { StartConnectivityTestReq } from './model/StartConnectivityTestReq';
 import { StartConnectivityTestRequest } from './model/StartConnectivityTestRequest';
 import { StartConnectivityTestResponse } from './model/StartConnectivityTestResponse';
+import { StartHotPipelineRequest } from './model/StartHotPipelineRequest';
+import { StartHotPipelineRequestBody } from './model/StartHotPipelineRequestBody';
+import { StartHotPipelineResponse } from './model/StartHotPipelineResponse';
 import { StartKibanaPublicReq } from './model/StartKibanaPublicReq';
 import { StartKibanaPublicReqElbWhitelist } from './model/StartKibanaPublicReqElbWhitelist';
 import { StartKibanaPublicRequest } from './model/StartKibanaPublicRequest';
@@ -252,11 +293,14 @@ import { StopSnapshotRequest } from './model/StopSnapshotRequest';
 import { StopSnapshotResponse } from './model/StopSnapshotResponse';
 import { StopVpecpRequest } from './model/StopVpecpRequest';
 import { StopVpecpResponse } from './model/StopVpecpResponse';
+import { SummaryInfo } from './model/SummaryInfo';
 import { SystemTemplates } from './model/SystemTemplates';
 import { Tag } from './model/Tag';
 import { TagReq } from './model/TagReq';
 import { UnBindPublicReq } from './model/UnBindPublicReq';
 import { UnBindPublicReqEipReq } from './model/UnBindPublicReqEipReq';
+import { UpdateAiOpsSettingRequest } from './model/UpdateAiOpsSettingRequest';
+import { UpdateAiOpsSettingResponse } from './model/UpdateAiOpsSettingResponse';
 import { UpdateAlterKibanaRequest } from './model/UpdateAlterKibanaRequest';
 import { UpdateAlterKibanaResponse } from './model/UpdateAlterKibanaResponse';
 import { UpdateAzByInstanceTypeReq } from './model/UpdateAzByInstanceTypeReq';
@@ -299,6 +343,9 @@ import { UpdatePublicKibanaBandwidthReqBandWidth } from './model/UpdatePublicKib
 import { UpdatePublicKibanaWhitelistReq } from './model/UpdatePublicKibanaWhitelistReq';
 import { UpdatePublicKibanaWhitelistRequest } from './model/UpdatePublicKibanaWhitelistRequest';
 import { UpdatePublicKibanaWhitelistResponse } from './model/UpdatePublicKibanaWhitelistResponse';
+import { UpdateRouteRequest } from './model/UpdateRouteRequest';
+import { UpdateRouteRequestBody } from './model/UpdateRouteRequestBody';
+import { UpdateRouteResponse } from './model/UpdateRouteResponse';
 import { UpdateShrinkClusterRequest } from './model/UpdateShrinkClusterRequest';
 import { UpdateShrinkClusterResponse } from './model/UpdateShrinkClusterResponse';
 import { UpdateShrinkNodesRequest } from './model/UpdateShrinkNodesRequest';
@@ -324,6 +371,9 @@ import { UpgradeCoreResponse } from './model/UpgradeCoreResponse';
 import { UpgradeDetailRequest } from './model/UpgradeDetailRequest';
 import { UpgradeDetailResponse } from './model/UpgradeDetailResponse';
 import { UpgradingTheKernelBody } from './model/UpgradingTheKernelBody';
+import { UploadCertsRequest } from './model/UploadCertsRequest';
+import { UploadCertsRequestBody } from './model/UploadCertsRequestBody';
+import { UploadCertsResponse } from './model/UploadCertsResponse';
 
 export class CssClient {
     public static newBuilder(): ClientBuilder<CssClient> {
@@ -425,13 +475,52 @@ export class CssClient {
     }
 
     /**
+     * CSS服务提供智能运维功能的定时检测，支持每日定时检测集群的潜在风险。此接口用于关闭智能运维定时检测。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 关闭智能运维定时检测
+     * @param {string} clusterId **参数解释**： 指定查询的集群ID。获取方法请参见[获取集群ID](css_03_0101.xml)。 **约束限制**： 不涉及 **取值范围**： 集群ID。 **默认取值**： 不涉及
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public closeAiOpsSetting(closeAiOpsSettingRequest?: CloseAiOpsSettingRequest): Promise<CloseAiOpsSettingResponse> {
+        const options = ParamCreater().closeAiOpsSetting(closeAiOpsSettingRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 当CSS预置委托不存在时，自动创建委托并赋予CSS依赖的权限。
+     * 当CSS预置委托存在时，去除依赖的高风险权限，设置为最小化权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 自动创建委托
+     * @param {ResourceTenant} [req] 自动创建委托请求体。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public createAgency(createAgencyRequest?: CreateAgencyRequest): Promise<CreateAgencyResponse> {
+        const options = ParamCreater().createAgency(createAgencyRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 该接口用于创建一个集群检测任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 创建一次集群检测任务
-     * @param {string} clusterId 指定待操作的集群ID。
-     * @param {CreateAiOpsRequestBody} createAiOpsRequestBody 
+     * @param {string} clusterId **参数解释**： 指定操作的集群ID。获取方法请参见[获取集群ID](css_03_0101.xml)。 **约束限制**： 不涉及 **取值范围**： 集群ID。 **默认取值**： 不涉及
+     * @param {CreateAiOpsRequestBody} createAiOpsRequestBody 检测类型及范围设置
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -525,11 +614,11 @@ export class CssClient {
     }
 
     /**
-     * 该接口用于es监听器配置。
+     * 该接口用于集群负载均衡监听器配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @summary es监听器配置。
+     * @summary 集群负载均衡监听器配置。
      * @param {string} clusterId 指定待更改集群名称的集群ID。
      * @param {CreateEsListenerRequestBody} createEsListenerRequestBody 
      * @param {*} [options] Override http request option.
@@ -609,7 +698,7 @@ export class CssClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 删除一个检测任务记录
-     * @param {string} clusterId 指定待删除的集群ID。
+     * @param {string} clusterId **参数解释**： 指定删除的集群ID。获取方法请参见[获取集群ID](css_03_0101.xml)。 **约束限制**： 不涉及 **取值范围**： 集群ID。 **默认取值**： 不涉及
      * @param {string} aiopsId 指定检测任务ID。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -723,11 +812,11 @@ export class CssClient {
     }
 
     /**
-     * 该接口打开或关闭es负载均衡器。
+     * 该接口为集群打开或关闭负载均衡器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @summary 打开或关闭es负载均衡器
+     * @summary 为集群打开或关闭负载均衡器
      * @param {string} clusterId 指定待更改的集群ID。
      * @param {UpdateEsElbRequestBody} [updateEsElbRequestBody] 
      * @param {*} [options] Override http request option.
@@ -743,14 +832,15 @@ export class CssClient {
     }
 
     /**
-     * 该接口用于获取智能运维任务列表及详情。
+     * CSS服务提供智能运维功能，支持检测集群潜在风险。检测任务完成后，可以查看集群存在的风险项详情，根据风险建议及时处理集群存在的风险。此接口用于获取智能运维任务列表及详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 获取智能运维任务列表及详情
-     * @param {string} clusterId 指定待查询的集群ID。
-     * @param {number} [limit] 分页参数，列表当前分页的数量限制。
-     * @param {number} [offset] 偏移量。 偏移量为一个大于0小于终端节点服务总个数的整数， 表示从偏移量后面的终端节点服务开始查询。
+     * @param {string} clusterId **参数解释**： 指定查询的集群ID。获取方法请参见[获取集群ID](css_03_0101.xml)。 **约束限制**： 不涉及 **取值范围**： 集群ID。 **默认取值**： 不涉及
+     * @param {number} [limit] **参数解释**： 分页参数，列表当前分页的数量限制。默认值为10，即一次查询10个任务信息。 **约束限制**： 不涉及 **取值范围**： 1-1000 **默认取值**： 10
+     * @param {number} [offset] **参数解释**： 偏移量，表示从偏移量后面的计数开始查询。 **约束限制**： 不涉及 **取值范围**： 0-1000 **默认取值**： 0
+     * @param {string} [report] **参数解释**： 获取当前最新一份报告或历史报告 **约束限制**： 不涉及 **取值范围**： - current   仅获取当前最新一次检测报告 - history   仅获取当前历史检测报告  **默认取值**： 不涉及
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -796,6 +886,24 @@ export class CssClient {
      */
     public listClustersTags(listClustersTagsRequest?: ListClustersTagsRequest): Promise<ListClustersTagsResponse> {
         const options = ParamCreater().listClustersTags(listClustersTagsRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 获取各可用区支持的磁盘类型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 列举磁盘类型
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listDiskType(listDiskTypeRequest?: ListDiskTypeRequest): Promise<ListDiskTypeResponse> {
+        const options = ParamCreater().listDiskType();
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -864,7 +972,7 @@ export class CssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @summary 获取目标镜像ID
+     * @summary 获取可升级的目标镜像ID
      * @param {string} clusterId 待升级的集群的ID。
      * @param {string} upgradeType 升级目标版本类型： - same：相同版本。 - cross： 跨版本。
      * @param {string} [offset] 指定查询起始值，默认值为0。
@@ -903,12 +1011,31 @@ export class CssClient {
     }
 
     /**
+     * 该接口用于获取集群路由。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 获取集群路由
+     * @param {string} clusterId 指定待操作的集群ID。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listRoutes(listRoutesRequest?: ListRoutesRequest): Promise<ListRoutesResponse> {
+        const options = ParamCreater().listRoutes(listRoutesRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 该接口用于获取智能运维告警可用的SMN主题。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 获取智能运维告警可用的SMN主题
-     * @param {string} domainId 指定待查询的集群ID。
+     * @param {string} domainId 域账号ID。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -1062,6 +1189,44 @@ export class CssClient {
     }
 
     /**
+     * CSS服务提供智能运维功能，支持检测集群潜在风险。此接口用于获取智能运维的检测项。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查看智能运维检测项
+     * @param {string} clusterId **参数解释**： 指定查询的集群ID。获取方法请参见[获取集群ID](css_03_0101.xml)。 **约束限制**： 不涉及 **取值范围**： 集群ID。 **默认取值**： 不涉及
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showAiOpsDetector(showAiOpsDetectorRequest?: ShowAiOpsDetectorRequest): Promise<ShowAiOpsDetectorResponse> {
+        const options = ParamCreater().showAiOpsDetector(showAiOpsDetectorRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * CSS服务提供智能运维功能的定时检测，支持每日定时检测集群的潜在风险。此接口用于获取智能运维定时检测设置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查看智能运维定时检测设置
+     * @param {string} clusterId **参数解释**： 指定查询的集群ID。获取方法请参见[获取集群ID](css_03_0101.xml)。 **约束限制**： 不涉及 **取值范围**： 集群ID。 **默认取值**： 不涉及
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showAiOpsSetting(showAiOpsSettingRequest?: ShowAiOpsSettingRequest): Promise<ShowAiOpsSettingResponse> {
+        const options = ParamCreater().showAiOpsSetting(showAiOpsSettingRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 该接口用于查询自动创建快照策略。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -1120,17 +1285,75 @@ export class CssClient {
     }
 
     /**
-     * 该接口用于获取该esELB的信息，以及页面需要展示健康检查状态。
+     * 查询集群磁盘使用情况
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @summary 获取该esELB的信息，以及页面需要展示健康检查状态
+     * @summary 查询集群磁盘使用情况
+     * @param {string} clusterId **参数解释**： 指定更新的集群ID，获取方法请参见获取集群ID。 **约束限制**： 不涉及 **取值范围**： 获取方法请参见获取集群ID。 **默认取值**： 不涉及
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showClusterVolumeUsage(showClusterVolumeUsageRequest?: ShowClusterVolumeUsageRequest): Promise<ShowClusterVolumeUsageResponse> {
+        const options = ParamCreater().showClusterVolumeUsage(showClusterVolumeUsageRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询指定引擎支持的规格。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询指定引擎支持的规格。
+     * @param {string} datastoreId **参数解释**： 引擎类型id。 **约束限制**： 不涉及 **取值范围**： Elasticsearch：cf7e2c8f-096c-4fcf-b174-1ebe060679fb。 Opensearch：07ec9f86-ec2f-49e7-8913-373003aedf32。 Logstash: 575276bb-87e5-4e18-8e1e-e748d8ad3a06。 **默认取值**： 不涉及
+     * @param {string} [datastoreVersionId] **参数解释**： 引擎类型id。 **约束限制**： 不涉及 **取值范围**： Elasticsearch 7.10.2：01f53413-0a58-4b0c-848a-f625846bae23。 Opensearch 2.19.0：11a9df5c-711f-496c-866d-a4521c179671。 Logstash 7.10.0: f5609cf0-3514-49ef-87db-a3df2858a46f。 **默认取值**： 不涉及
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showDataStoreFlavorDetail(showDataStoreFlavorDetailRequest?: ShowDataStoreFlavorDetailRequest): Promise<ShowDataStoreFlavorDetailResponse> {
+        const options = ParamCreater().showDataStoreFlavorDetail(showDataStoreFlavorDetailRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 该接口用于获取集群的负载均衡器信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 获取集群的负载均衡器信息
      * @param {string} clusterId 指定待查询的集群ID。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     public showElbDetail(showElbDetailRequest?: ShowElbDetailRequest): Promise<ShowElbDetailResponse> {
         const options = ParamCreater().showElbDetail(showElbDetailRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询规格详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询规格详情
+     * @param {string} flavorId 参数解释： 规格id。 约束限制： 不涉及 取值范围： 实例规格列表接口返回的id。 默认取值： 不涉及
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showFlavorDetail(showFlavorDetailRequest?: ShowFlavorDetailRequest): Promise<ShowFlavorDetailResponse> {
+        const options = ParamCreater().showFlavorDetail(showFlavorDetailRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -1189,6 +1412,25 @@ export class CssClient {
      */
     public showLogBackup(showLogBackupRequest?: ShowLogBackupRequest): Promise<ShowLogBackupResponse> {
         const options = ParamCreater().showLogBackup(showLogBackupRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询指定集群可以变更到哪些规格
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询指定集群的可变更规格列表
+     * @param {string} clusterId **参数解释**： 指定查询的集群ID。获取方法请参见[获取集群ID](css_03_0101.xml)。 **约束限制**： 不涉及 **取值范围**： 集群ID。 **默认取值**： 不涉及
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showResizeFlavors(showResizeFlavorsRequest?: ShowResizeFlavorsRequest): Promise<ShowResizeFlavorsResponse> {
+        const options = ParamCreater().showResizeFlavors(showResizeFlavorsRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -1442,6 +1684,26 @@ export class CssClient {
     }
 
     /**
+     * CSS服务提供智能运维功能的定时检测，支持每日定时检测集群的潜在风险。此接口用于设置智能运维定时检测。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 更新智能运维定时检测设置
+     * @param {string} clusterId **参数解释**： 指定查询的集群ID。获取方法请参见[获取集群ID](css_03_0101.xml)。 **约束限制**： 不涉及 **取值范围**： 集群ID。 **默认取值**： 不涉及
+     * @param {AiOpsSetting} changeAiOpsSetting 智能运维自动检测设置，设置每日自动进行智能检测。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public updateAiOpsSetting(updateAiOpsSettingRequest?: UpdateAiOpsSettingRequest): Promise<UpdateAiOpsSettingResponse> {
+        const options = ParamCreater().updateAiOpsSetting(updateAiOpsSettingRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 该接口通过指定节点类型切换AZ。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -1504,11 +1766,11 @@ export class CssClient {
     }
 
     /**
-     * 该接口用于更新es监听器。
+     * 该接口用于更新集群负载均衡监听器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @summary 更新es监听器
+     * @summary 更新集群负载均衡监听器
      * @param {string} clusterId 指定待操作的集群ID。
      * @param {string} listenerId 指定待操作得监听器ID。
      * @param {UpdateEsListenerRequestBody} updateEsListenerRequestBody 
@@ -1694,6 +1956,26 @@ export class CssClient {
     }
 
     /**
+     * 该接口用于更新集群路由。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 更新集群路由
+     * @param {string} clusterId 指定待操作的集群ID。
+     * @param {UpdateRouteRequestBody} updateRouteRequestBody 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public updateRoute(updateRouteRequest?: UpdateRouteRequest): Promise<UpdateRouteResponse> {
+        const options = ParamCreater().updateRoute(updateRouteRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 该接口用于集群对不同类型实例的个数以及存储容量进行缩容。包周期类型的集群不支持通过api进行指定节点类型缩容操作。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -1861,7 +2143,7 @@ export class CssClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @summary 获取升级详情信息
+     * @summary 获取集群升级或切换AZ的详情信息
      * @param {string} clusterId 待升级的集群的ID。
      * @param {number} [offset] 偏移量。 偏移量为一个大于0小于终端节点服务总个数的整数， 表示从偏移量后面的终端节点服务开始查询。
      * @param {number} [limit] 查询返回终端节点服务的连接列表限制每页个数，即每页返回的个数。
@@ -2010,6 +2292,26 @@ export class CssClient {
      */
     public createCnf(createCnfRequest?: CreateCnfRequest): Promise<CreateCnfResponse> {
         const options = ParamCreater().createCnf(createCnfRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 该接口用于删除证书文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 删除证书文件
+     * @param {string} clusterId 指定删除证书文件的集群ID。
+     * @param {string} certId 指定删除的证书文件ID。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public deleteCerts(deleteCertsRequest?: DeleteCertsRequest): Promise<DeleteCertsResponse> {
+        const options = ParamCreater().deleteCerts(deleteCertsRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -2181,6 +2483,45 @@ export class CssClient {
     }
 
     /**
+     * 重启过程中集群不可用，请谨慎操作。 工作中状态的集群，重启过程会主动停止logstash进程，管道列表“是否保持常驻”值为否，会将所有运行中管道状态置为已停止。“是否保持常驻”值为是，会触发logstash进程恢复机制，将工作中的管道状态置为恢复中，若十分钟内重新拉起logstash进程，管道状态恢复为工作中，否则置为失败状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 强制重启集群VMs
+     * @param {string} clusterId 指定待操作的集群ID。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public rebootCluster(rebootClusterRequest?: RebootClusterRequest): Promise<RebootClusterResponse> {
+        const options = ParamCreater().rebootCluster(rebootClusterRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 该接口用于查询证书文件信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询证书文件信息
+     * @param {string} clusterId 指定待查询的集群ID。
+     * @param {string} certId 指定查询的证书文件ID。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showCertsDetail(showCertsDetailRequest?: ShowCertsDetailRequest): Promise<ShowCertsDetailResponse> {
+        const options = ParamCreater().showCertsDetail(showCertsDetailRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 该接口用于查询配置文件内容。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -2213,6 +2554,26 @@ export class CssClient {
      */
     public startConnectivityTest(startConnectivityTestRequest?: StartConnectivityTestRequest): Promise<StartConnectivityTestResponse> {
         const options = ParamCreater().startConnectivityTest(startConnectivityTestRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 该接口用于热启动pipeline迁移数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 热启动pipeline迁移数据。
+     * @param {string} clusterId 指定待操作的集群ID。
+     * @param {StartHotPipelineRequestBody} startHotPipelineRequestBody 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public startHotPipeline(startHotPipelineRequest?: StartHotPipelineRequest): Promise<StartHotPipelineResponse> {
+        const options = ParamCreater().startHotPipeline(startHotPipelineRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -2292,6 +2653,26 @@ export class CssClient {
      */
     public updateCnf(updateCnfRequest?: UpdateCnfRequest): Promise<UpdateCnfResponse> {
         const options = ParamCreater().updateCnf(updateCnfRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 该接口用于上传证书文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 上传证书文件
+     * @param {string} clusterId 指定待操作的集群ID。
+     * @param {UploadCertsRequestBody} uploadCertsRequestBody 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public uploadCerts(uploadCertsRequest?: UploadCertsRequest): Promise<UploadCertsResponse> {
+        const options = ParamCreater().uploadCerts(uploadCertsRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -2492,6 +2873,79 @@ export const ParamCreater = function () {
 
             options.data = body !== undefined ? body : {};
             options.pathParams = { 'cluster_id': clusterId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * CSS服务提供智能运维功能的定时检测，支持每日定时检测集群的潜在风险。此接口用于关闭智能运维定时检测。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        closeAiOpsSetting(closeAiOpsSettingRequest?: CloseAiOpsSettingRequest) {
+            const options = {
+                method: "PUT",
+                url: "/v1.0/{project_id}/clusters/{cluster_id}/ai-ops/close",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let clusterId;
+
+            if (closeAiOpsSettingRequest !== null && closeAiOpsSettingRequest !== undefined) {
+                if (closeAiOpsSettingRequest instanceof CloseAiOpsSettingRequest) {
+                    clusterId = closeAiOpsSettingRequest.clusterId;
+                } else {
+                    clusterId = closeAiOpsSettingRequest['cluster_id'];
+                }
+            }
+
+        
+            if (clusterId === null || clusterId === undefined) {
+            throw new RequiredError('clusterId','Required parameter clusterId was null or undefined when calling closeAiOpsSetting.');
+            }
+
+            options.pathParams = { 'cluster_id': clusterId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 当CSS预置委托不存在时，自动创建委托并赋予CSS依赖的权限。
+         * 当CSS预置委托存在时，去除依赖的高风险权限，设置为最小化权限。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        createAgency(createAgencyRequest?: CreateAgencyRequest) {
+            const options = {
+                method: "POST",
+                url: "/v1.0/{project_id}/agency/create",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+
+            if (createAgencyRequest !== null && createAgencyRequest !== undefined) {
+                if (createAgencyRequest instanceof CreateAgencyRequest) {
+                    body = createAgencyRequest.body
+                } else {
+                    body = createAgencyRequest['body'];
+                }
+            }
+
+        
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -2726,7 +3180,7 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 该接口用于es监听器配置。
+         * 该接口用于集群负载均衡监听器配置。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -3137,7 +3591,7 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 该接口打开或关闭es负载均衡器。
+         * 该接口为集群打开或关闭负载均衡器。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -3180,7 +3634,7 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 该接口用于获取智能运维任务列表及详情。
+         * CSS服务提供智能运维功能，支持检测集群潜在风险。检测任务完成后，可以查看集群存在的风险项详情，根据风险建议及时处理集群存在的风险。此接口用于获取智能运维任务列表及详情。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -3201,16 +3655,20 @@ export const ParamCreater = function () {
             let limit;
             
             let offset;
+            
+            let report;
 
             if (listAiOpsRequest !== null && listAiOpsRequest !== undefined) {
                 if (listAiOpsRequest instanceof ListAiOpsRequest) {
                     clusterId = listAiOpsRequest.clusterId;
                     limit = listAiOpsRequest.limit;
                     offset = listAiOpsRequest.offset;
+                    report = listAiOpsRequest.report;
                 } else {
                     clusterId = listAiOpsRequest['cluster_id'];
                     limit = listAiOpsRequest['limit'];
                     offset = listAiOpsRequest['offset'];
+                    report = listAiOpsRequest['report'];
                 }
             }
 
@@ -3223,6 +3681,9 @@ export const ParamCreater = function () {
             }
             if (offset !== null && offset !== undefined) {
                 localVarQueryParameter['offset'] = offset;
+            }
+            if (report !== null && report !== undefined) {
+                localVarQueryParameter['report'] = report;
             }
 
             options.queryParams = localVarQueryParameter;
@@ -3315,6 +3776,27 @@ export const ParamCreater = function () {
             }
 
             options.pathParams = { 'resource_type': resourceType, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 获取各可用区支持的磁盘类型。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listDiskType() {
+            const options = {
+                method: "GET",
+                url: "/v1.0/{project_id}/disktypes",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -3520,6 +4002,43 @@ export const ParamCreater = function () {
             }
 
             options.queryParams = localVarQueryParameter;
+            options.pathParams = { 'cluster_id': clusterId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 该接口用于获取集群路由。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listRoutes(listRoutesRequest?: ListRoutesRequest) {
+            const options = {
+                method: "GET",
+                url: "/v1.0/{project_id}/clusters/{cluster_id}/route",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let clusterId;
+
+            if (listRoutesRequest !== null && listRoutesRequest !== undefined) {
+                if (listRoutesRequest instanceof ListRoutesRequest) {
+                    clusterId = listRoutesRequest.clusterId;
+                } else {
+                    clusterId = listRoutesRequest['cluster_id'];
+                }
+            }
+
+        
+            if (clusterId === null || clusterId === undefined) {
+            throw new RequiredError('clusterId','Required parameter clusterId was null or undefined when calling listRoutes.');
+            }
+
             options.pathParams = { 'cluster_id': clusterId, };
             options.headers = localVarHeaderParameter;
             return options;
@@ -3877,6 +4396,80 @@ export const ParamCreater = function () {
         },
     
         /**
+         * CSS服务提供智能运维功能，支持检测集群潜在风险。此接口用于获取智能运维的检测项。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showAiOpsDetector(showAiOpsDetectorRequest?: ShowAiOpsDetectorRequest) {
+            const options = {
+                method: "GET",
+                url: "/v1.0/{project_id}/clusters/{cluster_id}/ai-ops/detector",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let clusterId;
+
+            if (showAiOpsDetectorRequest !== null && showAiOpsDetectorRequest !== undefined) {
+                if (showAiOpsDetectorRequest instanceof ShowAiOpsDetectorRequest) {
+                    clusterId = showAiOpsDetectorRequest.clusterId;
+                } else {
+                    clusterId = showAiOpsDetectorRequest['cluster_id'];
+                }
+            }
+
+        
+            if (clusterId === null || clusterId === undefined) {
+            throw new RequiredError('clusterId','Required parameter clusterId was null or undefined when calling showAiOpsDetector.');
+            }
+
+            options.pathParams = { 'cluster_id': clusterId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * CSS服务提供智能运维功能的定时检测，支持每日定时检测集群的潜在风险。此接口用于获取智能运维定时检测设置。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showAiOpsSetting(showAiOpsSettingRequest?: ShowAiOpsSettingRequest) {
+            const options = {
+                method: "GET",
+                url: "/v1.0/{project_id}/clusters/{cluster_id}/ai-ops/setting",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let clusterId;
+
+            if (showAiOpsSettingRequest !== null && showAiOpsSettingRequest !== undefined) {
+                if (showAiOpsSettingRequest instanceof ShowAiOpsSettingRequest) {
+                    clusterId = showAiOpsSettingRequest.clusterId;
+                } else {
+                    clusterId = showAiOpsSettingRequest['cluster_id'];
+                }
+            }
+
+        
+            if (clusterId === null || clusterId === undefined) {
+            throw new RequiredError('clusterId','Required parameter clusterId was null or undefined when calling showAiOpsSetting.');
+            }
+
+            options.pathParams = { 'cluster_id': clusterId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 该接口用于查询自动创建快照策略。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -3995,7 +4588,89 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 该接口用于获取该esELB的信息，以及页面需要展示健康检查状态。
+         * 查询集群磁盘使用情况
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showClusterVolumeUsage(showClusterVolumeUsageRequest?: ShowClusterVolumeUsageRequest) {
+            const options = {
+                method: "GET",
+                url: "/v1.0/{project_id}/clusters/{cluster_id}/volume",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let clusterId;
+
+            if (showClusterVolumeUsageRequest !== null && showClusterVolumeUsageRequest !== undefined) {
+                if (showClusterVolumeUsageRequest instanceof ShowClusterVolumeUsageRequest) {
+                    clusterId = showClusterVolumeUsageRequest.clusterId;
+                } else {
+                    clusterId = showClusterVolumeUsageRequest['cluster_id'];
+                }
+            }
+
+        
+            if (clusterId === null || clusterId === undefined) {
+            throw new RequiredError('clusterId','Required parameter clusterId was null or undefined when calling showClusterVolumeUsage.');
+            }
+
+            options.pathParams = { 'cluster_id': clusterId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询指定引擎支持的规格。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showDataStoreFlavorDetail(showDataStoreFlavorDetailRequest?: ShowDataStoreFlavorDetailRequest) {
+            const options = {
+                method: "GET",
+                url: "/v1.0/{project_id}/datastore/{datastore_id}/flavors",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let datastoreId;
+            
+            let datastoreVersionId;
+
+            if (showDataStoreFlavorDetailRequest !== null && showDataStoreFlavorDetailRequest !== undefined) {
+                if (showDataStoreFlavorDetailRequest instanceof ShowDataStoreFlavorDetailRequest) {
+                    datastoreId = showDataStoreFlavorDetailRequest.datastoreId;
+                    datastoreVersionId = showDataStoreFlavorDetailRequest.datastoreVersionId;
+                } else {
+                    datastoreId = showDataStoreFlavorDetailRequest['datastore_id'];
+                    datastoreVersionId = showDataStoreFlavorDetailRequest['datastore_version_id'];
+                }
+            }
+
+        
+            if (datastoreId === null || datastoreId === undefined) {
+            throw new RequiredError('datastoreId','Required parameter datastoreId was null or undefined when calling showDataStoreFlavorDetail.');
+            }
+            if (datastoreVersionId !== null && datastoreVersionId !== undefined) {
+                localVarQueryParameter['datastore_version_id'] = datastoreVersionId;
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.pathParams = { 'datastore_id': datastoreId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 该接口用于获取集群的负载均衡器信息。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -4027,6 +4702,43 @@ export const ParamCreater = function () {
             }
 
             options.pathParams = { 'cluster_id': clusterId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询规格详细信息。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showFlavorDetail(showFlavorDetailRequest?: ShowFlavorDetailRequest) {
+            const options = {
+                method: "GET",
+                url: "/v1.0/{project_id}/flavors/{flavor_id}",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let flavorId;
+
+            if (showFlavorDetailRequest !== null && showFlavorDetailRequest !== undefined) {
+                if (showFlavorDetailRequest instanceof ShowFlavorDetailRequest) {
+                    flavorId = showFlavorDetailRequest.flavorId;
+                } else {
+                    flavorId = showFlavorDetailRequest['flavor_id'];
+                }
+            }
+
+        
+            if (flavorId === null || flavorId === undefined) {
+            throw new RequiredError('flavorId','Required parameter flavorId was null or undefined when calling showFlavorDetail.');
+            }
+
+            options.pathParams = { 'flavor_id': flavorId, };
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -4147,6 +4859,46 @@ export const ParamCreater = function () {
 
             options.data = body !== undefined ? body : {};
             options.pathParams = { 'cluster_id': clusterId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询指定集群可以变更到哪些规格
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showResizeFlavors(showResizeFlavorsRequest?: ShowResizeFlavorsRequest) {
+            const options = {
+                method: "GET",
+                url: "/v1.0/{project_id}/resize-flavors",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let clusterId;
+
+            if (showResizeFlavorsRequest !== null && showResizeFlavorsRequest !== undefined) {
+                if (showResizeFlavorsRequest instanceof ShowResizeFlavorsRequest) {
+                    clusterId = showResizeFlavorsRequest.clusterId;
+                } else {
+                    clusterId = showResizeFlavorsRequest['clusterId'];
+                }
+            }
+
+        
+            if (clusterId === null || clusterId === undefined) {
+                throw new RequiredError('clusterId','Required parameter clusterId was null or undefined when calling showResizeFlavors.');
+            }
+            if (clusterId !== null && clusterId !== undefined) {
+                localVarQueryParameter['clusterId'] = clusterId;
+            }
+
+            options.queryParams = localVarQueryParameter;
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -4673,6 +5425,52 @@ export const ParamCreater = function () {
         },
     
         /**
+         * CSS服务提供智能运维功能的定时检测，支持每日定时检测集群的潜在风险。此接口用于设置智能运维定时检测。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        updateAiOpsSetting(updateAiOpsSettingRequest?: UpdateAiOpsSettingRequest) {
+            const options = {
+                method: "POST",
+                url: "/v1.0/{project_id}/clusters/{cluster_id}/ai-ops/setting",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let clusterId;
+
+            if (updateAiOpsSettingRequest !== null && updateAiOpsSettingRequest !== undefined) {
+                if (updateAiOpsSettingRequest instanceof UpdateAiOpsSettingRequest) {
+                    clusterId = updateAiOpsSettingRequest.clusterId;
+                    body = updateAiOpsSettingRequest.body
+                } else {
+                    clusterId = updateAiOpsSettingRequest['cluster_id'];
+                    body = updateAiOpsSettingRequest['body'];
+                }
+            }
+
+        
+            if (clusterId === null || clusterId === undefined) {
+            throw new RequiredError('clusterId','Required parameter clusterId was null or undefined when calling updateAiOpsSetting.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'cluster_id': clusterId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 该接口通过指定节点类型切换AZ。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -4825,7 +5623,7 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 该接口用于更新es监听器。
+         * 该接口用于更新集群负载均衡监听器。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -5259,6 +6057,52 @@ export const ParamCreater = function () {
         
             if (clusterId === null || clusterId === undefined) {
             throw new RequiredError('clusterId','Required parameter clusterId was null or undefined when calling updatePublicBandWidth.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'cluster_id': clusterId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 该接口用于更新集群路由。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        updateRoute(updateRouteRequest?: UpdateRouteRequest) {
+            const options = {
+                method: "POST",
+                url: "/v1.0/{project_id}/clusters/{cluster_id}/route",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let clusterId;
+
+            if (updateRouteRequest !== null && updateRouteRequest !== undefined) {
+                if (updateRouteRequest instanceof UpdateRouteRequest) {
+                    clusterId = updateRouteRequest.clusterId;
+                    body = updateRouteRequest.body
+                } else {
+                    clusterId = updateRouteRequest['cluster_id'];
+                    body = updateRouteRequest['body'];
+                }
+            }
+
+        
+            if (clusterId === null || clusterId === undefined) {
+            throw new RequiredError('clusterId','Required parameter clusterId was null or undefined when calling updateRoute.');
             }
             if (body === null || body === undefined) {
                 throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
@@ -6021,6 +6865,50 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 该接口用于删除证书文件。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        deleteCerts(deleteCertsRequest?: DeleteCertsRequest) {
+            const options = {
+                method: "DELETE",
+                url: "/v1.0/{project_id}/clusters/{cluster_id}/certs/{cert_id}/delete",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let clusterId;
+            
+            let certId;
+
+            if (deleteCertsRequest !== null && deleteCertsRequest !== undefined) {
+                if (deleteCertsRequest instanceof DeleteCertsRequest) {
+                    clusterId = deleteCertsRequest.clusterId;
+                    certId = deleteCertsRequest.certId;
+                } else {
+                    clusterId = deleteCertsRequest['cluster_id'];
+                    certId = deleteCertsRequest['cert_id'];
+                }
+            }
+
+        
+            if (clusterId === null || clusterId === undefined) {
+            throw new RequiredError('clusterId','Required parameter clusterId was null or undefined when calling deleteCerts.');
+            }
+            if (certId === null || certId === undefined) {
+            throw new RequiredError('certId','Required parameter certId was null or undefined when calling deleteCerts.');
+            }
+
+            options.pathParams = { 'cluster_id': clusterId,'cert_id': certId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 删除配置文件。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -6403,6 +7291,87 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 重启过程中集群不可用，请谨慎操作。 工作中状态的集群，重启过程会主动停止logstash进程，管道列表“是否保持常驻”值为否，会将所有运行中管道状态置为已停止。“是否保持常驻”值为是，会触发logstash进程恢复机制，将工作中的管道状态置为恢复中，若十分钟内重新拉起logstash进程，管道状态恢复为工作中，否则置为失败状态。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        rebootCluster(rebootClusterRequest?: RebootClusterRequest) {
+            const options = {
+                method: "POST",
+                url: "/v1.0/{project_id}/clusters/{cluster_id}/reboot",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let clusterId;
+
+            if (rebootClusterRequest !== null && rebootClusterRequest !== undefined) {
+                if (rebootClusterRequest instanceof RebootClusterRequest) {
+                    clusterId = rebootClusterRequest.clusterId;
+                } else {
+                    clusterId = rebootClusterRequest['cluster_id'];
+                }
+            }
+
+        
+            if (clusterId === null || clusterId === undefined) {
+            throw new RequiredError('clusterId','Required parameter clusterId was null or undefined when calling rebootCluster.');
+            }
+
+            options.pathParams = { 'cluster_id': clusterId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 该接口用于查询证书文件信息。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showCertsDetail(showCertsDetailRequest?: ShowCertsDetailRequest) {
+            const options = {
+                method: "GET",
+                url: "/v1.0/{project_id}/clusters/{cluster_id}/certs/{cert_id}",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let clusterId;
+            
+            let certId;
+
+            if (showCertsDetailRequest !== null && showCertsDetailRequest !== undefined) {
+                if (showCertsDetailRequest instanceof ShowCertsDetailRequest) {
+                    clusterId = showCertsDetailRequest.clusterId;
+                    certId = showCertsDetailRequest.certId;
+                } else {
+                    clusterId = showCertsDetailRequest['cluster_id'];
+                    certId = showCertsDetailRequest['cert_id'];
+                }
+            }
+
+        
+            if (clusterId === null || clusterId === undefined) {
+            throw new RequiredError('clusterId','Required parameter clusterId was null or undefined when calling showCertsDetail.');
+            }
+            if (certId === null || certId === undefined) {
+            throw new RequiredError('certId','Required parameter certId was null or undefined when calling showCertsDetail.');
+            }
+
+            options.pathParams = { 'cluster_id': clusterId,'cert_id': certId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 该接口用于查询配置文件内容。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -6484,6 +7453,52 @@ export const ParamCreater = function () {
         
             if (clusterId === null || clusterId === undefined) {
             throw new RequiredError('clusterId','Required parameter clusterId was null or undefined when calling startConnectivityTest.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'cluster_id': clusterId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 该接口用于热启动pipeline迁移数据。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        startHotPipeline(startHotPipelineRequest?: StartHotPipelineRequest) {
+            const options = {
+                method: "POST",
+                url: "/v1.0/{project_id}/clusters/{cluster_id}/lgsconf/hot-start",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let clusterId;
+
+            if (startHotPipelineRequest !== null && startHotPipelineRequest !== undefined) {
+                if (startHotPipelineRequest instanceof StartHotPipelineRequest) {
+                    clusterId = startHotPipelineRequest.clusterId;
+                    body = startHotPipelineRequest.body
+                } else {
+                    clusterId = startHotPipelineRequest['cluster_id'];
+                    body = startHotPipelineRequest['body'];
+                }
+            }
+
+        
+            if (clusterId === null || clusterId === undefined) {
+            throw new RequiredError('clusterId','Required parameter clusterId was null or undefined when calling startHotPipeline.');
             }
             if (body === null || body === undefined) {
                 throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
@@ -6659,6 +7674,52 @@ export const ParamCreater = function () {
         
             if (clusterId === null || clusterId === undefined) {
             throw new RequiredError('clusterId','Required parameter clusterId was null or undefined when calling updateCnf.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'cluster_id': clusterId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 该接口用于上传证书文件。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        uploadCerts(uploadCertsRequest?: UploadCertsRequest) {
+            const options = {
+                method: "POST",
+                url: "/v1.0/{project_id}/clusters/{cluster_id}/certs/upload",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let clusterId;
+
+            if (uploadCertsRequest !== null && uploadCertsRequest !== undefined) {
+                if (uploadCertsRequest instanceof UploadCertsRequest) {
+                    clusterId = uploadCertsRequest.clusterId;
+                    body = uploadCertsRequest.body
+                } else {
+                    clusterId = uploadCertsRequest['cluster_id'];
+                    body = uploadCertsRequest['body'];
+                }
+            }
+
+        
+            if (clusterId === null || clusterId === undefined) {
+            throw new RequiredError('clusterId','Required parameter clusterId was null or undefined when calling uploadCerts.');
             }
             if (body === null || body === undefined) {
                 throw new RequiredError('body','Required parameter body was null or undefined when calling body.');

@@ -1,14 +1,17 @@
+import { LeakageListInfoAction } from './LeakageListInfoAction';
 
 
 export class LeakageListInfo {
     public id?: string;
     public policyid?: string;
+    public policyname?: string;
     public url?: string;
     public category?: string;
     public contents?: Array<string>;
     public timestamp?: number;
     public status?: number;
     public description?: string;
+    public action?: LeakageListInfoAction;
     public constructor() { 
     }
     public withId(id: string): LeakageListInfo {
@@ -17,6 +20,10 @@ export class LeakageListInfo {
     }
     public withPolicyid(policyid: string): LeakageListInfo {
         this['policyid'] = policyid;
+        return this;
+    }
+    public withPolicyname(policyname: string): LeakageListInfo {
+        this['policyname'] = policyname;
         return this;
     }
     public withUrl(url: string): LeakageListInfo {
@@ -41,6 +48,10 @@ export class LeakageListInfo {
     }
     public withDescription(description: string): LeakageListInfo {
         this['description'] = description;
+        return this;
+    }
+    public withAction(action: LeakageListInfoAction): LeakageListInfo {
+        this['action'] = action;
         return this;
     }
 }

@@ -6,11 +6,15 @@ export class ListCcRulesRequest {
     private 'policy_id'?: string;
     public offset?: number;
     public limit?: number;
-    public constructor(contentType?: string, policyId?: string, offset?: number, limit?: number) { 
+    public page?: number;
+    public pagesize?: number;
+    public name?: string;
+    public status?: number;
+    public category?: string;
+    private 'tag_type'?: ListCcRulesRequestTagTypeEnum | string;
+    public constructor(contentType?: string, policyId?: string) { 
         this['Content-Type'] = contentType;
         this['policy_id'] = policyId;
-        this['offset'] = offset;
-        this['limit'] = limit;
     }
     public withContentType(contentType: string): ListCcRulesRequest {
         this['Content-Type'] = contentType;
@@ -50,4 +54,48 @@ export class ListCcRulesRequest {
         this['limit'] = limit;
         return this;
     }
+    public withPage(page: number): ListCcRulesRequest {
+        this['page'] = page;
+        return this;
+    }
+    public withPagesize(pagesize: number): ListCcRulesRequest {
+        this['pagesize'] = pagesize;
+        return this;
+    }
+    public withName(name: string): ListCcRulesRequest {
+        this['name'] = name;
+        return this;
+    }
+    public withStatus(status: number): ListCcRulesRequest {
+        this['status'] = status;
+        return this;
+    }
+    public withCategory(category: string): ListCcRulesRequest {
+        this['category'] = category;
+        return this;
+    }
+    public withTagType(tagType: ListCcRulesRequestTagTypeEnum | string): ListCcRulesRequest {
+        this['tag_type'] = tagType;
+        return this;
+    }
+    public set tagType(tagType: ListCcRulesRequestTagTypeEnum | string  | undefined) {
+        this['tag_type'] = tagType;
+    }
+    public get tagType(): ListCcRulesRequestTagTypeEnum | string | undefined {
+        return this['tag_type'];
+    }
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum ListCcRulesRequestTagTypeEnum {
+    IP = 'ip',
+    COOKIE = 'cookie',
+    HEADER = 'header',
+    OTHER = 'other',
+    POLICY = 'policy',
+    DOMAIN = 'domain',
+    URL = 'url'
 }

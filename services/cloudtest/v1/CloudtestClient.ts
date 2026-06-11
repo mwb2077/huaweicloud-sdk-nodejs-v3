@@ -55,10 +55,14 @@ import { BasicAWInfo } from './model/BasicAWInfo';
 import { BasicAw } from './model/BasicAw';
 import { BasicAwCata } from './model/BasicAwCata';
 import { BasicAwRes } from './model/BasicAwRes';
+import { BatchAddCaseResultInTaskRequest } from './model/BatchAddCaseResultInTaskRequest';
+import { BatchAddCaseResultInTaskResponse } from './model/BatchAddCaseResultInTaskResponse';
 import { BatchAddRelationsByOneCaseRequest } from './model/BatchAddRelationsByOneCaseRequest';
 import { BatchAddRelationsByOneCaseResponse } from './model/BatchAddRelationsByOneCaseResponse';
 import { BatchAddResourcesForIteratorRequest } from './model/BatchAddResourcesForIteratorRequest';
 import { BatchAddResourcesForIteratorResponse } from './model/BatchAddResourcesForIteratorResponse';
+import { BatchAddTestCaseResultInTaskInfo } from './model/BatchAddTestCaseResultInTaskInfo';
+import { BatchCreateUpdateApiTestCaseVo } from './model/BatchCreateUpdateApiTestCaseVo';
 import { BatchDeleteFacotrByIdsRequest } from './model/BatchDeleteFacotrByIdsRequest';
 import { BatchDeleteFacotrByIdsResponse } from './model/BatchDeleteFacotrByIdsResponse';
 import { BatchDeleteTestCaseRequest } from './model/BatchDeleteTestCaseRequest';
@@ -72,6 +76,8 @@ import { BatchRemoveTestCasesFromIteratorRequest } from './model/BatchRemoveTest
 import { BatchRemoveTestCasesFromIteratorResponse } from './model/BatchRemoveTestCasesFromIteratorResponse';
 import { BatchShowTestCaseRequest } from './model/BatchShowTestCaseRequest';
 import { BatchShowTestCaseResponse } from './model/BatchShowTestCaseResponse';
+import { BatchUpdateTestCasesInDiffVersionRequest } from './model/BatchUpdateTestCasesInDiffVersionRequest';
+import { BatchUpdateTestCasesInDiffVersionResponse } from './model/BatchUpdateTestCasesInDiffVersionResponse';
 import { BatchUpdateVersionTestCasesRequest } from './model/BatchUpdateVersionTestCasesRequest';
 import { BatchUpdateVersionTestCasesResponse } from './model/BatchUpdateVersionTestCasesResponse';
 import { BranchVersionInfo } from './model/BranchVersionInfo';
@@ -191,6 +197,8 @@ import { DnsMappingNode } from './model/DnsMappingNode';
 import { DomainVisibleServiceVo } from './model/DomainVisibleServiceVo';
 import { DownloadAssetTemplateRequest } from './model/DownloadAssetTemplateRequest';
 import { DownloadAssetTemplateResponse } from './model/DownloadAssetTemplateResponse';
+import { DownloadStepImageNewRequest } from './model/DownloadStepImageNewRequest';
+import { DownloadStepImageNewResponse } from './model/DownloadStepImageNewResponse';
 import { ElementResourceChangeExternalVo } from './model/ElementResourceChangeExternalVo';
 import { Environment } from './model/Environment';
 import { ErrorCaseInfoBean } from './model/ErrorCaseInfoBean';
@@ -399,6 +407,7 @@ import { ResourcePoolVo } from './model/ResourcePoolVo';
 import { ResultStepVo } from './model/ResultStepVo';
 import { ResultValueAttachmentFileVo } from './model/ResultValueAttachmentFileVo';
 import { ResultValueBackgroundInfoVo } from './model/ResultValueBackgroundInfoVo';
+import { ResultValueBatchCreateUpdateApiTestCaseVo } from './model/ResultValueBatchCreateUpdateApiTestCaseVo';
 import { ResultValueBoolean } from './model/ResultValueBoolean';
 import { ResultValueCustomReportListVo } from './model/ResultValueCustomReportListVo';
 import { ResultValueExecuteTaskVo } from './model/ResultValueExecuteTaskVo';
@@ -760,6 +769,27 @@ export class CloudtestClient {
     }
 
     /**
+     * 在任务下批量设置用例结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 在任务下批量设置用例结果
+     * @param {string} projectId 项目id
+     * @param {string} versionUri 版本URI
+     * @param {BatchAddTestCaseResultInTaskInfo} param 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public batchAddCaseResultInTask(batchAddCaseResultInTaskRequest?: BatchAddCaseResultInTaskRequest): Promise<BatchAddCaseResultInTaskResponse> {
+        const options = ParamCreater().batchAddCaseResultInTask(batchAddCaseResultInTaskRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 添加需求/缺陷和多个用例关联关系
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -872,6 +902,25 @@ export class CloudtestClient {
      */
     public batchRemoveTestCasesFromIterator(batchRemoveTestCasesFromIteratorRequest?: BatchRemoveTestCasesFromIteratorRequest): Promise<BatchRemoveTestCasesFromIteratorResponse> {
         const options = ParamCreater().batchRemoveTestCasesFromIterator(batchRemoveTestCasesFromIteratorRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 在不同分支或者迭代下批量修改用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 在不同分支或者迭代下批量修改用例
+     * @param {Array<TestCaseInfo>} testCaseInfo 批量更新用例请求体
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public batchUpdateTestCasesInDiffVersion(batchUpdateTestCasesInDiffVersionRequest?: BatchUpdateTestCasesInDiffVersionRequest): Promise<BatchUpdateTestCasesInDiffVersionResponse> {
+        const options = ParamCreater().batchUpdateTestCasesInDiffVersion(batchUpdateTestCasesInDiffVersionRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -1298,6 +1347,29 @@ export class CloudtestClient {
      */
     public deleteTestReportCustomDetailByUri(deleteTestReportCustomDetailByUriRequest?: DeleteTestReportCustomDetailByUriRequest): Promise<DeleteTestReportCustomDetailByUriResponse> {
         const options = ParamCreater().deleteTestReportCustomDetailByUri(deleteTestReportCustomDetailByUriRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 下载图片
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 下载图片
+     * @param {string} projectId 项目id
+     * @param {string} parent 父级目录名称
+     * @param {string} sub 子级目录名称
+     * @param {string} fileName 文件名
+     * @param {string} fileType 文件类型
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public downloadStepImageNew(downloadStepImageNewRequest?: DownloadStepImageNewRequest): Promise<DownloadStepImageNewResponse> {
+        const options = ParamCreater().downloadStepImageNew(downloadStepImageNewRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -4353,6 +4425,59 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 在任务下批量设置用例结果
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        batchAddCaseResultInTask(batchAddCaseResultInTaskRequest?: BatchAddCaseResultInTaskRequest) {
+            const options = {
+                method: "POST",
+                url: "/v4/{project_id}/versions/{version_uri}/task/testcases/results",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let projectId;
+            
+            let versionUri;
+
+            if (batchAddCaseResultInTaskRequest !== null && batchAddCaseResultInTaskRequest !== undefined) {
+                if (batchAddCaseResultInTaskRequest instanceof BatchAddCaseResultInTaskRequest) {
+                    projectId = batchAddCaseResultInTaskRequest.projectId;
+                    versionUri = batchAddCaseResultInTaskRequest.versionUri;
+                    body = batchAddCaseResultInTaskRequest.body
+                } else {
+                    projectId = batchAddCaseResultInTaskRequest['project_id'];
+                    versionUri = batchAddCaseResultInTaskRequest['version_uri'];
+                    body = batchAddCaseResultInTaskRequest['body'];
+                }
+            }
+
+        
+            if (projectId === null || projectId === undefined) {
+            throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling batchAddCaseResultInTask.');
+            }
+            if (versionUri === null || versionUri === undefined) {
+            throw new RequiredError('versionUri','Required parameter versionUri was null or undefined when calling batchAddCaseResultInTask.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'project_id': projectId,'version_uri': versionUri, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 添加需求/缺陷和多个用例关联关系
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -4624,6 +4749,44 @@ export const ParamCreater = function () {
 
             options.data = body !== undefined ? body : {};
             options.pathParams = { 'iterator_id': iteratorId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 在不同分支或者迭代下批量修改用例
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        batchUpdateTestCasesInDiffVersion(batchUpdateTestCasesInDiffVersionRequest?: BatchUpdateTestCasesInDiffVersionRequest) {
+            const options = {
+                method: "PUT",
+                url: "/v4/batch/update/testcases",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+
+            if (batchUpdateTestCasesInDiffVersionRequest !== null && batchUpdateTestCasesInDiffVersionRequest !== undefined) {
+                if (batchUpdateTestCasesInDiffVersionRequest instanceof BatchUpdateTestCasesInDiffVersionRequest) {
+                    body = batchUpdateTestCasesInDiffVersionRequest.body
+                } else {
+                    body = batchUpdateTestCasesInDiffVersionRequest['body'];
+                }
+            }
+
+        
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -5619,6 +5782,71 @@ export const ParamCreater = function () {
             }
 
             options.pathParams = { 'project_id': projectId,'version_uri': versionUri,'report_uri': reportUri,'custom_info_uri': customInfoUri, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 下载图片
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        downloadStepImageNew(downloadStepImageNewRequest?: DownloadStepImageNewRequest) {
+            const options = {
+                method: "GET",
+                url: "/v4/{project_id}/image/{parent}/{sub}/{file_name}/{file_type}",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let projectId;
+            
+            let parent;
+            
+            let sub;
+            
+            let fileName;
+            
+            let fileType;
+
+            if (downloadStepImageNewRequest !== null && downloadStepImageNewRequest !== undefined) {
+                if (downloadStepImageNewRequest instanceof DownloadStepImageNewRequest) {
+                    projectId = downloadStepImageNewRequest.projectId;
+                    parent = downloadStepImageNewRequest.parent;
+                    sub = downloadStepImageNewRequest.sub;
+                    fileName = downloadStepImageNewRequest.fileName;
+                    fileType = downloadStepImageNewRequest.fileType;
+                } else {
+                    projectId = downloadStepImageNewRequest['project_id'];
+                    parent = downloadStepImageNewRequest['parent'];
+                    sub = downloadStepImageNewRequest['sub'];
+                    fileName = downloadStepImageNewRequest['file_name'];
+                    fileType = downloadStepImageNewRequest['file_type'];
+                }
+            }
+
+        
+            if (projectId === null || projectId === undefined) {
+            throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling downloadStepImageNew.');
+            }
+            if (parent === null || parent === undefined) {
+            throw new RequiredError('parent','Required parameter parent was null or undefined when calling downloadStepImageNew.');
+            }
+            if (sub === null || sub === undefined) {
+            throw new RequiredError('sub','Required parameter sub was null or undefined when calling downloadStepImageNew.');
+            }
+            if (fileName === null || fileName === undefined) {
+            throw new RequiredError('fileName','Required parameter fileName was null or undefined when calling downloadStepImageNew.');
+            }
+            if (fileType === null || fileType === undefined) {
+            throw new RequiredError('fileType','Required parameter fileType was null or undefined when calling downloadStepImageNew.');
+            }
+
+            options.pathParams = { 'project_id': projectId,'parent': parent,'sub': sub,'file_name': fileName,'file_type': fileType, };
             options.headers = localVarHeaderParameter;
             return options;
         },

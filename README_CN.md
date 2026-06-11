@@ -6,6 +6,9 @@
 
 <h1 align="center">华为云开发者 Node.js 软件开发工具包（Node.js SDK）</h1>
 
+[![GitHub Release](https://img.shields.io/github/v/release/huaweicloud/huaweicloud-sdk-nodejs-v3)](https://github.com/huaweicloud/huaweicloud-sdk-nodejs-v3/releases)
+[![License](https://img.shields.io/badge/license-Apache--2.0-green)](https://www.apache.org/licenses/LICENSE-2.0)
+
 欢迎使用华为云 Node.js SDK 。
 
 华为云 Node.js SDK 让您无需关心请求细节即可快速使用弹性云服务器（ECS）、虚拟私有云（VPC）等多个华为云服务。
@@ -21,6 +24,21 @@
   ，您需要确认已在 [华为云控制台](https://console.huaweicloud.com/console/?locale=zh-cn&region=cn-north-4#/home) 开通当前服务。
 
 - 华为云 Node.js SDK 支持 **Node 10.16.1** 及其以上版本。
+
+## 隐私声明
+
+- 收集信息：
+  为完成华为云服务开放API调用的必要校验，SDK需要使用由华为云控制台下载的用户访问密钥（AK）进行签名，该过程不会上传您的私有密钥（SK）。
+
+- 本工具默认会在请求头User-Agent中附加额外信息，附加信息包括客户端调用服务时所使用的SDK语言、客户端库版本、操作系统、时区语言信息和一个随机标识符，上述信息将用于保护您及您的用户的华为云账号安全。您可以通过自定义User-Agent的方式关闭上述行为 。
+
+- 数据处理方式：当您使用本工具提供的服务开放API功能时，您的相关数据（如上传的文件、提交的文本内容）将通过加密传输通道（HTTPS） 直接发送至华为云服务端进行处理。
+
+- 该过程由华为云服务端完成计算、存储或分析，数据不会在本应用客户端本地处理或持久化存储。
+
+- 华为云将根据其服务协议和隐私政策作为数据处理方独立处理这些数据，我们仅作为控制方发起API请求。数据处理结果将返回至本工具供您使用。
+
+- 华为云官方隐私声明：https://www.huaweicloud.com/declaration/sa_prp.html
 
 ## SDK 获取和安装
 
@@ -73,11 +91,27 @@ const client = VpcClient.newBuilder()
 
 ```
 
+- 添加/修改`tsconfig.json`配置文件
+
+``` json
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "NodeNext",
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*"]
+}
+ 
+```
+
 - 示例调试
 
 ``` bash
 # 添加依赖
 npm install -g ts-node typescript
+npm install -D @types/node
+npm install uuid@9.0.0
 
 # 运行
 ts-node ./index.ts
@@ -102,6 +136,7 @@ ts-node ./index.ts
 * [2. 认证信息配置](#2-认证信息配置-top)
     * [2.1 使用永久 AK 和 SK](#21-使用永久-ak-和-sk-top)
     * [2.2 使用临时 AK 和 SK](#22-使用临时-ak-和-sk-top)
+    * [2.3 使用 IdpId 和 IdTokenFile](#23-使用-idpid-和-idtokenfile-top)
 * [3. 客户端初始化](#3-客户端初始化-top)
     * [3.1 指定云服务 Endpoint 方式](#31-指定云服务-endpoint-方式-top)
     * [3.2 用户代理](#32-用户代理-top)
@@ -195,7 +230,33 @@ const globalCredentials = new GlobalCredentials()
     .withSecurityToken(securityToken)
     .withDomainId(domainId);
 ```
+#### 2.3 使用 IdpId 和 IdTokenFile [:top:](#用户手册-top)
 
+通过OpenID Connect ID token方式获取联邦认证token, 可参考文档：[获取联邦认证token(OpenID Connect ID token方式)](https://support.huaweicloud.com/api-iam/iam_13_0605.html)
+
+**认证参数说明**：
+
+- `IdpId` 身份提供商ID
+- `IdTokenFile` 存放id_token的文件路径，id_token由企业IdP构建，携带联邦用户身份信息
+- `projectId` 云服务所在项目 ID ，根据你想操作的项目所属区域选择对应的项目 ID
+- `domainId` 华为云账号 ID
+
+``` javascript
+import { BasicCredentials } from "@huaweicloud/huaweicloud-sdk-core/auth/BasicCredentials";
+import { GlobalCredentials } from "@huaweicloud/huaweicloud-sdk-core/auth/GlobalCredentials";
+
+// Region级服务
+const basicCredentials = new BasicCredentials()
+    .withIdpId(idpId)
+    .withIdTokenFile(idTokenFile)
+    .withProjectId(projectId)
+
+// Global级服务
+const globalCredentials = new GlobalCredentials()
+    .withIdpId(idpId)
+    .withIdTokenFile(idTokenFile)
+    .withDomainId(domainId);
+```
 ### 3. 客户端初始化 [:top:](#用户手册-top)
 
 #### 3.1 指定云服务 Endpoint 方式 [:top:](#用户手册-top)

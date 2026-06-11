@@ -3,8 +3,9 @@
 export class ListLogContextRequestBody {
     private 'line_num'?: string;
     private '__time__'?: string;
-    public backwardsSize?: number;
-    public forwardsSize?: number;
+    private 'backwards_size'?: number;
+    private 'forwards_size'?: number;
+    private 'scroll_id'?: string;
     public constructor() { 
     }
     public withLineNum(lineNum: string): ListLogContextRequestBody {
@@ -28,11 +29,33 @@ export class ListLogContextRequestBody {
         return this['__time__'];
     }
     public withBackwardsSize(backwardsSize: number): ListLogContextRequestBody {
-        this['backwardsSize'] = backwardsSize;
+        this['backwards_size'] = backwardsSize;
         return this;
     }
+    public set backwardsSize(backwardsSize: number  | undefined) {
+        this['backwards_size'] = backwardsSize;
+    }
+    public get backwardsSize(): number | undefined {
+        return this['backwards_size'];
+    }
     public withForwardsSize(forwardsSize: number): ListLogContextRequestBody {
-        this['forwardsSize'] = forwardsSize;
+        this['forwards_size'] = forwardsSize;
         return this;
+    }
+    public set forwardsSize(forwardsSize: number  | undefined) {
+        this['forwards_size'] = forwardsSize;
+    }
+    public get forwardsSize(): number | undefined {
+        return this['forwards_size'];
+    }
+    public withScrollId(scrollId: string): ListLogContextRequestBody {
+        this['scroll_id'] = scrollId;
+        return this;
+    }
+    public set scrollId(scrollId: string  | undefined) {
+        this['scroll_id'] = scrollId;
+    }
+    public get scrollId(): string | undefined {
+        return this['scroll_id'];
     }
 }

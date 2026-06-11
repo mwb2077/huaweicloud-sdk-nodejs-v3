@@ -6,12 +6,15 @@ export class SrcNodeReq {
     public region?: string;
     public ak?: string;
     public sk?: string;
+    private 'connection_string'?: string;
     private 'json_auth_file'?: string;
     private 'security_token'?: string;
     private 'app_id'?: string;
     public bucket?: string;
     private 'object_key'?: Array<string>;
     private 'list_file'?: ListFile;
+    private 'crypto_type'?: SrcNodeReqCryptoTypeEnum | string;
+    private 'kms_key_id'?: string;
     public constructor() { 
     }
     public withCloudType(cloudType: string): SrcNodeReq {
@@ -35,6 +38,16 @@ export class SrcNodeReq {
     public withSk(sk: string): SrcNodeReq {
         this['sk'] = sk;
         return this;
+    }
+    public withConnectionString(connectionString: string): SrcNodeReq {
+        this['connection_string'] = connectionString;
+        return this;
+    }
+    public set connectionString(connectionString: string  | undefined) {
+        this['connection_string'] = connectionString;
+    }
+    public get connectionString(): string | undefined {
+        return this['connection_string'];
     }
     public withJsonAuthFile(jsonAuthFile: string): SrcNodeReq {
         this['json_auth_file'] = jsonAuthFile;
@@ -90,4 +103,33 @@ export class SrcNodeReq {
     public get listFile(): ListFile | undefined {
         return this['list_file'];
     }
+    public withCryptoType(cryptoType: SrcNodeReqCryptoTypeEnum | string): SrcNodeReq {
+        this['crypto_type'] = cryptoType;
+        return this;
+    }
+    public set cryptoType(cryptoType: SrcNodeReqCryptoTypeEnum | string  | undefined) {
+        this['crypto_type'] = cryptoType;
+    }
+    public get cryptoType(): SrcNodeReqCryptoTypeEnum | string | undefined {
+        return this['crypto_type'];
+    }
+    public withKmsKeyId(kmsKeyId: string): SrcNodeReq {
+        this['kms_key_id'] = kmsKeyId;
+        return this;
+    }
+    public set kmsKeyId(kmsKeyId: string  | undefined) {
+        this['kms_key_id'] = kmsKeyId;
+    }
+    public get kmsKeyId(): string | undefined {
+        return this['kms_key_id'];
+    }
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum SrcNodeReqCryptoTypeEnum {
+    DEFAULT = 'DEFAULT',
+    KMS = 'KMS'
 }

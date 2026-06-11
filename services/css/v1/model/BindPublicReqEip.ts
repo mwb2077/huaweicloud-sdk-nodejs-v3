@@ -2,12 +2,18 @@ import { BindPublicReqEipBandWidth } from './BindPublicReqEipBandWidth';
 
 
 export class BindPublicReqEip {
-    public bandWidth?: BindPublicReqEipBandWidth;
+    private 'band_width'?: BindPublicReqEipBandWidth;
     public constructor(bandWidth?: BindPublicReqEipBandWidth) { 
-        this['bandWidth'] = bandWidth;
+        this['band_width'] = bandWidth;
     }
     public withBandWidth(bandWidth: BindPublicReqEipBandWidth): BindPublicReqEip {
-        this['bandWidth'] = bandWidth;
+        this['band_width'] = bandWidth;
         return this;
+    }
+    public set bandWidth(bandWidth: BindPublicReqEipBandWidth  | undefined) {
+        this['band_width'] = bandWidth;
+    }
+    public get bandWidth(): BindPublicReqEipBandWidth | undefined {
+        return this['band_width'];
     }
 }

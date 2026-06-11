@@ -5,6 +5,10 @@ export class AutoscalePolicy {
     private 'max_auto_created'?: number;
     private 'min_idle'?: number;
     private 'once_auto_created'?: number;
+    private 'min_retention'?: number;
+    private 'idle_retention_duration'?: number;
+    private 'auto_isolation_enable'?: boolean;
+    private 'auto_isolation_max_num'?: number;
     public constructor() { 
     }
     public withAutoscaleType(autoscaleType: AutoscalePolicyAutoscaleTypeEnum | string): AutoscalePolicy {
@@ -46,6 +50,46 @@ export class AutoscalePolicy {
     }
     public get onceAutoCreated(): number | undefined {
         return this['once_auto_created'];
+    }
+    public withMinRetention(minRetention: number): AutoscalePolicy {
+        this['min_retention'] = minRetention;
+        return this;
+    }
+    public set minRetention(minRetention: number  | undefined) {
+        this['min_retention'] = minRetention;
+    }
+    public get minRetention(): number | undefined {
+        return this['min_retention'];
+    }
+    public withIdleRetentionDuration(idleRetentionDuration: number): AutoscalePolicy {
+        this['idle_retention_duration'] = idleRetentionDuration;
+        return this;
+    }
+    public set idleRetentionDuration(idleRetentionDuration: number  | undefined) {
+        this['idle_retention_duration'] = idleRetentionDuration;
+    }
+    public get idleRetentionDuration(): number | undefined {
+        return this['idle_retention_duration'];
+    }
+    public withAutoIsolationEnable(autoIsolationEnable: boolean): AutoscalePolicy {
+        this['auto_isolation_enable'] = autoIsolationEnable;
+        return this;
+    }
+    public set autoIsolationEnable(autoIsolationEnable: boolean  | undefined) {
+        this['auto_isolation_enable'] = autoIsolationEnable;
+    }
+    public get autoIsolationEnable(): boolean | undefined {
+        return this['auto_isolation_enable'];
+    }
+    public withAutoIsolationMaxNum(autoIsolationMaxNum: number): AutoscalePolicy {
+        this['auto_isolation_max_num'] = autoIsolationMaxNum;
+        return this;
+    }
+    public set autoIsolationMaxNum(autoIsolationMaxNum: number  | undefined) {
+        this['auto_isolation_max_num'] = autoIsolationMaxNum;
+    }
+    public get autoIsolationMaxNum(): number | undefined {
+        return this['auto_isolation_max_num'];
     }
 }
 

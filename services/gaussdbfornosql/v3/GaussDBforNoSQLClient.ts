@@ -31,6 +31,7 @@ import { BigKeysInfoResponseBody } from './model/BigKeysInfoResponseBody';
 import { CancelInstanceScheduleWindowRequest } from './model/CancelInstanceScheduleWindowRequest';
 import { CancelInstanceScheduleWindowResponse } from './model/CancelInstanceScheduleWindowResponse';
 import { CassandraSlowLogDetail } from './model/CassandraSlowLogDetail';
+import { CertInfo } from './model/CertInfo';
 import { ChargeInfoOption } from './model/ChargeInfoOption';
 import { ChargeInfoResult } from './model/ChargeInfoResult';
 import { CheckDisasterRecoveryOperationRequest } from './model/CheckDisasterRecoveryOperationRequest';
@@ -80,6 +81,7 @@ import { CreateInstanceRequest } from './model/CreateInstanceRequest';
 import { CreateInstanceRequestBody } from './model/CreateInstanceRequestBody';
 import { CreateInstanceResponse } from './model/CreateInstanceResponse';
 import { DataStoreList } from './model/DataStoreList';
+import { DatabaseTable } from './model/DatabaseTable';
 import { Datastore } from './model/Datastore';
 import { DatastoreOption } from './model/DatastoreOption';
 import { DatastoreResult } from './model/DatastoreResult';
@@ -137,6 +139,8 @@ import { ListApiVersionRequest } from './model/ListApiVersionRequest';
 import { ListApiVersionResponse } from './model/ListApiVersionResponse';
 import { ListAvailableFlavorInfosRequest } from './model/ListAvailableFlavorInfosRequest';
 import { ListAvailableFlavorInfosResponse } from './model/ListAvailableFlavorInfosResponse';
+import { ListBackupsRequest } from './model/ListBackupsRequest';
+import { ListBackupsResponse } from './model/ListBackupsResponse';
 import { ListCassandraSlowLogsRequest } from './model/ListCassandraSlowLogsRequest';
 import { ListCassandraSlowLogsRequestBody } from './model/ListCassandraSlowLogsRequestBody';
 import { ListCassandraSlowLogsResponse } from './model/ListCassandraSlowLogsResponse';
@@ -226,8 +230,13 @@ import { ListRestoreTimeRequest } from './model/ListRestoreTimeRequest';
 import { ListRestoreTimeResponse } from './model/ListRestoreTimeResponse';
 import { ListSlowLogsRequest } from './model/ListSlowLogsRequest';
 import { ListSlowLogsResponse } from './model/ListSlowLogsResponse';
+import { ListSslCertDownloadAddressesRequest } from './model/ListSslCertDownloadAddressesRequest';
+import { ListSslCertDownloadAddressesResponse } from './model/ListSslCertDownloadAddressesResponse';
 import { LogInstanceInfo } from './model/LogInstanceInfo';
 import { MatchOption } from './model/MatchOption';
+import { ModifyAutoNodeExpansionPolicyRequest } from './model/ModifyAutoNodeExpansionPolicyRequest';
+import { ModifyAutoNodeExpansionPolicyRequestBody } from './model/ModifyAutoNodeExpansionPolicyRequestBody';
+import { ModifyAutoNodeExpansionPolicyResponse } from './model/ModifyAutoNodeExpansionPolicyResponse';
 import { ModifyDbUserPrivilegeRequest } from './model/ModifyDbUserPrivilegeRequest';
 import { ModifyDbUserPrivilegeResponse } from './model/ModifyDbUserPrivilegeResponse';
 import { ModifyEpsQuotasRequest } from './model/ModifyEpsQuotasRequest';
@@ -269,6 +278,7 @@ import { QueryDatabaseTableInfo } from './model/QueryDatabaseTableInfo';
 import { QueryInstanceBackupResponseBodyBackups } from './model/QueryInstanceBackupResponseBodyBackups';
 import { QueryInstanceBackupResponseBodyDatastore } from './model/QueryInstanceBackupResponseBodyDatastore';
 import { QueryRestoreList } from './model/QueryRestoreList';
+import { RecoveryInfo } from './model/RecoveryInfo';
 import { RecycleDatastore } from './model/RecycleDatastore';
 import { RecycleInstance } from './model/RecycleInstance';
 import { RecyclePolicy } from './model/RecyclePolicy';
@@ -307,6 +317,9 @@ import { RestorableTime } from './model/RestorableTime';
 import { RestoreExistingInstanceRequest } from './model/RestoreExistingInstanceRequest';
 import { RestoreExistingInstanceResponse } from './model/RestoreExistingInstanceResponse';
 import { RestoreInfo } from './model/RestoreInfo';
+import { RestoreRedisDataRequest } from './model/RestoreRedisDataRequest';
+import { RestoreRedisDataRequestBody } from './model/RestoreRedisDataRequestBody';
+import { RestoreRedisDataResponse } from './model/RestoreRedisDataResponse';
 import { RestoreRedisPitrRequest } from './model/RestoreRedisPitrRequest';
 import { RestoreRedisPitrRequestBody } from './model/RestoreRedisPitrRequestBody';
 import { RestoreRedisPitrResponse } from './model/RestoreRedisPitrResponse';
@@ -320,6 +333,7 @@ import { SaveRedisDisabledCommandsResponse } from './model/SaveRedisDisabledComm
 import { ScheduleDetailInfo } from './model/ScheduleDetailInfo';
 import { SetAutoEnlargePolicyRequest } from './model/SetAutoEnlargePolicyRequest';
 import { SetAutoEnlargePolicyResponse } from './model/SetAutoEnlargePolicyResponse';
+import { SetAutoPolicyErrorResults } from './model/SetAutoPolicyErrorResults';
 import { SetAutoPolicyRequestBody } from './model/SetAutoPolicyRequestBody';
 import { SetBackupPolicyRequest } from './model/SetBackupPolicyRequest';
 import { SetBackupPolicyRequestBody } from './model/SetBackupPolicyRequestBody';
@@ -347,6 +361,8 @@ import { ShowApplyHistoryRequest } from './model/ShowApplyHistoryRequest';
 import { ShowApplyHistoryResponse } from './model/ShowApplyHistoryResponse';
 import { ShowAutoEnlargePolicyRequest } from './model/ShowAutoEnlargePolicyRequest';
 import { ShowAutoEnlargePolicyResponse } from './model/ShowAutoEnlargePolicyResponse';
+import { ShowAutoNodeExpansionPolicyRequest } from './model/ShowAutoNodeExpansionPolicyRequest';
+import { ShowAutoNodeExpansionPolicyResponse } from './model/ShowAutoNodeExpansionPolicyResponse';
 import { ShowBackupPoliciesRequest } from './model/ShowBackupPoliciesRequest';
 import { ShowBackupPoliciesResponse } from './model/ShowBackupPoliciesResponse';
 import { ShowBackupPolicyRequest } from './model/ShowBackupPolicyRequest';
@@ -449,6 +465,9 @@ import { UpdateInstanceConfigurationResponse } from './model/UpdateInstanceConfi
 import { UpdateInstanceConfigurationsRequest } from './model/UpdateInstanceConfigurationsRequest';
 import { UpdateInstanceConfigurationsRequestBody } from './model/UpdateInstanceConfigurationsRequestBody';
 import { UpdateInstanceConfigurationsResponse } from './model/UpdateInstanceConfigurationsResponse';
+import { UpdateInstanceLBRequestBody } from './model/UpdateInstanceLBRequestBody';
+import { UpdateInstanceLbRequest } from './model/UpdateInstanceLbRequest';
+import { UpdateInstanceLbResponse } from './model/UpdateInstanceLbResponse';
 import { UpdateInstanceNameRequest } from './model/UpdateInstanceNameRequest';
 import { UpdateInstanceNameRequestBody } from './model/UpdateInstanceNameRequestBody';
 import { UpdateInstanceNameResponse } from './model/UpdateInstanceNameResponse';
@@ -702,7 +721,7 @@ export class GaussDBforNoSQLClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 创建手动备份
-     * @param {string} instanceId 实例ID。
+     * @param {string} instanceId **参数解释：** 实例ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @param {NoSqlCreateBackupRequestBody} createBackup 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -742,7 +761,7 @@ export class GaussDBforNoSQLClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 创建参数模板
-     * @param {CreateConfigurationRequestBody} createConfigurationRequestBody 请求体。
+     * @param {CreateConfigurationRequestBody} createConfigurationRequestBody **参数解释：** 请求体。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -1139,6 +1158,33 @@ export class GaussDBforNoSQLClient {
      */
     public listAvailableFlavorInfos(listAvailableFlavorInfosRequest?: ListAvailableFlavorInfosRequest): Promise<ListAvailableFlavorInfosResponse> {
         const options = ParamCreater().listAvailableFlavorInfos(listAvailableFlavorInfosRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 根据指定条件查询备份列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询备份列表（推荐）
+     * @param {string} [instanceId] 参数解释： 实例ID，可以调用“查询实例列表”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 约束限制： 不涉及。 取值范围： 不涉及。 默认取值： 不涉及。
+     * @param {string} [datastoreType] 参数解释： 数据库类型。 约束限制： 不涉及。 取值范围： 不涉及。 默认取值：  - cassandra  - redis  - mongodb  - influxdb
+     * @param {string} [backupId] 备份ID。
+     * @param {string} [backupType] 参数解释： 备份类型，大小写敏感。 约束限制： 不涉及。 取值范围：  - 取值为“Auto”，表示自动全量备份。  - 取值为“Manual”，表示手动全量备份。  - 当该字段未传入值时，默认只查询所有的全量备份(包含库表级)，包括自动全备备份和手动全量备份。 默认取值： 不涉及。
+     * @param {string} [type] 参数解释： 备份策略类型。 约束限制： 不涉及。 取值范围：  - Instance 表示查询实例级备份。  - DatabaseTable 表示查询库表级备份。 默认取值：  Instance。
+     * @param {number} [limit] 参数解释： 查询备份个数上限值。 约束限制： 不涉及。 取值范围： 1~100。 默认取值： 不传该参数时，默认查询前100条实例信息。
+     * @param {number} [offset] 参数解释： 索引位置偏移量，表示从指定project ID下最新的备份创建时间开始，按时间的先后顺序偏移offset条数据后查询对应的备份信息。 约束限制： 取值大于或等于0。 取值范围： 取值大于或等于0。 默认取值： 不传该参数时，查询偏移量默认为0，表示从最新的备份创建时间对应的备份开始查询。
+     * @param {string} [beginTime] 参数解释： 查询备份开始的时间，为yyyy-mm-ddThh:mm:ssZ字符串格式，T指某个时间的开始，Z指时区偏移量。 约束限制： - “end_time”有值时，“begin_time”必选。 取值范围： 不涉及。 默认取值： 默认为空。
+     * @param {string} [endTime] 参数解释： 查询备份开始的结束时间，为yyyy-mm-ddThh:mm:ssZ字符串格式，T指某个时间的开始，Z指时区偏移量。 约束限制： - “begin_time”有值时，“end_time”必选。 取值范围： 不涉及。 默认取值： 默认为空。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listBackups(listBackupsRequest?: ListBackupsRequest): Promise<ListBackupsResponse> {
+        const options = ParamCreater().listBackups(listBackupsRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -1896,6 +1942,46 @@ export class GaussDBforNoSQLClient {
     }
 
     /**
+     * 获取SSL证书下载地址。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 获取SSL证书下载地址
+     * @param {string} instanceId **参数解释：** 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listSslCertDownloadAddresses(listSslCertDownloadAddressesRequest?: ListSslCertDownloadAddressesRequest): Promise<ListSslCertDownloadAddressesResponse> {
+        const options = ParamCreater().listSslCertDownloadAddresses(listSslCertDownloadAddressesRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 设置节点自动扩容策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 设置节点自动扩容策略
+     * @param {string} instanceId **参数解释：** 实例ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {ModifyAutoNodeExpansionPolicyRequestBody} modifyAutoNodeExpansionPolicyRequestBody 请求体。
+     * @param {string} [xLanguage] **参数解释：** 语言。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public modifyAutoNodeExpansionPolicy(modifyAutoNodeExpansionPolicyRequest?: ModifyAutoNodeExpansionPolicyRequest): Promise<ModifyAutoNodeExpansionPolicyResponse> {
+        const options = ParamCreater().modifyAutoNodeExpansionPolicy(modifyAutoNodeExpansionPolicyRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 修改Redis数据库帐号权限。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -2217,6 +2303,26 @@ export class GaussDBforNoSQLClient {
     }
 
     /**
+     * 数据导入已有实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 数据文件导入已有实例
+     * @param {string} instanceId 参数解释： 实例ID，可以调用“查询实例列表”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 约束限制： 不涉及。 取值范围： 不涉及。 默认取值： 不涉及。
+     * @param {RestoreRedisDataRequestBody} restoreRedisDataRequestBody 参数解释： 请求体。 约束限制： 不涉及。 取值范围： 不涉及。 默认取值： 不涉及。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public restoreRedisData(restoreRedisDataRequest?: RestoreRedisDataRequest): Promise<RestoreRedisDataResponse> {
+        const options = ParamCreater().restoreRedisData(restoreRedisDataRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 恢复当前Redis实例到指定时间点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -2458,6 +2564,8 @@ export class GaussDBforNoSQLClient {
      * @param {string} configId 参数模板id
      * @param {number} [offset] 索引位置，偏移量。  从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询）。  取值必须为数字，不能为负数。
      * @param {number} [limit] 查询个数上限值。   - 取值范围: 1~100。   - 不传该参数时，默认查询前100条信息。
+     * @param {string} [instanceName] **参数解释：** 实例名称，支持模糊搜索。 **约束限制：** 不涉及。 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @param {string} [instanceId] **参数解释：** 实例ID，支持模糊搜索。 **约束限制：** 不涉及。 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -2475,9 +2583,9 @@ export class GaussDBforNoSQLClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 查询参数模板应用历史
-     * @param {string} configId 参数组id
-     * @param {number} [offset] 索引位置，偏移量。  从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询）。  取值必须为数字，不能为负数。
-     * @param {number} [limit] 查询个数上限值。   - 取值范围: 1~100。   - 不传该参数时，默认查询前100条信息。
+     * @param {string} configId **参数解释：** 参数组id。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {number} [offset] **参数解释：** 索引位置，偏移量。 **约束限制：** 不涉及。 **取值范围：** 取值必须为数字，不能为负数。 **默认取值：** 从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询）。
+     * @param {number} [limit] **参数解释：** 查询个数上限值。 **约束限制：** 不涉及。 **取值范围：** 取值范围: 1~100。 **默认取值：** 不传该参数时，默认查询前100条信息。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -2502,6 +2610,26 @@ export class GaussDBforNoSQLClient {
      */
     public showAutoEnlargePolicy(showAutoEnlargePolicyRequest?: ShowAutoEnlargePolicyRequest): Promise<ShowAutoEnlargePolicyResponse> {
         const options = ParamCreater().showAutoEnlargePolicy(showAutoEnlargePolicyRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询节点自动扩容策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询节点自动扩容策略
+     * @param {string} instanceId **参数解释：** 实例ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {string} [xLanguage] **参数解释：** 语言。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public showAutoNodeExpansionPolicy(showAutoNodeExpansionPolicyRequest?: ShowAutoNodeExpansionPolicyRequest): Promise<ShowAutoNodeExpansionPolicyResponse> {
+        const options = ParamCreater().showAutoNodeExpansionPolicy(showAutoNodeExpansionPolicyRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -2730,14 +2858,15 @@ export class GaussDBforNoSQLClient {
     }
 
     /**
-     * 查询实例参数的修改历史
+     * 查询指定实例的参数组修改历史记录，支持分页查询，支持参数搜索。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @summary 查询实例参数的修改历史
-     * @param {string} instanceId 实例id
-     * @param {number} [offset] 索引位置，偏移量。  从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询）。  取值必须为数字，不能为负数。
-     * @param {number} [limit] 查询个数上限值。   - 取值范围: 1~100。   - 不传该参数时，默认查询前100条信息。
+     * @summary 查询参数组修改历史。
+     * @param {string} instanceId **参数解释：** 实例ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {string} [parameterName] **参数解释：** 参数名称，支持模糊查询。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {number} [offset] **参数解释：** 索引位置，偏移量。 从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询）。 **约束限制：** 取值必须为数字，不能为负数。 **取值范围：** 非负整数。 **默认取值：** 0
+     * @param {number} [limit] **参数解释：** 查询个数上限值。 **约束限制：** 不涉及。 **取值范围：** 1~100。 **默认取值：** 100。不传该参数时，默认查询前100条信息。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -3293,13 +3422,33 @@ export class GaussDBforNoSQLClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 修改指定实例的参数
-     * @param {string} instanceId 实例ID。
+     * @param {string} instanceId **参数解释：** 实例ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @param {UpdateInstanceConfigurationsRequestBody} updateInstanceConfigurationsRequestBody 请求体。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     public updateInstanceConfigurations(updateInstanceConfigurationsRequest?: UpdateInstanceConfigurationsRequest): Promise<UpdateInstanceConfigurationsResponse> {
         const options = ParamCreater().updateInstanceConfigurations(updateInstanceConfigurationsRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 修改负载均衡地址。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 修改负载均衡地址
+     * @param {string} instanceId **参数解释：** 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @param {UpdateInstanceLBRequestBody} updateInstanceLBRequestBody 请求体。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public updateInstanceLb(updateInstanceLbRequest?: UpdateInstanceLbRequest): Promise<UpdateInstanceLbResponse> {
+        const options = ParamCreater().updateInstanceLb(updateInstanceLbRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -4856,6 +5005,99 @@ export const ParamCreater = function () {
 
             options.queryParams = localVarQueryParameter;
             options.pathParams = { 'instance_id': instanceId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 根据指定条件查询备份列表。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listBackups(listBackupsRequest?: ListBackupsRequest) {
+            const options = {
+                method: "GET",
+                url: "/v4/{project_id}/backups",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let instanceId;
+            
+            let datastoreType;
+            
+            let backupId;
+            
+            let backupType;
+            
+            let type;
+            
+            let limit;
+            
+            let offset;
+            
+            let beginTime;
+            
+            let endTime;
+
+            if (listBackupsRequest !== null && listBackupsRequest !== undefined) {
+                if (listBackupsRequest instanceof ListBackupsRequest) {
+                    instanceId = listBackupsRequest.instanceId;
+                    datastoreType = listBackupsRequest.datastoreType;
+                    backupId = listBackupsRequest.backupId;
+                    backupType = listBackupsRequest.backupType;
+                    type = listBackupsRequest.type;
+                    limit = listBackupsRequest.limit;
+                    offset = listBackupsRequest.offset;
+                    beginTime = listBackupsRequest.beginTime;
+                    endTime = listBackupsRequest.endTime;
+                } else {
+                    instanceId = listBackupsRequest['instance_id'];
+                    datastoreType = listBackupsRequest['datastore_type'];
+                    backupId = listBackupsRequest['backup_id'];
+                    backupType = listBackupsRequest['backup_type'];
+                    type = listBackupsRequest['type'];
+                    limit = listBackupsRequest['limit'];
+                    offset = listBackupsRequest['offset'];
+                    beginTime = listBackupsRequest['begin_time'];
+                    endTime = listBackupsRequest['end_time'];
+                }
+            }
+
+        
+            if (instanceId !== null && instanceId !== undefined) {
+                localVarQueryParameter['instance_id'] = instanceId;
+            }
+            if (datastoreType !== null && datastoreType !== undefined) {
+                localVarQueryParameter['datastore_type'] = datastoreType;
+            }
+            if (backupId !== null && backupId !== undefined) {
+                localVarQueryParameter['backup_id'] = backupId;
+            }
+            if (backupType !== null && backupType !== undefined) {
+                localVarQueryParameter['backup_type'] = backupType;
+            }
+            if (type !== null && type !== undefined) {
+                localVarQueryParameter['type'] = type;
+            }
+            if (limit !== null && limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+            if (offset !== null && offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
+            }
+            if (beginTime !== null && beginTime !== undefined) {
+                localVarQueryParameter['begin_time'] = beginTime;
+            }
+            if (endTime !== null && endTime !== undefined) {
+                localVarQueryParameter['end_time'] = endTime;
+            }
+
+            options.queryParams = localVarQueryParameter;
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -6774,6 +7016,96 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 获取SSL证书下载地址。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listSslCertDownloadAddresses(listSslCertDownloadAddressesRequest?: ListSslCertDownloadAddressesRequest) {
+            const options = {
+                method: "GET",
+                url: "/v3/{project_id}/instances/{instance_id}/ssl-cert/download-link",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let instanceId;
+
+            if (listSslCertDownloadAddressesRequest !== null && listSslCertDownloadAddressesRequest !== undefined) {
+                if (listSslCertDownloadAddressesRequest instanceof ListSslCertDownloadAddressesRequest) {
+                    instanceId = listSslCertDownloadAddressesRequest.instanceId;
+                } else {
+                    instanceId = listSslCertDownloadAddressesRequest['instance_id'];
+                }
+            }
+
+        
+            if (instanceId === null || instanceId === undefined) {
+            throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling listSslCertDownloadAddresses.');
+            }
+
+            options.pathParams = { 'instance_id': instanceId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 设置节点自动扩容策略。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        modifyAutoNodeExpansionPolicy(modifyAutoNodeExpansionPolicyRequest?: ModifyAutoNodeExpansionPolicyRequest) {
+            const options = {
+                method: "PUT",
+                url: "/v3/{project_id}/instances/{instance_id}/node-auto-expansion-policy",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let instanceId;
+            
+            let xLanguage;
+
+            if (modifyAutoNodeExpansionPolicyRequest !== null && modifyAutoNodeExpansionPolicyRequest !== undefined) {
+                if (modifyAutoNodeExpansionPolicyRequest instanceof ModifyAutoNodeExpansionPolicyRequest) {
+                    instanceId = modifyAutoNodeExpansionPolicyRequest.instanceId;
+                    body = modifyAutoNodeExpansionPolicyRequest.body
+                    xLanguage = modifyAutoNodeExpansionPolicyRequest.xLanguage;
+                } else {
+                    instanceId = modifyAutoNodeExpansionPolicyRequest['instance_id'];
+                    body = modifyAutoNodeExpansionPolicyRequest['body'];
+                    xLanguage = modifyAutoNodeExpansionPolicyRequest['X-Language'];
+                }
+            }
+
+        
+            if (instanceId === null || instanceId === undefined) {
+            throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling modifyAutoNodeExpansionPolicy.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            if (xLanguage !== undefined && xLanguage !== null) {
+                localVarHeaderParameter['X-Language'] = String(xLanguage);
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'instance_id': instanceId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 修改Redis数据库帐号权限。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -7499,6 +7831,52 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 数据导入已有实例。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        restoreRedisData(restoreRedisDataRequest?: RestoreRedisDataRequest) {
+            const options = {
+                method: "POST",
+                url: "/v3/{project_id}/redis/instances/{instance_id}/recovery",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let instanceId;
+
+            if (restoreRedisDataRequest !== null && restoreRedisDataRequest !== undefined) {
+                if (restoreRedisDataRequest instanceof RestoreRedisDataRequest) {
+                    instanceId = restoreRedisDataRequest.instanceId;
+                    body = restoreRedisDataRequest.body
+                } else {
+                    instanceId = restoreRedisDataRequest['instance_id'];
+                    body = restoreRedisDataRequest['body'];
+                }
+            }
+
+        
+            if (instanceId === null || instanceId === undefined) {
+            throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling restoreRedisData.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'instance_id': instanceId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 恢复当前Redis实例到指定时间点。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -8097,16 +8475,24 @@ export const ParamCreater = function () {
             let offset;
             
             let limit;
+            
+            let instanceName;
+            
+            let instanceId;
 
             if (showApplicableInstancesRequest !== null && showApplicableInstancesRequest !== undefined) {
                 if (showApplicableInstancesRequest instanceof ShowApplicableInstancesRequest) {
                     configId = showApplicableInstancesRequest.configId;
                     offset = showApplicableInstancesRequest.offset;
                     limit = showApplicableInstancesRequest.limit;
+                    instanceName = showApplicableInstancesRequest.instanceName;
+                    instanceId = showApplicableInstancesRequest.instanceId;
                 } else {
                     configId = showApplicableInstancesRequest['config_id'];
                     offset = showApplicableInstancesRequest['offset'];
                     limit = showApplicableInstancesRequest['limit'];
+                    instanceName = showApplicableInstancesRequest['instance_name'];
+                    instanceId = showApplicableInstancesRequest['instance_id'];
                 }
             }
 
@@ -8119,6 +8505,12 @@ export const ParamCreater = function () {
             }
             if (limit !== null && limit !== undefined) {
                 localVarQueryParameter['limit'] = limit;
+            }
+            if (instanceName !== null && instanceName !== undefined) {
+                localVarQueryParameter['instance_name'] = instanceName;
+            }
+            if (instanceId !== null && instanceId !== undefined) {
+                localVarQueryParameter['instance_id'] = instanceId;
             }
 
             options.queryParams = localVarQueryParameter;
@@ -8208,6 +8600,50 @@ export const ParamCreater = function () {
         
             if (instanceId === null || instanceId === undefined) {
             throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling showAutoEnlargePolicy.');
+            }
+
+            options.pathParams = { 'instance_id': instanceId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询节点自动扩容策略。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        showAutoNodeExpansionPolicy(showAutoNodeExpansionPolicyRequest?: ShowAutoNodeExpansionPolicyRequest) {
+            const options = {
+                method: "GET",
+                url: "/v3/{project_id}/instances/{instance_id}/node-auto-expansion-policy",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            
+            let instanceId;
+            
+            let xLanguage;
+
+            if (showAutoNodeExpansionPolicyRequest !== null && showAutoNodeExpansionPolicyRequest !== undefined) {
+                if (showAutoNodeExpansionPolicyRequest instanceof ShowAutoNodeExpansionPolicyRequest) {
+                    instanceId = showAutoNodeExpansionPolicyRequest.instanceId;
+                    xLanguage = showAutoNodeExpansionPolicyRequest.xLanguage;
+                } else {
+                    instanceId = showAutoNodeExpansionPolicyRequest['instance_id'];
+                    xLanguage = showAutoNodeExpansionPolicyRequest['X-Language'];
+                }
+            }
+
+        
+            if (instanceId === null || instanceId === undefined) {
+            throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling showAutoNodeExpansionPolicy.');
+            }
+            if (xLanguage !== undefined && xLanguage !== null) {
+                localVarHeaderParameter['X-Language'] = String(xLanguage);
             }
 
             options.pathParams = { 'instance_id': instanceId, };
@@ -8710,7 +9146,7 @@ export const ParamCreater = function () {
         },
     
         /**
-         * 查询实例参数的修改历史
+         * 查询指定实例的参数组修改历史记录，支持分页查询，支持参数搜索。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
          */
@@ -8728,6 +9164,8 @@ export const ParamCreater = function () {
             
             let instanceId;
             
+            let parameterName;
+            
             let offset;
             
             let limit;
@@ -8735,10 +9173,12 @@ export const ParamCreater = function () {
             if (showModifyHistoryRequest !== null && showModifyHistoryRequest !== undefined) {
                 if (showModifyHistoryRequest instanceof ShowModifyHistoryRequest) {
                     instanceId = showModifyHistoryRequest.instanceId;
+                    parameterName = showModifyHistoryRequest.parameterName;
                     offset = showModifyHistoryRequest.offset;
                     limit = showModifyHistoryRequest.limit;
                 } else {
                     instanceId = showModifyHistoryRequest['instance_id'];
+                    parameterName = showModifyHistoryRequest['parameter_name'];
                     offset = showModifyHistoryRequest['offset'];
                     limit = showModifyHistoryRequest['limit'];
                 }
@@ -8747,6 +9187,9 @@ export const ParamCreater = function () {
         
             if (instanceId === null || instanceId === undefined) {
             throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling showModifyHistory.');
+            }
+            if (parameterName !== null && parameterName !== undefined) {
+                localVarQueryParameter['parameter_name'] = parameterName;
             }
             if (offset !== null && offset !== undefined) {
                 localVarQueryParameter['offset'] = offset;
@@ -9986,6 +10429,52 @@ export const ParamCreater = function () {
         
             if (instanceId === null || instanceId === undefined) {
             throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling updateInstanceConfigurations.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'instance_id': instanceId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 修改负载均衡地址。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        updateInstanceLb(updateInstanceLbRequest?: UpdateInstanceLbRequest) {
+            const options = {
+                method: "PUT",
+                url: "/v3/{project_id}/instances/{instance_id}/lb",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let instanceId;
+
+            if (updateInstanceLbRequest !== null && updateInstanceLbRequest !== undefined) {
+                if (updateInstanceLbRequest instanceof UpdateInstanceLbRequest) {
+                    instanceId = updateInstanceLbRequest.instanceId;
+                    body = updateInstanceLbRequest.body
+                } else {
+                    instanceId = updateInstanceLbRequest['instance_id'];
+                    body = updateInstanceLbRequest['body'];
+                }
+            }
+
+        
+            if (instanceId === null || instanceId === undefined) {
+            throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling updateInstanceLb.');
             }
             if (body === null || body === undefined) {
                 throw new RequiredError('body','Required parameter body was null or undefined when calling body.');

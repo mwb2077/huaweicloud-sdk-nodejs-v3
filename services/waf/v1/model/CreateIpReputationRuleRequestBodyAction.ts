@@ -1,11 +1,22 @@
 
 
 export class CreateIpReputationRuleRequestBodyAction {
-    public category?: string;
-    public constructor() { 
+    public category?: CreateIpReputationRuleRequestBodyActionCategoryEnum | string;
+    public constructor(category?: string) { 
+        this['category'] = category;
     }
-    public withCategory(category: string): CreateIpReputationRuleRequestBodyAction {
+    public withCategory(category: CreateIpReputationRuleRequestBodyActionCategoryEnum | string): CreateIpReputationRuleRequestBodyAction {
         this['category'] = category;
         return this;
     }
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum CreateIpReputationRuleRequestBodyActionCategoryEnum {
+    LOG = 'log',
+    PASS = 'pass',
+    BLOCK = 'block'
 }

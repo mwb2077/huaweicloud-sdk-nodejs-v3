@@ -2,6 +2,8 @@
 
 export class StartInfo {
     private 'job_id'?: string;
+    private 'is_only_init_task'?: boolean;
+    private 'is_auto_create_compare'?: boolean;
     private 'start_time'?: string;
     public constructor(jobId?: string) { 
         this['job_id'] = jobId;
@@ -15,6 +17,26 @@ export class StartInfo {
     }
     public get jobId(): string | undefined {
         return this['job_id'];
+    }
+    public withIsOnlyInitTask(isOnlyInitTask: boolean): StartInfo {
+        this['is_only_init_task'] = isOnlyInitTask;
+        return this;
+    }
+    public set isOnlyInitTask(isOnlyInitTask: boolean  | undefined) {
+        this['is_only_init_task'] = isOnlyInitTask;
+    }
+    public get isOnlyInitTask(): boolean | undefined {
+        return this['is_only_init_task'];
+    }
+    public withIsAutoCreateCompare(isAutoCreateCompare: boolean): StartInfo {
+        this['is_auto_create_compare'] = isAutoCreateCompare;
+        return this;
+    }
+    public set isAutoCreateCompare(isAutoCreateCompare: boolean  | undefined) {
+        this['is_auto_create_compare'] = isAutoCreateCompare;
+    }
+    public get isAutoCreateCompare(): boolean | undefined {
+        return this['is_auto_create_compare'];
     }
     public withStartTime(startTime: string): StartInfo {
         this['start_time'] = startTime;

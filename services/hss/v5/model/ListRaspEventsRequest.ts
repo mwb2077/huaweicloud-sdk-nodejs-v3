@@ -3,20 +3,17 @@
 export class ListRaspEventsRequest {
     private 'enterprise_project_id'?: string;
     private 'host_id'?: string;
+    public offset?: number;
+    public limit?: number;
     private 'start_time'?: number;
     private 'end_time'?: number;
-    public limit?: number;
-    public offset?: number;
-    private 'app_type'?: ListRaspEventsRequestAppTypeEnum | string;
+    private 'app_type'?: string;
     public severity?: string;
     private 'attack_tag'?: string;
-    private 'protect_status'?: ListRaspEventsRequestProtectStatusEnum | string;
-    public constructor(hostId?: string, startTime?: number, endTime?: number, limit?: number, offset?: number) { 
-        this['host_id'] = hostId;
+    private 'protect_status'?: string;
+    public constructor(startTime?: number, endTime?: number) { 
         this['start_time'] = startTime;
         this['end_time'] = endTime;
-        this['limit'] = limit;
-        this['offset'] = offset;
     }
     public withEnterpriseProjectId(enterpriseProjectId: string): ListRaspEventsRequest {
         this['enterprise_project_id'] = enterpriseProjectId;
@@ -38,6 +35,14 @@ export class ListRaspEventsRequest {
     public get hostId(): string | undefined {
         return this['host_id'];
     }
+    public withOffset(offset: number): ListRaspEventsRequest {
+        this['offset'] = offset;
+        return this;
+    }
+    public withLimit(limit: number): ListRaspEventsRequest {
+        this['limit'] = limit;
+        return this;
+    }
     public withStartTime(startTime: number): ListRaspEventsRequest {
         this['start_time'] = startTime;
         return this;
@@ -58,22 +63,14 @@ export class ListRaspEventsRequest {
     public get endTime(): number | undefined {
         return this['end_time'];
     }
-    public withLimit(limit: number): ListRaspEventsRequest {
-        this['limit'] = limit;
-        return this;
-    }
-    public withOffset(offset: number): ListRaspEventsRequest {
-        this['offset'] = offset;
-        return this;
-    }
-    public withAppType(appType: ListRaspEventsRequestAppTypeEnum | string): ListRaspEventsRequest {
+    public withAppType(appType: string): ListRaspEventsRequest {
         this['app_type'] = appType;
         return this;
     }
-    public set appType(appType: ListRaspEventsRequestAppTypeEnum | string  | undefined) {
+    public set appType(appType: string  | undefined) {
         this['app_type'] = appType;
     }
-    public get appType(): ListRaspEventsRequestAppTypeEnum | string | undefined {
+    public get appType(): string | undefined {
         return this['app_type'];
     }
     public withSeverity(severity: string): ListRaspEventsRequest {
@@ -90,30 +87,14 @@ export class ListRaspEventsRequest {
     public get attackTag(): string | undefined {
         return this['attack_tag'];
     }
-    public withProtectStatus(protectStatus: ListRaspEventsRequestProtectStatusEnum | string): ListRaspEventsRequest {
+    public withProtectStatus(protectStatus: string): ListRaspEventsRequest {
         this['protect_status'] = protectStatus;
         return this;
     }
-    public set protectStatus(protectStatus: ListRaspEventsRequestProtectStatusEnum | string  | undefined) {
+    public set protectStatus(protectStatus: string  | undefined) {
         this['protect_status'] = protectStatus;
     }
-    public get protectStatus(): ListRaspEventsRequestProtectStatusEnum | string | undefined {
+    public get protectStatus(): string | undefined {
         return this['protect_status'];
     }
-}
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ListRaspEventsRequestAppTypeEnum {
-    JAVA = 'java'
-}
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ListRaspEventsRequestProtectStatusEnum {
-    CLOSED = 'closed',
-    OPENED = 'opened'
 }

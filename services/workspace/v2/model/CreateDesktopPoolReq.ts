@@ -1,7 +1,8 @@
 import { AuthorizedObjects } from './AuthorizedObjects';
 import { AutoscalePolicy } from './AutoscalePolicy';
-import { SecurityGroup } from './SecurityGroup';
+import { SecurityGroupIdInfo } from './SecurityGroupIdInfo';
 import { Tag } from './Tag';
+import { UserResetPolicy } from './UserResetPolicy';
 import { VolumeInfo } from './VolumeInfo';
 
 
@@ -19,7 +20,7 @@ export class CreateDesktopPoolReq {
     private 'data_volumes'?: Array<VolumeInfo>;
     private 'vpc_id'?: string;
     private 'subnet_ids'?: Array<string>;
-    private 'security_groups'?: Array<SecurityGroup>;
+    private 'security_groups'?: Array<SecurityGroupIdInfo>;
     private 'authorized_objects'?: Array<AuthorizedObjects>;
     private 'ou_name'?: string;
     public tags?: Array<Tag>;
@@ -27,7 +28,9 @@ export class CreateDesktopPoolReq {
     private 'disconnected_retention_period'?: number;
     private 'enable_autoscale'?: boolean;
     private 'autoscale_policy'?: AutoscalePolicy;
+    private 'user_reset_policy'?: UserResetPolicy;
     private 'desktop_name_policy_id'?: string;
+    public domain?: string;
     public constructor(name?: string, type?: string, size?: number, productId?: string, imageType?: string, imageId?: string, rootVolume?: VolumeInfo, subnetIds?: Array<string>) { 
         this['name'] = name;
         this['type'] = type;
@@ -144,14 +147,14 @@ export class CreateDesktopPoolReq {
     public get subnetIds(): Array<string> | undefined {
         return this['subnet_ids'];
     }
-    public withSecurityGroups(securityGroups: Array<SecurityGroup>): CreateDesktopPoolReq {
+    public withSecurityGroups(securityGroups: Array<SecurityGroupIdInfo>): CreateDesktopPoolReq {
         this['security_groups'] = securityGroups;
         return this;
     }
-    public set securityGroups(securityGroups: Array<SecurityGroup>  | undefined) {
+    public set securityGroups(securityGroups: Array<SecurityGroupIdInfo>  | undefined) {
         this['security_groups'] = securityGroups;
     }
-    public get securityGroups(): Array<SecurityGroup> | undefined {
+    public get securityGroups(): Array<SecurityGroupIdInfo> | undefined {
         return this['security_groups'];
     }
     public withAuthorizedObjects(authorizedObjects: Array<AuthorizedObjects>): CreateDesktopPoolReq {
@@ -218,6 +221,16 @@ export class CreateDesktopPoolReq {
     public get autoscalePolicy(): AutoscalePolicy | undefined {
         return this['autoscale_policy'];
     }
+    public withUserResetPolicy(userResetPolicy: UserResetPolicy): CreateDesktopPoolReq {
+        this['user_reset_policy'] = userResetPolicy;
+        return this;
+    }
+    public set userResetPolicy(userResetPolicy: UserResetPolicy  | undefined) {
+        this['user_reset_policy'] = userResetPolicy;
+    }
+    public get userResetPolicy(): UserResetPolicy | undefined {
+        return this['user_reset_policy'];
+    }
     public withDesktopNamePolicyId(desktopNamePolicyId: string): CreateDesktopPoolReq {
         this['desktop_name_policy_id'] = desktopNamePolicyId;
         return this;
@@ -227,6 +240,10 @@ export class CreateDesktopPoolReq {
     }
     public get desktopNamePolicyId(): string | undefined {
         return this['desktop_name_policy_id'];
+    }
+    public withDomain(domain: string): CreateDesktopPoolReq {
+        this['domain'] = domain;
+        return this;
     }
 }
 

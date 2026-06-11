@@ -2,8 +2,8 @@
 
 export class UpdateYmlsReqEditModify {
     private 'elasticsearch.yml'?: object;
-    public constructor(elasticsearchYml?: object) { 
-        this['elasticsearch.yml'] = elasticsearchYml;
+    private 'kibana.yml'?: object;
+    public constructor() { 
     }
     public withElasticsearchYml(elasticsearchYml: object): UpdateYmlsReqEditModify {
         this['elasticsearch.yml'] = elasticsearchYml;
@@ -14,5 +14,15 @@ export class UpdateYmlsReqEditModify {
     }
     public get elasticsearchYml(): object | undefined {
         return this['elasticsearch.yml'];
+    }
+    public withKibanaYml(kibanaYml: object): UpdateYmlsReqEditModify {
+        this['kibana.yml'] = kibanaYml;
+        return this;
+    }
+    public set kibanaYml(kibanaYml: object  | undefined) {
+        this['kibana.yml'] = kibanaYml;
+    }
+    public get kibanaYml(): object | undefined {
+        return this['kibana.yml'];
     }
 }

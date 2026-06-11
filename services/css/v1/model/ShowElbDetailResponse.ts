@@ -1,5 +1,6 @@
-import { EsHealthmonitorsResource } from './EsHealthmonitorsResource';
-import { EsLoadBalancerResource } from './EsLoadBalancerResource';
+import { Elbv3Listener } from './Elbv3Listener';
+import { LoadBalancer } from './LoadBalancer';
+import { Member } from './Member';
 
 import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
 
@@ -10,8 +11,9 @@ export class ShowElbDetailResponse extends SdkResponse {
     public cacertId?: string;
     private 'elb_enable'?: boolean;
     private 'authentication_type'?: string;
-    public loadBalancer?: EsLoadBalancerResource;
-    public healthmonitors?: EsHealthmonitorsResource;
+    public loadBalancer?: LoadBalancer;
+    public listener?: Elbv3Listener;
+    public healthmonitors?: Array<Member>;
     public constructor() { 
         super();
     }
@@ -51,11 +53,15 @@ export class ShowElbDetailResponse extends SdkResponse {
     public get authenticationType(): string | undefined {
         return this['authentication_type'];
     }
-    public withLoadBalancer(loadBalancer: EsLoadBalancerResource): ShowElbDetailResponse {
+    public withLoadBalancer(loadBalancer: LoadBalancer): ShowElbDetailResponse {
         this['loadBalancer'] = loadBalancer;
         return this;
     }
-    public withHealthmonitors(healthmonitors: EsHealthmonitorsResource): ShowElbDetailResponse {
+    public withListener(listener: Elbv3Listener): ShowElbDetailResponse {
+        this['listener'] = listener;
+        return this;
+    }
+    public withHealthmonitors(healthmonitors: Array<Member>): ShowElbDetailResponse {
         this['healthmonitors'] = healthmonitors;
         return this;
     }

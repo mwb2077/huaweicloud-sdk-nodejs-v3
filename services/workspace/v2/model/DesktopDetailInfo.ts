@@ -19,7 +19,6 @@ export class DesktopDetailInfo {
     private 'user_list'?: Array<string>;
     private 'user_group_list'?: Array<string>;
     private 'desktop_type'?: string;
-    private 'resource_type'?: string;
     public metadata?: { [key: string]: string; };
     public flavor?: FlavorInfo;
     public status?: string;
@@ -55,6 +54,9 @@ export class DesktopDetailInfo {
     public process?: number;
     private 'root_resource_id'?: string;
     private 'hour_package_info'?: HourPackageInfo;
+    private 'is_freeze'?: boolean;
+    public isolated?: boolean;
+    public domain?: string;
     public constructor() { 
     }
     public withDesktopId(desktopId: string): DesktopDetailInfo {
@@ -138,16 +140,6 @@ export class DesktopDetailInfo {
     }
     public get desktopType(): string | undefined {
         return this['desktop_type'];
-    }
-    public withResourceType(resourceType: string): DesktopDetailInfo {
-        this['resource_type'] = resourceType;
-        return this;
-    }
-    public set resourceType(resourceType: string  | undefined) {
-        this['resource_type'] = resourceType;
-    }
-    public get resourceType(): string | undefined {
-        return this['resource_type'];
     }
     public withMetadata(metadata: { [key: string]: string; }): DesktopDetailInfo {
         this['metadata'] = metadata;
@@ -450,6 +442,24 @@ export class DesktopDetailInfo {
     }
     public get hourPackageInfo(): HourPackageInfo | undefined {
         return this['hour_package_info'];
+    }
+    public withIsFreeze(isFreeze: boolean): DesktopDetailInfo {
+        this['is_freeze'] = isFreeze;
+        return this;
+    }
+    public set isFreeze(isFreeze: boolean  | undefined) {
+        this['is_freeze'] = isFreeze;
+    }
+    public get isFreeze(): boolean | undefined {
+        return this['is_freeze'];
+    }
+    public withIsolated(isolated: boolean): DesktopDetailInfo {
+        this['isolated'] = isolated;
+        return this;
+    }
+    public withDomain(domain: string): DesktopDetailInfo {
+        this['domain'] = domain;
+        return this;
     }
 }
 

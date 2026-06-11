@@ -63,6 +63,7 @@ export class ShowInstanceResponse extends SdkResponse {
     private 'enable_log_collection'?: boolean;
     private 'new_auth_cert'?: boolean;
     private 'cross_vpc_info'?: string;
+    private 'public_cross_vpc_info'?: string;
     private 'ipv6_enable'?: boolean;
     private 'ipv6_connect_addresses'?: Array<string>;
     private 'connector_enable'?: boolean;
@@ -640,6 +641,16 @@ export class ShowInstanceResponse extends SdkResponse {
     }
     public get crossVpcInfo(): string | undefined {
         return this['cross_vpc_info'];
+    }
+    public withPublicCrossVpcInfo(publicCrossVpcInfo: string): ShowInstanceResponse {
+        this['public_cross_vpc_info'] = publicCrossVpcInfo;
+        return this;
+    }
+    public set publicCrossVpcInfo(publicCrossVpcInfo: string  | undefined) {
+        this['public_cross_vpc_info'] = publicCrossVpcInfo;
+    }
+    public get publicCrossVpcInfo(): string | undefined {
+        return this['public_cross_vpc_info'];
     }
     public withIpv6Enable(ipv6Enable: boolean): ShowInstanceResponse {
         this['ipv6_enable'] = ipv6Enable;

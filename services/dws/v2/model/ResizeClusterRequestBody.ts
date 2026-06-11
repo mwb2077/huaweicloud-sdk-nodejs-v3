@@ -1,12 +1,17 @@
+import { RedisConfReq } from './RedisConfReq';
 import { ScaleOut } from './ScaleOut';
 
 
 export class ResizeClusterRequestBody {
     private 'scale_out'?: ScaleOut;
+    private 'logical_cluster_name'?: string;
     private 'create_node_only'?: boolean;
     private 'waiting_for_killing'?: number;
     private 'auto_redistribute'?: boolean;
-    public constructor() { 
+    public mode?: string;
+    private 'redis_conf'?: RedisConfReq;
+    public constructor(scaleOut?: ScaleOut) { 
+        this['scale_out'] = scaleOut;
     }
     public withScaleOut(scaleOut: ScaleOut): ResizeClusterRequestBody {
         this['scale_out'] = scaleOut;
@@ -17,6 +22,16 @@ export class ResizeClusterRequestBody {
     }
     public get scaleOut(): ScaleOut | undefined {
         return this['scale_out'];
+    }
+    public withLogicalClusterName(logicalClusterName: string): ResizeClusterRequestBody {
+        this['logical_cluster_name'] = logicalClusterName;
+        return this;
+    }
+    public set logicalClusterName(logicalClusterName: string  | undefined) {
+        this['logical_cluster_name'] = logicalClusterName;
+    }
+    public get logicalClusterName(): string | undefined {
+        return this['logical_cluster_name'];
     }
     public withCreateNodeOnly(createNodeOnly: boolean): ResizeClusterRequestBody {
         this['create_node_only'] = createNodeOnly;
@@ -47,5 +62,19 @@ export class ResizeClusterRequestBody {
     }
     public get autoRedistribute(): boolean | undefined {
         return this['auto_redistribute'];
+    }
+    public withMode(mode: string): ResizeClusterRequestBody {
+        this['mode'] = mode;
+        return this;
+    }
+    public withRedisConf(redisConf: RedisConfReq): ResizeClusterRequestBody {
+        this['redis_conf'] = redisConf;
+        return this;
+    }
+    public set redisConf(redisConf: RedisConfReq  | undefined) {
+        this['redis_conf'] = redisConf;
+    }
+    public get redisConf(): RedisConfReq | undefined {
+        return this['redis_conf'];
     }
 }

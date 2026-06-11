@@ -1,14 +1,33 @@
 import { AuthTypeEnum } from './AuthTypeEnum';
 import { RadiusGatewayConfig } from './RadiusGatewayConfig';
+import { Saml2AuthConfig } from './Saml2AuthConfig';
 import { ThirdPartyAuthConfig } from './ThirdPartyAuthConfig';
 
 
 export class AuthMethodConfigRequest {
+    public id?: string;
+    private 'is_multi_domain_authenticate_enabled'?: boolean;
     private 'auth_type'?: AuthTypeEnum;
     private 'radius_gateway_config'?: RadiusGatewayConfig;
     private 'third_party_auth_config'?: ThirdPartyAuthConfig;
     private 'emergency_login_mode'?: string;
+    private 'saml2_auth_config'?: Saml2AuthConfig;
+    private 'sms_login_enabled'?: boolean;
     public constructor() { 
+    }
+    public withId(id: string): AuthMethodConfigRequest {
+        this['id'] = id;
+        return this;
+    }
+    public withIsMultiDomainAuthenticateEnabled(isMultiDomainAuthenticateEnabled: boolean): AuthMethodConfigRequest {
+        this['is_multi_domain_authenticate_enabled'] = isMultiDomainAuthenticateEnabled;
+        return this;
+    }
+    public set isMultiDomainAuthenticateEnabled(isMultiDomainAuthenticateEnabled: boolean  | undefined) {
+        this['is_multi_domain_authenticate_enabled'] = isMultiDomainAuthenticateEnabled;
+    }
+    public get isMultiDomainAuthenticateEnabled(): boolean | undefined {
+        return this['is_multi_domain_authenticate_enabled'];
     }
     public withAuthType(authType: AuthTypeEnum): AuthMethodConfigRequest {
         this['auth_type'] = authType;
@@ -49,5 +68,25 @@ export class AuthMethodConfigRequest {
     }
     public get emergencyLoginMode(): string | undefined {
         return this['emergency_login_mode'];
+    }
+    public withSaml2AuthConfig(saml2AuthConfig: Saml2AuthConfig): AuthMethodConfigRequest {
+        this['saml2_auth_config'] = saml2AuthConfig;
+        return this;
+    }
+    public set saml2AuthConfig(saml2AuthConfig: Saml2AuthConfig  | undefined) {
+        this['saml2_auth_config'] = saml2AuthConfig;
+    }
+    public get saml2AuthConfig(): Saml2AuthConfig | undefined {
+        return this['saml2_auth_config'];
+    }
+    public withSmsLoginEnabled(smsLoginEnabled: boolean): AuthMethodConfigRequest {
+        this['sms_login_enabled'] = smsLoginEnabled;
+        return this;
+    }
+    public set smsLoginEnabled(smsLoginEnabled: boolean  | undefined) {
+        this['sms_login_enabled'] = smsLoginEnabled;
+    }
+    public get smsLoginEnabled(): boolean | undefined {
+        return this['sms_login_enabled'];
     }
 }

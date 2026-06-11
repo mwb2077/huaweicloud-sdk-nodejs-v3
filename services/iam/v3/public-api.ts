@@ -1,4 +1,5 @@
 export * from './IamClient';
+export * from './GlobalCredentials,BasicCredentials';
 
 export * from './model/AclPolicyOption';
 export * from './model/AclPolicyResult';
@@ -38,6 +39,8 @@ export * from './model/AllowIpRangesOptionIPv6';
 export * from './model/AllowIpRangesResult';
 export * from './model/AllowIpRangesResultIPv6';
 export * from './model/AllowUserBody';
+export * from './model/AllowVpcEndpointsOption';
+export * from './model/AllowVpcEndpointsResult';
 export * from './model/AssociateAgencyWithAllProjectsPermissionRequest';
 export * from './model/AssociateAgencyWithAllProjectsPermissionResponse';
 export * from './model/AssociateAgencyWithDomainPermissionRequest';

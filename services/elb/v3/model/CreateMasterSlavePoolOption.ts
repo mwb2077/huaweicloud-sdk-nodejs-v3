@@ -22,6 +22,8 @@ export class CreateMasterSlavePoolOption {
     private 'any_port_enable'?: boolean;
     private 'connection_drain'?: ConnectionDrain;
     private 'quic_cid_hash_strategy'?: QuicCidHashStrategy;
+    private 'enterprise_project_id'?: string;
+    private 'public_border_group'?: string;
     public constructor(lbAlgorithm?: string, protocol?: string, type?: string, members?: Array<CreateMasterSlaveMemberOption>, healthmonitor?: CreateMasterSlaveHealthMonitorOption) { 
         this['lb_algorithm'] = lbAlgorithm;
         this['protocol'] = protocol;
@@ -152,5 +154,25 @@ export class CreateMasterSlavePoolOption {
     }
     public get quicCidHashStrategy(): QuicCidHashStrategy | undefined {
         return this['quic_cid_hash_strategy'];
+    }
+    public withEnterpriseProjectId(enterpriseProjectId: string): CreateMasterSlavePoolOption {
+        this['enterprise_project_id'] = enterpriseProjectId;
+        return this;
+    }
+    public set enterpriseProjectId(enterpriseProjectId: string  | undefined) {
+        this['enterprise_project_id'] = enterpriseProjectId;
+    }
+    public get enterpriseProjectId(): string | undefined {
+        return this['enterprise_project_id'];
+    }
+    public withPublicBorderGroup(publicBorderGroup: string): CreateMasterSlavePoolOption {
+        this['public_border_group'] = publicBorderGroup;
+        return this;
+    }
+    public set publicBorderGroup(publicBorderGroup: string  | undefined) {
+        this['public_border_group'] = publicBorderGroup;
+    }
+    public get publicBorderGroup(): string | undefined {
+        return this['public_border_group'];
     }
 }

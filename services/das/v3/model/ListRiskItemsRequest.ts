@@ -3,6 +3,9 @@
 export class ListRiskItemsRequest {
     private 'X-Language'?: ListRiskItemsRequestXLanguageEnum | string;
     private 'datastore_type'?: string;
+    public page?: number;
+    public limit?: number;
+    public offset?: number;
     public constructor(datastoreType?: string) { 
         this['datastore_type'] = datastoreType;
     }
@@ -25,6 +28,18 @@ export class ListRiskItemsRequest {
     }
     public get datastoreType(): string | undefined {
         return this['datastore_type'];
+    }
+    public withPage(page: number): ListRiskItemsRequest {
+        this['page'] = page;
+        return this;
+    }
+    public withLimit(limit: number): ListRiskItemsRequest {
+        this['limit'] = limit;
+        return this;
+    }
+    public withOffset(offset: number): ListRiskItemsRequest {
+        this['offset'] = offset;
+        return this;
     }
 }
 

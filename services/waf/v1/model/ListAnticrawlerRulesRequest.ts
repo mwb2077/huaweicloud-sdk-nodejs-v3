@@ -6,12 +6,12 @@ export class ListAnticrawlerRulesRequest {
     private 'policy_id'?: string;
     public offset?: number;
     public limit?: number;
-    public type?: string;
-    public constructor(contentType?: string, policyId?: string, offset?: number, limit?: number) { 
+    public page?: number;
+    public pagesize?: number;
+    public type?: ListAnticrawlerRulesRequestTypeEnum | string;
+    public constructor(contentType?: string, policyId?: string) { 
         this['Content-Type'] = contentType;
         this['policy_id'] = policyId;
-        this['offset'] = offset;
-        this['limit'] = limit;
     }
     public withContentType(contentType: string): ListAnticrawlerRulesRequest {
         this['Content-Type'] = contentType;
@@ -51,8 +51,25 @@ export class ListAnticrawlerRulesRequest {
         this['limit'] = limit;
         return this;
     }
-    public withType(type: string): ListAnticrawlerRulesRequest {
+    public withPage(page: number): ListAnticrawlerRulesRequest {
+        this['page'] = page;
+        return this;
+    }
+    public withPagesize(pagesize: number): ListAnticrawlerRulesRequest {
+        this['pagesize'] = pagesize;
+        return this;
+    }
+    public withType(type: ListAnticrawlerRulesRequestTypeEnum | string): ListAnticrawlerRulesRequest {
         this['type'] = type;
         return this;
     }
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum ListAnticrawlerRulesRequestTypeEnum {
+    ANTICRAWLER_EXCEPT_URL = 'anticrawler_except_url',
+    ANTICRAWLER_SPECIFIC_URL = 'anticrawler_specific_url'
 }

@@ -1,13 +1,15 @@
+import { BatchPeriod } from './BatchPeriod';
+import { Filter } from './Filter';
 import { MetricInfo } from './MetricInfo';
 
 
 export class BatchListMetricDataRequestBody {
     public metrics?: Array<MetricInfo>;
-    public period?: string;
-    public filter?: string;
+    public period?: BatchPeriod;
+    public filter?: Filter;
     public from?: number;
     public to?: number;
-    public constructor(metrics?: Array<MetricInfo>, period?: string, filter?: string, from?: number, to?: number) { 
+    public constructor(metrics?: Array<MetricInfo>, period?: BatchPeriod, filter?: Filter, from?: number, to?: number) { 
         this['metrics'] = metrics;
         this['period'] = period;
         this['filter'] = filter;
@@ -18,11 +20,11 @@ export class BatchListMetricDataRequestBody {
         this['metrics'] = metrics;
         return this;
     }
-    public withPeriod(period: string): BatchListMetricDataRequestBody {
+    public withPeriod(period: BatchPeriod): BatchListMetricDataRequestBody {
         this['period'] = period;
         return this;
     }
-    public withFilter(filter: string): BatchListMetricDataRequestBody {
+    public withFilter(filter: Filter): BatchListMetricDataRequestBody {
         this['filter'] = filter;
         return this;
     }

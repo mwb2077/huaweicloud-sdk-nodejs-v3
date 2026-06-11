@@ -19,6 +19,8 @@ import { AggregationLogicTableVODetailData } from './model/AggregationLogicTable
 import { AggregationLogicTableVOSearchResultData } from './model/AggregationLogicTableVOSearchResultData';
 import { AggregationLogicTableVOSearchResultDataValue } from './model/AggregationLogicTableVOSearchResultDataValue';
 import { AlarmInfoResponseAlarmInfo } from './model/AlarmInfoResponseAlarmInfo';
+import { AlarmPeriod } from './model/AlarmPeriod';
+import { AlarmRulesItemsDetails } from './model/AlarmRulesItemsDetails';
 import { AlgorithmDetailDTO } from './model/AlgorithmDetailDTO';
 import { AllModelStatisticVO } from './model/AllModelStatisticVO';
 import { AllTableVO } from './model/AllTableVO';
@@ -92,6 +94,8 @@ import { AuthorizeDataConnectionResponse } from './model/AuthorizeDataConnection
 import { BackendConfig } from './model/BackendConfig';
 import { BackendConstant } from './model/BackendConstant';
 import { BackendRequestPara } from './model/BackendRequestPara';
+import { BaselineInstance } from './model/BaselineInstance';
+import { BaselineV2 } from './model/BaselineV2';
 import { BasicInfo } from './model/BasicInfo';
 import { BatchApproveApplyRequest } from './model/BatchApproveApplyRequest';
 import { BatchApproveApplyResponse } from './model/BatchApproveApplyResponse';
@@ -109,11 +113,14 @@ import { BatchCreateSecurityPermissionSetMembersResponse } from './model/BatchCr
 import { BatchCreateSecurityPermissionSetPermissionsRequest } from './model/BatchCreateSecurityPermissionSetPermissionsRequest';
 import { BatchCreateSecurityPermissionSetPermissionsResponse } from './model/BatchCreateSecurityPermissionSetPermissionsResponse';
 import { BatchDeleteBaseDTO } from './model/BatchDeleteBaseDTO';
+import { BatchDeleteCategoryGroupDTO } from './model/BatchDeleteCategoryGroupDTO';
 import { BatchDeletePolicySetsDTO } from './model/BatchDeletePolicySetsDTO';
 import { BatchDeleteResourcePolicyDTO } from './model/BatchDeleteResourcePolicyDTO';
 import { BatchDeleteRuleGroupsBaseDTO } from './model/BatchDeleteRuleGroupsBaseDTO';
 import { BatchDeleteRulesBaseDTO } from './model/BatchDeleteRulesBaseDTO';
 import { BatchDeleteSecrecyLevelDTO } from './model/BatchDeleteSecrecyLevelDTO';
+import { BatchDeleteSecurityDataCategoriesRequest } from './model/BatchDeleteSecurityDataCategoriesRequest';
+import { BatchDeleteSecurityDataCategoriesResponse } from './model/BatchDeleteSecurityDataCategoriesResponse';
 import { BatchDeleteSecurityDataClassificationRuleRequest } from './model/BatchDeleteSecurityDataClassificationRuleRequest';
 import { BatchDeleteSecurityDataClassificationRuleResponse } from './model/BatchDeleteSecurityDataClassificationRuleResponse';
 import { BatchDeleteSecurityDynamicMaskingPoliciesRequest } from './model/BatchDeleteSecurityDynamicMaskingPoliciesRequest';
@@ -159,16 +166,12 @@ import { BusinessCatalogTreeNode } from './model/BusinessCatalogTreeNode';
 import { CancelFactoryPackagesRequest } from './model/CancelFactoryPackagesRequest';
 import { CancelFactoryPackagesRequestBody } from './model/CancelFactoryPackagesRequestBody';
 import { CancelFactoryPackagesResponse } from './model/CancelFactoryPackagesResponse';
-import { CatalogAttributeVO } from './model/CatalogAttributeVO';
-import { CatalogAttributeVOParent } from './model/CatalogAttributeVOParent';
-import { CatalogEntityVO } from './model/CatalogEntityVO';
 import { CatalogInfo } from './model/CatalogInfo';
 import { CatalogLevelVO } from './model/CatalogLevelVO';
 import { CatalogLevelVOList } from './model/CatalogLevelVOList';
 import { CatalogMetaDataEventInfo } from './model/CatalogMetaDataEventInfo';
 import { CatalogMetaDataEventRequest } from './model/CatalogMetaDataEventRequest';
 import { CatalogMoveParaDTO } from './model/CatalogMoveParaDTO';
-import { CatalogParamsVO } from './model/CatalogParamsVO';
 import { CatalogVO } from './model/CatalogVO';
 import { CategoryDetailVO } from './model/CategoryDetailVO';
 import { CategoryInfo } from './model/CategoryInfo';
@@ -235,6 +238,7 @@ import { CreateAppResponse } from './model/CreateAppResponse';
 import { CreateApproverRequest } from './model/CreateApproverRequest';
 import { CreateApproverResponse } from './model/CreateApproverResponse';
 import { CreateApproverResultData } from './model/CreateApproverResultData';
+import { CreateBaselineRequest } from './model/CreateBaselineRequest';
 import { CreateBizMetricRequest } from './model/CreateBizMetricRequest';
 import { CreateBizMetricResponse } from './model/CreateBizMetricResponse';
 import { CreateBizMetricResultData } from './model/CreateBizMetricResultData';
@@ -261,6 +265,8 @@ import { CreateDesignDimensionResponse } from './model/CreateDesignDimensionResp
 import { CreateDirectoryRequest } from './model/CreateDirectoryRequest';
 import { CreateDirectoryResponse } from './model/CreateDirectoryResponse';
 import { CreateDirectoryResultData } from './model/CreateDirectoryResultData';
+import { CreateFactoryBaselineRequest } from './model/CreateFactoryBaselineRequest';
+import { CreateFactoryBaselineResponse } from './model/CreateFactoryBaselineResponse';
 import { CreateFactoryEnvRequest } from './model/CreateFactoryEnvRequest';
 import { CreateFactoryEnvResponse } from './model/CreateFactoryEnvResponse';
 import { CreateFactoryJobRequest } from './model/CreateFactoryJobRequest';
@@ -285,6 +291,8 @@ import { CreateOrUpdateEntitiesResponse } from './model/CreateOrUpdateEntitiesRe
 import { CreateSecrecyLevelDTO } from './model/CreateSecrecyLevelDTO';
 import { CreateSecurityAssignedQueueRequest } from './model/CreateSecurityAssignedQueueRequest';
 import { CreateSecurityAssignedQueueResponse } from './model/CreateSecurityAssignedQueueResponse';
+import { CreateSecurityDataCategoryRequest } from './model/CreateSecurityDataCategoryRequest';
+import { CreateSecurityDataCategoryResponse } from './model/CreateSecurityDataCategoryResponse';
 import { CreateSecurityDataClassificationCombineRuleRequest } from './model/CreateSecurityDataClassificationCombineRuleRequest';
 import { CreateSecurityDataClassificationCombineRuleResponse } from './model/CreateSecurityDataClassificationCombineRuleResponse';
 import { CreateSecurityDataClassificationRuleGroupRequest } from './model/CreateSecurityDataClassificationRuleGroupRequest';
@@ -333,6 +341,8 @@ import { CustomMetadata } from './model/CustomMetadata';
 import { CustomizedFieldsVO } from './model/CustomizedFieldsVO';
 import { CustomizedFieldsVOList } from './model/CustomizedFieldsVOList';
 import { DataCategoryDTO } from './model/DataCategoryDTO';
+import { DataCategoryInsertDTO } from './model/DataCategoryInsertDTO';
+import { DataCategoryUpdateDTO } from './model/DataCategoryUpdateDTO';
 import { DataClassificationCombineRuleCheckDTO } from './model/DataClassificationCombineRuleCheckDTO';
 import { DataClassificationCombineRuleCheckDTOCombineInputData } from './model/DataClassificationCombineRuleCheckDTOCombineInputData';
 import { DataClassificationCombineRuleDTO } from './model/DataClassificationCombineRuleDTO';
@@ -457,6 +467,7 @@ import { DimensionHierarchiesVO } from './model/DimensionHierarchiesVO';
 import { DimensionLogicTableAttributeVO } from './model/DimensionLogicTableAttributeVO';
 import { DimensionLogicTableVO } from './model/DimensionLogicTableVO';
 import { DimensionVO } from './model/DimensionVO';
+import { DirectoryDTO } from './model/DirectoryDTO';
 import { DirectoryVO } from './model/DirectoryVO';
 import { DisStream } from './model/DisStream';
 import { DlsAdmin } from './model/DlsAdmin';
@@ -479,6 +490,7 @@ import { EnvRespParams } from './model/EnvRespParams';
 import { EnvTypeEnum } from './model/EnvTypeEnum';
 import { Event } from './model/Event';
 import { EventParam } from './model/EventParam';
+import { EventSearchResultV2Events } from './model/EventSearchResultV2Events';
 import { ExecuteApiToInstanceRequest } from './model/ExecuteApiToInstanceRequest';
 import { ExecuteApiToInstanceResponse } from './model/ExecuteApiToInstanceResponse';
 import { ExecuteSecurityDiagnoseRequest } from './model/ExecuteSecurityDiagnoseRequest';
@@ -672,6 +684,8 @@ import { ListFactLogicTablesResultData } from './model/ListFactLogicTablesResult
 import { ListFactLogicTablesResultDataValue } from './model/ListFactLogicTablesResultDataValue';
 import { ListFactoryAlarmInfoRequest } from './model/ListFactoryAlarmInfoRequest';
 import { ListFactoryAlarmInfoResponse } from './model/ListFactoryAlarmInfoResponse';
+import { ListFactoryAlarmRulesRequest } from './model/ListFactoryAlarmRulesRequest';
+import { ListFactoryAlarmRulesResponse } from './model/ListFactoryAlarmRulesResponse';
 import { ListFactoryJobInstancesByNameRequest } from './model/ListFactoryJobInstancesByNameRequest';
 import { ListFactoryJobInstancesByNameResponse } from './model/ListFactoryJobInstancesByNameResponse';
 import { ListFactoryJobsRequest } from './model/ListFactoryJobsRequest';
@@ -683,6 +697,8 @@ import { ListFactoryReleasePackagesRequest } from './model/ListFactoryReleasePac
 import { ListFactoryReleasePackagesResponse } from './model/ListFactoryReleasePackagesResponse';
 import { ListFactoryScriptsRequest } from './model/ListFactoryScriptsRequest';
 import { ListFactoryScriptsResponse } from './model/ListFactoryScriptsResponse';
+import { ListFactorySearchBaselineInstancesRequest } from './model/ListFactorySearchBaselineInstancesRequest';
+import { ListFactorySearchBaselineInstancesResponse } from './model/ListFactorySearchBaselineInstancesResponse';
 import { ListFactoryTaskCompletionRequest } from './model/ListFactoryTaskCompletionRequest';
 import { ListFactoryTaskCompletionResAverage } from './model/ListFactoryTaskCompletionResAverage';
 import { ListFactoryTaskCompletionResToday } from './model/ListFactoryTaskCompletionResToday';
@@ -690,6 +706,9 @@ import { ListFactoryTaskCompletionResYesterday } from './model/ListFactoryTaskCo
 import { ListFactoryTaskCompletionResponse } from './model/ListFactoryTaskCompletionResponse';
 import { ListFactoryTaskOverviewRequest } from './model/ListFactoryTaskOverviewRequest';
 import { ListFactoryTaskOverviewResponse } from './model/ListFactoryTaskOverviewResponse';
+import { ListFactoryWorkspacesApprovalRequest } from './model/ListFactoryWorkspacesApprovalRequest';
+import { ListFactoryWorkspacesApprovalRespJobApplySearchList } from './model/ListFactoryWorkspacesApprovalRespJobApplySearchList';
+import { ListFactoryWorkspacesApprovalResponse } from './model/ListFactoryWorkspacesApprovalResponse';
 import { ListInstanceListRequest } from './model/ListInstanceListRequest';
 import { ListInstanceListResponse } from './model/ListInstanceListResponse';
 import { ListInstancesRequest } from './model/ListInstancesRequest';
@@ -719,6 +738,10 @@ import { ListReleasePackagesRespData } from './model/ListReleasePackagesRespData
 import { ListReleasePackagesRespPackageApprovers } from './model/ListReleasePackagesRespPackageApprovers';
 import { ListSchemasRequest } from './model/ListSchemasRequest';
 import { ListSchemasResponse } from './model/ListSchemasResponse';
+import { ListSearchFactoryBaselinesRequest } from './model/ListSearchFactoryBaselinesRequest';
+import { ListSearchFactoryBaselinesResponse } from './model/ListSearchFactoryBaselinesResponse';
+import { ListSearchFactoryEventsRequest } from './model/ListSearchFactoryEventsRequest';
+import { ListSearchFactoryEventsResponse } from './model/ListSearchFactoryEventsResponse';
 import { ListSecurityApprovalsRequest } from './model/ListSecurityApprovalsRequest';
 import { ListSecurityApprovalsResponse } from './model/ListSecurityApprovalsResponse';
 import { ListSecurityAssignedQueuesRequest } from './model/ListSecurityAssignedQueuesRequest';
@@ -836,6 +859,8 @@ import { ParseUserBehaviorRequest } from './model/ParseUserBehaviorRequest';
 import { ParseUserBehaviorResponse } from './model/ParseUserBehaviorResponse';
 import { PayForDgcOneKeyRequest } from './model/PayForDgcOneKeyRequest';
 import { PayForDgcOneKeyResponse } from './model/PayForDgcOneKeyResponse';
+import { PeriodObject } from './model/PeriodObject';
+import { PeriodSlaTimeV2 } from './model/PeriodSlaTimeV2';
 import { PermissionActions } from './model/PermissionActions';
 import { PermissionApprovalDetailDTO } from './model/PermissionApprovalDetailDTO';
 import { PermissionApprovalDetailDTOPermissions } from './model/PermissionApprovalDetailDTOPermissions';
@@ -1144,6 +1169,8 @@ import { ShowWorkSpaceRequest } from './model/ShowWorkSpaceRequest';
 import { ShowWorkSpaceResponse } from './model/ShowWorkSpaceResponse';
 import { ShowWorkspaceDetailByIdRequest } from './model/ShowWorkspaceDetailByIdRequest';
 import { ShowWorkspaceDetailByIdResponse } from './model/ShowWorkspaceDetailByIdResponse';
+import { SmnTopic } from './model/SmnTopic';
+import { SmnTopicRequest } from './model/SmnTopicRequest';
 import { Sort } from './model/Sort';
 import { StandElementFieldVO } from './model/StandElementFieldVO';
 import { StandElementFieldVOList } from './model/StandElementFieldVOList';
@@ -1250,6 +1277,8 @@ import { UpdatePermissionExpireTimeResultDTOResults } from './model/UpdatePermis
 import { UpdateSecrecyLevelDTO } from './model/UpdateSecrecyLevelDTO';
 import { UpdateSecurityAssignedQueueRequest } from './model/UpdateSecurityAssignedQueueRequest';
 import { UpdateSecurityAssignedQueueResponse } from './model/UpdateSecurityAssignedQueueResponse';
+import { UpdateSecurityDataCategoriesRequest } from './model/UpdateSecurityDataCategoriesRequest';
+import { UpdateSecurityDataCategoriesResponse } from './model/UpdateSecurityDataCategoriesResponse';
 import { UpdateSecurityDataClassificationCombineRuleRequest } from './model/UpdateSecurityDataClassificationCombineRuleRequest';
 import { UpdateSecurityDataClassificationCombineRuleResponse } from './model/UpdateSecurityDataClassificationCombineRuleResponse';
 import { UpdateSecurityDataClassificationRuleGroupRequest } from './model/UpdateSecurityDataClassificationRuleGroupRequest';
@@ -1621,6 +1650,26 @@ export class DataArtsStudioClient {
      */
     public batchCreateSecurityPermissionSetPermissions(batchCreateSecurityPermissionSetPermissionsRequest?: BatchCreateSecurityPermissionSetPermissionsRequest): Promise<BatchCreateSecurityPermissionSetPermissionsResponse> {
         const options = ParamCreater().batchCreateSecurityPermissionSetPermissions(batchCreateSecurityPermissionSetPermissionsRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 删除数据分类。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 删除数据分类
+     * @param {string} workspace DataArts Studio工作空间ID
+     * @param {BatchDeleteCategoryGroupDTO} batchDeleteSecurityDataCategoriesRequestBody 批量删除数据分类参数。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public batchDeleteSecurityDataCategories(batchDeleteSecurityDataCategoriesRequest?: BatchDeleteSecurityDataCategoriesRequest): Promise<BatchDeleteSecurityDataCategoriesResponse> {
+        const options = ParamCreater().batchDeleteSecurityDataCategories(batchDeleteSecurityDataCategoriesRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -2457,6 +2506,29 @@ export class DataArtsStudioClient {
     }
 
     /**
+     * 创建基线任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 创建基线任务
+     * @param {string} instanceId DataArts Studio实例ID。
+     * @param {string} workspace 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
+     * @param {CreateBaselineRequest} createFactoryBaselineRequestBody 基线任务请求信息。
+     * @param {string} [xProjectId] 项目ID，获取方法请参见[项目ID和账号ID](projectid_accountid.xml)。  多project场景采用AK/SK认证的接口请求，则该字段必选。
+     * @param {string} [contentType] 默认值：application/json;charset&#x3D;UTF-8 可选，有Body体的情况下必选，没有Body体则无需填写和校验。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public createFactoryBaseline(createFactoryBaselineRequest?: CreateFactoryBaselineRequest): Promise<CreateFactoryBaselineResponse> {
+        const options = ParamCreater().createFactoryBaseline(createFactoryBaselineRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 创建环境变量
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -2633,6 +2705,26 @@ export class DataArtsStudioClient {
      */
     public createSecurityAssignedQueue(createSecurityAssignedQueueRequest?: CreateSecurityAssignedQueueRequest): Promise<CreateSecurityAssignedQueueResponse> {
         const options = ParamCreater().createSecurityAssignedQueue(createSecurityAssignedQueueRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 创建数据分类。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 创建数据分类
+     * @param {string} workspace DataArts Studio工作空间ID
+     * @param {DataCategoryInsertDTO} createSecurityDataCategoryRequestBody 数据分类更新参数。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public createSecurityDataCategory(createSecurityDataCategoryRequest?: CreateSecurityDataCategoryRequest): Promise<CreateSecurityDataCategoryResponse> {
+        const options = ParamCreater().createSecurityDataCategory(createSecurityDataCategoryRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -2895,7 +2987,7 @@ export class DataArtsStudioClient {
      *
      * @summary 创建主题
      * @param {string} workspace 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
-     * @param {CatalogParamsVO} createSubjectRequestBody catalog参数。
+     * @param {CatalogVO} createSubjectRequestBody catalog参数。
      * @param {string} [xProjectId] 项目ID，获取方法请参见[项目ID和账号ID](projectid_accountid.xml)。  多project场景采用AK/SK认证的接口请求，则该字段必选。
      * @param {string} [contentType] 默认值：application/json;charset&#x3D;UTF-8 可选，有Body体的情况下必选，没有Body体则无需填写和校验。
      * @param {*} [options] Override http request option.
@@ -5153,6 +5245,32 @@ export class DataArtsStudioClient {
     }
 
     /**
+     * 查询通知规则列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询通知规则列表
+     * @param {string} workspace 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
+     * @param {string} [xProjectId] 项目ID，获取方法请参见[项目ID和账号ID](projectid_accountid.xml)。  多project场景采用AK/SK认证的接口请求，则该字段必选。
+     * @param {string} [contentType] 默认值：application/json;charset&#x3D;UTF-8 可选，有Body体的情况下必选，没有Body体则无需填写和校验。
+     * @param {string} [name] 作业/规则名称。
+     * @param {number} [remindType] 通知类型：  - 0：运行成功。 - 1：运行异常/失败。 - 3：未完成。 - 4：资源繁忙。 - 5：基线任务异常。 - 6：基线预警。 - 7：基线破线。 - 8：基线加剧。 - 9：保障作业预警时间未完成。 - 10：保障作业承诺时间未完成。 - 11：保障作业失败。 - 12：周期未完成。 - 13：运行取消。 - 14：失败作业重跑成功。 - 15：作业改动。 默认查询所有状态。
+     * @param {string} [dingName] 钉钉机器人名称。
+     * @param {number} [offset] 分页列表的页数，默认值为0。取值范围大于等于0。
+     * @param {number} [limit] 分页返回结果，指定每页最大记录数。范围[1,100]，默认为10。  默认值：10
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listFactoryAlarmRules(listFactoryAlarmRulesRequest?: ListFactoryAlarmRulesRequest): Promise<ListFactoryAlarmRulesResponse> {
+        const options = ParamCreater().listFactoryAlarmRules(listFactoryAlarmRulesRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 查询指定作业的实例列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -5278,6 +5396,39 @@ export class DataArtsStudioClient {
     }
 
     /**
+     * 查询基线实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询基线实例列表
+     * @param {string} instanceId DataArts Studio实例ID。
+     * @param {string} workspace 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
+     * @param {string} workspaceId 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
+     * @param {string} [xProjectId] 项目ID，获取方法请参见[项目ID和账号ID](projectid_accountid.xml)。  多project场景采用AK/SK认证的接口请求，则该字段必选。
+     * @param {string} [baselineName] 基线任务名称。
+     * @param {string} [ownerName] 责任人。
+     * @param {'DAY' | 'HOUR'} [type] 基线类型，DAY天基线，HOUR小时基线，默认查询所有基线类型。
+     * @param {number} [priority] 优先级，取值有1/2/3/4/5，默认查询所有优先级。当同时查询优先级为1/2/3时，样例如下：priority&#x3D;1&amp;priority&#x3D;2&amp;priority&#x3D;3
+     * @param {'ERROR' | 'SAFE' | 'DANGEROUS' | 'OVER'} [status] 状态： - ERROR：异常 - SAFE：安全 - DANGEROUS：预警 - OVER：破线 默认查询所有状态。
+     * @param {'UNFINISH' | 'FINISH'} [finishStatus] 完成状态：UNFINISH未完成，FINISH完成，默认查询所有状态。
+     * @param {number} [startTime] 开始时间戳，用于检索基线任务实例的承诺时间，单位毫秒。默认为当天0点0分0秒，当end_time有值时，该值不能为空。
+     * @param {number} [endTime] 终止时间戳，用于检索基线任务实例的承诺时间，单位毫秒。默认为当天23点59分59秒，当start_time有值时，该值不能为空，最大查询范围为180天。
+     * @param {string} [orderBy] 排序规则，示例 start_time_ms asc，表示按照开始时间升序排序，有如下取值： - start_time_ms asc：按照开始时间升序。 - start_time_ms desc：按照开始时间降序。 - end_time_ms asc：按照结束时间升序。 - end_time_ms desc：按照结束时间降序。 默认不排序。
+     * @param {number} [offset] 分页列表的页数，默认值为1。取值范围大于等于1。
+     * @param {number} [limit] 分页返回结果，指定每页最大记录数。范围[1,100] 默认值：10
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listFactorySearchBaselineInstances(listFactorySearchBaselineInstancesRequest?: ListFactorySearchBaselineInstancesRequest): Promise<ListFactorySearchBaselineInstancesResponse> {
+        const options = ParamCreater().listFactorySearchBaselineInstances(listFactorySearchBaselineInstancesRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 查询任务完成情况
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -5311,6 +5462,38 @@ export class DataArtsStudioClient {
      */
     public listFactoryTaskOverview(listFactoryTaskOverviewRequest?: ListFactoryTaskOverviewRequest): Promise<ListFactoryTaskOverviewResponse> {
         const options = ParamCreater().listFactoryTaskOverview(listFactoryTaskOverviewRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询审批中心列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询审批中心列表
+     * @param {string} workspace 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
+     * @param {string} [xProjectId] 项目ID，获取方法请参见[项目ID和账号ID](projectid_accountid.xml)。  多project场景采用AK/SK认证的接口请求，则该字段必选。
+     * @param {string} [contentType] 默认值：application/json;charset&#x3D;UTF-8 可选，有Body体的情况下必选，没有Body体则无需填写和校验。
+     * @param {number} [beginTime] 申请开始时间，13位时间戳。
+     * @param {number} [endTime] 申请结束时间，13位时间戳。当开始时间和结束时间都不传时，默认查询前7天到当天的数据。
+     * @param {string} [status] 审批状态：  - DEVELOPING: 待审批  - APPROVED: 已通过  - REJECT: 已驳回  默认查询全部的状态
+     * @param {string} [type] 审批类型:  - DEVELOPING: 查询待审批信息  - FINISHED: 查询已审批信息  - APPLY: 查询我的申请页面  默认值：APPLY
+     * @param {string} [applyId] 申请单号。
+     * @param {string} [approverName] 审批人。
+     * @param {string} [createUser] 申请人，该参数只支持在待审批和已审批页面使用。
+     * @param {string} [objectName] 对象名。
+     * @param {string} [objectType] 审批对象： - JOB: 作业 - SCRIPT: 脚本  默认审批全部对象。
+     * @param {number} [offset] 分页的起始页，取值范围大于等于0。样例: offset&#x3D;0 默认值: 0。
+     * @param {number} [limit] 分页返回结果，指定每页最大记录数，范围[1,100]。样例: limit&#x3D;10 默认值: 10。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listFactoryWorkspacesApproval(listFactoryWorkspacesApprovalRequest?: ListFactoryWorkspacesApprovalRequest): Promise<ListFactoryWorkspacesApprovalResponse> {
+        const options = ParamCreater().listFactoryWorkspacesApproval(listFactoryWorkspacesApprovalRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -5558,6 +5741,67 @@ export class DataArtsStudioClient {
      */
     public listSchemas(listSchemasRequest?: ListSchemasRequest): Promise<ListSchemasResponse> {
         const options = ParamCreater().listSchemas(listSchemasRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询基线任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询基线任务列表
+     * @param {string} instanceId DataArts Studio实例ID。
+     * @param {string} workspace 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
+     * @param {string} workspaceId 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
+     * @param {string} [xProjectId] 项目ID，获取方法请参见[项目ID和账号ID](projectid_accountid.xml)。  多project场景采用AK/SK认证的接口请求，则该字段必选。
+     * @param {string} [name] 基线任务名称。
+     * @param {string} [ownerName] 责任人名称。
+     * @param {number} [priority] 优先级，取值有1/2/3/4/5，默认查询所有优先级。当同时查询优先级为1/2/3时，样例如下：priority&#x3D;1&amp;priority&#x3D;2&amp;priority&#x3D;3。
+     * @param {string} [orderBy] 排序规则，取值如下： - priority asc: 按照优先级升序。 - priority desc: 按照优先级降序。 默认不排序。
+     * @param {boolean} [enable] 开启基线任务。 true: 开启基线任务，系统将会监控基线任务以及其依赖链上游的所有任务。 false: 关闭基线任务，系统不会监控基线任务以及其依赖链上游的所有任务。 默认查询全部。
+     * @param {number} [offset] 分页列表的页数，默认值为1。取值范围大于等于1。
+     * @param {number} [limit] 分页返回结果，指定每页最大记录数。范围[1,100] 默认值：10
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listSearchFactoryBaselines(listSearchFactoryBaselinesRequest?: ListSearchFactoryBaselinesRequest): Promise<ListSearchFactoryBaselinesResponse> {
+        const options = ParamCreater().listSearchFactoryBaselines(listSearchFactoryBaselinesRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询事件列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询事件列表
+     * @param {string} instanceId DataArts Studio实例ID。
+     * @param {string} workspace 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
+     * @param {string} workspaceId 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
+     * @param {string} [xProjectId] 项目ID，获取方法请参见[项目ID和账号ID](projectid_accountid.xml)。  多project场景采用AK/SK认证的接口请求，则该字段必选。
+     * @param {string} [name] 基线任务名称。
+     * @param {string} [taskName] 作业名称
+     * @param {string} [ownerName] 责任人名称。
+     * @param {string} [type] 事件类型:  - ERROR: 出错 - SLOW_DOWN: 变慢  默认查询全部事件类型。
+     * @param {string} [status] 事件状态: - NEW_DISCOVERY: 新发现 - PROCESSING: 处理中 - RESTORED: 已恢复 - IGNORED: 已忽略
+     * @param {string} [orderBy] 排序规则，示例 happen_time_ms asc asc，表示按照优先级升序排序，有如下取值： - happen_time_ms asc asc: 按照触发事件升序。 - happen_time_ms asc desc: 按照触发事件降序。  默认不排序。
+     * @param {number} [startTime] 创建时间检索区间，起始时间戳，单位毫秒。默认为当天0点0分0秒，当end_time有值时，该值不能为空。
+     * @param {number} [endTime] 创建时间检索区间，终止时间戳，单位毫秒。默认为当天23点59分59秒，当start_time有值时，该值不能为空，最大查询范围为180天。
+     * @param {number} [offset] 分页列表的页数，默认值为1。取值范围大于等于1。
+     * @param {number} [limit] 分页返回结果，指定每页最大记录数。范围[1,100] 默认值：10
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listSearchFactoryEvents(listSearchFactoryEventsRequest?: ListSearchFactoryEventsRequest): Promise<ListSearchFactoryEventsResponse> {
+        const options = ParamCreater().listSearchFactoryEvents(listSearchFactoryEventsRequest);
 
          // @ts-ignore
         options['responseHeaders'] = [''];
@@ -8037,6 +8281,8 @@ export class DataArtsStudioClient {
      * @summary 获取实例结果
      * @param {string} instanceId projectId
      * @param {string} workspace DataArts Studio工作空间ID
+     * @param {number} [limit] 每页的记录数，取值范围为0~100。
+     * @param {number} [offset] 分页偏移量，最小值为0。
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -9249,6 +9495,27 @@ export class DataArtsStudioClient {
     }
 
     /**
+     * 修改数据分类。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 修改数据分类
+     * @param {string} workspace DataArts Studio工作空间ID
+     * @param {string} id 数据分类id。
+     * @param {DataCategoryUpdateDTO} updateSecurityDataCategoriesRequestBody 数据分类更新参数。
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public updateSecurityDataCategories(updateSecurityDataCategoriesRequest?: UpdateSecurityDataCategoriesRequest): Promise<UpdateSecurityDataCategoriesResponse> {
+        const options = ParamCreater().updateSecurityDataCategories(updateSecurityDataCategoriesRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = [''];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 修改组合识别规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -9510,7 +9777,7 @@ export class DataArtsStudioClient {
      *
      * @summary 修改主题
      * @param {string} workspace 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
-     * @param {CatalogParamsVO} updateSubjectRequestBody catalog参数。
+     * @param {CatalogVO} updateSubjectRequestBody catalog参数。
      * @param {string} [xProjectId] 项目ID，获取方法请参见[项目ID和账号ID](projectid_accountid.xml)。  多project场景采用AK/SK认证的接口请求，则该字段必选。
      * @param {string} [contentType] 默认值：application/json;charset&#x3D;UTF-8 可选，有Body体的情况下必选，没有Body体则无需填写和校验。
      * @param {*} [options] Override http request option.
@@ -10859,6 +11126,51 @@ export const ParamCreater = function () {
 
             options.data = body !== undefined ? body : {};
             options.pathParams = { 'permission_set_id': permissionSetId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 删除数据分类。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        batchDeleteSecurityDataCategories(batchDeleteSecurityDataCategoriesRequest?: BatchDeleteSecurityDataCategoriesRequest) {
+            const options = {
+                method: "POST",
+                url: "/v1/{project_id}/security/data-category/batch-delete",
+                contentType: "application/json;charset=UTF-8",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let workspace;
+
+            if (batchDeleteSecurityDataCategoriesRequest !== null && batchDeleteSecurityDataCategoriesRequest !== undefined) {
+                if (batchDeleteSecurityDataCategoriesRequest instanceof BatchDeleteSecurityDataCategoriesRequest) {
+                    workspace = batchDeleteSecurityDataCategoriesRequest.workspace;
+                    body = batchDeleteSecurityDataCategoriesRequest.body
+                } else {
+                    workspace = batchDeleteSecurityDataCategoriesRequest['workspace'];
+                    body = batchDeleteSecurityDataCategoriesRequest['body'];
+                }
+            }
+
+        
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            if (workspace !== undefined && workspace !== null) {
+                localVarHeaderParameter['workspace'] = String(workspace);
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json;charset=UTF-8';
+
+            options.data = body !== undefined ? body : {};
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -12942,6 +13254,73 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 创建基线任务。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        createFactoryBaseline(createFactoryBaselineRequest?: CreateFactoryBaselineRequest) {
+            const options = {
+                method: "POST",
+                url: "/v2/{project_id}/factory/aiops/{instance_id}/baseline",
+                contentType: "application/json;charset=UTF-8",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let instanceId;
+            
+            let workspace;
+            
+            let xProjectId;
+            
+            let contentType;
+
+            if (createFactoryBaselineRequest !== null && createFactoryBaselineRequest !== undefined) {
+                if (createFactoryBaselineRequest instanceof CreateFactoryBaselineRequest) {
+                    instanceId = createFactoryBaselineRequest.instanceId;
+                    workspace = createFactoryBaselineRequest.workspace;
+                    body = createFactoryBaselineRequest.body
+                    xProjectId = createFactoryBaselineRequest.xProjectId;
+                    contentType = createFactoryBaselineRequest.contentType;
+                } else {
+                    instanceId = createFactoryBaselineRequest['instance_id'];
+                    workspace = createFactoryBaselineRequest['workspace'];
+                    body = createFactoryBaselineRequest['body'];
+                    xProjectId = createFactoryBaselineRequest['X-Project-Id'];
+                    contentType = createFactoryBaselineRequest['Content-Type'];
+                }
+            }
+
+        
+            if (instanceId === null || instanceId === undefined) {
+            throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling createFactoryBaseline.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            if (xProjectId !== undefined && xProjectId !== null) {
+                localVarHeaderParameter['X-Project-Id'] = String(xProjectId);
+            }
+            if (workspace !== undefined && workspace !== null) {
+                localVarHeaderParameter['workspace'] = String(workspace);
+            }
+            if (contentType !== undefined && contentType !== null) {
+                localVarHeaderParameter['Content-Type'] = String(contentType);
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json;charset=UTF-8';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'instance_id': instanceId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 创建环境变量
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -13358,6 +13737,51 @@ export const ParamCreater = function () {
                 } else {
                     workspace = createSecurityAssignedQueueRequest['workspace'];
                     body = createSecurityAssignedQueueRequest['body'];
+                }
+            }
+
+        
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            if (workspace !== undefined && workspace !== null) {
+                localVarHeaderParameter['workspace'] = String(workspace);
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json;charset=UTF-8';
+
+            options.data = body !== undefined ? body : {};
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 创建数据分类。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        createSecurityDataCategory(createSecurityDataCategoryRequest?: CreateSecurityDataCategoryRequest) {
+            const options = {
+                method: "POST",
+                url: "/v1/{project_id}/security/data-category",
+                contentType: "application/json;charset=UTF-8",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let workspace;
+
+            if (createSecurityDataCategoryRequest !== null && createSecurityDataCategoryRequest !== undefined) {
+                if (createSecurityDataCategoryRequest instanceof CreateSecurityDataCategoryRequest) {
+                    workspace = createSecurityDataCategoryRequest.workspace;
+                    body = createSecurityDataCategoryRequest.body
+                } else {
+                    workspace = createSecurityDataCategoryRequest['workspace'];
+                    body = createSecurityDataCategoryRequest['body'];
                 }
             }
 
@@ -20655,6 +21079,92 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 查询通知规则列表。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listFactoryAlarmRules(listFactoryAlarmRulesRequest?: ListFactoryAlarmRulesRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2/{project_id}/factory/alarm/rules",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let workspace;
+            
+            let xProjectId;
+            
+            let contentType;
+            
+            let name;
+            
+            let remindType;
+            
+            let dingName;
+            
+            let offset;
+            
+            let limit;
+
+            if (listFactoryAlarmRulesRequest !== null && listFactoryAlarmRulesRequest !== undefined) {
+                if (listFactoryAlarmRulesRequest instanceof ListFactoryAlarmRulesRequest) {
+                    workspace = listFactoryAlarmRulesRequest.workspace;
+                    xProjectId = listFactoryAlarmRulesRequest.xProjectId;
+                    contentType = listFactoryAlarmRulesRequest.contentType;
+                    name = listFactoryAlarmRulesRequest.name;
+                    remindType = listFactoryAlarmRulesRequest.remindType;
+                    dingName = listFactoryAlarmRulesRequest.dingName;
+                    offset = listFactoryAlarmRulesRequest.offset;
+                    limit = listFactoryAlarmRulesRequest.limit;
+                } else {
+                    workspace = listFactoryAlarmRulesRequest['workspace'];
+                    xProjectId = listFactoryAlarmRulesRequest['X-Project-Id'];
+                    contentType = listFactoryAlarmRulesRequest['Content-Type'];
+                    name = listFactoryAlarmRulesRequest['name'];
+                    remindType = listFactoryAlarmRulesRequest['remind_type'];
+                    dingName = listFactoryAlarmRulesRequest['ding_name'];
+                    offset = listFactoryAlarmRulesRequest['offset'];
+                    limit = listFactoryAlarmRulesRequest['limit'];
+                }
+            }
+
+        
+            if (name !== null && name !== undefined) {
+                localVarQueryParameter['name'] = name;
+            }
+            if (remindType !== null && remindType !== undefined) {
+                localVarQueryParameter['remind_type'] = remindType;
+            }
+            if (dingName !== null && dingName !== undefined) {
+                localVarQueryParameter['ding_name'] = dingName;
+            }
+            if (offset !== null && offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
+            }
+            if (limit !== null && limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+            if (workspace !== undefined && workspace !== null) {
+                localVarHeaderParameter['workspace'] = String(workspace);
+            }
+            if (xProjectId !== undefined && xProjectId !== null) {
+                localVarHeaderParameter['X-Project-Id'] = String(xProjectId);
+            }
+            if (contentType !== undefined && contentType !== null) {
+                localVarHeaderParameter['Content-Type'] = String(contentType);
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 查询指定作业的实例列表
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -21052,6 +21562,145 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 查询基线实例列表。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listFactorySearchBaselineInstances(listFactorySearchBaselineInstancesRequest?: ListFactorySearchBaselineInstancesRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2/{project_id}/factory/aiops/{instance_id}/baselineinstance",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let instanceId;
+            
+            let workspace;
+            
+            let workspaceId;
+            
+            let xProjectId;
+            
+            let baselineName;
+            
+            let ownerName;
+            
+            let type;
+            
+            let priority;
+            
+            let status;
+            
+            let finishStatus;
+            
+            let startTime;
+            
+            let endTime;
+            
+            let orderBy;
+            
+            let offset;
+            
+            let limit;
+
+            if (listFactorySearchBaselineInstancesRequest !== null && listFactorySearchBaselineInstancesRequest !== undefined) {
+                if (listFactorySearchBaselineInstancesRequest instanceof ListFactorySearchBaselineInstancesRequest) {
+                    instanceId = listFactorySearchBaselineInstancesRequest.instanceId;
+                    workspace = listFactorySearchBaselineInstancesRequest.workspace;
+                    workspaceId = listFactorySearchBaselineInstancesRequest.workspaceId;
+                    xProjectId = listFactorySearchBaselineInstancesRequest.xProjectId;
+                    baselineName = listFactorySearchBaselineInstancesRequest.baselineName;
+                    ownerName = listFactorySearchBaselineInstancesRequest.ownerName;
+                    type = listFactorySearchBaselineInstancesRequest.type;
+                    priority = listFactorySearchBaselineInstancesRequest.priority;
+                    status = listFactorySearchBaselineInstancesRequest.status;
+                    finishStatus = listFactorySearchBaselineInstancesRequest.finishStatus;
+                    startTime = listFactorySearchBaselineInstancesRequest.startTime;
+                    endTime = listFactorySearchBaselineInstancesRequest.endTime;
+                    orderBy = listFactorySearchBaselineInstancesRequest.orderBy;
+                    offset = listFactorySearchBaselineInstancesRequest.offset;
+                    limit = listFactorySearchBaselineInstancesRequest.limit;
+                } else {
+                    instanceId = listFactorySearchBaselineInstancesRequest['instance_id'];
+                    workspace = listFactorySearchBaselineInstancesRequest['workspace'];
+                    workspaceId = listFactorySearchBaselineInstancesRequest['workspace_id'];
+                    xProjectId = listFactorySearchBaselineInstancesRequest['X-Project-Id'];
+                    baselineName = listFactorySearchBaselineInstancesRequest['baseline_name'];
+                    ownerName = listFactorySearchBaselineInstancesRequest['owner_name'];
+                    type = listFactorySearchBaselineInstancesRequest['type'];
+                    priority = listFactorySearchBaselineInstancesRequest['priority'];
+                    status = listFactorySearchBaselineInstancesRequest['status'];
+                    finishStatus = listFactorySearchBaselineInstancesRequest['finish_status'];
+                    startTime = listFactorySearchBaselineInstancesRequest['start_time'];
+                    endTime = listFactorySearchBaselineInstancesRequest['end_time'];
+                    orderBy = listFactorySearchBaselineInstancesRequest['order_by'];
+                    offset = listFactorySearchBaselineInstancesRequest['offset'];
+                    limit = listFactorySearchBaselineInstancesRequest['limit'];
+                }
+            }
+
+        
+            if (instanceId === null || instanceId === undefined) {
+            throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling listFactorySearchBaselineInstances.');
+            }
+            if (workspaceId === null || workspaceId === undefined) {
+                throw new RequiredError('workspaceId','Required parameter workspaceId was null or undefined when calling listFactorySearchBaselineInstances.');
+            }
+            if (workspaceId !== null && workspaceId !== undefined) {
+                localVarQueryParameter['workspace_id'] = workspaceId;
+            }
+            if (baselineName !== null && baselineName !== undefined) {
+                localVarQueryParameter['baseline_name'] = baselineName;
+            }
+            if (ownerName !== null && ownerName !== undefined) {
+                localVarQueryParameter['owner_name'] = ownerName;
+            }
+            if (type !== null && type !== undefined) {
+                localVarQueryParameter['type'] = type;
+            }
+            if (priority !== null && priority !== undefined) {
+                localVarQueryParameter['priority'] = priority;
+            }
+            if (status !== null && status !== undefined) {
+                localVarQueryParameter['status'] = status;
+            }
+            if (finishStatus !== null && finishStatus !== undefined) {
+                localVarQueryParameter['finish_status'] = finishStatus;
+            }
+            if (startTime !== null && startTime !== undefined) {
+                localVarQueryParameter['start_time'] = startTime;
+            }
+            if (endTime !== null && endTime !== undefined) {
+                localVarQueryParameter['end_time'] = endTime;
+            }
+            if (orderBy !== null && orderBy !== undefined) {
+                localVarQueryParameter['order_by'] = orderBy;
+            }
+            if (offset !== null && offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
+            }
+            if (limit !== null && limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+            if (xProjectId !== undefined && xProjectId !== null) {
+                localVarHeaderParameter['X-Project-Id'] = String(xProjectId);
+            }
+            if (workspace !== undefined && workspace !== null) {
+                localVarHeaderParameter['workspace'] = String(workspace);
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.pathParams = { 'instance_id': instanceId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 查询任务完成情况
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -21139,6 +21788,134 @@ export const ParamCreater = function () {
             }
             if (workspace !== undefined && workspace !== null) {
                 localVarHeaderParameter['workspace'] = String(workspace);
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询审批中心列表。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listFactoryWorkspacesApproval(listFactoryWorkspacesApprovalRequest?: ListFactoryWorkspacesApprovalRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2/{project_id}/factory/workspaces/approval",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let workspace;
+            
+            let xProjectId;
+            
+            let contentType;
+            
+            let beginTime;
+            
+            let endTime;
+            
+            let status;
+            
+            let type;
+            
+            let applyId;
+            
+            let approverName;
+            
+            let createUser;
+            
+            let objectName;
+            
+            let objectType;
+            
+            let offset;
+            
+            let limit;
+
+            if (listFactoryWorkspacesApprovalRequest !== null && listFactoryWorkspacesApprovalRequest !== undefined) {
+                if (listFactoryWorkspacesApprovalRequest instanceof ListFactoryWorkspacesApprovalRequest) {
+                    workspace = listFactoryWorkspacesApprovalRequest.workspace;
+                    xProjectId = listFactoryWorkspacesApprovalRequest.xProjectId;
+                    contentType = listFactoryWorkspacesApprovalRequest.contentType;
+                    beginTime = listFactoryWorkspacesApprovalRequest.beginTime;
+                    endTime = listFactoryWorkspacesApprovalRequest.endTime;
+                    status = listFactoryWorkspacesApprovalRequest.status;
+                    type = listFactoryWorkspacesApprovalRequest.type;
+                    applyId = listFactoryWorkspacesApprovalRequest.applyId;
+                    approverName = listFactoryWorkspacesApprovalRequest.approverName;
+                    createUser = listFactoryWorkspacesApprovalRequest.createUser;
+                    objectName = listFactoryWorkspacesApprovalRequest.objectName;
+                    objectType = listFactoryWorkspacesApprovalRequest.objectType;
+                    offset = listFactoryWorkspacesApprovalRequest.offset;
+                    limit = listFactoryWorkspacesApprovalRequest.limit;
+                } else {
+                    workspace = listFactoryWorkspacesApprovalRequest['workspace'];
+                    xProjectId = listFactoryWorkspacesApprovalRequest['X-Project-Id'];
+                    contentType = listFactoryWorkspacesApprovalRequest['Content-Type'];
+                    beginTime = listFactoryWorkspacesApprovalRequest['begin_time'];
+                    endTime = listFactoryWorkspacesApprovalRequest['end_time'];
+                    status = listFactoryWorkspacesApprovalRequest['status'];
+                    type = listFactoryWorkspacesApprovalRequest['type'];
+                    applyId = listFactoryWorkspacesApprovalRequest['apply_id'];
+                    approverName = listFactoryWorkspacesApprovalRequest['approver_name'];
+                    createUser = listFactoryWorkspacesApprovalRequest['create_user'];
+                    objectName = listFactoryWorkspacesApprovalRequest['object_name'];
+                    objectType = listFactoryWorkspacesApprovalRequest['object_type'];
+                    offset = listFactoryWorkspacesApprovalRequest['offset'];
+                    limit = listFactoryWorkspacesApprovalRequest['limit'];
+                }
+            }
+
+        
+            if (beginTime !== null && beginTime !== undefined) {
+                localVarQueryParameter['begin_time'] = beginTime;
+            }
+            if (endTime !== null && endTime !== undefined) {
+                localVarQueryParameter['end_time'] = endTime;
+            }
+            if (status !== null && status !== undefined) {
+                localVarQueryParameter['status'] = status;
+            }
+            if (type !== null && type !== undefined) {
+                localVarQueryParameter['type'] = type;
+            }
+            if (applyId !== null && applyId !== undefined) {
+                localVarQueryParameter['apply_id'] = applyId;
+            }
+            if (approverName !== null && approverName !== undefined) {
+                localVarQueryParameter['approver_name'] = approverName;
+            }
+            if (createUser !== null && createUser !== undefined) {
+                localVarQueryParameter['create_user'] = createUser;
+            }
+            if (objectName !== null && objectName !== undefined) {
+                localVarQueryParameter['object_name'] = objectName;
+            }
+            if (objectType !== null && objectType !== undefined) {
+                localVarQueryParameter['object_type'] = objectType;
+            }
+            if (offset !== null && offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
+            }
+            if (limit !== null && limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+            if (workspace !== undefined && workspace !== null) {
+                localVarHeaderParameter['workspace'] = String(workspace);
+            }
+            if (xProjectId !== undefined && xProjectId !== null) {
+                localVarHeaderParameter['X-Project-Id'] = String(xProjectId);
+            }
+            if (contentType !== undefined && contentType !== null) {
+                localVarHeaderParameter['Content-Type'] = String(contentType);
             }
 
             options.queryParams = localVarQueryParameter;
@@ -21926,6 +22703,249 @@ export const ParamCreater = function () {
 
             options.queryParams = localVarQueryParameter;
             options.pathParams = { 'connection_id': connectionId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询基线任务列表。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listSearchFactoryBaselines(listSearchFactoryBaselinesRequest?: ListSearchFactoryBaselinesRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2/{project_id}/factory/aiops/{instance_id}/baseline",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let instanceId;
+            
+            let workspace;
+            
+            let workspaceId;
+            
+            let xProjectId;
+            
+            let name;
+            
+            let ownerName;
+            
+            let priority;
+            
+            let orderBy;
+            
+            let enable;
+            
+            let offset;
+            
+            let limit;
+
+            if (listSearchFactoryBaselinesRequest !== null && listSearchFactoryBaselinesRequest !== undefined) {
+                if (listSearchFactoryBaselinesRequest instanceof ListSearchFactoryBaselinesRequest) {
+                    instanceId = listSearchFactoryBaselinesRequest.instanceId;
+                    workspace = listSearchFactoryBaselinesRequest.workspace;
+                    workspaceId = listSearchFactoryBaselinesRequest.workspaceId;
+                    xProjectId = listSearchFactoryBaselinesRequest.xProjectId;
+                    name = listSearchFactoryBaselinesRequest.name;
+                    ownerName = listSearchFactoryBaselinesRequest.ownerName;
+                    priority = listSearchFactoryBaselinesRequest.priority;
+                    orderBy = listSearchFactoryBaselinesRequest.orderBy;
+                    enable = listSearchFactoryBaselinesRequest.enable;
+                    offset = listSearchFactoryBaselinesRequest.offset;
+                    limit = listSearchFactoryBaselinesRequest.limit;
+                } else {
+                    instanceId = listSearchFactoryBaselinesRequest['instance_id'];
+                    workspace = listSearchFactoryBaselinesRequest['workspace'];
+                    workspaceId = listSearchFactoryBaselinesRequest['workspace_id'];
+                    xProjectId = listSearchFactoryBaselinesRequest['X-Project-Id'];
+                    name = listSearchFactoryBaselinesRequest['name'];
+                    ownerName = listSearchFactoryBaselinesRequest['owner_name'];
+                    priority = listSearchFactoryBaselinesRequest['priority'];
+                    orderBy = listSearchFactoryBaselinesRequest['order_by'];
+                    enable = listSearchFactoryBaselinesRequest['enable'];
+                    offset = listSearchFactoryBaselinesRequest['offset'];
+                    limit = listSearchFactoryBaselinesRequest['limit'];
+                }
+            }
+
+        
+            if (instanceId === null || instanceId === undefined) {
+            throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling listSearchFactoryBaselines.');
+            }
+            if (workspaceId === null || workspaceId === undefined) {
+                throw new RequiredError('workspaceId','Required parameter workspaceId was null or undefined when calling listSearchFactoryBaselines.');
+            }
+            if (workspaceId !== null && workspaceId !== undefined) {
+                localVarQueryParameter['workspace_id'] = workspaceId;
+            }
+            if (name !== null && name !== undefined) {
+                localVarQueryParameter['name'] = name;
+            }
+            if (ownerName !== null && ownerName !== undefined) {
+                localVarQueryParameter['owner_name'] = ownerName;
+            }
+            if (priority !== null && priority !== undefined) {
+                localVarQueryParameter['priority'] = priority;
+            }
+            if (orderBy !== null && orderBy !== undefined) {
+                localVarQueryParameter['order_by'] = orderBy;
+            }
+            if (enable !== null && enable !== undefined) {
+                localVarQueryParameter['enable'] = enable;
+            }
+            if (offset !== null && offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
+            }
+            if (limit !== null && limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+            if (xProjectId !== undefined && xProjectId !== null) {
+                localVarHeaderParameter['X-Project-Id'] = String(xProjectId);
+            }
+            if (workspace !== undefined && workspace !== null) {
+                localVarHeaderParameter['workspace'] = String(workspace);
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.pathParams = { 'instance_id': instanceId, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询事件列表。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listSearchFactoryEvents(listSearchFactoryEventsRequest?: ListSearchFactoryEventsRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2/{project_id}/factory/aiops/{instance_id}/event",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let instanceId;
+            
+            let workspace;
+            
+            let workspaceId;
+            
+            let xProjectId;
+            
+            let name;
+            
+            let taskName;
+            
+            let ownerName;
+            
+            let type;
+            
+            let status;
+            
+            let orderBy;
+            
+            let startTime;
+            
+            let endTime;
+            
+            let offset;
+            
+            let limit;
+
+            if (listSearchFactoryEventsRequest !== null && listSearchFactoryEventsRequest !== undefined) {
+                if (listSearchFactoryEventsRequest instanceof ListSearchFactoryEventsRequest) {
+                    instanceId = listSearchFactoryEventsRequest.instanceId;
+                    workspace = listSearchFactoryEventsRequest.workspace;
+                    workspaceId = listSearchFactoryEventsRequest.workspaceId;
+                    xProjectId = listSearchFactoryEventsRequest.xProjectId;
+                    name = listSearchFactoryEventsRequest.name;
+                    taskName = listSearchFactoryEventsRequest.taskName;
+                    ownerName = listSearchFactoryEventsRequest.ownerName;
+                    type = listSearchFactoryEventsRequest.type;
+                    status = listSearchFactoryEventsRequest.status;
+                    orderBy = listSearchFactoryEventsRequest.orderBy;
+                    startTime = listSearchFactoryEventsRequest.startTime;
+                    endTime = listSearchFactoryEventsRequest.endTime;
+                    offset = listSearchFactoryEventsRequest.offset;
+                    limit = listSearchFactoryEventsRequest.limit;
+                } else {
+                    instanceId = listSearchFactoryEventsRequest['instance_id'];
+                    workspace = listSearchFactoryEventsRequest['workspace'];
+                    workspaceId = listSearchFactoryEventsRequest['workspace_id'];
+                    xProjectId = listSearchFactoryEventsRequest['X-Project-Id'];
+                    name = listSearchFactoryEventsRequest['name'];
+                    taskName = listSearchFactoryEventsRequest['task_name'];
+                    ownerName = listSearchFactoryEventsRequest['owner_name'];
+                    type = listSearchFactoryEventsRequest['type'];
+                    status = listSearchFactoryEventsRequest['status'];
+                    orderBy = listSearchFactoryEventsRequest['order_by'];
+                    startTime = listSearchFactoryEventsRequest['start_time'];
+                    endTime = listSearchFactoryEventsRequest['end_time'];
+                    offset = listSearchFactoryEventsRequest['offset'];
+                    limit = listSearchFactoryEventsRequest['limit'];
+                }
+            }
+
+        
+            if (instanceId === null || instanceId === undefined) {
+            throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling listSearchFactoryEvents.');
+            }
+            if (workspaceId === null || workspaceId === undefined) {
+                throw new RequiredError('workspaceId','Required parameter workspaceId was null or undefined when calling listSearchFactoryEvents.');
+            }
+            if (workspaceId !== null && workspaceId !== undefined) {
+                localVarQueryParameter['workspace_id'] = workspaceId;
+            }
+            if (name !== null && name !== undefined) {
+                localVarQueryParameter['name'] = name;
+            }
+            if (taskName !== null && taskName !== undefined) {
+                localVarQueryParameter['task_name'] = taskName;
+            }
+            if (ownerName !== null && ownerName !== undefined) {
+                localVarQueryParameter['owner_name'] = ownerName;
+            }
+            if (type !== null && type !== undefined) {
+                localVarQueryParameter['type'] = type;
+            }
+            if (status !== null && status !== undefined) {
+                localVarQueryParameter['status'] = status;
+            }
+            if (orderBy !== null && orderBy !== undefined) {
+                localVarQueryParameter['order_by'] = orderBy;
+            }
+            if (startTime !== null && startTime !== undefined) {
+                localVarQueryParameter['start_time'] = startTime;
+            }
+            if (endTime !== null && endTime !== undefined) {
+                localVarQueryParameter['end_time'] = endTime;
+            }
+            if (offset !== null && offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
+            }
+            if (limit !== null && limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+            if (xProjectId !== undefined && xProjectId !== null) {
+                localVarHeaderParameter['X-Project-Id'] = String(xProjectId);
+            }
+            if (workspace !== undefined && workspace !== null) {
+                localVarHeaderParameter['workspace'] = String(workspace);
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.pathParams = { 'instance_id': instanceId, };
             options.headers = localVarHeaderParameter;
             return options;
         },
@@ -29569,19 +30589,27 @@ export const ParamCreater = function () {
                 headers: {}
             };
             const localVarHeaderParameter = {} as any;
-
+            const localVarQueryParameter = {} as any;
             
             let instanceId;
             
             let workspace;
+            
+            let limit;
+            
+            let offset;
 
             if (showInstanceResultRequest !== null && showInstanceResultRequest !== undefined) {
                 if (showInstanceResultRequest instanceof ShowInstanceResultRequest) {
                     instanceId = showInstanceResultRequest.instanceId;
                     workspace = showInstanceResultRequest.workspace;
+                    limit = showInstanceResultRequest.limit;
+                    offset = showInstanceResultRequest.offset;
                 } else {
                     instanceId = showInstanceResultRequest['instance_id'];
                     workspace = showInstanceResultRequest['workspace'];
+                    limit = showInstanceResultRequest['limit'];
+                    offset = showInstanceResultRequest['offset'];
                 }
             }
 
@@ -29589,10 +30617,17 @@ export const ParamCreater = function () {
             if (instanceId === null || instanceId === undefined) {
             throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling showInstanceResult.');
             }
+            if (limit !== null && limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+            if (offset !== null && offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
+            }
             if (workspace !== undefined && workspace !== null) {
                 localVarHeaderParameter['workspace'] = String(workspace);
             }
 
+            options.queryParams = localVarQueryParameter;
             options.pathParams = { 'instance_id': instanceId, };
             options.headers = localVarHeaderParameter;
             return options;
@@ -32633,6 +33668,59 @@ export const ParamCreater = function () {
         
             if (id === null || id === undefined) {
             throw new RequiredError('id','Required parameter id was null or undefined when calling updateSecurityAssignedQueue.');
+            }
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling body.');
+            }
+            if (workspace !== undefined && workspace !== null) {
+                localVarHeaderParameter['workspace'] = String(workspace);
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json;charset=UTF-8';
+
+            options.data = body !== undefined ? body : {};
+            options.pathParams = { 'id': id, };
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 修改数据分类。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        updateSecurityDataCategories(updateSecurityDataCategoriesRequest?: UpdateSecurityDataCategoriesRequest) {
+            const options = {
+                method: "PUT",
+                url: "/v1/{project_id}/security/data-category/{id}",
+                contentType: "application/json;charset=UTF-8",
+                queryParams: {},
+                pathParams: {},
+                headers: {},
+                data: {}
+            };
+            const localVarHeaderParameter = {} as any;
+
+            let body: any;
+            
+            let workspace;
+            
+            let id;
+
+            if (updateSecurityDataCategoriesRequest !== null && updateSecurityDataCategoriesRequest !== undefined) {
+                if (updateSecurityDataCategoriesRequest instanceof UpdateSecurityDataCategoriesRequest) {
+                    workspace = updateSecurityDataCategoriesRequest.workspace;
+                    id = updateSecurityDataCategoriesRequest.id;
+                    body = updateSecurityDataCategoriesRequest.body
+                } else {
+                    workspace = updateSecurityDataCategoriesRequest['workspace'];
+                    id = updateSecurityDataCategoriesRequest['id'];
+                    body = updateSecurityDataCategoriesRequest['body'];
+                }
+            }
+
+        
+            if (id === null || id === undefined) {
+            throw new RequiredError('id','Required parameter id was null or undefined when calling updateSecurityDataCategories.');
             }
             if (body === null || body === undefined) {
                 throw new RequiredError('body','Required parameter body was null or undefined when calling body.');

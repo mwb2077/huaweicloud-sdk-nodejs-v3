@@ -33,8 +33,12 @@ import { ListSingleStreamFramerateRequest } from './model/ListSingleStreamFramer
 import { ListSingleStreamFramerateResponse } from './model/ListSingleStreamFramerateResponse';
 import { ListSnapshotDataRequest } from './model/ListSnapshotDataRequest';
 import { ListSnapshotDataResponse } from './model/ListSnapshotDataResponse';
+import { ListTranscodeConcurrencyNumRequest } from './model/ListTranscodeConcurrencyNumRequest';
+import { ListTranscodeConcurrencyNumResponse } from './model/ListTranscodeConcurrencyNumResponse';
 import { ListTranscodeDataRequest } from './model/ListTranscodeDataRequest';
 import { ListTranscodeDataResponse } from './model/ListTranscodeDataResponse';
+import { ListTranscodeTaskDetailRequest } from './model/ListTranscodeTaskDetailRequest';
+import { ListTranscodeTaskDetailResponse } from './model/ListTranscodeTaskDetailResponse';
 import { ListUpStreamDetailRequest } from './model/ListUpStreamDetailRequest';
 import { ListUpStreamDetailResponse } from './model/ListUpStreamDetailResponse';
 import { ListUsersOfStreamRequest } from './model/ListUsersOfStreamRequest';
@@ -55,7 +59,9 @@ import { StreamPortrait } from './model/StreamPortrait';
 import { TimeValue } from './model/TimeValue';
 import { TrafficData } from './model/TrafficData';
 import { TrafficSummaryData } from './model/TrafficSummaryData';
+import { TranscodeConNumData } from './model/TranscodeConNumData';
 import { TranscodeData } from './model/TranscodeData';
+import { TranscodeDetailInfo } from './model/TranscodeDetailInfo';
 import { TranscodeSpec } from './model/TranscodeSpec';
 import { TranscodeSummary } from './model/TranscodeSummary';
 import { UpStreamDetail } from './model/UpStreamDetail';
@@ -139,6 +145,7 @@ export class LiveClient {
      * @param {string} [startTime] 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度31天，最大查询周期一年。  若参数为空，默认查询7天数据。 
      * @param {string} [endTime] 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。  若参数为空，默认为当前时间。结束时间需大于起始时间。 
      * @param {'Live' | 'LLL' | 'ALL'} [serviceType] 服务类型： - Live：直播 - LLL：超低时延直播 - ALL：默认所有直播 
+     * @param {'v4' | 'v6'} [ipType] ip类型，取值如下：  - v4 ：ipv4协议  - v6 ：ipv6协议   不填写默认查询所有ip类型的数据   该参数只对2026-01-30后的数据生效。 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -261,7 +268,7 @@ export class LiveClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 查询历史推流列表接口
-     * @param {string} domain 推流域名。 
+     * @param {Array<string>} domain 推流域名列表，最多支持查询100个域名，多个域名以逗号分隔。  若查询多个域名，则返回的是多个域名合并数据。 
      * @param {string} [app] 应用名称。
      * @param {string} [stream] 流名称。
      * @param {string} [startTime] 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度1天。  若参数为空，默认查询1天数据。 
@@ -369,6 +376,30 @@ export class LiveClient {
     }
 
     /**
+     * 查询推流域名下的转码路数，根据输入时间点和时间粒度，返回转码路数。
+     * 最大查询跨度1天，最大查询周期90天，数据延迟5分钟。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询推流域名转码路数
+     * @param {Array<string>} publishDomains 推流域名列表，最多支持查询100个域名，多个域名以逗号分隔。  若查询多个域名，则返回的是多个域名合并数据。 
+     * @param {string} [app] 应用名称
+     * @param {60 | 300 | 3600} [interval] 查询数据的时间粒度。支持60, 300（默认值）和3600秒。不传值时，使用默认值300秒。 
+     * @param {string} [startTime] 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度1天，最大查询周期90天。  若参数为空，默认查询1天数据。 
+     * @param {string} [endTime] 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度1天，最大查询周期90天。  若参数为空，默认为当前时间。结束时间需大于起始时间。 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listTranscodeConcurrencyNum(listTranscodeConcurrencyNumRequest?: ListTranscodeConcurrencyNumRequest): Promise<ListTranscodeConcurrencyNumResponse> {
+        const options = ParamCreater().listTranscodeConcurrencyNum(listTranscodeConcurrencyNumRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = ['X-Request-Id'];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
      * 查询直播域名每小时的转码时长数据。  最大查询跨度31天，最大查询周期90天。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -383,6 +414,29 @@ export class LiveClient {
      */
     public listTranscodeData(listTranscodeDataRequest?: ListTranscodeDataRequest): Promise<ListTranscodeDataResponse> {
         const options = ParamCreater().listTranscodeData(listTranscodeDataRequest);
+
+         // @ts-ignore
+        options['responseHeaders'] = ['X-Request-Id'];
+
+        return this.hcClient.sendRequest(options);
+    }
+
+    /**
+     * 查询流粒度转码明细，包含流名、模版、格式、时长。
+     * 最大查询跨度1天，最大查询周期14天。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @summary 查询转码明细
+     * @param {string} domain 推流域名。 
+     * @param {Array<string>} [streamNameList] 流名列表，以逗号分隔，最多支持查询100个流名。 如果不传入流名，则查询域名下所有转码流的数据。 
+     * @param {string} [startTime] 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度1天，最大查询周期14天。  若参数为空，默认查询1天数据。 
+     * @param {string} [endTime] 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度1天，最大查询周期14天。  若参数为空，默认为当前时间。结束时间需大于起始时间。 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listTranscodeTaskDetail(listTranscodeTaskDetailRequest?: ListTranscodeTaskDetailRequest): Promise<ListTranscodeTaskDetailResponse> {
+        const options = ParamCreater().listTranscodeTaskDetail(listTranscodeTaskDetailRequest);
 
          // @ts-ignore
         options['responseHeaders'] = ['X-Request-Id'];
@@ -502,6 +556,7 @@ export class LiveClient {
      * @param {string} domain 推流域名。 
      * @param {string} app App名。 
      * @param {string} stream 流名。 
+     * @param {'VIDEO' | 'AUDIO'} [type] 数据类型，取值如下：  - VIDEO ：视频码率  - AUDIO ：音频码率   不填写默认查询视频码率的数据。 
      * @param {string} [startTime] 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度1天，最大查询周期1个月。  若参数为空，默认查询最近1小时数据。 
      * @param {string} [endTime] 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。  若参数为空，默认为当前时间。结束时间需大于起始时间。 
      * @param {*} [options] Override http request option.
@@ -765,6 +820,8 @@ export const ParamCreater = function () {
             let endTime;
             
             let serviceType;
+            
+            let ipType;
 
             if (listBandwidthDetailRequest !== null && listBandwidthDetailRequest !== undefined) {
                 if (listBandwidthDetailRequest instanceof ListBandwidthDetailRequest) {
@@ -779,6 +836,7 @@ export const ParamCreater = function () {
                     startTime = listBandwidthDetailRequest.startTime;
                     endTime = listBandwidthDetailRequest.endTime;
                     serviceType = listBandwidthDetailRequest.serviceType;
+                    ipType = listBandwidthDetailRequest.ipType;
                 } else {
                     playDomains = listBandwidthDetailRequest['play_domains'];
                     app = listBandwidthDetailRequest['app'];
@@ -791,6 +849,7 @@ export const ParamCreater = function () {
                     startTime = listBandwidthDetailRequest['start_time'];
                     endTime = listBandwidthDetailRequest['end_time'];
                     serviceType = listBandwidthDetailRequest['service_type'];
+                    ipType = listBandwidthDetailRequest['ip_type'];
                 }
             }
 
@@ -827,6 +886,9 @@ export const ParamCreater = function () {
             }
             if (serviceType !== null && serviceType !== undefined) {
                 localVarQueryParameter['service_type'] = serviceType;
+            }
+            if (ipType !== null && ipType !== undefined) {
+                localVarQueryParameter['ip_type'] = ipType;
             }
 
             options.queryParams = localVarQueryParameter;
@@ -1451,6 +1513,75 @@ export const ParamCreater = function () {
         },
     
         /**
+         * 查询推流域名下的转码路数，根据输入时间点和时间粒度，返回转码路数。
+         * 最大查询跨度1天，最大查询周期90天，数据延迟5分钟。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listTranscodeConcurrencyNum(listTranscodeConcurrencyNumRequest?: ListTranscodeConcurrencyNumRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2/{project_id}/stats/transcode/concurrency",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let publishDomains;
+            
+            let app;
+            
+            let interval;
+            
+            let startTime;
+            
+            let endTime;
+
+            if (listTranscodeConcurrencyNumRequest !== null && listTranscodeConcurrencyNumRequest !== undefined) {
+                if (listTranscodeConcurrencyNumRequest instanceof ListTranscodeConcurrencyNumRequest) {
+                    publishDomains = listTranscodeConcurrencyNumRequest.publishDomains;
+                    app = listTranscodeConcurrencyNumRequest.app;
+                    interval = listTranscodeConcurrencyNumRequest.interval;
+                    startTime = listTranscodeConcurrencyNumRequest.startTime;
+                    endTime = listTranscodeConcurrencyNumRequest.endTime;
+                } else {
+                    publishDomains = listTranscodeConcurrencyNumRequest['publish_domains'];
+                    app = listTranscodeConcurrencyNumRequest['app'];
+                    interval = listTranscodeConcurrencyNumRequest['interval'];
+                    startTime = listTranscodeConcurrencyNumRequest['start_time'];
+                    endTime = listTranscodeConcurrencyNumRequest['end_time'];
+                }
+            }
+
+        
+            if (publishDomains === null || publishDomains === undefined) {
+                throw new RequiredError('publishDomains','Required parameter publishDomains was null or undefined when calling listTranscodeConcurrencyNum.');
+            }
+            if (publishDomains !== null && publishDomains !== undefined) {
+                localVarQueryParameter['publish_domains'] = publishDomains;
+            }
+            if (app !== null && app !== undefined) {
+                localVarQueryParameter['app'] = app;
+            }
+            if (interval !== null && interval !== undefined) {
+                localVarQueryParameter['interval'] = interval;
+            }
+            if (startTime !== null && startTime !== undefined) {
+                localVarQueryParameter['start_time'] = startTime;
+            }
+            if (endTime !== null && endTime !== undefined) {
+                localVarQueryParameter['end_time'] = endTime;
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
          * 查询直播域名每小时的转码时长数据。  最大查询跨度31天，最大查询周期90天。
          * 
          * Please refer to HUAWEI cloud API Explorer for details.
@@ -1495,6 +1626,68 @@ export const ParamCreater = function () {
             }
             if (stream !== null && stream !== undefined) {
                 localVarQueryParameter['stream'] = stream;
+            }
+            if (startTime !== null && startTime !== undefined) {
+                localVarQueryParameter['start_time'] = startTime;
+            }
+            if (endTime !== null && endTime !== undefined) {
+                localVarQueryParameter['end_time'] = endTime;
+            }
+
+            options.queryParams = localVarQueryParameter;
+            options.headers = localVarHeaderParameter;
+            return options;
+        },
+    
+        /**
+         * 查询流粒度转码明细，包含流名、模版、格式、时长。
+         * 最大查询跨度1天，最大查询周期14天。
+         * 
+         * Please refer to HUAWEI cloud API Explorer for details.
+         */
+        listTranscodeTaskDetail(listTranscodeTaskDetailRequest?: ListTranscodeTaskDetailRequest) {
+            const options = {
+                method: "GET",
+                url: "/v2/{project_id}/stats/transcode/detail",
+                contentType: "application/json",
+                queryParams: {},
+                pathParams: {},
+                headers: {}
+            };
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+            
+            let domain;
+            
+            let streamNameList;
+            
+            let startTime;
+            
+            let endTime;
+
+            if (listTranscodeTaskDetailRequest !== null && listTranscodeTaskDetailRequest !== undefined) {
+                if (listTranscodeTaskDetailRequest instanceof ListTranscodeTaskDetailRequest) {
+                    domain = listTranscodeTaskDetailRequest.domain;
+                    streamNameList = listTranscodeTaskDetailRequest.streamNameList;
+                    startTime = listTranscodeTaskDetailRequest.startTime;
+                    endTime = listTranscodeTaskDetailRequest.endTime;
+                } else {
+                    domain = listTranscodeTaskDetailRequest['domain'];
+                    streamNameList = listTranscodeTaskDetailRequest['stream_name_list'];
+                    startTime = listTranscodeTaskDetailRequest['start_time'];
+                    endTime = listTranscodeTaskDetailRequest['end_time'];
+                }
+            }
+
+        
+            if (domain === null || domain === undefined) {
+                throw new RequiredError('domain','Required parameter domain was null or undefined when calling listTranscodeTaskDetail.');
+            }
+            if (domain !== null && domain !== undefined) {
+                localVarQueryParameter['domain'] = domain;
+            }
+            if (streamNameList !== null && streamNameList !== undefined) {
+                localVarQueryParameter['stream_name_list'] = streamNameList;
             }
             if (startTime !== null && startTime !== undefined) {
                 localVarQueryParameter['start_time'] = startTime;
@@ -1853,6 +2046,8 @@ export const ParamCreater = function () {
             
             let stream;
             
+            let type;
+            
             let startTime;
             
             let endTime;
@@ -1862,12 +2057,14 @@ export const ParamCreater = function () {
                     domain = listSingleStreamBitrateRequest.domain;
                     app = listSingleStreamBitrateRequest.app;
                     stream = listSingleStreamBitrateRequest.stream;
+                    type = listSingleStreamBitrateRequest.type;
                     startTime = listSingleStreamBitrateRequest.startTime;
                     endTime = listSingleStreamBitrateRequest.endTime;
                 } else {
                     domain = listSingleStreamBitrateRequest['domain'];
                     app = listSingleStreamBitrateRequest['app'];
                     stream = listSingleStreamBitrateRequest['stream'];
+                    type = listSingleStreamBitrateRequest['type'];
                     startTime = listSingleStreamBitrateRequest['start_time'];
                     endTime = listSingleStreamBitrateRequest['end_time'];
                 }
@@ -1891,6 +2088,9 @@ export const ParamCreater = function () {
             }
             if (stream !== null && stream !== undefined) {
                 localVarQueryParameter['stream'] = stream;
+            }
+            if (type !== null && type !== undefined) {
+                localVarQueryParameter['type'] = type;
             }
             if (startTime !== null && startTime !== undefined) {
                 localVarQueryParameter['start_time'] = startTime;

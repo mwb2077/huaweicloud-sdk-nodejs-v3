@@ -1,4 +1,4 @@
-import { CreateIpReputationRuleRequestBodyAction } from './CreateIpReputationRuleRequestBodyAction';
+import { CreateIpReputationRuleResponseBodyAction } from './CreateIpReputationRuleResponseBodyAction';
 
 import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
 
@@ -12,7 +12,7 @@ export class CreateIpReputationRuleResponse extends SdkResponse {
     public status?: number;
     public type?: string;
     public tags?: Array<string>;
-    public action?: CreateIpReputationRuleRequestBodyAction;
+    public action?: CreateIpReputationRuleResponseBodyAction;
     public constructor() { 
         super();
     }
@@ -52,7 +52,7 @@ export class CreateIpReputationRuleResponse extends SdkResponse {
         this['tags'] = tags;
         return this;
     }
-    public withAction(action: CreateIpReputationRuleRequestBodyAction): CreateIpReputationRuleResponse {
+    public withAction(action: CreateIpReputationRuleResponseBodyAction): CreateIpReputationRuleResponse {
         this['action'] = action;
         return this;
     }
